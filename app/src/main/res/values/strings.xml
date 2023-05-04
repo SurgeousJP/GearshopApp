@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GearShop</string>
+    <string name="title_scree">
+        Tên gian hàng
+    </string>
+    <string name="title_categ">
+        Danh mục
+    </string>
+    <string name="cta_viewmor">
+        Xem thêm
+    </string>
+    <string name="label_produ">
+        Tên sản phẩm
+    </string>
+    <string name="rating_numb">
+        (44)
+    </string>
+</resources>
