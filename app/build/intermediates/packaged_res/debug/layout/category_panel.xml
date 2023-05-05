@@ -1,0 +1,74 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/section"
+    android:layout_width="411dp"
+    android:layout_height="314dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/show_category"
+        app:layout_constraintTop_toTopOf="@id/section"
+        app:layout_constraintStart_toStartOf="@id/section"
+        app:layout_constraintEnd_toEndOf="@id/section"
+        android:layout_width="379dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp">
+
+        <TextView
+            android:id="@+id/title_categ"
+            app:layout_constraintTop_toTopOf="@id/show_category"
+            app:layout_constraintBottom_toBottomOf="@id/show_category"
+            app:layout_constraintStart_toStartOf="@id/show_category"
+            android:layout_marginLeft="8dp"
+            android:layout_width="220dp"
+            android:layout_height="24dp"
+            android:gravity="top"
+            android:lineSpacingExtra="5sp"
+            android:text="@string/title_categ"
+            android:textAppearance="@style/title_categ"
+            android:textStyle="bold"
+            android:translationY="-2.32sp" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/more_category"
+            app:layout_constraintTop_toTopOf="@id/show_category"
+            app:layout_constraintBottom_toBottomOf="@id/show_category"
+            app:layout_constraintEnd_toEndOf="@id/show_category"
+            android:layout_marginRight="8dp"
+            android:layout_width="110dp"
+            android:layout_height="24dp">
+            <TextView
+                android:id="@+id/cta_viewmor"
+                android:layout_width="68dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="1.5dp"
+                android:text="@string/cta_viewmor"
+                android:textAppearance="@style/cta_viewmor"
+                android:lineSpacingExtra="4sp"
+                android:lineHeight="21sp"
+                />
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/trailing_ic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:clipToOutline="true"
+                android:background="@drawable/vicon"
+                android:layout_toRightOf="@id/cta_viewmor"
+                android:layout_marginLeft="8dp"
+                />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/show_list_category"
+        app:layout_constraintTop_toBottomOf="@id/show_category"
+        app:layout_constraintBottom_toBottomOf="@id/section"
+        app:layout_constraintStart_toStartOf="@id/section"
+        app:layout_constraintEnd_toEndOf="@id/section"
+        android:layout_width="379dp"
+        android:layout_height="254dp"
+        android:layout_below="@id/show_category"
+        android:layout_marginHorizontal="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
