@@ -1,0 +1,3 @@
+Server name: DozLap
+Server admin login: sqladmin
+Password: CodingProject123@
