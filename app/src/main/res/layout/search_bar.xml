@@ -38,8 +38,7 @@
             android:background="@null"
             android:inputType="text"
             android:textAppearance="@style/placeholder"
-            android:text="Nhập từ khóa cần tìm"
-            android:textColor="#808089"
+            android:hint="Nhập từ khóa cần tìm"
             android:backgroundTint="#808089"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

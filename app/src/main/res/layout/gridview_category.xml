@@ -18,6 +18,7 @@
             app:cardCornerRadius="10dp"
             android:layout_gravity="center">
             <ImageView
+                android:id="@+id/item_image_list_category"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"

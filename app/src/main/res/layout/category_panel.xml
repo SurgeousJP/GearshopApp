@@ -1,7 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/section"
-    android:layout_width="match_parent"
+    android:layout_width="411dp"
     android:layout_height="314dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,8 +10,8 @@
         app:layout_constraintTop_toTopOf="@id/section"
         app:layout_constraintStart_toStartOf="@id/section"
         app:layout_constraintEnd_toEndOf="@id/section"
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="12dp">
 
@@ -23,19 +23,17 @@
             android:layout_marginLeft="8dp"
             android:layout_width="220dp"
             android:layout_height="24dp"
-            android:gravity="top"
             android:lineSpacingExtra="5sp"
             android:text="@string/title_categ"
             android:textAppearance="@style/title_categ"
-            android:textStyle="bold"
-            android:translationY="-2.32sp" />
+            android:textStyle="bold"/>
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/more_category"
             app:layout_constraintTop_toTopOf="@id/show_category"
             app:layout_constraintBottom_toBottomOf="@id/show_category"
             app:layout_constraintEnd_toEndOf="@id/show_category"
             android:layout_marginRight="8dp"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_height="24dp">
             <TextView
                 android:id="@+id/cta_viewmor"
@@ -67,7 +65,7 @@
         app:layout_constraintBottom_toBottomOf="@id/section"
         app:layout_constraintStart_toStartOf="@id/section"
         app:layout_constraintEnd_toEndOf="@id/section"
-        android:layout_width="match_parent"
+        android:layout_width="379dp"
         android:layout_height="254dp"
         android:layout_below="@id/show_category"
         android:layout_marginHorizontal="16dp" />
