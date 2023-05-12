@@ -218,6 +218,7 @@ layout gridview_category
 layout list_item
 layout listview_category
 layout login
+layout main_activity
 layout not_found_search
 layout register
 layout search_bar

@@ -8,19 +8,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">GearShop</string>
-    <string name="cta_viewmor">
+    <string name="cta_viewmore">
         Xem thêm
     </string>
-    <string name="label_produ">
+    <string name="label_product">
         Tên sản phẩm
     </string>
-    <string name="rating_numb">
+    <string name="rating_number">
         (44)
     </string>
-    <string name="title_categ">
+    <string name="title_category">
         Danh mục
     </string>
-    <string name="title_scree">
+    <string name="title_screen">
         Tên gian hàng
     </string>
     <style name="Theme.GearShop" parent="Theme.MaterialComponents.DayNight.NoActionBar">

@@ -276,6 +276,10 @@
         "source": "com.example.gearshop.app-main-31:/layout/category_panel.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_main_activity.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/main_activity.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_navigation_.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/navigation_.xml"
     },
