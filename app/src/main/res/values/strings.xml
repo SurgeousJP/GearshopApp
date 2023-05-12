@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">GearShop</string>
-    <string name="title_scree">
+    <string name="title_screen">
         Tên gian hàng
     </string>
-    <string name="title_categ">
+    <string name="title_category">
         Danh mục
     </string>
-    <string name="cta_viewmor">
+    <string name="cta_viewmore">
         Xem thêm
     </string>
-    <string name="label_produ">
+    <string name="label_product">
         Tên sản phẩm
     </string>
-    <string name="rating_numb">
+    <string name="rating_number">
         (44)
     </string>
 </resources>

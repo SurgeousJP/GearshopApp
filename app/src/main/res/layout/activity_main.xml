@@ -30,7 +30,7 @@
                 android:layout_height="27dp"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="5sp"
-                android:text="@string/title_scree"
+                android:text="@string/title_screen"
                 android:textAppearance="@style/title_scree"
                 android:textStyle="bold" />
         </RelativeLayout>
