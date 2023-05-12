@@ -45,7 +45,7 @@ Nếu thấy project này hữu ích, 1 sao sẽ rất là tuyệt vời.</b>)<b
 |STT|Họ và tên          |MSSV       |Chức vụ   |Github|
 |:-:|:------------------|:---------:|:--------:|:-----------:|
 | 1	|[Nguyễn Tuấn Bảo](mailto:21520620@gm.uit.edu.vn)	| 21520620	| ![](https://img.shields.io/badge/-Member-blue)  |[SurgeousJP](https://github.com/SurgeousJP)|
-| 2	|[Mai Hoàng Nhật Duy](mailto:21522819@gm.uit.edu.vn)	| 21522819	| ![](https://img.shields.io/badge/-Member-blue)  |[N/A](N/A)|
+| 2	|[Mai Hoàng Nhật Duy](mailto:21522819@gm.uit.edu.vn)	| 21522819	| ![](https://img.shields.io/badge/-Member-blue)  |[Nhatduy13nhatduy](https://github.com/Nhatduy13nhatduy)|
 | 3	|[Nguyễn Trung Kiên](mailto:21521026@gm.uit.edu.vn)	| 21521026	| ![](https://img.shields.io/badge/-Member-blue)  |[trungkien2003ntk](https://github.com/trungkien2003ntk)|
 | 4	|[Đoàn Tiến Dũng](mailto:21521297@gm.uit.edu.vn)	| 21521297	| ![](https://img.shields.io/badge/-Member-blue)  |[N/A](N/A)|
 
