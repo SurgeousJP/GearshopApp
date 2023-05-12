@@ -225,11 +225,11 @@ layout sort_setting
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
-string cta_viewmor
-string label_produ
-string rating_numb
-string title_categ
-string title_scree
+string cta_viewmore
+string label_product
+string rating_number
+string title_category
+string title_screen
 style Theme.GearShop
 style content_emp
 style content_pro
