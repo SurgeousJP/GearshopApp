@@ -141,7 +141,7 @@
                 android:id="@+id/text"
                 android:layout_width="26dp"
                 android:layout_height="15dp"
-                android:text="-10%"
+                android:text="10%"
                 android:layout_marginLeft="3dp"
                 android:textStyle="bold"
                 android:textAppearance="@style/text"

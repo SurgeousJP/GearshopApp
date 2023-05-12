@@ -100,7 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_bar" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_screen"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -108,8 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/none2"
-        app:layout_constraintTop_toBottomOf="@+id/none">
-        </RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/none"/>
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
