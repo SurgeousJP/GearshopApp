@@ -2936,6 +2936,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backward_button
 id badge
 id barrier
 id baseline
@@ -2985,16 +2986,16 @@ id components_3
 id components_4
 id compress
 id confirm_button
+id confirm_change_password_button
 id confirm_code
 id confirm_code_box
 id confirm_code_edit
+id confirm_new_passwword_edit
 id confirm_password
 id confirm_password_box
-id confirm_password_edit
 id confirm_passwword
 id confirm_passwword_box
-id confirm_passwword_edit
-id confirm_text
+id confirm_register_password_edit
 id constraint
 id constraintLayout
 id container
@@ -3056,7 +3057,6 @@ id edit_query
 id elastic
 id email
 id email_box
-id email_edit
 id embed
 id end
 id endToStart
@@ -3085,7 +3085,10 @@ id fixed
 id flip
 id floating
 id forever
-id forgotpassword
+id forgot_email_edit
+id forgot_password_textview
+id forgot_send_code_button
+id forgot_username_edit
 id forgotpassword_form
 id fragment_container_view_tag
 id frost
@@ -3164,7 +3167,6 @@ id list_item4
 id listgear
 id listview_category
 id login_button
-id login_text
 id loginform
 id low_price
 id m3_side_sheet
@@ -3234,7 +3236,6 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id name
 id name_box
-id name_edit
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3246,6 +3247,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id new_password_edit
 id noScroll
 id noState
 id none
@@ -3272,7 +3274,6 @@ id parentRelative
 id parent_matrix
 id password
 id password_box
-id password_edit
 id password_text
 id password_toggle
 id path
@@ -3295,7 +3296,11 @@ id rating_numb
 id ratio
 id rectangles
 id register_button
-id register_text
+id register_email_edit
+id register_name_edit
+id register_navigate_button
+id register_password_edit
+id register_username_edit
 id registerform
 id reverseSawtooth
 id right
@@ -3350,7 +3355,6 @@ id selected
 id selection_type
 id selling_pri
 id send_text
-id sendcode
 id sharedValueSet
 id sharedValueUnset
 id sheet_conte
@@ -3361,7 +3365,7 @@ id showHome
 id showTitle
 id show_category
 id show_list_category
-id signup
+id sign_in_navigate_button
 id sin
 id skipCollapsed
 id skipped
@@ -3443,12 +3447,13 @@ id titleDividerNoCustom
 id title_categ
 id title_empty
 id title_filte
-id title_scree
+id title_screen
 id title_template
 id title_wrapp
 id toggle
 id top
 id topPanel
+id top_bar
 id touch_outside
 id trailing_ic
 id transitionToEnd
@@ -3468,7 +3473,6 @@ id up
 id useLogo
 id username
 id username_box
-id username_edit
 id username_text
 id vector
 id vertical_only
@@ -3481,7 +3485,6 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id wayback
-id wayback_icon
 id west
 id withText
 id with_icon
@@ -3627,7 +3630,6 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
-layout main_activity
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
