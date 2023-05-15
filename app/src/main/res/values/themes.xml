@@ -122,4 +122,8 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
+    <style name="title_usern">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
 </resources>
