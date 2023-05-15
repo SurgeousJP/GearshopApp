@@ -15,4 +15,7 @@
     <string name="rating_number">
         (44)
     </string>
+    <string name="label_produ">
+        Tên sản phẩm
+    </string>
 </resources>

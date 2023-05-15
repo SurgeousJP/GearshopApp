@@ -1,5 +1,13 @@
 [
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_product_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/product_detail.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_voucher_setting.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/voucher_setting.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/layout_sort_setting.xml.flat",
         "source": "com.example.gearshop.app-main-31:/layout/sort_setting.xml"
     },
@@ -76,6 +84,10 @@
         "source": "com.example.gearshop.app-main-31:/layout/search_bar.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_next_arrow.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/next_arrow.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_wayback_icon.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/wayback_icon.xml"
     },
@@ -100,6 +112,10 @@
         "source": "com.example.gearshop.app-main-31:/drawable/x.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_decrement_invalid_button.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/decrement_invalid_button.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_additonal_i.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/additonal_i.xml"
     },
@@ -116,8 +132,16 @@
         "source": "com.example.gearshop.app-main-31:/layout/register.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_fill_blue_box_2.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/fill_blue_box_2.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_a1.jpg.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/a1.jpg"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_discount_badge.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/discount_badge.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_search_input.xml.flat",
@@ -126,6 +150,10 @@
     {
         "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.example.gearshop.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_cart.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/cart.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
@@ -138,6 +166,10 @@
     {
         "merged": "com.example.gearshop.app-merged_res-29:/layout_not_found_search.xml.flat",
         "source": "com.example.gearshop.app-main-31:/layout/not_found_search.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_list_voucher.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/list_voucher.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_star.xml.flat",
@@ -158,6 +190,14 @@
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_check_icon.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/check_icon.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_cart_box.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/cart_box.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_decrement_valid_button.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/decrement_valid_button.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_normal_box.xml.flat",
@@ -184,8 +224,20 @@
         "source": "com.example.gearshop.app-main-31:/drawable/search_icon.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_voucher_icon.png.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/voucher_icon.png"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_list_item.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/list_item.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_list_item_cart.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/list_item_cart.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_increment_invalid_button.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/increment_invalid_button.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_option_item_color.xml.flat",
@@ -198,6 +250,10 @@
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___search_item.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___search_item.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_increment_valid_button.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/increment_valid_button.xml"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_not_found.png.flat",
@@ -232,6 +288,10 @@
         "source": "com.example.gearshop.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_number_of_prod_box.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/number_of_prod_box.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_normal_box_2.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/normal_box_2.xml"
     },
@@ -240,8 +300,16 @@
         "source": "com.example.gearshop.app-main-31:/drawable/tw.png"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_location_icon.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/location_icon.xml"
+    },
+    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_option_item.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/option_item.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_transport_unit.png.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/transport_unit.png"
     },
     {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_roundx.xml.flat",
@@ -276,10 +344,6 @@
         "source": "com.example.gearshop.app-main-31:/layout/category_panel.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_main_activity.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/main_activity.xml"
-    },
-    {
         "merged": "com.example.gearshop.app-merged_res-29:/drawable_navigation_.xml.flat",
         "source": "com.example.gearshop.app-main-31:/drawable/navigation_.xml"
     },
@@ -298,5 +362,9 @@
     {
         "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.gearshop.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/drawable_shipping_box.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/drawable/shipping_box.xml"
     }
 ]
