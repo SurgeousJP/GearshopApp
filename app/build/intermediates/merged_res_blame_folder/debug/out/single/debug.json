@@ -40,10 +40,6 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\fb.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_list_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_gridview_category.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\gridview_category.xml"
     },
