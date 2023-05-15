@@ -11,6 +11,9 @@
     <string name="cta_viewmore">
         Xem thêm
     </string>
+    <string name="label_produ">
+        Tên sản phẩm
+    </string>
     <string name="label_product">
         Tên sản phẩm
     </string>
@@ -56,9 +59,17 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#1A94FF</item>
     </style>
+    <style name="data_value">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00AB56</item>
+    </style>
     <style name="description">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#808089</item>
+    </style>
+    <style name="input_value">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#27272A</item>
     </style>
     <style name="label_categ">
         <item name="android:textSize">14sp</item>
@@ -76,9 +87,21 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
+    <style name="label_produ2">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="label_shipp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
     <style name="label_sort_">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#1A94FF</item>
+    </style>
+    <style name="original_pr">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#808089</item>
     </style>
     <style name="placeholder">
         <item name="android:textSize">14sp</item>
@@ -110,6 +133,10 @@
     </style>
     <style name="title_scree">
         <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="title_shipp">
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
     <style name="welcome_bac">
