@@ -12,7 +12,7 @@ public class Customer {
 
     public Customer(int ID, String username, String password, String email,
                     String firstName, String lastName, String gender,
-                    String phoneNumber, Date dateOfBirth, int cardID) {
+                    String phoneNumber, Date dateOfBirth) {
         this.ID = ID;
         Username = username;
         Password = password;
@@ -22,7 +22,6 @@ public class Customer {
         Gender = gender;
         PhoneNumber = phoneNumber;
         DateOfBirth = dateOfBirth;
-        CardID = cardID;
     }
 
     public int getID() {

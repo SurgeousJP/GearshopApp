@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -13,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.gearshop.R;
-import com.example.gearshop.testclass.CustomerRepository;
+import com.example.gearshop.controller.CustomerRepository;
 
 import java.util.Random;
 

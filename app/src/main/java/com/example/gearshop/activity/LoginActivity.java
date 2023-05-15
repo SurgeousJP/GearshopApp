@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.gearshop.R;
-import com.example.gearshop.testclass.Customer;
-import com.example.gearshop.testclass.CustomerRepository;
+import com.example.gearshop.controller.CustomerRepository;
+import com.example.gearshop.model.Customer;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     // save the logged in customer id
                     SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
-                    editor.putString("customerId", Integer.toString(customer.id));
+                    editor.putString("customerId", Integer.toString(customer.getID()));
                     editor.apply();
 
                     // go to main activity (home page)

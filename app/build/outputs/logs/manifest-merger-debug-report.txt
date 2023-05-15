@@ -114,9 +114,9 @@ ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\ma
 	android:name
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:20:27-74
 activity#com.example.gearshop.activity.MainActivity
-ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:24:9-59
+ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:23:9-24:20
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:24:19-56
+		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:23:19-56
 activity#com.example.gearshop.activity.ForgotPasswordActivity
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:25:9-69
 	android:name

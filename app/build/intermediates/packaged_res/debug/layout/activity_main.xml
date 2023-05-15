@@ -102,6 +102,7 @@
 
     <RelativeLayout
         android:id="@+id/main_screen"
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_below="@id/none"
@@ -109,6 +110,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/none2"
         app:layout_constraintTop_toBottomOf="@+id/none">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_filter_box"
+            android:name="com.example.gearshop.activity.fragment.FilterSortBar">
+
+        </fragment>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_list_item"
+            android:name="com.example.gearshop.activity.fragment.ListProduct">
+
+        </fragment>
         </RelativeLayout>
 
     <RelativeLayout

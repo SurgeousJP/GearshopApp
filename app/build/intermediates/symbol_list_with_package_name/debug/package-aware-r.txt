@@ -3091,6 +3091,8 @@ id forgot_send_code_button
 id forgot_username_edit
 id forgotpassword_form
 id fragment_container_view_tag
+id fragment_filter_box
+id fragment_list_item
 id frost
 id fullscreen_header
 id ghost_view
@@ -3621,6 +3623,8 @@ layout design_text_input_start_icon
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
+layout framelayout_filter_sort_bar
+layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout listview_category
@@ -3739,6 +3743,7 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

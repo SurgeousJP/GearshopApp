@@ -1,6 +1,5 @@
 package com.example.gearshop.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,8 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.gearshop.R;
-import com.example.gearshop.testclass.Customer;
-import com.example.gearshop.testclass.CustomerRepository;
+import com.example.gearshop.controller.CustomerRepository;
+import com.example.gearshop.model.Customer;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class RegisterActivity extends AppCompatActivity {
     CustomerRepository customerRepository;
@@ -46,9 +48,14 @@ public class RegisterActivity extends AppCompatActivity {
                     String newCustomerUsername = edtUsername.getText().toString();
                     String newCustomerPassword = edtPassword.getText().toString();
                     String newCustomerEmail = edtEmail.getText().toString();
-
-                    Customer newCustomer = new Customer(newCustomerId, newCustomerUsername, newCustomerPassword, newCustomerEmail);
-
+                    Customer newCustomer;
+                    try {
+                        newCustomer = (new Customer(newCustomerId, newCustomerUsername, newCustomerPassword, newCustomerEmail,
+                                "test_first_name", "test_last_name", "test_gender", "phone_number",
+                                new SimpleDateFormat("dd/MM/yyyy").parse("11/03/2003")));
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
                     customerRepository.signUp(newCustomer);
                     Toast.makeText(getApplicationContext(), "Đăng ký tài khoản thành công!", Toast.LENGTH_SHORT).show();
 

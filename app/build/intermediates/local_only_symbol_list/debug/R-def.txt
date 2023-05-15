@@ -102,6 +102,8 @@ id forgot_password_textview
 id forgot_send_code_button
 id forgot_username_edit
 id forgotpassword_form
+id fragment_filter_box
+id fragment_list_item
 id google_icon
 id grid_item_g
 id high_price
@@ -216,6 +218,8 @@ layout category_panel
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
+layout framelayout_filter_sort_bar
+layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout listview_category
@@ -228,6 +232,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string cta_viewmore
+string hello_blank_fragment
 string label_product
 string rating_number
 string title_category

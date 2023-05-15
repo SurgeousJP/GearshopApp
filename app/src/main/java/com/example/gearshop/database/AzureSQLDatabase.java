@@ -1,6 +1,7 @@
 package com.example.gearshop.database;
 
 import android.os.AsyncTask;
+import android.widget.EditText;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +18,7 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
             "password=CodingProject123@;" +
             "encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;" +
             "loginTimeout=30;ssl=TLSv1.2";
+
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
