@@ -3102,6 +3102,7 @@ id google_icon
 id graph
 id graph_wrap
 id grid_item_g
+id grid_view_list_product
 id group_divider
 id grouping
 id groups
@@ -3147,7 +3148,7 @@ id label_option4
 id label_price
 id label_price1
 id label_price2
-id label_produ
+id label_product
 id label_sort_
 id labeled
 id layout
@@ -3201,8 +3202,8 @@ id matrix
 id message
 id middle
 id mini
-id module_pric
-id module_prod
+id module_price
+id module_product
 id module_rati
 id month_grid
 id month_navigation_bar
@@ -3290,11 +3291,12 @@ id pricebox1
 id pricebox2
 id pricebox3
 id pricebox4
+id product_image
 id product_item
 id progress_circular
 id progress_horizontal
 id radio
-id rating_numb
+id rating_number
 id ratio
 id rectangles
 id register_button
@@ -3355,7 +3357,7 @@ id section_con
 id select_dialog_listview
 id selected
 id selection_type
-id selling_pri
+id selling_price
 id send_text
 id sharedValueSet
 id sharedValueUnset

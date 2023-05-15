@@ -3101,6 +3101,7 @@ int id google_icon 0x7f0800fb
 int id graph 0x7f0800fc
 int id graph_wrap 0x7f0800fd
 int id grid_item_g 0x7f0800fe
+int id grid_view_list_product 0x7f080289
 int id group_divider 0x7f0800ff
 int id grouping 0x7f080100
 int id groups 0x7f080101
@@ -3146,7 +3147,7 @@ int id label_option4 0x7f080128
 int id label_price 0x7f080129
 int id label_price1 0x7f08012a
 int id label_price2 0x7f08012b
-int id label_produ 0x7f08012c
+int id label_product 0x7f08028a
 int id label_sort_ 0x7f08012d
 int id labeled 0x7f08012e
 int id layout 0x7f08012f
@@ -3200,8 +3201,8 @@ int id matrix 0x7f08015e
 int id message 0x7f08015f
 int id middle 0x7f080160
 int id mini 0x7f080161
-int id module_pric 0x7f080162
-int id module_prod 0x7f080163
+int id module_price 0x7f08028b
+int id module_product 0x7f08028c
 int id module_rati 0x7f080164
 int id month_grid 0x7f080165
 int id month_navigation_bar 0x7f080166
@@ -3289,11 +3290,12 @@ int id pricebox1 0x7f0801b7
 int id pricebox2 0x7f0801b8
 int id pricebox3 0x7f0801b9
 int id pricebox4 0x7f0801ba
+int id product_image 0x7f08028d
 int id product_item 0x7f0801bb
 int id progress_circular 0x7f0801bc
 int id progress_horizontal 0x7f0801bd
 int id radio 0x7f0801be
-int id rating_numb 0x7f0801bf
+int id rating_number 0x7f08028e
 int id ratio 0x7f0801c0
 int id rectangles 0x7f0801c1
 int id register_button 0x7f0801c2
@@ -3354,7 +3356,7 @@ int id section_con 0x7f0801f8
 int id select_dialog_listview 0x7f0801f9
 int id selected 0x7f0801fa
 int id selection_type 0x7f0801fb
-int id selling_pri 0x7f0801fc
+int id selling_price 0x7f08028f
 int id send_text 0x7f0801fd
 int id sharedValueSet 0x7f0801fe
 int id sharedValueUnset 0x7f0801ff

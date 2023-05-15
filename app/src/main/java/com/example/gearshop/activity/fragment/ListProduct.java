@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.model.Product;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ListProduct#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class ListProduct extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +27,14 @@ public class ListProduct extends Fragment {
     private String mParam1;
     private String mParam2;
     private GridView ProductGridView;
+    private List<Product> DemoProductList;
+    private void InitDemoProductList(){
+        DemoProductList = new ArrayList<>();
+        DemoProductList.add(new Product(1, "demo_product1", "", "", "", 2000000, "Available", 1));
+        DemoProductList.add(new Product(2, "demo_product1", "", "", "", 30000000, "Available", 2));
+        DemoProductList.add(new Product(3, "demo_product1", "", "", "", 400000, "Available", 3));
+        DemoProductList.add(new Product(4, "demo_product1", "", "", "", 20000000, "Available", 4));
+    }
     public ListProduct() {
         // Required empty public constructor
     }
@@ -61,11 +69,13 @@ public class ListProduct extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.framelayout_list_product, container, false);
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.framelayout_list_product, container, false);
+        InitDemoProductList();
         ProductGridView = (GridView) view.findViewById(R.id.grid_view_list_product);
-        // ProductGridView.setAdapter(new GridAdapter(this));
+        ProductGridAdapter productGridAdapter = new ProductGridAdapter(getContext(), DemoProductList);
+        ProductGridView.setAdapter(productGridAdapter);
         return view;
-
     }
+
 }

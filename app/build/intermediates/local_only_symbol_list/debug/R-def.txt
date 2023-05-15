@@ -106,6 +106,7 @@ id fragment_filter_box
 id fragment_list_item
 id google_icon
 id grid_item_g
+id grid_view_list_product
 id high_price
 id home_item
 id imageView
@@ -126,7 +127,7 @@ id label_option4
 id label_price
 id label_price1
 id label_price2
-id label_produ
+id label_product
 id label_sort_
 id linebegin
 id lineend
@@ -141,8 +142,8 @@ id login_button
 id loginform
 id low_price
 id main_screen
-id module_pric
-id module_prod
+id module_price
+id module_product
 id module_rati
 id more_category
 id name
@@ -161,8 +162,9 @@ id pricebox1
 id pricebox2
 id pricebox3
 id pricebox4
+id product_image
 id product_item
-id rating_numb
+id rating_number
 id register_button
 id register_email_edit
 id register_name_edit
@@ -177,7 +179,7 @@ id search_item
 id search_text
 id section
 id section_con
-id selling_pri
+id selling_price
 id send_text
 id sheet_conte
 id shopping_bo
