@@ -23,7 +23,9 @@ public class ProductGridAdapter extends BaseAdapter {
         this.context = context;
         this.products = products;
     }
-
+    public void setData(List<Product> products){
+        this.products = products;
+    }
     @Override
     public int getCount() {
         return products.size();

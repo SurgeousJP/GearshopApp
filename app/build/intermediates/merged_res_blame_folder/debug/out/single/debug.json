@@ -232,10 +232,6 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\x.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_framelayout_list_product.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/framelayout_list_product.xml"
-    },
-    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
@@ -290,6 +286,10 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_login.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/login.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_normal_box_3.xml.flat",

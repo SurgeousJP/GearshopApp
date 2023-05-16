@@ -4,12 +4,12 @@ public class Product {
     private int ID;
     private String Name, ImageURL, Description, Specs;
     private double Price;
-    private String Status;
+    private boolean Status;
     private int CategoryID;
 
     public Product(){}
     public Product(int ID, String name, String imageURL, String description,
-                   String specs, double price, String status, int categoryID) {
+                   String specs, double price, boolean status, int categoryID) {
         ID = ID;
         Name = name;
         ImageURL = imageURL;
@@ -44,7 +44,7 @@ public class Product {
         Price = price;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         Status = status;
     }
 
@@ -75,7 +75,7 @@ public class Product {
         return Price;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return Status;
     }
 

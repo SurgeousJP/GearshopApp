@@ -63,6 +63,10 @@ INJECTED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src
 		INJECTED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:4:22-64
 application
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:5:5-27:19
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\tuanb\.gradle\caches\transforms-3\1d6008e40b174b18ef5fa9ea4cd35014\transformed\material-1.8.0\AndroidManifest.xml:24:5-20

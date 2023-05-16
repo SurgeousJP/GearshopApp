@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
     final String AzureConnectionString =
@@ -17,8 +18,7 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
             "user=sqladmin@dozlap;" +
             "password=CodingProject123@;" +
             "encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;" +
-            "loginTimeout=30;ssl=TLSv1.2";
-
+            "loginTimeout=30;ssl=request";
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
@@ -39,6 +39,6 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
     }
     @Override
     protected void onPostExecute(ResultSet result) {
-        // do something
+
     }
 }
