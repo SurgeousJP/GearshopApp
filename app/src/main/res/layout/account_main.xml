@@ -260,7 +260,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/transport_box_inside"
                     android:layout_marginTop="12dp"
-                    android:layout_marginHorizontal="16dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="106dp"
                     app:layout_constraintEnd_toEndOf="parent"
