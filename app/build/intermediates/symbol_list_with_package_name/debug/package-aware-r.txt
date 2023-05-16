@@ -2702,6 +2702,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable acc_image
 drawable additonal_i
 drawable avd_hide_password
 drawable avd_show_password
@@ -2728,6 +2729,7 @@ drawable cart_box
 drawable check_icon
 drawable decrement_invalid_button
 drawable decrement_valid_button
+drawable delivery
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2757,6 +2759,7 @@ drawable ic_search_black_24
 drawable icon
 drawable increment_invalid_button
 drawable increment_valid_button
+drawable lazy_version
 drawable line
 drawable list_item
 drawable listgear
@@ -2842,13 +2845,16 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable roundx
+drawable save_box
 drawable search_icon
 drawable search_input
 drawable sheet_header
+drawable shipped
 drawable shipping_box
 drawable shopping_bo
 drawable sort_icon
 drawable star
+drawable support_image
 drawable test_level_drawable
 drawable thin
 drawable title_wrapp
@@ -2856,9 +2862,12 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transport_unit
 drawable tw
+drawable user_info_image
 drawable vicon
 drawable voucher_icon
+drawable voucher_image
 drawable wayback_icon
+drawable white_blue_box
 drawable x
 id ALT
 id BOTTOM_END
@@ -2908,6 +2917,8 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id account_avartar
+id account_avatar_item
 id account_item
 id actionDown
 id actionDownUp
@@ -2944,6 +2955,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id app_only_tag
 id arc
 id asConfigured
 id async
@@ -2973,13 +2985,18 @@ id buy_now
 id buy_now_text
 id cache_measures
 id callMeasure
+id cancel_buttom_confirm_box
 id cancel_button
 id cancel_listvoucher
+id cardView
 id carryVelocity
+id cart_icon_account_main
 id cart_icon_prod
 id cart_text
 id cart_text_2
+id category_discount
 id category_item
+id category_tag
 id center
 id centerCrop
 id centerInside
@@ -3011,6 +3028,7 @@ id components_4
 id components_list_voucher
 id compress
 id confirm_button
+id confirm_button_confirm_box
 id confirm_change_password_button
 id confirm_code
 id confirm_code_box
@@ -3031,6 +3049,7 @@ id contentPanel
 id content_emp
 id content_pro1
 id content_pro2
+id content_rem
 id contiguous
 id continuousVelocity
 id control_box
@@ -3053,6 +3072,8 @@ id decelerateAndComplete
 id decor_content_parent
 id decrease_box
 id default_activity_button
+id delivered_box
+id delivery_box
 id deltaRelative
 id dependency_ordering
 id description
@@ -3068,9 +3089,11 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id discount_name
 id discount_percent
 id disjoint
 id dots
+id dots_account_main
 id dots_cart
 id dots_icon_prod
 id dragAnticlockwise
@@ -3100,6 +3123,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expired_day
 id facebook_icon
 id fade
 id fields
@@ -3154,12 +3178,15 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_voucher
+id image_voucher_list_voucher
 id imagelayout
 id immediateStop
 id included
 id increase_box
 id indeterminate
 id info
+id info_box
 id input_field1
 id input_field2
 id input_value
@@ -3178,6 +3205,8 @@ id label
 id label2
 id label_address
 id label_categ
+id label_delivered
+id label_delivery
 id label_filte
 id label_filter
 id label_final_price
@@ -3194,7 +3223,12 @@ id label_produ
 id label_shipp
 id label_shipp2
 id label_sort_
+id label_support
+id label_support_desc
 id label_transport_fee
+id label_user_info
+id label_user_info_desc
+id label_voucher
 id label_voucher_apply
 id labeled
 id layout
@@ -3318,6 +3352,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number_voucher
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3342,6 +3377,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id percent_discount
 id pin
 id position
 id postLayout
@@ -3384,8 +3420,10 @@ id right_icon
 id right_side
 id rounded
 id roundx
+id roundx_account_main
 id roundx_cart
 id row_index_key
+id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3445,6 +3483,7 @@ id showHome
 id showTitle
 id show_category
 id show_list_category
+id show_order
 id sign_in_navigate_button
 id sin
 id skipCollapsed
@@ -3486,6 +3525,8 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id support_box
+id support_box_image
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3523,12 +3564,15 @@ id textinput_prefix_text
 id textinput_suffix_text
 id thin
 id thin2
+id thinline
+id thinline2
 id time
 id time_of_transport
 id title
 id titleDividerNoCustom
 id title_1
 id title_categ
+id title_confi
 id title_empty
 id title_filte
 id title_prod_config
@@ -3536,6 +3580,7 @@ id title_prod_detail
 id title_screen
 id title_shipp
 id title_template
+id title_username
 id title_wrapp
 id toggle
 id top
@@ -3551,6 +3596,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id transport_box
+id transport_box_inside
 id transport_fee_box
 id transport_fee_price
 id transport_info
@@ -3566,11 +3613,18 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_info_box
+id user_info_image
 id username
 id username_box
 id username_text
 id vector
+id version
 id vertical_only
+id view
+id view2
+id view3
+id view_more_order
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3582,8 +3636,11 @@ id visible_removing_fragment_view_tag
 id voucher_apply_box
 id voucher_apply_price
 id voucher_box
+id voucher_box_account_main
 id voucher_code_box
 id voucher_icon
+id voucher_image
+id voucher_mini_box
 id wayback
 id wayback_icon_cart
 id wayback_icon_prod
@@ -3702,9 +3759,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout account_main
 layout activity_main
 layout cart
 layout category_panel
+layout confirm_box
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -5076,10 +5135,12 @@ style rating_numb
 style selling_pri
 style text
 style title_categ
+style title_confi
 style title_empty
 style title_filte
 style title_scree
 style title_shipp
+style title_usern
 style welcome_bac
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
