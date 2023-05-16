@@ -9,18 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:background="#F5F5FA"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#F5F5FA"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="#F5F5FA"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <View
                 android:id="@+id/view"
@@ -35,9 +34,9 @@
                 android:id="@+id/account_avatar_item"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
+                android:layout_marginTop="75dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                android:layout_marginTop="75dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -56,15 +55,16 @@
                         android:src="@drawable/a1" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
+
             <RelativeLayout
                 android:id="@+id/navigation_box"
                 android:layout_width="72dp"
                 android:layout_height="27dp"
-                android:background="@drawable/_navigation_box"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="14.5dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_marginRight="16dp"
+                android:background="@drawable/_navigation_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/dots_account_main"
@@ -95,22 +95,24 @@
                     android:background="@drawable/roundx"
                     android:clipToOutline="true" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/cart_icon_account_main"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/navigation_box"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="14.5dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/additonal_i"
+                app:layout_constraintEnd_toStartOf="@id/navigation_box"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="296dp"
                 tools:layout_editor_absoluteY="0dp" />
 
             <TextView
-                android:id="@+id/title_usern"
+                android:id="@+id/title_username"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|top"
                 android:lineSpacingExtra="5sp"
                 android:text="Tên người dùng"
@@ -119,11 +121,351 @@
                 android:translationY="-2.61sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/account_avatar_item" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/voucher_box_account_main"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_username">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/voucher_mini_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/voucher_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/voucher_image"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/label_voucher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_vertical"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Mã giảm giá"
+                        android:textAppearance="@style/title_confi"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/voucher_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/thinline"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/thin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/number_voucher"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_voucher"
+                    android:layout_marginEnd="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="4sp"
+                    android:text="00"
+                    android:textAppearance="@style/title_confi"
+                    android:textStyle="bold"
+                    android:translationY="-2.03sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/transport_box"
+                android:layout_width="match_parent"
+                android:layout_height="166dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/voucher_box_account_main">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/show_order"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="12dp">
+
+                    <TextView
+                        android:id="@+id/title_categ"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:lineSpacingExtra="5sp"
+                        android:text="Đơn hàng"
+                        android:textAppearance="@style/title_categ"
+                        android:textStyle="bold"
+                        android:translationY="-2.32sp" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_more_order"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp">
+
+                        <TextView
+                            android:id="@+id/cta_viewmor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineHeight="21sp"
+                            android:lineSpacingExtra="4sp"
+                            android:text="@string/cta_viewmore"
+                            android:textAppearance="@style/cta_viewmor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/trailing_ic"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/trailing_ic"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/vicon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transport_box_inside"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/show_order">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/delivery_box"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toStartOf="@id/thinline2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/delivery"
+                            app:layout_constraintBottom_toTopOf="@id/label_delivery"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/label_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Đang vận chuyển"
+                            android:textAppearance="@style/title_confi"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <View
+                        android:id="@+id/thinline2"
+                        android:layout_width="1dp"
+                        android:layout_height="84dp"
+                        android:background="@drawable/thin"
+                        app:layout_constraintEnd_toStartOf="@id/delivered_box"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/delivery_box"/>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/delivered_box"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/thinline2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/shipped"
+                            app:layout_constraintBottom_toTopOf="@id/label_delivered"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/label_delivered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="4sp"
+                            android:text="Đã giao hàng"
+                            android:textAppearance="@style/title_confi"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view3" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_info_box"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/transport_box">
+                <View
+                    android:id="@+id/user_info_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/user_info_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_user_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Thông tin khách hàng"
+                    android:layout_marginLeft="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="23dp"
+                    android:textAppearance="@style/label_shipp"
+                    app:layout_constraintStart_toEndOf="@+id/user_info_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/label_user_info_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Xem hoặc chỉnh sửa thông tin"
+                    android:layout_marginLeft="16dp"
+                    android:textAppearance="@style/label_shipp"
+                    app:layout_constraintStart_toEndOf="@+id/user_info_image"
+                    app:layout_constraintTop_toBottomOf="@id/label_user_info" />
+
+                <View
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/next_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/support_box"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/cart_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_info_box">
+                <View
+                    android:id="@+id/support_box_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/support_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Hỗ trợ"
+                    android:layout_marginLeft="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="23dp"
+                    android:textAppearance="@style/label_shipp"
+                    app:layout_constraintStart_toEndOf="@+id/support_box_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/label_support_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Gọi hoặc nhắn tin cho chúng tôi"
+                    android:layout_marginLeft="16dp"
+                    android:textAppearance="@style/label_shipp"
+                    app:layout_constraintStart_toEndOf="@+id/support_box_image"
+                    app:layout_constraintTop_toBottomOf="@id/label_support" />
+
+                <View
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/next_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/version"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="126dp"
+                android:layout_height="49dp"
+                android:background="@drawable/lazy_version"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/support_box" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/shopping_bo"
