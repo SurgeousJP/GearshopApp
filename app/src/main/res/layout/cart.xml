@@ -323,7 +323,7 @@
                                 android:layout_marginTop="4dp"
                                 android:gravity="top"
                                 android:lineSpacingExtra="4sp"
-                                android:text="Tiki Now"
+                                android:text="Giaohangnhanh"
                                 android:textAppearance="@style/label_shipp"
                                 android:textStyle="bold"
                                 android:translationY="-2.03sp"

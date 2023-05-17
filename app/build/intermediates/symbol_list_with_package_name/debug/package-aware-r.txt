@@ -1305,6 +1305,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1363,8 +1364,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_grey
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2725,11 +2728,16 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cancel_box
 drawable cart_box
 drawable check_icon
 drawable decrement_invalid_button
 drawable decrement_valid_button
+drawable delivered_box
+drawable delivered_icon
 drawable delivery
+drawable delivery_box
+drawable delivery_icon
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2844,6 +2852,7 @@ drawable notify_panel_notification_icon_bg
 drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
+drawable processing_icon
 drawable roundx
 drawable save_box
 drawable search_icon
@@ -2950,6 +2959,7 @@ id alertTitle
 id aligned
 id all
 id allStates
+id all_order
 id always
 id animateToEnd
 id animateToStart
@@ -2988,6 +2998,7 @@ id callMeasure
 id cancel_buttom_confirm_box
 id cancel_button
 id cancel_listvoucher
+id cancel_order
 id cardView
 id carryVelocity
 id cart_icon_account_main
@@ -3046,10 +3057,16 @@ id constraintLayout4
 id container
 id content
 id contentPanel
+id content_all
+id content_cancel
+id content_delivered
+id content_delivery
 id content_emp
 id content_pro1
 id content_pro2
+id content_processing
 id content_rem
+id content_sta
 id contiguous
 id continuousVelocity
 id control_box
@@ -3073,7 +3090,9 @@ id decor_content_parent
 id decrease_box
 id default_activity_button
 id delivered_box
+id delivered_order
 id delivery_box
+id delivery_order
 id deltaRelative
 id dependency_ordering
 id description
@@ -3096,6 +3115,7 @@ id dots
 id dots_account_main
 id dots_cart
 id dots_icon_prod
+id dots_order_management
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3171,6 +3191,7 @@ id homeAsUp
 id home_item
 id honorRequest
 id horizontal_only
+id horizontal_scrollview_order_status
 id icon
 id icon_group
 id ifRoom
@@ -3214,10 +3235,13 @@ id label_option1
 id label_option2
 id label_option3
 id label_option4
+id label_payme
+id label_payment
 id label_price
 id label_price1
 id label_price2
 id label_price_cart
+id label_processing
 id label_prod_cart
 id label_produ
 id label_shipp
@@ -3236,6 +3260,7 @@ id layout_price_info
 id left
 id leftToRight
 id legacy
+id line
 id line1
 id line2
 id line3
@@ -3252,6 +3277,7 @@ id list_item2
 id list_item3
 id list_item4
 id list_prod
+id list_view_order_management
 id listgear
 id listview_category
 id listview_voucher
@@ -3359,6 +3385,9 @@ id onInterceptTouchReturnSwipe
 id or_form
 id or_text
 id order_detail_text
+id order_management_text
+id order_status_border
+id order_status_box
 id original_pr
 id outline
 id outward
@@ -3387,12 +3416,15 @@ id pricebox1
 id pricebox2
 id pricebox3
 id pricebox4
+id processing_box
+id processing_order
 id prod_config_box
 id prod_config_info
 id prod_detail_box
 id prod_detail_info
 id prod_image
 id prod_number_box
+id produ_info_list_order_status
 id product_item
 id progress_circular
 id progress_horizontal
@@ -3422,6 +3454,7 @@ id rounded
 id roundx
 id roundx_account_main
 id roundx_cart
+id roundx_order_management
 id row_index_key
 id save_button_list_voucher
 id save_non_transition_alpha
@@ -3566,6 +3599,7 @@ id thin
 id thin2
 id thinline
 id thinline2
+id thinline3
 id time
 id time_of_transport
 id title
@@ -3622,8 +3656,11 @@ id vector
 id version
 id vertical_only
 id view
+id view1
 id view2
 id view3
+id view4
+id view5
 id view_more_order
 id view_offset_helper
 id view_transition
@@ -3643,6 +3680,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon_cart
+id wayback_icon_order_management
 id wayback_icon_prod
 id west
 id withText
@@ -3786,6 +3824,7 @@ layout forgot_password
 layout gridview_category
 layout list_item
 layout list_item_cart
+layout list_order_status
 layout list_voucher
 layout listview_category
 layout login
@@ -3847,6 +3886,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout order_management
 layout product_detail
 layout register
 layout search_bar
@@ -5121,6 +5161,7 @@ style cta_reset_0
 style cta_viewmor
 style data_value
 style description
+style description12
 style input_value
 style label_categ
 style label_filte

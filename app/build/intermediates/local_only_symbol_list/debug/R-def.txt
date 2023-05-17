@@ -1,6 +1,9 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color blue
+color grey
+color light_grey
 color purple_200
 color purple_500
 color purple_700
@@ -22,11 +25,16 @@ drawable bottom_bar___home_blue
 drawable bottom_bar___home_item
 drawable bottom_bar___search_blue
 drawable bottom_bar___search_item
+drawable cancel_box
 drawable cart_box
 drawable check_icon
 drawable decrement_invalid_button
 drawable decrement_valid_button
+drawable delivered_box
+drawable delivered_icon
 drawable delivery
+drawable delivery_box
+drawable delivery_icon
 drawable discount_badge
 drawable dots
 drawable fb
@@ -53,6 +61,7 @@ drawable not_found
 drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
+drawable processing_icon
 drawable roundx
 drawable save_box
 drawable search_icon
@@ -81,6 +90,7 @@ id account_item
 id add_to_card
 id add_to_card_text
 id additonal_i
+id all_order
 id app_only_tag
 id backward_button
 id badge
@@ -92,6 +102,7 @@ id buy_now
 id buy_now_text
 id cancel_buttom_confirm_box
 id cancel_listvoucher
+id cancel_order
 id cardView
 id cart_icon_account_main
 id cart_icon_prod
@@ -125,10 +136,16 @@ id confirm_register_password_edit
 id constraintLayout
 id constraintLayout2
 id constraintLayout4
+id content_all
+id content_cancel
+id content_delivered
+id content_delivery
 id content_emp
 id content_pro1
 id content_pro2
+id content_processing
 id content_rem
+id content_sta
 id control_box
 id cta_apply
 id cta_apply_0
@@ -137,7 +154,9 @@ id cta_viewmor
 id custom_pric
 id decrease_box
 id delivered_box
+id delivered_order
 id delivery_box
+id delivery_order
 id description
 id discount_name
 id discount_percent
@@ -145,6 +164,7 @@ id dots
 id dots_account_main
 id dots_cart
 id dots_icon_prod
+id dots_order_management
 id editText
 id email
 id email_box
@@ -166,6 +186,7 @@ id google_icon
 id grid_item_g
 id high_price
 id home_item
+id horizontal_scrollview_order_status
 id imageView
 id image_voucher
 id image_voucher_list_voucher
@@ -193,10 +214,13 @@ id label_option1
 id label_option2
 id label_option3
 id label_option4
+id label_payme
+id label_payment
 id label_price
 id label_price1
 id label_price2
 id label_price_cart
+id label_processing
 id label_prod_cart
 id label_produ
 id label_shipp
@@ -210,6 +234,7 @@ id label_user_info_desc
 id label_voucher
 id label_voucher_apply
 id layout_price_info
+id line
 id line1
 id line2
 id line3
@@ -223,6 +248,7 @@ id list_item2
 id list_item3
 id list_item4
 id list_prod
+id list_view_order_management
 id listgear
 id listview_category
 id listview_voucher
@@ -250,6 +276,9 @@ id number_voucher
 id or_form
 id or_text
 id order_detail_text
+id order_management_text
+id order_status_border
+id order_status_box
 id original_pr
 id password
 id password_box
@@ -260,12 +289,15 @@ id pricebox1
 id pricebox2
 id pricebox3
 id pricebox4
+id processing_box
+id processing_order
 id prod_config_box
 id prod_config_info
 id prod_detail_box
 id prod_detail_info
 id prod_image
 id prod_number_box
+id produ_info_list_order_status
 id product_item
 id rate_star1
 id rate_star2
@@ -284,6 +316,7 @@ id registerform
 id roundx
 id roundx_account_main
 id roundx_cart
+id roundx_order_management
 id save_button_list_voucher
 id scroll_box
 id scroll_box_cart
@@ -324,6 +357,7 @@ id thin
 id thin2
 id thinline
 id thinline2
+id thinline3
 id time_of_transport
 id title_1
 id title_categ
@@ -358,8 +392,11 @@ id username_text
 id vector
 id version
 id view
+id view1
 id view2
 id view3
+id view4
+id view5
 id view_more_order
 id voucher_apply_box
 id voucher_apply_price
@@ -371,6 +408,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon_cart
+id wayback_icon_order_management
 id wayback_icon_prod
 layout account_main
 layout activity_main
@@ -383,10 +421,12 @@ layout forgot_password
 layout gridview_category
 layout list_item
 layout list_item_cart
+layout list_order_status
 layout list_voucher
 layout listview_category
 layout login
 layout not_found_search
+layout order_management
 layout product_detail
 layout register
 layout search_bar
@@ -409,6 +449,7 @@ style cta_reset_0
 style cta_viewmor
 style data_value
 style description
+style description12
 style input_value
 style label_categ
 style label_filte
