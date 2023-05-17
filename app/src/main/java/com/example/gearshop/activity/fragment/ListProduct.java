@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,19 +13,16 @@ import android.widget.GridView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
-import com.example.gearshop.database.SelectSQL;
+import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.model.Product;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 
 public class ListProduct extends Fragment {
+    private Context context;
     private GridView ProductGridView;
     private List<Product> ProductList = new ArrayList<Product>();
     private ProductGridAdapter ProductAdapter;
@@ -37,13 +32,6 @@ public class ListProduct extends Fragment {
     public ProductGridAdapter getProductAdapter(){
         return ProductAdapter;
     }
-    public void GetProductDataFromAzure(List<Product> products){
-        synchronized (ProductAdapter) {
-            ProductAdapter.setData(products);
-            ProductAdapter.notify();
-        }
-    }
-    private Context context;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -75,19 +63,25 @@ public class ListProduct extends Fragment {
         ProductAdapter = new ProductGridAdapter(getContext(), ProductList);
         ProductGridView.setAdapter(ProductAdapter);
 
-        final SelectSQL[] selectSQL = new SelectSQL[1];
-        selectSQL[0] = new SelectSQL();
-        selectSQL[0].execute("SELECT * FROM product WHERE category_id = 1");
+        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
+        getProductDataFromAzure[0] = new GetProductDataFromAzure();
+        getProductDataFromAzure[0].execute("SELECT * FROM product WHERE category_id = 1");
         System.out.println("Async Task running");
 
         try {
-            selectSQL[0].get();
+            getProductDataFromAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
         System.out.println("Async Task ended");
-        if (selectSQL[0].getProductList() != null) this.GetProductDataFromAzure(selectSQL[0].getProductList());
+        if (getProductDataFromAzure[0].getProductList() != null) this.GetProductDataFromAzure(getProductDataFromAzure[0].getProductList());
 
         return view;
+    }
+    public void GetProductDataFromAzure(List<Product> products){
+        synchronized (ProductAdapter) {
+            ProductAdapter.setData(products);
+            ProductAdapter.notify();
+        }
     }
 }

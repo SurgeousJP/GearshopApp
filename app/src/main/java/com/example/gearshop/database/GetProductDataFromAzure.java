@@ -1,9 +1,5 @@
 package com.example.gearshop.database;
 
-import android.content.Context;
-import android.widget.GridView;
-
-import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.model.Product;
 
 import java.sql.Connection;
@@ -13,11 +9,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
-public class SelectSQL extends AzureSQLDatabase{
+public class GetProductDataFromAzure extends AzureSQLDatabase{
     private List<Product> ProductList;
-    public SelectSQL() {
+    public GetProductDataFromAzure() {
         this.ProductList = new ArrayList<>();
     }
     public List<Product> getProductList(){
@@ -55,9 +50,5 @@ public class SelectSQL extends AzureSQLDatabase{
             e.printStackTrace();
         }
         return resultSet;
-    }
-
-    @Override
-    protected void onPostExecute(ResultSet result) {
     }
 }

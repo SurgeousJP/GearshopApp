@@ -4,7 +4,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,8 +11,6 @@ import android.widget.Toast;
 import com.example.gearshop.R;
 import com.example.gearshop.activity.fragment.FilterSortBar;
 import com.example.gearshop.activity.fragment.ListProduct;
-import com.example.gearshop.database.SelectSQL;
-import com.example.gearshop.model.Product;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -30,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         FilterSortBar filterSortBar = new FilterSortBar();
         ListProduct listProduct = new ListProduct();
 
+        // Adding fragments
         CompletableFuture<Void> futureFragment = CompletableFuture.runAsync(() -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -37,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.main_screen, listProduct);
             fragmentTransaction.commit();
         });
-
-        // Chờ cho CompletableFuture hoàn thành
         try {
             futureFragment.get();
         } catch (InterruptedException | ExecutionException e) {
@@ -46,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
-//        titleScreen.setText(userId);
-        titleScreen.setText("001");
-        Toast.makeText(this, "ENDED ACTIVITY", Toast.LENGTH_SHORT).show();
+        titleScreen.setText(userId);
     }
 }
