@@ -165,20 +165,21 @@ INSERT INTO credit_card_type VALUES(3, N'Thẻ tín dụng (Credit)', 10000)
 --2 discount_applied_category, product, address, credit_card | 4 tables
 
 CREATE TABLE discount_applied_category(
+	id BIGINT,
 	discount_id BIGINT,
 	category_id BIGINT,
 	CONSTRAINT fk_discount_applied FOREIGN KEY (discount_id) REFERENCES discount(id),
 	CONSTRAINT fk_category_applied FOREIGN KEY (category_id) REFERENCES product_category(id),
-	CONSTRAINT pk_discount_applied_category PRIMARY KEY (discount_id, category_id)
+	CONSTRAINT pk_discount_applied_category PRIMARY KEY (id)
 )
-INSERT INTO discount_applied_category VALUES(1, 1)
-INSERT INTO discount_applied_category VALUES(2, 2)
-INSERT INTO discount_applied_category VALUES(3, 3)
-INSERT INTO discount_applied_category VALUES(4, 4)
-INSERT INTO discount_applied_category VALUES(5, 5)
-INSERT INTO discount_applied_category VALUES(6, 6)
-INSERT INTO discount_applied_category VALUES(7, 7)
-INSERT INTO discount_applied_category VALUES(8, 8)
+INSERT INTO discount_applied_category VALUES(1, 1, 1)
+INSERT INTO discount_applied_category VALUES(2, 2, 2)
+INSERT INTO discount_applied_category VALUES(3, 3, 3)
+INSERT INTO discount_applied_category VALUES(4, 4, 4)
+INSERT INTO discount_applied_category VALUES(5, 5, 5)
+INSERT INTO discount_applied_category VALUES(6, 6, 6)
+INSERT INTO discount_applied_category VALUES(7, 7, 7)
+INSERT INTO discount_applied_category VALUES(8, 8, 8)
 
 -- bn sản phẩm / 1 category ??
 CREATE TABLE product(
@@ -1560,18 +1561,6 @@ CREATE TABLE shopping_cart_item(
 	CONSTRAINT fk_cart_customer FOREIGN KEY (customer_id) REFERENCES customer(id),
 	CONSTRAINT fk_cart_product FOREIGN KEY (product_id) REFERENCES product(id)
 )
--- optional
-CREATE TABLE product_review(
-	product_id BIGINT, 
-	customer_id BIGINT, 
-	-- ONLY 1 TO 5 STARS
-	rate SMALLINT, 
-	comment NVARCHAR(1000), 
-	report NVARCHAR(1000)
-	CONSTRAINT fk_review_product FOREIGN KEY (product_id) REFERENCES product(id),
-	CONSTRAINT fk_review_customer FOREIGN KEY (customer_id) REFERENCES customer(id),
-	CONSTRAINT pk_review PRIMARY KEY (product_id, customer_id)
-)
 
 -- USING orders since order cause an error in sql syntax
 CREATE TABLE orders(
@@ -1599,6 +1588,8 @@ CREATE TABLE order_item(
 	order_id BIGINT,
 	product_id BIGINT,
 	quantity BIGINT,
+	rate SMALLINT, 
+	comment NVARCHAR(1000), 
 	CONSTRAINT fk_item_order FOREIGN KEY (order_id) REFERENCES orders(id),
 	CONSTRAINT fk_item_product FOREIGN KEY (product_id) REFERENCES product(id),
 	CONSTRAINT pk_item PRIMARY KEY (id)
