@@ -13,12 +13,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
     final String AzureConnectionString =
-            "jdbc:jtds:sqlserver://dozlap.database.windows.net:1433;" +
-            "databaseName=dozlap;" +
-            "user=sqladmin@dozlap;" +
+            "jdbc:jtds:sqlserver://dozlapsoutheastasia.database.windows.net:1433;" +
+            "databaseName=dozlapsoutheastasiaDB;" +
+            "user=sqladmin@dozlapsoutheastasia;" +
             "password=CodingProject123@;" +
             "encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;" +
-            "loginTimeout=30;ssl=request";
+            "loginTimeout=30;ssl=request"
+            ;
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;

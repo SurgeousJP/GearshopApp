@@ -1,5 +1,4 @@
 ﻿
-CREATE DATABASE DozLapEShopping
 
 GO
 --1 discount, product_category, shipment_method, province, credit_card_type, admin | 6 tables
