@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".activity.fragment.ListProduct">
+    tools:context=".fragment.ListProduct">
 
     <GridView
         android:id="@+id/grid_view_list_product"

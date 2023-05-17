@@ -114,14 +114,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fragment_filter_box"
-            android:name="com.example.gearshop.activity.fragment.FilterSortBar">
+            android:name="com.example.gearshop.fragment.FilterSortBar">
 
         </fragment>
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fragment_list_item"
-            android:name="com.example.gearshop.activity.fragment.ListProduct">
+            android:name="com.example.gearshop.fragment.ListProduct">
 
         </fragment>
         </RelativeLayout>

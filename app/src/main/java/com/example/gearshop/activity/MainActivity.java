@@ -6,11 +6,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.fragment.FilterSortBar;
-import com.example.gearshop.activity.fragment.ListProduct;
+import com.example.gearshop.fragment.FilterSortBar;
+import com.example.gearshop.fragment.ListProduct;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

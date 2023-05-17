@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
-
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Locale;
+import com.squareup.picasso.Picasso;
 
 public class ProductGridAdapter extends BaseAdapter {
     private Context context;
@@ -48,27 +48,30 @@ public class ProductGridAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_item, parent, false);
         }
 
-        // Lấy các thành phần UI trong list_item.xml
+        // Get UI components in xml file
         ImageView productImageView = convertView.findViewById(R.id.product_image);
         TextView productSellingPriceTextView = convertView.findViewById(R.id.selling_price);
         TextView productNameTextView = convertView.findViewById(R.id.label_product);
 
-        // Thiết lập dữ liệu cho các thành phần UI
+        // Set data to UI components
         Product product = products.get(position);
+
         productNameTextView.setText(product.getName());
+
         double price = product.getPrice();
-
-        Locale locale = new Locale("vi", "VN"); // Locale của định dạng (Ví dụ: en-US cho tiền tệ Mỹ)
+        Locale locale = new Locale("vi", "VN");
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
-        symbols.setCurrencySymbol("đ"); // Ký hiệu tiền tệ
-        symbols.setGroupingSeparator('.'); // Dấu ngăn cách hàng nghìn
-        symbols.setDecimalSeparator(','); // Dấu thập phân
-
+        symbols.setCurrencySymbol("đ");
+        symbols.setGroupingSeparator('.');
+        symbols.setDecimalSeparator(',');
         DecimalFormat decimalFormatter = new DecimalFormat("#,##0.00 ¤", symbols);
-
         String formattedPrice  = decimalFormatter.format(price);
         productSellingPriceTextView.setText(String.valueOf(formattedPrice));
 
+        String imageURL = product.getImageURL();
+        Picasso.get()
+                .load(imageURL)
+                .into(productImageView);
         return convertView;
     }
 }

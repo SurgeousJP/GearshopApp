@@ -43,6 +43,10 @@
         <activity android:name="com.example.gearshop.activity.RegisterActivity" />
 
         <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.gearshop.com.squareup.picasso"
+            android:exported="false" />
+        <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.gearshop.androidx-startup"
             android:exported="false" >

@@ -1,4 +1,4 @@
-package com.example.gearshop.activity.fragment;
+package com.example.gearshop.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
