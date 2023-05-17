@@ -44,20 +44,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
-        final SelectSQL[] selectSQL = new SelectSQL[1];
-        CompletableFuture<Void> futureData = CompletableFuture.runAsync(()->{
-            try{
-                selectSQL[0] = new SelectSQL();
-                selectSQL[0].execute("SELECT * FROM product WHERE category_id = 1");
-                System.out.println("Async Task running");
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }).thenAccept(result -> {
-                System.out.println("Async Task ended");
-                listProduct.GetProductDataFromAzure(selectSQL[0].getProductList());
-        });
+
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
 //        titleScreen.setText(userId);
         titleScreen.setText("001");
