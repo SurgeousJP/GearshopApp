@@ -8,8 +8,7 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="29" />
 
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <permission
         android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -30,7 +29,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
-            android:name="com.example.gearshop.activity.MainActivity"
+            android:name="com.example.gearshop.activity.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

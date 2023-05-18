@@ -1,5 +1,6 @@
 package com.example.gearshop.adapter;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+
 import com.example.gearshop.R;
+import com.example.gearshop.activity.ProductDetailActivity;
 import com.example.gearshop.model.Product;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -72,6 +76,14 @@ public class ProductGridAdapter extends BaseAdapter {
         Picasso.get()
                 .load(imageURL)
                 .into(productImageView);
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }
