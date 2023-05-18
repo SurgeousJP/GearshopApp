@@ -3067,6 +3067,7 @@ int id disableIntraAutoTransition 0x7f0800cc
 int id disablePostScroll 0x7f0800cd
 int id disableScroll 0x7f0800ce
 int id discount_percent 0x7f0800cf
+int id discount_text 0x7f0802e5
 int id disjoint 0x7f0800d0
 int id dots 0x7f0800d1
 int id dots_cart 0x7f0800d2

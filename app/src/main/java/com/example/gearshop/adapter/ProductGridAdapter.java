@@ -81,6 +81,7 @@ public class ProductGridAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("clickedProduct", product);
                 context.startActivity(intent);
             }
         });

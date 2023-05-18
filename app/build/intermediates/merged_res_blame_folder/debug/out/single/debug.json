@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_product_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/product_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_shopping_bo.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\shopping_bo.xml"
     },
@@ -46,10 +50,6 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_activity_main.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_fb.png.flat",

@@ -1,6 +1,8 @@
 package com.example.gearshop.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int ID;
     private String Name, ImageURL, Description, Specs;
     private double Price;

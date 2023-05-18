@@ -119,6 +119,7 @@ id custom_pric
 id decrease_box
 id description
 id discount_percent
+id discount_text
 id dots
 id dots_cart
 id dots_icon_prod

@@ -3068,6 +3068,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id discount_percent
+id discount_text
 id disjoint
 id dots
 id dots_cart
