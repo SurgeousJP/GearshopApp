@@ -48,7 +48,7 @@
     </RelativeLayout>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/module_rati"
+        android:id="@+id/module_rate"
         android:layout_width="181.5dp"
         android:layout_height="18dp"
         android:layout_below="@id/item_image"
@@ -116,7 +116,7 @@
         android:id="@+id/module_price"
         android:layout_width="181.5dp"
         android:layout_height="21dp"
-        android:layout_below="@id/module_rati"
+        android:layout_below="@id/module_rate"
         android:layout_marginTop="4dp">
         <TextView
             android:id="@+id/selling_price"
