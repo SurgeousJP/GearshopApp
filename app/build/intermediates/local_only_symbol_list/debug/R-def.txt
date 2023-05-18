@@ -136,6 +136,8 @@ id final_price_box
 id first_bar
 id forgotpassword
 id forgotpassword_form
+id fragment_filter_box
+id fragment_grid_view
 id google_icon
 id grid_item_g
 id grid_view_list_product

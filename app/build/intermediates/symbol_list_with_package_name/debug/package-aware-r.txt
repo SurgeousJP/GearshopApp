@@ -3124,6 +3124,8 @@ id forever
 id forgotpassword
 id forgotpassword_form
 id fragment_container_view_tag
+id fragment_filter_box
+id fragment_grid_view
 id frost
 id fullscreen_header
 id ghost_view

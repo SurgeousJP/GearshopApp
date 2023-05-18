@@ -3123,6 +3123,8 @@ int id forever 0x7f080104
 int id forgotpassword 0x7f080105
 int id forgotpassword_form 0x7f080106
 int id fragment_container_view_tag 0x7f080107
+int id fragment_filter_box 0x7f0802e3
+int id fragment_grid_view 0x7f0802e4
 int id frost 0x7f080108
 int id fullscreen_header 0x7f080109
 int id ghost_view 0x7f08010a

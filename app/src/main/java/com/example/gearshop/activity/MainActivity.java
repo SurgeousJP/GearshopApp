@@ -5,6 +5,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
@@ -16,6 +18,9 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FilterSortBar CategoryProductFilterSortBar;
+    private ListProduct CategoryListProduct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,22 +28,22 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
-        FilterSortBar filterSortBar = new FilterSortBar();
-        ListProduct listProduct = new ListProduct();
+        CategoryListProduct = new ListProduct();
+        CategoryProductFilterSortBar = new FilterSortBar();
 
-        // Adding fragments
-        CompletableFuture<Void> futureFragment = CompletableFuture.runAsync(() -> {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.main_screen, filterSortBar);
-            fragmentTransaction.add(R.id.main_screen, listProduct);
-            fragmentTransaction.commit();
-        });
-        try {
-            futureFragment.get();
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+//        // Adding fragments
+//        CompletableFuture<Void> futureFragment = CompletableFuture.runAsync(() -> {
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.add(R.id.fragment_filter_box, CategoryProductFilterSortBar);
+//            fragmentTransaction.add(R.id.fragment_grid_view, CategoryListProduct);
+//            fragmentTransaction.commit();
+//        });
+//        try {
+//            futureFragment.get();
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
 
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
         titleScreen.setText(userId);
