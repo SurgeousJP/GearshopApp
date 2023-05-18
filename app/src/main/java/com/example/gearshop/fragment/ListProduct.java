@@ -75,7 +75,6 @@ public class ListProduct extends Fragment {
         }
         System.out.println("Async Task ended");
         if (getProductDataFromAzure[0].getProductList() != null) this.GetProductDataFromAzure(getProductDataFromAzure[0].getProductList());
-
         return view;
     }
     public void GetProductDataFromAzure(List<Product> products){

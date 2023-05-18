@@ -49,7 +49,7 @@ public class ProductGridAdapter extends BaseAdapter {
         }
 
         // Get UI components in xml file
-        ImageView productImageView = convertView.findViewById(R.id.product_image);
+        ImageView productImageView = convertView.findViewById(R.id.item_image_list_item);
         TextView productSellingPriceTextView = convertView.findViewById(R.id.selling_price);
         TextView productNameTextView = convertView.findViewById(R.id.label_product);
 

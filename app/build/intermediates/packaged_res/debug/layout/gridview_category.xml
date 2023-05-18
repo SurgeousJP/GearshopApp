@@ -18,6 +18,7 @@
             app:cardCornerRadius="10dp"
             android:layout_gravity="center">
             <ImageView
+                android:id="@+id/item_image_list_category"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"
@@ -33,7 +34,7 @@
         android:lineHeight="21dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
-        android:textAppearance="@style/label_categ"
+        android:textAppearance="@style/label_category"
         android:lineSpacingExtra="4sp"
         android:translationY="-2.03sp"
         android:gravity="center_horizontal|top"/>

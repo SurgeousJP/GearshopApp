@@ -18,7 +18,7 @@
             app:cardCornerRadius="10dp"
             android:layout_gravity="center">
             <ImageView
-                android:id="@+id/product_image"
+                android:id="@+id/item_image_list_item"
                 android:layout_width="181.5dp"
                 android:layout_height="181.5dp"
                 android:scaleType="centerCrop"
@@ -39,7 +39,7 @@
             android:layout_height="21dp"
             android:text="Tên sản phẩm"
             android:layout_marginLeft="1dp"
-            android:textAppearance="@style/label_produ"
+            android:textAppearance="@style/label_product"
             android:lineSpacingExtra="4sp"
             android:translationY="-2.03sp"
             android:gravity="top"
@@ -125,7 +125,7 @@
             android:text="00.000đ"
             android:textStyle="bold"
             android:layout_marginLeft="1dp"
-            android:textAppearance="@style/selling_pri"
+            android:textAppearance="@style/selling_price"
             android:lineSpacingExtra="4sp"
             />
 

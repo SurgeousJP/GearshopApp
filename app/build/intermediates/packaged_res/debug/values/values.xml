@@ -53,19 +53,27 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#1A94FF</item>
     </style>
-    <style name="cta_viewmor">
+    <style name="cta_viewmore">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#1A94FF</item>
+    </style>
+    <style name="data_value">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#00AB56</item>
     </style>
     <style name="description">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#808089</item>
     </style>
-    <style name="label_categ">
+    <style name="input_value">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="label_category">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
-    <style name="label_filte">
+    <style name="label_filter">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
@@ -73,7 +81,15 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
-    <style name="label_produ">
+    <style name="label_produ2">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="label_product">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="label_ship">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
@@ -81,15 +97,19 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#1A94FF</item>
     </style>
+    <style name="original_pr">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#808089</item>
+    </style>
     <style name="placeholder">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#808089</item>
     </style>
-    <style name="rating_numb">
+    <style name="rating_number">
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">#808089</item>
     </style>
-    <style name="selling_pri">
+    <style name="selling_price">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
@@ -97,7 +117,7 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
-    <style name="title_categ">
+    <style name="title_category">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
@@ -105,12 +125,16 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
-    <style name="title_filte">
+    <style name="title_filter">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
-    <style name="title_scree">
+    <style name="title_screen">
         <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#27272A</item>
+    </style>
+    <style name="title_ship">
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">#27272A</item>
     </style>
     <style name="welcome_bac">

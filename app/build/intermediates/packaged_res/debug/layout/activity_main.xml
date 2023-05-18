@@ -31,7 +31,7 @@
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="5sp"
                 android:text="@string/title_screen"
-                android:textAppearance="@style/title_scree"
+                android:textAppearance="@style/title_screen"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -100,31 +100,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_bar" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_screen"
-        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_below="@id/none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/none2"
-        app:layout_constraintTop_toBottomOf="@+id/none">
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fragment_filter_box"
-            android:name="com.example.gearshop.fragment.FilterSortBar">
-
-        </fragment>
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fragment_list_item"
-            android:name="com.example.gearshop.fragment.ListProduct">
-
-        </fragment>
-        </RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/none"/>
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

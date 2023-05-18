@@ -32,7 +32,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:lineSpacingExtra="5sp"
             android:text="Xắp sếp"
-            android:textAppearance="@style/title_filte"
+            android:textAppearance="@style/title_filter"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

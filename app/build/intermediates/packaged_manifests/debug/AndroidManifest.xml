@@ -8,8 +8,6 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="29" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <permission
         android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -29,7 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
-            android:name="com.example.gearshop.activity.LoginActivity"
+            android:name="com.example.gearshop.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,10 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.gearshop.activity.MainActivity" >
-        </activity>
-        <activity android:name="com.example.gearshop.activity.ForgotPasswordActivity" />
-        <activity android:name="com.example.gearshop.activity.RegisterActivity" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
