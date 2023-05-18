@@ -3425,6 +3425,10 @@ id prod_config_box
 id prod_detail_box
 id produ_info_list_order_status
 id product_config_info
+id product_detail_description_layout
+id product_detail_description_text
+id product_detail_header_layout
+id product_detail_header_text
 id product_detail_info
 id product_image
 id product_item
@@ -3888,6 +3892,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout order_management
 layout product_detail
+layout product_spec_item
 layout register
 layout search_bar
 layout select_dialog_item_material

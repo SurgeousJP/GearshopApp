@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="@id/first_bar"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintEnd_toStartOf="@id/navigation_box"
-            android:layout_marginRight="10dp"
+             android:layout_marginRight="10dp"
             android:background="@drawable/cart_image"/>
 
         <RelativeLayout
@@ -342,9 +342,9 @@
                 android:background="#F5F5FA"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/prod_config_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/prod_config_box"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/none2">
@@ -352,7 +352,7 @@
                 <TextView
                     android:id="@+id/title_product_config"
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="12dp"
                     android:gravity="top"
@@ -366,17 +366,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <GridView
                     android:id="@+id/product_config_info"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="12dp"
-                    android:gravity="top"
-                    android:lineSpacingExtra="5sp"
-                    android:text="Cấu hình sản phẩm"
-                    android:textAppearance="@style/title_ship"
-                    android:translationY="-2.32sp"
+                    android:scrollbars="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
