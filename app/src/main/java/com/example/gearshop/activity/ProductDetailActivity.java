@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,17 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView ProductDiscountTextView;
     private TextView ProductSpecsTextView;
     private TextView ProductDetailTextView;
+    protected String ConvertToHTMLText(String s){
+        String[] bulletParts = s.split("\\|\\n");
+        String result = "<ul>\n";
+        for (int i = 0; i < bulletParts.length; i++){
+            System.out.println(bulletParts[i]);
+            bulletParts[i] = "<li>" + bulletParts[i] + "<\\li>\n";
+            result = result + bulletParts[i];
+        }
+        result = result + "<\\ul>";
+        return result;
+    }
     protected void setProductInformationOnView(Product inputtedProduct){
         String imageURL = inputtedProduct.getImageURL();
         Picasso.get()
@@ -44,20 +56,21 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductSellingPriceTextView.setText(formattedPrice);
         ProductOriginalPriceTextView.setText(formattedPrice);
         ProductSpecsTextView.setText(inputtedProduct.getSpecs());
-        ProductDetailTextView.setText(inputtedProduct.getDescription());
+        ProductDetailTextView.setText(
+                Html.fromHtml(this.ConvertToHTMLText(inputtedProduct.getDescription()), Html.FROM_HTML_MODE_COMPACT));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_detail);
-        returnView = findViewById(R.id.wayback_icon_prod);
-        ProductImageView = findViewById(R.id.prod_image);
-        ProductNameTextView = findViewById(R.id.label_produ);
-        ProductSellingPriceTextView = findViewById(R.id.selling_pri);
-        ProductOriginalPriceTextView = findViewById(R.id.original_pr);
+        returnView = findViewById(R.id.wayback_icon_product);
+        ProductImageView = findViewById(R.id.product_image);
+        ProductNameTextView = findViewById(R.id.label_product_text);
+        ProductSellingPriceTextView = findViewById(R.id.selling_price_text);
+        ProductOriginalPriceTextView = findViewById(R.id.original_price);
         ProductDiscountTextView = findViewById(R.id.discount_text);
-        ProductSpecsTextView = findViewById(R.id.prod_config_info);
-        ProductDetailTextView = findViewById(R.id.prod_detail_info);
+        ProductSpecsTextView = findViewById(R.id.product_config_info);
+        ProductDetailTextView = findViewById(R.id.product_detail_info);
         Intent getProductIntent = getIntent();
         Product clickedProduct = (Product) getProductIntent.getSerializableExtra("clickedProduct");
         this.setProductInformationOnView(clickedProduct);

@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_filte"
+            android:id="@+id/title_filter"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
