@@ -38,6 +38,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
 
+
     protected Map<String, String> ConvertProductSpecsToMap(String productSpec){
         String[] parts = productSpec.split("\\|\\n");
         Map<String, String> result = new HashMap<>();
@@ -117,6 +118,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         EscapeLayout.setOnClickListener(view -> {
 
         });
+
+
 
         Intent getProductIntent = getIntent();
         Product clickedProduct = (Product) getProductIntent.getSerializableExtra("clickedProduct");

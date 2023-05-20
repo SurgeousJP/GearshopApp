@@ -13,13 +13,17 @@ import com.example.gearshop.fragment.FilterSortBar;
 import com.example.gearshop.fragment.ListProduct;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
-
     private FilterSortBar CategoryProductFilterSortBar;
     private ListProduct CategoryListProduct;
 
     private RelativeLayout CartIconLayout;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
+
+    private RelativeLayout HomeItem;
+    private RelativeLayout CategoryItem;
+    private RelativeLayout SearchItem;
+    private RelativeLayout AccountItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,23 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         EscapeLayout.setOnClickListener(view -> {
 
         });
+
+        HomeItem = findViewById(R.id.home_item);
+        HomeItem.setOnClickListener(view -> {
+
+        });
+        CategoryItem = findViewById(R.id.category_item);
+        CategoryItem.setOnClickListener(view -> {
+
+        });
+        SearchItem = findViewById(R.id.search_item);
+        SearchItem.setOnClickListener(view -> {
+
+        });
+        AccountItem = findViewById(R.id.account_item);
+        AccountItem.setOnClickListener(view -> {
+        });
+
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
         titleScreen.setText(userId);
     }
