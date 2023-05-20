@@ -14,11 +14,15 @@ import android.widget.GridView;
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.database.GetProductDataFromAzure;
+import com.example.gearshop.database.testExecutor;
 import com.example.gearshop.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 
 public class ListProduct extends Fragment {
@@ -63,19 +67,36 @@ public class ListProduct extends Fragment {
         ProductAdapter = new ProductGridAdapter(getContext(), ProductList);
         ProductGridView.setAdapter(ProductAdapter);
 
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].execute("SELECT * FROM product WHERE category_id = 1");
-        System.out.println("Async Task running");
-
-        try {
-            getProductDataFromAzure[0].get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Async Task ended");
-        if (getProductDataFromAzure[0].getProductList() != null) this.GetProductDataFromAzure(getProductDataFromAzure[0].getProductList());
+//        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
+//        getProductDataFromAzure[0] = new GetProductDataFromAzure();
+//        getProductDataFromAzure[0].execute("SELECT * FROM product WHERE category_id = 1");
+//        System.out.println("Async Task running");
+//
+//        try {
+//            getProductDataFromAzure[0].get();
+//        } catch (ExecutionException | InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        System.out.println("Async Task ended");
+//        if (getProductDataFromAzure[0].getProductList() != null) this.GetProductDataFromAzure(getProductDataFromAzure[0].getProductList());
+        this.GetProductDataFromAzure(this.performTaskAsync());
         return view;
+    }
+    public List<Product> performTaskAsync() {
+        List<Product> returnResult = new ArrayList<>();
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<List<Product>> future = executorService.submit(new testExecutor("SELECT * FROM product" +
+                " WHERE category_id = 1"));
+        // Handle the result or any exceptions
+        try {
+            List<Product> result = future.get();
+            returnResult = result;
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        // Shutdown the executor service when no longer needed
+        executorService.shutdown();
+        return returnResult;
     }
     public void GetProductDataFromAzure(List<Product> products){
         synchronized (ProductAdapter) {
