@@ -9,6 +9,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
@@ -30,19 +31,23 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView ProductSellingPriceTextView;
     private TextView ProductOriginalPriceTextView;
     private TextView ProductDiscountTextView;
-    private GridView ProductSpecsGridView;
+    private TextView ProductSpecsGridView;
     private TextView ProductDetailTextView;
+
+    private RelativeLayout CartIconLayout;
+    private RelativeLayout MoreInformationLayout;
+    private RelativeLayout EscapeLayout;
+
     protected Map<String, String> ConvertProductSpecsToMap(String productSpec){
         String[] parts = productSpec.split("\\|\\n");
         Map<String, String> result = new HashMap<>();
-        for (int i = 0; i < parts.length; i++){
-            System.out.println(parts[i]);
-            String[] headerAndDetail = parts[i].split(" {4}");
-            try{
+        for (String part : parts) {
+            System.out.println(part);
+            String[] headerAndDetail = part.split(" {4}");
+            try {
                 result.put(headerAndDetail[0], headerAndDetail[1]);
                 System.out.println(headerAndDetail[0] + "\t" + headerAndDetail[1]);
-            }
-            catch(NullPointerException | IndexOutOfBoundsException e){
+            } catch (NullPointerException | IndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
         }
@@ -75,9 +80,11 @@ public class ProductDetailActivity extends AppCompatActivity {
         String formattedPrice  = decimalFormatter.format(inputtedProduct.getPrice());
         ProductSellingPriceTextView.setText(formattedPrice);
         ProductOriginalPriceTextView.setText(formattedPrice);
-        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
-        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
-        ProductSpecsGridView.setAdapter(productSpecAdapter);
+        ProductSpecsGridView.setText(inputtedProduct.getSpecs());
+//        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
+//        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
+//        ProductSpecsGridView.setAdapter(productSpecAdapter);
+
         ProductDetailTextView.setText(
                 Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()), Html.FROM_HTML_MODE_COMPACT));
     }
@@ -85,6 +92,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_detail);
+
         returnView = findViewById(R.id.wayback_icon_product);
         ProductImageView = findViewById(R.id.product_image);
         ProductNameTextView = findViewById(R.id.label_product_text);
@@ -93,6 +101,23 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductDiscountTextView = findViewById(R.id.discount_text);
         ProductSpecsGridView = findViewById(R.id.product_config_info);
         ProductDetailTextView = findViewById(R.id.product_detail_info);
+
+        CartIconLayout = findViewById(R.id.cart_icon_product);
+        CartIconLayout.setOnClickListener(view -> {
+            Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getBaseContext().startActivity(intent);
+        });
+
+        MoreInformationLayout = findViewById(R.id.dots_icon_product);
+        MoreInformationLayout.setOnClickListener(view -> {
+
+        });
+
+        EscapeLayout = findViewById(R.id.escape);
+        EscapeLayout.setOnClickListener(view -> {
+
+        });
+
         Intent getProductIntent = getIntent();
         Product clickedProduct = (Product) getProductIntent.getSerializableExtra("clickedProduct");
         this.setProductInformationOnView(clickedProduct);
