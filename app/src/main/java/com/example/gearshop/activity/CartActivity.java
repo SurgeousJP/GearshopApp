@@ -1,11 +1,13 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
@@ -20,7 +22,7 @@ public class CartActivity extends AppCompatActivity {
     private List<ShoppingCartItem> CartItemList;
     private List<Product> ProductList;
     private View ReturnView;
-    private ListView CartListView;
+    private RecyclerView CartRecyclerView;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
     @Override
@@ -29,10 +31,11 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.cart);
         CartItemList = ((Cart) getApplication()).getCartItemList();
         ProductList = ((Cart) getApplication()).getProductList();
-        CartListView = findViewById(R.id.list_product);
-        CartListAdapter cartListAdapter = new CartListAdapter(getBaseContext(), R.id.list_product,
-                CartItemList, ProductList);
-        CartListView.setAdapter(cartListAdapter);
+        CartRecyclerView = findViewById(R.id.list_product);
+        CartListAdapter cartListAdapter = new CartListAdapter(this);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
+        CartRecyclerView.setLayoutManager(linearLayoutManager);
+        CartRecyclerView.setAdapter(cartListAdapter);
         ReturnView = findViewById(R.id.wayback_icon_cart);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);

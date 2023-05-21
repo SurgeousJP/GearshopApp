@@ -2860,6 +2860,7 @@ drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
+drawable selection_band_overlay
 drawable sheet_header
 drawable shipped
 drawable shipping_box
