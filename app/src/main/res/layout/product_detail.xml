@@ -449,7 +449,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
                 <TextView
-                    android:id="@+id/add_to_card_text"
+                    android:id="@+id/add_to_cart_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Thêm vào giỏ hàng"

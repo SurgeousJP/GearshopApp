@@ -3,6 +3,7 @@ package com.example.gearshop.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -14,12 +15,17 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
+import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Product;
+import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.StringFormat;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -38,7 +44,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
 
-
+    private TextView AddToCart;
+    private TextView BuyProductNow;
     protected Map<String, String> ConvertProductSpecsToMap(String productSpec){
         String[] parts = productSpec.split("\\|\\n");
         Map<String, String> result = new HashMap<>();
@@ -72,22 +79,18 @@ public class ProductDetailActivity extends AppCompatActivity {
                 .into(ProductImageView);
         ProductNameTextView.setText(inputtedProduct.getName());
 
-        Locale locale = new Locale("vi", "VN");
-        DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
-        symbols.setCurrencySymbol("đ");
-        symbols.setGroupingSeparator('.');
-        symbols.setDecimalSeparator(',');
-        DecimalFormat decimalFormatter = new DecimalFormat("#,##0.00 ¤", symbols);
-        String formattedPrice  = decimalFormatter.format(inputtedProduct.getPrice());
+        String formattedPrice = StringFormat.getVietnameseMoneyStringFormatted(inputtedProduct.getPrice());
         ProductSellingPriceTextView.setText(formattedPrice);
         ProductOriginalPriceTextView.setText(formattedPrice);
+
         ProductSpecsGridView.setText(inputtedProduct.getSpecs());
 //        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
 //        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
 //        ProductSpecsGridView.setAdapter(productSpecAdapter);
 
         ProductDetailTextView.setText(
-                Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()), Html.FROM_HTML_MODE_COMPACT));
+                Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()),
+                        Html.FROM_HTML_MODE_COMPACT));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,10 +106,13 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductSpecsGridView = findViewById(R.id.product_config_info);
         ProductDetailTextView = findViewById(R.id.product_detail_info);
 
+        Intent getProductIntent = getIntent();
+        Product clickedProduct = (Product) getProductIntent.getSerializableExtra("clickedProduct");
+        this.setProductInformationOnView(clickedProduct);
+
         CartIconLayout = findViewById(R.id.cart_icon_product);
         CartIconLayout.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
+            startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
         MoreInformationLayout = findViewById(R.id.dots_icon_product);
@@ -119,11 +125,18 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         });
 
+        AddToCart = findViewById(R.id.add_to_cart_text);
+        AddToCart.setOnClickListener(view -> {
+            addNewProductToCart(clickedProduct);
+        });
+
+        BuyProductNow = findViewById(R.id.buy_now_text);
+        BuyProductNow.setOnClickListener(view -> {
+            addNewProductToCart(clickedProduct);
+            startTargetActivity(getBaseContext(), CartActivity.class);
+        });
 
 
-        Intent getProductIntent = getIntent();
-        Product clickedProduct = (Product) getProductIntent.getSerializableExtra("clickedProduct");
-        this.setProductInformationOnView(clickedProduct);
         returnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,5 +144,22 @@ public class ProductDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void startTargetActivity(Context context, Class<?> targetActivityClass) {
+        Intent intent = new Intent(context, targetActivityClass)
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+    private void addNewProductToCart(Product product) {
+        List<ShoppingCartItem> currentShoppingCartList = ((Cart) getApplication()).getCartItemList();
+        List<Product> currentProductList = ((Cart)getApplication()).getProductList();
+        ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
+                1, product.getID(), 1, new Date());
+
+        if (!currentShoppingCartList.contains(newItem))
+            currentShoppingCartList.add(newItem);
+        if (!currentProductList.contains(product))
+            currentProductList.add(product);
     }
 }

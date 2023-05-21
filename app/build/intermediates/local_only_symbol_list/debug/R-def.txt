@@ -92,7 +92,7 @@ id account_avartar
 id account_avatar_item
 id account_item
 id add_to_card
-id add_to_card_text
+id add_to_cart_text
 id all_order
 id badge
 id bottom_bar

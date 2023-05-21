@@ -54,7 +54,6 @@ public class ProductSpecAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.product_spec_item, parent, false);
         }
-
         String key = keys.get(position);
         String value = values.get(position);
 

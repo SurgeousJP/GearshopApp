@@ -17,6 +17,8 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Locale;
+
+import com.example.gearshop.utility.StringFormat;
 import com.squareup.picasso.Picasso;
 
 public class ProductGridAdapter extends BaseAdapter {
@@ -63,13 +65,7 @@ public class ProductGridAdapter extends BaseAdapter {
         productNameTextView.setText(product.getName());
 
         double price = product.getPrice();
-        Locale locale = new Locale("vi", "VN");
-        DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
-        symbols.setCurrencySymbol("đ");
-        symbols.setGroupingSeparator('.');
-        symbols.setDecimalSeparator(',');
-        DecimalFormat decimalFormatter = new DecimalFormat("#,##0.00 ¤", symbols);
-        String formattedPrice  = decimalFormatter.format(price);
+        String formattedPrice  = StringFormat.getVietnameseMoneyStringFormatted(price);
         productSellingPriceTextView.setText(String.valueOf(formattedPrice));
 
         String imageURL = product.getImageURL();

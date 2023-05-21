@@ -2957,7 +2957,7 @@ id actions
 id activity_chooser_view_content
 id add
 id add_to_card
-id add_to_card_text
+id add_to_cart_text
 id alertTitle
 id aligned
 id all
