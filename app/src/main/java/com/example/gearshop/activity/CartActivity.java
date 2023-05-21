@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.MoneyFormat;
 
 import java.util.List;
 
@@ -23,16 +25,29 @@ public class CartActivity extends AppCompatActivity {
     private ListView CartListView;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
+    private TextView TotalProductPrice;
+    private TextView FinalPrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
+
         CartItemList = ((Cart) getApplication()).getCartItemList();
         ProductList = ((Cart) getApplication()).getProductList();
         CartListView = findViewById(R.id.list_product);
         CartListAdapter cartListAdapter = new CartListAdapter(getBaseContext(), R.id.list_product,
                 CartItemList, ProductList);
         CartListView.setAdapter(cartListAdapter);
+
+        TotalProductPrice = findViewById(R.id.total_price);
+        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        FinalPrice = findViewById(R.id.final_price);
+        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+
+        cartListAdapter.setTotalProductPrice(TotalProductPrice);
+        cartListAdapter.setFinalPrice(FinalPrice);
+
         ReturnView = findViewById(R.id.wayback_icon_cart);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
@@ -46,6 +61,18 @@ public class CartActivity extends AppCompatActivity {
         EscapeLayout.setOnClickListener(view -> {
 
         });
-
     }
+    protected double getTotalProductPrice(List<Product> products){
+        double resultPrice = 0;
+        for (int i = 0; i < products.size(); i++){
+            Product product = products.get(i);
+            double price = product.getPrice();
+            if (product.getDiscountInformation().isActive()){
+                price = price * (100 - product.getDiscountInformation().getDiscountPercentage()) / 100;
+            }
+            resultPrice += price;
+        }
+        return resultPrice;
+    }
+
 }

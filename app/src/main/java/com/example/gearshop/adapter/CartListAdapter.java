@@ -1,12 +1,10 @@
 package com.example.gearshop.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,10 +14,8 @@ import androidx.annotation.Nullable;
 import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
-import com.example.gearshop.utility.StringFormat;
+import com.example.gearshop.utility.MoneyFormat;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -27,6 +23,17 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
     int resource;
     private List<ShoppingCartItem> ListCartItems;
     private List<Product> ProductList;
+
+    public void setTotalProductPrice(TextView totalProductPrice) {
+        TotalProductPrice = totalProductPrice;
+    }
+
+    public void setFinalPrice(TextView finalPrice) {
+        FinalPrice = finalPrice;
+    }
+
+    private TextView TotalProductPrice;
+    private TextView FinalPrice;
     public CartListAdapter(Context context, int resource, List<ShoppingCartItem> shoppingCartItems,
                            List<Product> products){
         super(context, resource, shoppingCartItems);
@@ -52,6 +59,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
             TextView numberOfCartItemText = v.findViewById(R.id.input_value);
             View decreaseCartItemView = v.findViewById(R.id.decrease_box);
             View increaseCartItemView = v.findViewById(R.id.increase_box);
+
             if (cartItemImage != null){
                 String imageURL = p.getImageURL();
                 Picasso.get()
@@ -62,11 +70,8 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
                 productNameText.setText(p.getName());
             }
             if (priceText != null){
-                double price = p.getPrice();
-                if (p.getDiscountInformation().isActive()){
-                    price = price * (100 - p.getDiscountInformation().getDiscountPercentage());
-                }
-                priceText.setText(StringFormat.getVietnameseMoneyStringFormatted(price));
+                double discountedPrice = getDiscountedPrice(p);
+                priceText.setText(MoneyFormat.getVietnameseMoneyStringFormatted(discountedPrice));
             }
             if (numberOfCartItemText != null){
                 numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
@@ -76,6 +81,12 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
                     if (numberOfCartItemText != null && s.getQuantity() > 1){
                         s.setQuantity(s.getQuantity() - 1);
                         numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
+
+                        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                                TotalProductPrice.getText().toString());
+                        currentTotalPrice -= getDiscountedPrice(p);
+                        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
                     }
                 });
             }
@@ -84,10 +95,24 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
                     if (numberOfCartItemText != null ){
                         s.setQuantity(s.getQuantity() + 1);
                         numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
+
+                        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                                TotalProductPrice.getText().toString());
+                        currentTotalPrice += getDiscountedPrice(p);
+                        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
                     }
                 });
             }
         }
         return v;
+    }
+
+    private double getDiscountedPrice(Product p) {
+        double price = p.getPrice();
+        if (p.getDiscountInformation().isActive()){
+            price = price * (100 - p.getDiscountInformation().getDiscountPercentage()) / 100;
+        }
+        return price;
     }
 }

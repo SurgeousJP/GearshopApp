@@ -8,18 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.result.ActivityResultLauncher;
-
 import com.example.gearshop.R;
 import com.example.gearshop.activity.ProductDetailActivity;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.List;
-import java.util.Locale;
 
-import com.example.gearshop.utility.StringFormat;
+import java.util.List;
+
+import com.example.gearshop.utility.MoneyFormat;
 import com.squareup.picasso.Picasso;
 
 public class ProductGridAdapter extends BaseAdapter {
@@ -80,7 +76,7 @@ public class ProductGridAdapter extends BaseAdapter {
         else{
             productDiscountTextView.setText("Không giảm giá");
         }
-        productSellingPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(sellingPrice));
+        productSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

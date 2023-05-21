@@ -9,26 +9,21 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
-import com.example.gearshop.utility.StringFormat;
+import com.example.gearshop.utility.MoneyFormat;
 import com.squareup.picasso.Picasso;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class ProductDetailActivity extends AppCompatActivity {
@@ -82,7 +77,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductNameTextView.setText(inputtedProduct.getName());
 
         double originalPrice = inputtedProduct.getPrice();
-        ProductOriginalPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(originalPrice));
+        ProductOriginalPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(originalPrice));
         ProductOriginalPriceTextView.setPaintFlags(
                 ProductOriginalPriceTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
@@ -96,7 +91,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         else{
             ProductDiscountTextView.setText("Không giảm giá");
         }
-        ProductSellingPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(sellingPrice));
+        ProductSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
         ProductSpecsGridView.setText(inputtedProduct.getSpecs());
 //        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
 //        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
