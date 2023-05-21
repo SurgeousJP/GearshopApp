@@ -62,7 +62,11 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
                 productNameText.setText(p.getName());
             }
             if (priceText != null){
-                priceText.setText(StringFormat.getVietnameseMoneyStringFormatted(p.getPrice()));
+                double price = p.getPrice();
+                if (p.getDiscountInformation().isActive()){
+                    price = price * (100 - p.getDiscountInformation().getDiscountPercentage());
+                }
+                priceText.setText(StringFormat.getVietnameseMoneyStringFormatted(price));
             }
             if (numberOfCartItemText != null){
                 numberOfCartItemText.setText(String.valueOf(s.getQuantity()));

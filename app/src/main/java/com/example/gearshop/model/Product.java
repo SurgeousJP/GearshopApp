@@ -8,11 +8,11 @@ public class Product implements Serializable {
     private double Price;
     private boolean Status;
     private int CategoryID;
-
+    private Discount DiscountInformation;
     public Product(){}
-    public Product(int ID, String name, String imageURL, String description,
-                   String specs, double price, boolean status, int categoryID) {
-        ID = ID;
+    public Product(int Id, String name, String imageURL, String description,
+                   String specs, double price, boolean status, int categoryID, Discount discountInformation) {
+        ID = Id;
         Name = name;
         ImageURL = imageURL;
         Description = description;
@@ -20,8 +20,8 @@ public class Product implements Serializable {
         Price = price;
         Status = status;
         CategoryID = categoryID;
+        DiscountInformation = discountInformation;
     }
-
     public void setID(int ID) {
         this.ID = ID;
     }
@@ -85,5 +85,12 @@ public class Product implements Serializable {
         return CategoryID;
     }
 
+    public Discount getDiscountInformation() {
+        return DiscountInformation;
+    }
+
+    public void setDiscountInformation(Discount discountInformation) {
+        DiscountInformation = discountInformation;
+    }
 
 }

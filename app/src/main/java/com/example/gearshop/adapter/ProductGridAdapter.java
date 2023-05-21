@@ -12,6 +12,7 @@ import androidx.activity.result.ActivityResultLauncher;
 
 import com.example.gearshop.R;
 import com.example.gearshop.activity.ProductDetailActivity;
+import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -58,21 +59,28 @@ public class ProductGridAdapter extends BaseAdapter {
         ImageView productImageView = convertView.findViewById(R.id.item_image_list_item);
         TextView productSellingPriceTextView = convertView.findViewById(R.id.selling_price);
         TextView productNameTextView = convertView.findViewById(R.id.label_product);
-
+        TextView productDiscountTextView = convertView.findViewById(R.id.text);
         // Set data to UI components
         Product product = products.get(position);
 
         productNameTextView.setText(product.getName());
-
-        double price = product.getPrice();
-        String formattedPrice  = StringFormat.getVietnameseMoneyStringFormatted(price);
-        productSellingPriceTextView.setText(String.valueOf(formattedPrice));
 
         String imageURL = product.getImageURL();
         Picasso.get()
                 .load(imageURL)
                 .into(productImageView);
 
+        Discount productDiscount = product.getDiscountInformation();
+        double sellingPrice = product.getPrice();
+        if (productDiscount.isActive()){
+            double discountPercentage = productDiscount.getDiscountPercentage();
+            sellingPrice = sellingPrice * (100 - discountPercentage) / 100;
+            productDiscountTextView.setText(String.format("-%s%%", discountPercentage));
+        }
+        else{
+            productDiscountTextView.setText("Không giảm giá");
+        }
+        productSellingPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(sellingPrice));
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

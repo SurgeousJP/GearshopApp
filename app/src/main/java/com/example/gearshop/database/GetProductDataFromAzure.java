@@ -1,5 +1,6 @@
 package com.example.gearshop.database;
 
+import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 
 import java.sql.Connection;
@@ -8,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class GetProductDataFromAzure extends AzureSQLDatabase{
@@ -34,11 +36,23 @@ public class GetProductDataFromAzure extends AzureSQLDatabase{
                 try {
                     assert resultSet != null;
                     if (!resultSet.next()) break;
-                    ProductList.add(new Product(resultSet.getInt("id"),
-                            resultSet.getString("name"), resultSet.getString("image_url"),
-                            resultSet.getString("description"), resultSet.getString("specs"),
+                    Discount newDiscount = new Discount(
+                            resultSet.getInt("discount_id"),
+                            resultSet.getString("discount_name"),
+                            resultSet.getInt("discount_percentage"),
+                            resultSet.getDate("start_date_utc"),
+                            resultSet.getDate("end_date_utc"));
+
+                    Product newProduct = new Product(
+                            resultSet.getInt("id"),
+                            resultSet.getString("name"),
+                            resultSet.getString("image_url"),
+                            resultSet.getString("description"),
+                            resultSet.getString("specs"),
                             resultSet.getDouble("price"),
-                            resultSet.getBoolean("status"), resultSet.getInt("category_id")));
+                            resultSet.getBoolean("status"),
+                            resultSet.getInt("category_id"), newDiscount);
+                    ProductList.add(newProduct);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

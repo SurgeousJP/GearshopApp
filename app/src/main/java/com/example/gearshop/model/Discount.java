@@ -1,13 +1,13 @@
 package com.example.gearshop.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Discount {
+public class Discount implements Serializable {
     private int ID;
     private String Name;
     private int DiscountPercentage;
     private Date StartDateUtc, EndDateUtc;
-    private boolean IsActive;
 
     public int getID() {
         return ID;
@@ -29,9 +29,7 @@ public class Discount {
         return DiscountPercentage;
     }
 
-    public void setDiscountPercentage(int discountPercentage) {
-        DiscountPercentage = discountPercentage;
-    }
+    public void setDiscountPercentage(int discountPercentage){DiscountPercentage = discountPercentage;}
 
     public Date getStartDateUtc() {
         return StartDateUtc;
@@ -50,20 +48,15 @@ public class Discount {
     }
 
     public boolean isActive() {
-        return IsActive;
+        Date currentDate = new Date();
+        return currentDate.after(getStartDateUtc()) && currentDate.before(getEndDateUtc());
     }
-
-    public void setActive(boolean active) {
-        IsActive = active;
-    }
-
-    public Discount(int ID, String name, int discountPercentage, Date startDateUtc, Date endDateUtc, boolean isActive) {
+    public Discount(int ID, String name, int discountPercentage, Date startDateUtc, Date endDateUtc) {
         this.ID = ID;
         Name = name;
         DiscountPercentage = discountPercentage;
         StartDateUtc = startDateUtc;
         EndDateUtc = endDateUtc;
-        IsActive = isActive;
     }
 
 

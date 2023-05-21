@@ -64,7 +64,16 @@ public class ListProduct extends Fragment {
 
         final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
         getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].execute("SELECT * FROM product WHERE category_id = 1");
+        getProductDataFromAzure[0].execute(
+                "SELECT product.*,\n" +
+                        "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
+                        "\t   discount_percentage, start_date_utc, end_date_utc\n" +
+                        "FROM product\n" +
+                        "JOIN product_category ON product.category_id = product_category.id\n" +
+                        "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
+                        "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
+                        "WHERE product.category_id = 6"
+        );
         System.out.println("Async Task running");
 
         try {
@@ -73,11 +82,11 @@ public class ListProduct extends Fragment {
             throw new RuntimeException(e);
         }
         System.out.println("Async Task ended");
-        if (getProductDataFromAzure[0].getProductList() != null) this.GetProductDataFromAzure(getProductDataFromAzure[0].getProductList());
+        if (getProductDataFromAzure[0].getProductList() != null) this.UpdateDataOntoAdapter(getProductDataFromAzure[0].getProductList());
         return view;
     }
 
-    public void GetProductDataFromAzure(List<Product> products){
+    public void UpdateDataOntoAdapter(List<Product> products){
         synchronized (ProductAdapter) {
             ProductAdapter.setData(products);
             ProductAdapter.notify();

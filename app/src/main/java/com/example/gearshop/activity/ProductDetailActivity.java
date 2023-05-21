@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.model.Cart;
+import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.StringFormat;
@@ -79,10 +81,22 @@ public class ProductDetailActivity extends AppCompatActivity {
                 .into(ProductImageView);
         ProductNameTextView.setText(inputtedProduct.getName());
 
-        String formattedPrice = StringFormat.getVietnameseMoneyStringFormatted(inputtedProduct.getPrice());
-        ProductSellingPriceTextView.setText(formattedPrice);
-        ProductOriginalPriceTextView.setText(formattedPrice);
+        double originalPrice = inputtedProduct.getPrice();
+        ProductOriginalPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(originalPrice));
+        ProductOriginalPriceTextView.setPaintFlags(
+                ProductOriginalPriceTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
+        Discount productDiscount = inputtedProduct.getDiscountInformation();
+        double sellingPrice = inputtedProduct.getPrice();
+        if (productDiscount.isActive()){
+            double discountPercentage = productDiscount.getDiscountPercentage();
+            sellingPrice = originalPrice * (100 - discountPercentage) / 100;
+            ProductDiscountTextView.setText(String.format("-%s%%", discountPercentage));
+        }
+        else{
+            ProductDiscountTextView.setText("Không giảm giá");
+        }
+        ProductSellingPriceTextView.setText(StringFormat.getVietnameseMoneyStringFormatted(sellingPrice));
         ProductSpecsGridView.setText(inputtedProduct.getSpecs());
 //        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
 //        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
