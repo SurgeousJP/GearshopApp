@@ -2934,7 +2934,7 @@ int id accessibility_custom_action_8 0x7f08002e
 int id accessibility_custom_action_9 0x7f08002f
 int id account_avartar 0x7f080030
 int id account_avatar_item 0x7f080031
-int id account_item 0x7f080032
+int id account_item_category_detail 0x7f080349
 int id actionDown 0x7f080033
 int id actionDownUp 0x7f080034
 int id actionUp 0x7f080035
@@ -2970,6 +2970,7 @@ int id animateToEnd 0x7f080052
 int id animateToStart 0x7f080053
 int id antiClockwise 0x7f080054
 int id anticipate 0x7f080055
+int id app_only_tag 0x7f08034a
 int id arc 0x7f080056
 int id asConfigured 0x7f080057
 int id async 0x7f080058
@@ -3003,13 +3004,17 @@ int id cancel_buttom_confirm_box 0x7f08032c
 int id cancel_button 0x7f080073
 int id cancel_listvoucher 0x7f080074
 int id cancel_order 0x7f080075
+int id cardView 0x7f08034b
 int id carryVelocity 0x7f080076
 int id cart_icon_account_main 0x7f080077
 int id cart_icon_product 0x7f080078
 int id cart_layout 0x7f080079
+int id cart_layout_category_detail 0x7f080346
 int id cart_text 0x7f08007a
 int id cart_text_2 0x7f08007b
-int id category_item 0x7f08007c
+int id category_discount 0x7f08034c
+int id category_item_category_detail 0x7f08034d
+int id category_tag 0x7f08034e
 int id center 0x7f08007d
 int id centerCrop 0x7f08007e
 int id centerInside 0x7f08007f
@@ -3111,6 +3116,7 @@ int id disableHome 0x7f0800db
 int id disableIntraAutoTransition 0x7f0800dc
 int id disablePostScroll 0x7f0800dd
 int id disableScroll 0x7f0800de
+int id discount_name 0x7f08034f
 int id discount_percent 0x7f0800df
 int id discount_text 0x7f0800e0
 int id disjoint 0x7f0800e1
@@ -3145,9 +3151,11 @@ int id enterAlways 0x7f0800fd
 int id enterAlwaysCollapsed 0x7f0800fe
 int id escape 0x7f0800ff
 int id escape_cart 0x7f080100
+int id escape_category_detail 0x7f080350
 int id exitUntilCollapsed 0x7f080101
 int id expand_activities_button 0x7f080102
 int id expanded_menu 0x7f080103
+int id expired_day 0x7f080351
 int id facebook_icon 0x7f080104
 int id fade 0x7f080105
 int id fields 0x7f080106
@@ -3192,7 +3200,7 @@ int id hideable 0x7f08012c
 int id high_price 0x7f08012d
 int id home 0x7f08012e
 int id homeAsUp 0x7f08012f
-int id home_item 0x7f080130
+int id home_item_category_detail 0x7f080352
 int id honorRequest 0x7f080131
 int id horizontal_only 0x7f080132
 int id horizontal_scrollview_order_status 0x7f080133
@@ -3203,12 +3211,15 @@ int id ignore 0x7f080137
 int id ignoreRequest 0x7f080138
 int id image 0x7f080139
 int id imageView 0x7f08013a
+int id image_voucher 0x7f080353
+int id image_voucher_list_voucher 0x7f080354
 int id imagelayout 0x7f08013b
 int id immediateStop 0x7f08013c
 int id included 0x7f08013d
 int id increase_box 0x7f08013e
 int id indeterminate 0x7f08013f
 int id info 0x7f080140
+int id info_box 0x7f080355
 int id input_field1 0x7f080141
 int id input_field2 0x7f080142
 int id input_value 0x7f080143
@@ -3287,6 +3298,7 @@ int id list_product 0x7f08018a
 int id list_view_order_management 0x7f08018b
 int id listgear 0x7f08018c
 int id listview_category 0x7f08018d
+int id listview_category_layout 0x7f080342
 int id listview_voucher 0x7f08018e
 int id location_icon 0x7f08018f
 int id login_button 0x7f080190
@@ -3333,7 +3345,7 @@ int id month_navigation_next 0x7f0801b8
 int id month_navigation_previous 0x7f0801b9
 int id month_title 0x7f0801ba
 int id more_category 0x7f0801bb
-int id more_info 0x7f0801bc
+int id more_info_category_detail 0x7f080347
 int id motion_base 0x7f0801bd
 int id mtrl_anchor_parent 0x7f0801be
 int id mtrl_calendar_day_selector_frame 0x7f0801bf
@@ -3416,6 +3428,7 @@ int id path 0x7f08020b
 int id pathRelative 0x7f08020c
 int id peekHeight 0x7f08020d
 int id percent 0x7f08020e
+int id percent_discount 0x7f080356
 int id pin 0x7f08020f
 int id position 0x7f080210
 int id postLayout 0x7f080211
@@ -3465,6 +3478,7 @@ int id rounded 0x7f08023b
 int id roundx_account_main 0x7f08023c
 int id roundx_order_management 0x7f08023d
 int id row_index_key 0x7f08023e
+int id save_button_list_voucher 0x7f080357
 int id save_non_transition_alpha 0x7f08023f
 int id save_overlay_view 0x7f080240
 int id sawtooth 0x7f080241
@@ -3479,6 +3493,7 @@ int id scrollView_product 0x7f080249
 int id scroll_box 0x7f08024a
 int id scroll_box_cart 0x7f08024b
 int id scrollable 0x7f08024c
+int id scrollview_search_layout 0x7f080339
 int id search_badge 0x7f08024d
 int id search_bar 0x7f08024e
 int id search_bar_text_view 0x7f08024f
@@ -3488,7 +3503,7 @@ int id search_edit_frame 0x7f080252
 int id search_go_btn 0x7f080253
 int id search_icon 0x7f080254
 int id search_input 0x7f080255
-int id search_item 0x7f080256
+int id search_item_category_detail 0x7f080358
 int id search_mag_icon 0x7f080257
 int id search_plate 0x7f080258
 int id search_src_text 0x7f080259
@@ -3521,7 +3536,9 @@ int id sharedValueUnset 0x7f080273
 int id sheet_content 0x7f080274
 int id shipping_box 0x7f080275
 int id shipping_info 0x7f080276
-int id shopping_bo 0x7f080277
+int id shopping_bottom 0x7f08033b
+int id shopping_bottom_category_detail 0x7f080359
+int id shopping_bottom_search 0x7f08033c
 int id shortcut 0x7f080278
 int id showCustom 0x7f080279
 int id showHome 0x7f08027a
@@ -3691,7 +3708,7 @@ int id voucher_image 0x7f08031c
 int id voucher_mini_box 0x7f08031d
 int id wayback 0x7f08031e
 int id wayback_icon 0x7f08031f
-int id wayback_icon_cart 0x7f080320
+int id wayback_icon_category_layout_detail 0x7f080348
 int id wayback_icon_order_management 0x7f080321
 int id wayback_icon_product 0x7f080322
 int id west 0x7f080323
@@ -3812,6 +3829,8 @@ int layout abc_tooltip 0x7f0b001b
 int layout account_main 0x7f0b001c
 int layout activity_main 0x7f0b001d
 int layout cart 0x7f0b001e
+int layout category_layout 0x7f0b0083
+int layout category_layout_detail 0x7f0b0084
 int layout category_panel 0x7f0b001f
 int layout confirm_box 0x7f0b0081
 int layout custom_dialog 0x7f0b0020
@@ -3904,7 +3923,7 @@ int layout order_management 0x7f0b0076
 int layout product_detail 0x7f0b0077
 int layout product_spec_item 0x7f0b0078
 int layout register 0x7f0b0079
-int layout search_bar 0x7f0b007a
+int layout search_layout 0x7f0b0082
 int layout select_dialog_item_material 0x7f0b007b
 int layout select_dialog_multichoice_material 0x7f0b007c
 int layout select_dialog_singlechoice_material 0x7f0b007d
