@@ -68,12 +68,12 @@
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\product_detail.xml"
     },
     {
-        "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_location_icon.xml.flat",
-        "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\location_icon.xml"
-    },
-    {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_voucher_icon.png.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\voucher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_location_icon.xml.flat",
+        "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\location_icon.xml"
     },
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_star.xml.flat",
@@ -178,10 +178,6 @@
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_sort_icon.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\sort_icon.xml"
-    },
-    {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_framelayout_list_product.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/framelayout_list_product.xml"
     },
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_login.xml.flat",
@@ -302,10 +298,6 @@
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_search_bar.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\search_bar.xml"
-    },
-    {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_product_detail.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/product_detail.xml"
     },
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_escape.xml.flat",
@@ -454,6 +446,10 @@
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_product_spec_item.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/product_spec_item.xml"
     },
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_delivered_box.xml.flat",

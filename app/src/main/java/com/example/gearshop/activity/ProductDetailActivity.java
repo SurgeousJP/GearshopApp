@@ -1,6 +1,8 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Discount;
@@ -36,7 +39,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView ProductSellingPriceTextView;
     private TextView ProductOriginalPriceTextView;
     private TextView ProductDiscountTextView;
-    private GridView ProductSpecsGridView;
+    private RecyclerView ProductSpecsGridView;
     private TextView ProductDetailTextView;
 
     private RelativeLayout CartIconLayout;
@@ -96,7 +99,11 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
         Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
         ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1,RecyclerView.VERTICAL, false);
+        ProductSpecsGridView.setLayoutManager(layoutManager);
         ProductSpecsGridView.setAdapter(productSpecAdapter);
+
+
 
         ProductDetailTextView.setText(
                 Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()),
