@@ -88,6 +88,7 @@ drawable voucher_image
 drawable wayback_icon
 drawable white_blue_box
 drawable x
+drawable x_grey
 id account_avartar
 id account_avatar_item
 id account_item
@@ -102,6 +103,7 @@ id brand_button_2
 id button_bar
 id buy_now
 id buy_now_text
+id cancel_buttom_confirm_box
 id cancel_listvoucher
 id cancel_order
 id cart_icon_account_main
@@ -122,6 +124,7 @@ id components_3
 id components_4
 id components_list_voucher
 id confirm_button
+id confirm_button_confirm_box
 id confirm_code
 id confirm_code_box
 id confirm_code_edit
@@ -142,6 +145,7 @@ id content_emp
 id content_pro1
 id content_pro2
 id content_processing
+id content_rem
 id content_sta
 id control_box
 id cta_apply
@@ -151,6 +155,7 @@ id cta_viewmor
 id cta_viewmore
 id custom_price
 id decrease_box
+id delete_product
 id delivered_box
 id delivered_order
 id delivery_box
@@ -365,6 +370,7 @@ id time_of_transport
 id title_1
 id title_categ
 id title_category
+id title_confi
 id title_empty
 id title_filter
 id title_product_config
@@ -418,6 +424,7 @@ layout account_main
 layout activity_main
 layout cart
 layout category_panel
+layout confirm_box
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -471,6 +478,7 @@ style selling_price
 style text
 style title_category
 style title_config
+style title_confirm
 style title_empty
 style title_filter
 style title_screen

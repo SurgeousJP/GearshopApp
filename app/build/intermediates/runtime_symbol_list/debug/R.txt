@@ -2882,6 +2882,7 @@ int drawable voucher_image 0x7f070128
 int drawable wayback_icon 0x7f070129
 int drawable white_blue_box 0x7f07012a
 int drawable x 0x7f07012b
+int drawable x_grey 0x7f07012c
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
@@ -2997,6 +2998,7 @@ int id buy_now 0x7f08006f
 int id buy_now_text 0x7f080070
 int id cache_measures 0x7f080071
 int id callMeasure 0x7f080072
+int id cancel_buttom_confirm_box 0x7f08032c
 int id cancel_button 0x7f080073
 int id cancel_listvoucher 0x7f080074
 int id cancel_order 0x7f080075
@@ -3038,6 +3040,7 @@ int id components_4 0x7f080098
 int id components_list_voucher 0x7f080099
 int id compress 0x7f08009a
 int id confirm_button 0x7f08009b
+int id confirm_button_confirm_box 0x7f08032d
 int id confirm_code 0x7f08009c
 int id confirm_code_box 0x7f08009d
 int id confirm_code_edit 0x7f08009e
@@ -3062,6 +3065,7 @@ int id content_emp 0x7f0800b0
 int id content_pro1 0x7f0800b1
 int id content_pro2 0x7f0800b2
 int id content_processing 0x7f0800b3
+int id content_rem 0x7f08032e
 int id content_sta 0x7f0800b4
 int id contiguous 0x7f0800b5
 int id continuousVelocity 0x7f0800b6
@@ -3086,6 +3090,7 @@ int id decelerateAndComplete 0x7f0800c8
 int id decor_content_parent 0x7f0800c9
 int id decrease_box 0x7f0800ca
 int id default_activity_button 0x7f0800cb
+int id delete_product 0x7f08032f
 int id delivered_box 0x7f0800cc
 int id delivered_order 0x7f0800cd
 int id delivery_box 0x7f0800ce
@@ -3609,6 +3614,7 @@ int id titleDividerNoCustom 0x7f0802d3
 int id title_1 0x7f0802d4
 int id title_categ 0x7f0802d5
 int id title_category 0x7f0802d6
+int id title_confi 0x7f080330
 int id title_empty 0x7f0802d7
 int id title_filter 0x7f0802d8
 int id title_product_config 0x7f0802d9
@@ -3804,6 +3810,7 @@ int layout account_main 0x7f0b001c
 int layout activity_main 0x7f0b001d
 int layout cart 0x7f0b001e
 int layout category_panel 0x7f0b001f
+int layout confirm_box 0x7f0b0081
 int layout custom_dialog 0x7f0b0020
 int layout design_bottom_navigation_item 0x7f0b0021
 int layout design_bottom_sheet_dialog 0x7f0b0022
@@ -5182,6 +5189,7 @@ int style selling_price 0x7f100459
 int style text 0x7f10045a
 int style title_category 0x7f10045b
 int style title_config 0x7f10045c
+int style title_confirm 0x7f100463
 int style title_empty 0x7f10045d
 int style title_filter 0x7f10045e
 int style title_screen 0x7f10045f

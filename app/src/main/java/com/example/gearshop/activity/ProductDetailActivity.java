@@ -9,11 +9,13 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
@@ -34,7 +36,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView ProductSellingPriceTextView;
     private TextView ProductOriginalPriceTextView;
     private TextView ProductDiscountTextView;
-    private TextView ProductSpecsGridView;
+    private GridView ProductSpecsGridView;
     private TextView ProductDetailTextView;
 
     private RelativeLayout CartIconLayout;
@@ -92,10 +94,9 @@ public class ProductDetailActivity extends AppCompatActivity {
             ProductDiscountTextView.setText("Không giảm giá");
         }
         ProductSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
-        ProductSpecsGridView.setText(inputtedProduct.getSpecs());
-//        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
-//        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
-//        ProductSpecsGridView.setAdapter(productSpecAdapter);
+        Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
+        ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
+        ProductSpecsGridView.setAdapter(productSpecAdapter);
 
         ProductDetailTextView.setText(
                 Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()),
