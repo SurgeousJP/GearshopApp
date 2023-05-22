@@ -1,6 +1,7 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,9 +34,14 @@ public class CartActivity extends AppCompatActivity {
         ProductList = ((Cart) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
         CartListAdapter cartListAdapter = new CartListAdapter(this);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
-        CartRecyclerView.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,RecyclerView.VERTICAL,false);
+        CartRecyclerView.setLayoutManager(gridLayoutManager);
         CartRecyclerView.setAdapter(cartListAdapter);
+//        CartRecyclerView.setHasFixedSize(true);
+//        CartRecyclerView.setItemViewCacheSize(5);
+//        CartRecyclerView.setDrawingCacheEnabled(true);
+//        CartRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        cartListAdapter.setData(ProductList);
         ReturnView = findViewById(R.id.wayback_icon_cart);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
