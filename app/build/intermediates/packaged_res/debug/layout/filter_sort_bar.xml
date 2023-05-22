@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="411dp"
+    android:layout_width="match_parent"
     android:layout_height="56dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             android:text="Lọc"
             android:textStyle="bold"
             android:layout_marginHorizontal="8dp"
-            android:textAppearance="@style/label_filte"
+            android:textAppearance="@style/label_filter"
             app:layout_constraintBottom_toBottomOf="@id/filter_box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/filter_icon"

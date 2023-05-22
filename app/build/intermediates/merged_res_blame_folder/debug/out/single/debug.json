@@ -1,302 +1,474 @@
 [
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_sort_setting.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/sort_setting.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_account_main.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\account_main.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_badge.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/badge.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_decrement_valid_button.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\decrement_valid_button.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_gridview_category.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/gridview_category.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_shipping_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\shipping_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_listgear.jpg.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/listgear.jpg"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_framelayout_list_product.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\framelayout_list_product.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_gg.png.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/gg.png"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_category_panel.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\category_panel.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_filter_setting.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/filter_setting.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___account_blue.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___account_blue.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_normal_box_3.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/normal_box_3.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_activity_main.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/activity_main.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_fb.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\fb.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_list_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/list_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_cart_image.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\cart_image.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_fill_blue_box.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/fill_blue_box.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_gridview_category.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\gridview_category.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___search_blue.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___search_blue.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_badge.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\badge.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_filter_sort_bar.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/filter_sort_bar.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_cart_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\cart_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___categoty_blue.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___categoty_blue.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_normal_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\normal_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_border_box.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/border_box.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_transport_unit.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\transport_unit.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___search_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___search_item.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_cancel_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\cancel_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_fb.png.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/fb.png"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___categoty_blue.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___categoty_blue.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_search_bar.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/search_bar.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_search_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\search_icon.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_wayback_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/wayback_icon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_user_info_image.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\user_info_image.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_sort_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/sort_icon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_save_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\save_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_escape.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\escape.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_thin.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\thin.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_x.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/x.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_processing_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\processing_icon.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_additonal_i.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/additonal_i.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_voucher_setting.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\voucher_setting.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-anydpi-v33/ic_launcher.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_lazy_version.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\lazy_version.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_vicon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/vicon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_a1.jpg.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\a1.jpg"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_register.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/register.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_a1.jpg.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/a1.jpg"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_gg.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\gg.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_search_input.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/search_input.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_next_arrow.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\next_arrow.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_decrement_invalid_button.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\decrement_invalid_button.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_filter_setting.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\filter_setting.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_order_management.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\order_management.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_not_found_search.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/not_found_search.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_list_voucher.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\list_voucher.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_star.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/star.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_delivery_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\delivery_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_blue_box.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/blue_box.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_title_wrap.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\title_wrap.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_title_wrapp.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/title_wrapp.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_additonal_i.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\additonal_i.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_dots.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/dots.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_list_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\list_item.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_check_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/check_icon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_navigation_.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\navigation_.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_normal_box.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/normal_box.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_wayback_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\wayback_icon.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable__navigation_box.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/_navigation_box.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_search_input.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\search_input.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/xml_backup_rules.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_listview_category.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\listview_category.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_listview_category.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/listview_category.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_filter_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\filter_icon.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_search_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/search_icon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_x.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\x.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_list_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/list_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_voucher_image.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\voucher_image.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_option_item_color.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/option_item_color.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___account_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___account_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_sort_setting.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\sort_setting.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___search_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___search_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_increment_invalid_button.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\increment_invalid_button.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_not_found.png.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/not_found.png"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\list_item.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_voucher_icon.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\voucher_icon.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_line.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/line.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_tw.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\tw.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_forgot_password.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/forgot_password.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_roundx.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\roundx.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___home_blue.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___home_blue.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_list_order_status.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\list_order_status.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_shopping_bo.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/shopping_bo.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_option_item_color.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\option_item_color.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_normal_box_2.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/normal_box_2.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_tw.png.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/tw.png"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_normal_box_3.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\normal_box_3.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_option_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/option_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_roundx.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/roundx.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_listgear.jpg.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\listgear.jpg"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/icon.xml"
+        "merged": "com.example.gearshop.app-merged_res-29:/layout_product_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-31:/layout/product_detail.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_sheet_header.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/sheet_header.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_shopping_bo.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\shopping_bo.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_line.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\line.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___account_blue.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___account_blue.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_increment_valid_button.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\increment_valid_button.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_thin.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/thin.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___category_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___category_item.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___home_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___home_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_dots.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\dots.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_category_panel.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/category_panel.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_fill_blue_box_2.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\fill_blue_box_2.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_main_activity.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/main_activity.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_search_bar.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\search_bar.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_navigation_.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/navigation_.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/layout_login.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/layout/login.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_delivered_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\delivered_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_bottom_bar___category_item.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/bottom_bar___category_item.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_check_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\check_icon.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/drawable_filter_icon.xml.flat",
-        "source": "com.example.gearshop.app-main-31:/drawable/filter_icon.xml"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_filter_sort_bar.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\filter_sort_bar.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.gearshop.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_register.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\register.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_discount_badge.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\discount_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___search_blue.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___search_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_normal_box_2.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\normal_box_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_forgot_password.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___home_blue.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___home_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_fill_blue_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\fill_blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_not_found_search.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\not_found_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_border_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\border_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_shipped.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\shipped.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_list_item_cart.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\list_item_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_location_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\location_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_acc_image.jpg.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\acc_image.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_delivered_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\delivered_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_cart.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_not_found.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\not_found.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_white_blue_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\white_blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_more_info.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\more_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_product_spec_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\product_spec_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___account_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___account_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_support_image.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\support_image.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_number_of_prod_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\number_of_prod_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_option_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\option_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_blue_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\blue_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_product_detail.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\product_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable__navigation_box.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\_navigation_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_framelayout_filter_sort_bar.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\framelayout_filter_sort_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_vicon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\vicon.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_title_wrapp.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\title_wrapp.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_bottom_bar___home_item.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\bottom_bar___home_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_sheet_header.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\sheet_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_delivery_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\delivery_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_delivery.png.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\delivery.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_star.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\star.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\layout_login.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\layout\\login.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-29:\\drawable_sort_icon.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-31:\\drawable\\sort_icon.xml"
     }
 ]

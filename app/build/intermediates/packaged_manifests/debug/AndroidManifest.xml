@@ -8,6 +8,8 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -15,6 +17,7 @@
     <uses-permission android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="com.example.gearshop.model.Cart"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -24,9 +27,16 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
-            android:name="com.example.gearshop.activity.MainActivity"
+            android:name="com.example.gearshop.activity.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +45,10 @@
             </intent-filter>
         </activity>
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.gearshop.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.gearshop.androidx-startup"

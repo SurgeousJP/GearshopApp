@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/item_cart_image_layout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/item_image_list_cart"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/a1" />
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/label_product_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:text="@string/label_product"
+        android:textAppearance="@style/label_product"
+        android:lineSpacingExtra="4sp"
+        android:translationY="-2.03sp"
+        android:gravity="top"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_cart_image_layout"
+        />
+    <TextView
+        android:id="@+id/label_price_cart"
+        android:layout_width="65dp"
+        android:layout_height="21dp"
+        android:text="X0.000 đ"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/label_product_cart"
+        app:layout_constraintStart_toEndOf="@id/item_cart_image_layout"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/selling_price"
+        android:lineSpacingExtra="4sp"
+        android:translationY="-2.03sp"
+        android:gravity="top"
+        />
+    <View
+        android:id="@+id/decrease_box"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/label_price_cart"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_image_layout"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/decrement_invalid_button"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/product_number_box"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/label_price_cart"
+        app:layout_constraintStart_toEndOf="@+id/decrease_box"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/number_of_prod_box">
+
+        <TextView
+            android:id="@+id/input_value"
+            android:layout_width="10dp"
+            android:layout_height="24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="0"
+            android:textAppearance="@style/input_value"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/increase_box"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/label_price_cart"
+        app:layout_constraintStart_toEndOf="@+id/product_number_box"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/increment_valid_button"/>
+
+    <View
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/line_view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#EBEBF0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_number_box" />
+</androidx.constraintlayout.widget.ConstraintLayout>

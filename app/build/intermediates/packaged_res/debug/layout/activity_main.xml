@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/first_bar"
@@ -16,35 +17,35 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:id="@+id/title_wrapp"
+            android:id="@+id/title_wrap"
             app:layout_constraintTop_toTopOf="@id/first_bar"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="224dp"
             android:layout_height="27dp"
             android:layout_marginLeft="16dp"
-            android:background="@drawable/title_wrapp">
+            android:background="@drawable/title_wrap">
             <TextView
-                android:id="@+id/title_scree"
+                android:id="@+id/title_screen"
                 android:layout_width="224dp"
                 android:layout_height="27dp"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="5sp"
                 android:text="@string/title_screen"
-                android:textAppearance="@style/title_scree"
+                android:textAppearance="@style/title_screen"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/additonal_i"
+            android:id="@+id/cart_layout"
             android:layout_width="27dp"
             android:layout_height="27dp"
             app:layout_constraintTop_toTopOf="@id/first_bar"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintEnd_toStartOf="@id/navigation_box"
-            android:layout_toRightOf="@id/title_wrapp"
+            android:layout_toRightOf="@id/title_wrap"
             android:layout_marginRight="10dp"
-            android:background="@drawable/additonal_i"
+            android:background="@drawable/cart_image"
             tools:layout_editor_absoluteX="296dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -52,7 +53,7 @@
             android:id="@+id/navigation_box"
             android:layout_width="72dp"
             android:layout_height="27dp"
-            android:layout_toRightOf="@id/additonal_i"
+            android:layout_toRightOf="@id/cart_layout"
             android:background="@drawable/_navigation_box"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,13 +61,13 @@
             app:layout_constraintTop_toTopOf="@id/first_bar">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/dots"
+                android:id="@+id/more_info"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="8dp"
-                android:background="@drawable/dots"
+                android:background="@drawable/more_info"
                 android:clipToOutline="true" />
 
             <View
@@ -75,17 +76,17 @@
                 android:layout_height="17dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/dots"
+                android:layout_toRightOf="@id/more_info"
                 android:background="@drawable/thin" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/roundx"
+                android:id="@+id/escape"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/thin"
-                android:background="@drawable/roundx"
+                android:background="@drawable/escape"
                 android:clipToOutline="true" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -100,23 +101,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_bar" />
 
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/main_screen"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_below="@id/none"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/none2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/none"/>-->
+
     <RelativeLayout
         android:id="@+id/main_screen"
-        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/none2"
         app:layout_constraintTop_toBottomOf="@+id/none">
-        </RelativeLayout>
+        <fragment
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_filter_box"
+            android:name="com.example.gearshop.fragment.FilterSortBar">
+        </fragment>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_grid_view"
+            android:name="com.example.gearshop.fragment.ListProduct"
+            android:layout_below="@id/fragment_filter_box"
+            >
+        </fragment>
+    </RelativeLayout>
+
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/none2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/shopping_bo"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
         android:layout_width="0dp"
         android:layout_height="8dp"
         android:background="#F5F5FA"
@@ -125,7 +153,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/shopping_bo"
+        android:id="@+id/bottom_bar"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
@@ -137,9 +165,9 @@
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/home_item"
-            app:layout_constraintStart_toStartOf="@id/shopping_bo"
-            app:layout_constraintTop_toTopOf="@id/shopping_bo"
-            app:layout_constraintBottom_toBottomOf="@id/shopping_bo"
+            app:layout_constraintStart_toStartOf="@id/bottom_bar"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintEnd_toStartOf="@id/category_item"
             android:layout_width="0dp"
             android:layout_height="56dp"
@@ -148,8 +176,8 @@
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/category_item"
-            app:layout_constraintTop_toTopOf="@id/shopping_bo"
-            app:layout_constraintBottom_toBottomOf="@id/shopping_bo"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintStart_toEndOf="@id/home_item"
             app:layout_constraintEnd_toStartOf="@id/search_item"
             android:layout_width="0dp"
@@ -160,8 +188,8 @@
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/search_item"
-            app:layout_constraintTop_toTopOf="@id/shopping_bo"
-            app:layout_constraintBottom_toBottomOf="@id/shopping_bo"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintStart_toEndOf="@id/category_item"
             app:layout_constraintEnd_toStartOf="@id/account_item"
             android:layout_width="0dp"
@@ -172,9 +200,9 @@
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/account_item"
-            app:layout_constraintTop_toTopOf="@id/shopping_bo"
-            app:layout_constraintBottom_toBottomOf="@id/shopping_bo"
-            app:layout_constraintEnd_toEndOf="@id/shopping_bo"
+            app:layout_constraintTop_toTopOf="@id/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+            app:layout_constraintEnd_toEndOf="@id/bottom_bar"
             app:layout_constraintStart_toEndOf="@id/search_item"
             android:layout_width="0dp"
             android:layout_height="56dp"

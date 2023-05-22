@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/product_item"
-    android:layout_width="181.5dp"
+    android:layout_width="150dp"
     android:layout_height="263.5dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_image"
-        android:layout_width="181.5dp"
-        android:layout_height="181.5dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/white">
         <androidx.cardview.widget.CardView
-            android:layout_width="181.5dp"
-            android:layout_height="181.5dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             app:cardCornerRadius="10dp"
             android:layout_gravity="center">
             <ImageView
-                android:layout_width="181.5dp"
-                android:layout_height="181.5dp"
+                android:id="@+id/item_image_list_item"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/a1" />
         </androidx.cardview.widget.CardView>
@@ -27,18 +28,18 @@
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/module_prod"
-        android:layout_width="181.5dp"
+        android:id="@+id/module_product"
+        android:layout_width="150dp"
         android:layout_height="66dp"
         android:layout_below="@id/item_image"
         android:layout_marginTop="8dp">
         <TextView
-            android:id="@+id/label_produ"
-            android:layout_width="181.5dp"
+            android:id="@+id/label_product"
+            android:layout_width="150dp"
             android:layout_height="21dp"
             android:text="Tên sản phẩm"
             android:layout_marginLeft="1dp"
-            android:textAppearance="@style/label_produ"
+            android:textAppearance="@style/label_product"
             android:lineSpacingExtra="4sp"
             android:translationY="-2.03sp"
             android:gravity="top"
@@ -47,8 +48,8 @@
     </RelativeLayout>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/module_rati"
-        android:layout_width="181.5dp"
+        android:id="@+id/module_rate"
+        android:layout_width="150dp"
         android:layout_height="18dp"
         android:layout_below="@id/item_image"
         android:layout_marginTop="33dp">
@@ -102,29 +103,29 @@
             android:layout_toRightOf="@id/star4"
             />
         <TextView
-            android:id="@+id/rating_numb"
+            android:id="@+id/rating_number"
             android:layout_width="30dp"
             android:layout_height="18dp"
-            android:text="(44)"
+            android:text="(4.4)"
             android:lineHeight="15dp"
             android:layout_toRightOf="@id/star5"
             android:layout_marginLeft="4dp"
             />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/module_pric"
-        android:layout_width="181.5dp"
+        android:id="@+id/module_price"
+        android:layout_width="150dp"
         android:layout_height="21dp"
-        android:layout_below="@id/module_rati"
+        android:layout_below="@id/module_rate"
         android:layout_marginTop="4dp">
         <TextView
-            android:id="@+id/selling_pri"
+            android:id="@+id/selling_price"
             android:layout_width="64dp"
             android:layout_height="21dp"
             android:text="00.000đ"
             android:textStyle="bold"
             android:layout_marginLeft="1dp"
-            android:textAppearance="@style/selling_pri"
+            android:textAppearance="@style/selling_price"
             android:lineSpacingExtra="4sp"
             />
 
@@ -134,7 +135,7 @@
             android:layout_height="21dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="2dp"
-            android:layout_toRightOf="@id/selling_pri"
+            android:layout_toRightOf="@id/selling_price"
             android:background="@drawable/badge">
             <TextView
                 android:id="@+id/text"

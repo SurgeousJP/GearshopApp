@@ -5,7 +5,7 @@
     android:layout_height="52dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/search_inpu"
+        android:id="@+id/search_input"
         android:layout_marginHorizontal="24dp"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -39,7 +39,6 @@
             android:inputType="text"
             android:textAppearance="@style/placeholder"
             android:text="Nhập từ khóa cần tìm"
-            android:textColor="#808089"
-            android:backgroundTint="#808089"/>
+            android:textColor="#808089"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

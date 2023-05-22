@@ -9,7 +9,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:background="@drawable/search_input"
-        app:layout_constraintBottom_toTopOf="@+id/sheet_conte"
+        app:layout_constraintBottom_toTopOf="@+id/sheet_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -24,15 +24,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_filte"
+            android:id="@+id/title_filter"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal|center_vertical"
             android:lineSpacingExtra="5sp"
-            android:text="Xắp sếp"
-            android:textAppearance="@style/title_filte"
+            android:text="Sắp xếp"
+            android:textAppearance="@style/title_filter"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sheet_conte"
+        android:id="@+id/sheet_content"
         android:layout_width="0dp"
         android:layout_height="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,7 +157,7 @@
                 android:layout_width="0dp"
                 android:layout_height="22dp"
                 android:lineSpacingExtra="4sp"
-                android:text="Giá: cao đến thấp"
+                android:text="Giá: Cao đến thấp"
                 android:layout_marginLeft="16dp"
                 android:textSize="18dp"
                 android:textAppearance="@style/content_pro"

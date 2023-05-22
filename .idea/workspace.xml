@@ -9,13 +9,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Tạo Activity Class và Database Class" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Xử lý tính toán total price trong màn hình cart">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/androidResources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/app-debug.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/layout_activity_main.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/layout_forgot_password.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/layout_login.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/layout_register.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/resources-debug.ap_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_15_2023_6_10_AM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\tuanb\.android\avd\Pixel_6_Pro_API_UpsideDownCake.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CN90LZ0FL]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -63,15 +86,27 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="UI_update_branch" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Pe4StZMBmXfANLKyz6RJEhewSP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -83,18 +118,29 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/libs&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/libs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.gearshop.activity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\libs" />
     </key>
+    <key name="android.template.193244703">
+      <recent name="com.example.gearshop.activity" />
+    </key>
     <key name="android.template.638899212">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.1405498936">
       <recent name="com.example.gearshop.activity" />
     </key>
   </component>
@@ -202,7 +248,210 @@
       <option name="project" value="LOCAL" />
       <updated>1683892096744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tạo lại AzureSQLDatabase kết nối với database trên cloud.">
+      <created>1683892544066</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683892544066</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Taọ mới ModelBranch">
+      <created>1683892642022</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683892642022</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Tạo các class model">
+      <created>1683895515797</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683895515797</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update changes">
+      <created>1684105909969</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684105909969</updated>
+    </task>
+    <task id="LOCAL-00010" summary="merge main into ModelBranch">
+      <created>1684106060244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684106060244</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tạo fragment cho filterbox và listproduct">
+      <created>1684138712922</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684138712922</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tạo gridview adapter cho fragment ListProduct">
+      <created>1684140607810</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684140607810</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Sửa lỗi UI của navigation &amp; sort bar và product grid view chồng đè lên nhau">
+      <created>1684147259061</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684147259061</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Taọ class SelectSQL và tạo package adapter để tổ chức rõ hơn">
+      <created>1684152067741</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152067741</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Xử lý async task lấy data của product về">
+      <created>1684225711931</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684225711931</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix bug async task không lấy được data từ Azure về">
+      <created>1684307370391</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684307370392</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Sắp xếp lại code và refractor code">
+      <created>1684307569438</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684307569438</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update database sql">
+      <created>1684307633791</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684307633791</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Import picasso và implement để lấy ảnh product về">
+      <created>1684314786766</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684314786766</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString">
+      <created>1684318973289</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684318973289</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix bug khi merge nhánh UI">
+      <created>1684373095009</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684373095009</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix một số bug xảy ra do merge nhánh (cụ thể là mất package và sai tên id)">
+      <created>1684375687860</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684375687860</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Thêm ProductDetailActivity và set event mở, quay trở lại">
+      <created>1684377077306</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684377077306</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Load data của product lên ProductDetailActivity">
+      <created>1684378984199</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1684378984199</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Fix typo các file UI xml">
+      <created>1684392546380</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1684392546380</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Thêm một số file UI mới">
+      <created>1684393290243</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684393290243</updated>
+    </task>
+    <task id="LOCAL-00027" summary="load thông số kỹ thuật lên gridview và chỉnh sửa UI">
+      <created>1684397838725</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684397838725</updated>
+    </task>
+    <task id="LOCAL-00028" summary="load thông số kỹ thuật lên gridview và chỉnh sửa UI">
+      <created>1684397906163</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684397906163</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Tạo CartActivity và thêm các event đến activity này cùng việc return về activity cũ">
+      <created>1684547383574</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684547383574</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Tạo event click cho các icon ở dưới trang ProductsInCategoryActivity">
+      <created>1684548291126</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684548291126</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Change asynctask to future (test)">
+      <created>1684555365264</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684555365264</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Xử lý thêm sản phẩm vào giỏ hàng">
+      <created>1684643618727</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684643618727</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Xử lý discount trong quá trình mua hàng">
+      <created>1684653600641</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1684653600641</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Xử lý tính toán total price trong màn hình cart">
+      <created>1684657109027</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684657109027</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,12 +478,41 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sửa worktree, thêm class kết nối với Azure Database trên cloud." />
-    <MESSAGE value="Sửa lỗi chính tả trong file strings.xml" />
-    <MESSAGE value="Thêm jtds-1.3.1.jar là driver để kết nối sqlServer" />
-    <MESSAGE value="Tạo package activity và database" />
-    <MESSAGE value="Tạo Activity Class và Database Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tạo Activity Class và Database Class" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="update changes" />
+    <MESSAGE value="merge main into ModelBranch" />
+    <MESSAGE value="Tạo fragment cho filterbox và listproduct" />
+    <MESSAGE value="Tạo gridview adapter cho fragment ListProduct" />
+    <MESSAGE value="Sửa lỗi UI của navigation &amp; sort bar và product grid view chồng đè lên nhau" />
+    <MESSAGE value="Taọ class SelectSQL và tạo package adapter để tổ chức rõ hơn" />
+    <MESSAGE value="Xử lý async task lấy data của product về" />
+    <MESSAGE value="Fix bug async task không lấy được data từ Azure về" />
+    <MESSAGE value="Sắp xếp lại code và refractor code" />
+    <MESSAGE value="Update database sql" />
+    <MESSAGE value="Import picasso và implement để lấy ảnh product về" />
+    <MESSAGE value="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString" />
+    <MESSAGE value="fix bug khi merge nhánh UI" />
+    <MESSAGE value="fix một số bug xảy ra do merge nhánh (cụ thể là mất package và sai tên id)" />
+    <MESSAGE value="Thêm ProductDetailActivity và set event mở, quay trở lại" />
+    <MESSAGE value="Load data của product lên ProductDetailActivity" />
+    <MESSAGE value="Fix typo các file UI xml" />
+    <MESSAGE value="Thêm một số file UI mới" />
+    <MESSAGE value="load thông số kỹ thuật lên gridview và chỉnh sửa UI" />
+    <MESSAGE value="Tạo CartActivity và thêm các event đến activity này cùng việc return về activity cũ" />
+    <MESSAGE value="Tạo event click cho các icon ở dưới trang ProductsInCategoryActivity" />
+    <MESSAGE value="Change asynctask to future (test)" />
+    <MESSAGE value="Xử lý thêm sản phẩm vào giỏ hàng" />
+    <MESSAGE value="Xử lý discount trong quá trình mua hàng" />
+    <MESSAGE value="Xử lý tính toán total price trong màn hình cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Xử lý tính toán total price trong màn hình cart" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.gearshop.database.SelectSQL" memberName="mFuture" />
+        <PinnedItemInfo parentTag="android.os.Bundle" memberName="mClassLoader" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
