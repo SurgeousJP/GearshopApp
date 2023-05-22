@@ -2751,6 +2751,7 @@ drawable fb
 drawable fill_blue_box
 drawable fill_blue_box_2
 drawable filter_icon
+drawable gear_shop_icon
 drawable gg
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -3217,6 +3218,7 @@ id inward
 id italic
 id item_cart_image_layout
 id item_category
+id item_constraint
 id item_image
 id item_image_cart
 id item_image_list_cart
@@ -3449,6 +3451,7 @@ id rate_star4
 id rate_star5
 id rating_display
 id rating_number
+id rating_number_product_detail
 id ratio
 id rectangles
 id register_button

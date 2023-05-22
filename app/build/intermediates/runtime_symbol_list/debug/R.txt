@@ -2750,6 +2750,7 @@ int drawable fb 0x7f0700a4
 int drawable fill_blue_box 0x7f0700a5
 int drawable fill_blue_box_2 0x7f0700a6
 int drawable filter_icon 0x7f0700a7
+int drawable gear_shop_icon 0x7f07012d
 int drawable gg 0x7f0700a8
 int drawable ic_arrow_back_black_24 0x7f0700a9
 int drawable ic_clear_black_24 0x7f0700aa
@@ -3216,6 +3217,7 @@ int id inward 0x7f080145
 int id italic 0x7f080146
 int id item_cart_image_layout 0x7f080147
 int id item_category 0x7f080148
+int id item_constraint 0x7f080331
 int id item_image 0x7f080149
 int id item_image_cart 0x7f08014a
 int id item_image_list_cart 0x7f08014b
@@ -3448,6 +3450,7 @@ int id rate_star4 0x7f08022d
 int id rate_star5 0x7f08022e
 int id rating_display 0x7f08022f
 int id rating_number 0x7f080230
+int id rating_number_product_detail 0x7f080332
 int id ratio 0x7f080231
 int id rectangles 0x7f080232
 int id register_button 0x7f080233

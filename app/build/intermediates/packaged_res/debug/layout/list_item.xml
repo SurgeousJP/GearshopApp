@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/product_item"
     android:layout_width="150dp"
-    android:layout_height="263.5dp">
+    android:layout_height="265dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_image"
@@ -41,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/item_image">
 
         <TextView
+            android:maxLines="3"
             android:id="@+id/label_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -162,19 +163,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/selling_price"
-            android:background="@drawable/badge">
+            android:background="@drawable/discount_badge">
 
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginHorizontal="4dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:lineSpacingExtra="3sp"
                 android:text="10%"
-                android:layout_marginHorizontal="8dp"
                 android:textAppearance="@style/text"
                 android:textStyle="bold"
 
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -99,7 +99,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\duyvi\.gradle\cach
 	tools:targetApi
 		ADDED from C:\Users\duyvi\Desktop\Git Clone main\GearshopApp\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from C:\Users\duyvi\Desktop\Git Clone main\GearshopApp\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\duyvi\Desktop\Git Clone main\GearshopApp\app\src\main\AndroidManifest.xml:11:9-48
 	android:allowBackup
 		ADDED from C:\Users\duyvi\Desktop\Git Clone main\GearshopApp\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme

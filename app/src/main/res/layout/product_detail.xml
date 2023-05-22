@@ -13,15 +13,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <View
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/wayback_icon_product"
-            android:layout_width="11dp"
-            android:layout_height="16dp"
-            android:layout_marginLeft="24dp"
-            android:background="@drawable/wayback_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="11dp"
+                android:layout_height="16dp"
+                android:background="@drawable/wayback_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <RelativeLayout
             android:id="@+id/cart_icon_product"
@@ -104,15 +114,16 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_price_info"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/product_image" >
 
                 <TextView
+
                     android:id="@+id/label_product_text"
                     android:layout_width="0dp"
-                    android:layout_height="27dp"
+                    android:layout_height="wrap_content"
                     android:gravity="top"
                     android:textStyle="bold"
                     android:layout_marginHorizontal="16dp"
@@ -120,6 +131,7 @@
                     android:lineSpacingExtra="5sp"
                     android:text="Tên Sản phẩm"
                     android:textSize="20dp"
+                    android:singleLine="false"
                     android:textAppearance="@style/label_product2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +190,16 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@id/rate_star4"
                         android:background="@drawable/star"/>
-
+                    <TextView
+                        android:id="@+id/rating_number_product_detail"
+                        android:layout_width="30dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="4dp"
+                        android:lineHeight="15dp"
+                        android:text="(4.4)"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rate_star5"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <TextView
                     android:id="@+id/selling_price_text"
@@ -198,17 +219,20 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/discount_percent"
-                    android:layout_width="34dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/discount_badge"
                     app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/selling_price_text">
 
                     <TextView
+                        android:layout_marginHorizontal="4dp"
                         android:id="@+id/discount_text"
-                        android:layout_width="26dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="15dp"
                         android:gravity="center_horizontal|center_vertical"
                         android:lineSpacingExtra="3sp"
@@ -225,7 +249,7 @@
 
                 <TextView
                     android:id="@+id/original_price"
-                    android:layout_width="69dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:text="X00.000 đ"
                     android:layout_marginTop="5dp"
@@ -233,8 +257,6 @@
                     app:layout_constraintStart_toEndOf="@id/discount_percent"
                     android:textAppearance="@style/original_price"
                     android:lineSpacingExtra="4sp"
-                    android:translationY="-2.03sp"
-                    android:gravity="top"
                     android:layout_marginLeft="4dp"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
