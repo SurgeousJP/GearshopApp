@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gearshop.app-mergeDebugResources-27:/values-lt/values-lt.xml",
+            "outputFile": "com.example.gearshop.app-mergeDebugResources-28:/values-lt/values-lt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\tuanb\\.gradle\\caches\\transforms-3\\1d6008e40b174b18ef5fa9ea4cd35014\\transformed\\material-1.8.0\\res\\values-lt\\values-lt.xml",
