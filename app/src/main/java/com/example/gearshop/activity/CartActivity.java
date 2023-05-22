@@ -10,12 +10,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.MoneyFormat;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -26,6 +30,8 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView CartRecyclerView;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
+    private TextView TotalProductPrice;
+    private TextView FinalPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,15 +39,20 @@ public class CartActivity extends AppCompatActivity {
         CartItemList = ((Cart) getApplication()).getCartItemList();
         ProductList = ((Cart) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
-        CartListAdapter cartListAdapter = new CartListAdapter(this);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,RecyclerView.VERTICAL,false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
+        CartListAdapter cartListAdapter = new CartListAdapter(CartItemList, ProductList);
         CartRecyclerView.setLayoutManager(gridLayoutManager);
         CartRecyclerView.setAdapter(cartListAdapter);
-//        CartRecyclerView.setHasFixedSize(true);
-//        CartRecyclerView.setItemViewCacheSize(5);
-//        CartRecyclerView.setDrawingCacheEnabled(true);
-//        CartRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         cartListAdapter.setData(ProductList);
+        CartRecyclerView.setAdapter(cartListAdapter);
+        TotalProductPrice = findViewById(R.id.total_price);
+        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        FinalPrice = findViewById(R.id.final_price);
+        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+
+        cartListAdapter.setTotalProductPrice(TotalProductPrice);
+        cartListAdapter.setFinalPrice(FinalPrice);
+
         ReturnView = findViewById(R.id.wayback_icon_cart);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
@@ -55,6 +66,17 @@ public class CartActivity extends AppCompatActivity {
         EscapeLayout.setOnClickListener(view -> {
 
         });
-
+    }
+    protected double getTotalProductPrice(List<Product> products){
+        double resultPrice = 0;
+        for (int i = 0; i < products.size(); i++){
+            Product product = products.get(i);
+            double price = product.getPrice();
+            if (product.getDiscountInformation().isActive()){
+                price = price * (100 - product.getDiscountInformation().getDiscountPercentage()) / 100;
+            }
+            resultPrice += price;
+        }
+        return resultPrice;
     }
 }
