@@ -451,6 +451,7 @@
                     android:gravity="top"
                     android:lineSpacingExtra="5sp"
                     android:text="Chi tiết sản phẩm"
+                    android:textColor="@color/grey"
                     android:textAppearance="@style/title_ship"
                     android:translationY="-2.32sp"
                     app:layout_constraintBottom_toBottomOf="parent"
