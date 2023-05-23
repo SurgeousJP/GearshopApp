@@ -112,8 +112,7 @@ id cardView
 id cart_icon_account_main
 id cart_icon_product
 id cart_layout
-id cart_layout_category_detail
-id cart_text
+id cart_order_detail
 id cart_text_2
 id category_discount
 id category_item_category_detail
@@ -186,7 +185,7 @@ id email_edit
 id endtext
 id escape
 id escape_cart
-id escape_category_detail
+id escape_order_detail
 id expired_day
 id facebook_icon
 id fields
@@ -298,9 +297,11 @@ id module_price
 id module_product
 id module_rate
 id more_category
-id more_info_category_detail
+id more_info_order_detail
 id navigation_box
+id next_arrow_support
 id next_arrow_transport
+id next_arrow_user_info
 id next_arrow_voucher
 id next_shipping_info
 id none
@@ -310,6 +311,7 @@ id normaltext
 id number_voucher
 id or_form
 id or_text
+id order_detail_label
 id order_detail_text
 id order_management_text
 id order_status_border
@@ -458,7 +460,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
-id wayback_icon_category_layout_detail
+id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product
 layout account_main
@@ -481,6 +483,7 @@ layout list_voucher
 layout listview_category
 layout login
 layout not_found_search
+layout order_detail
 layout order_management
 layout product_detail
 layout product_spec_item

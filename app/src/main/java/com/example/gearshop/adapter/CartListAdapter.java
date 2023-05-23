@@ -97,7 +97,10 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
                     currentTotalPrice -= getDiscountedPrice(product);
-                    setPriceToView(TotalProductPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice), FinalPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                    setPriceToView(TotalProductPrice,
+                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                            FinalPrice,
+                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
                 }
             });
         }
@@ -111,7 +114,10 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
                     currentTotalPrice += getDiscountedPrice(product);
-                    setPriceToView(TotalProductPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice), FinalPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                    setPriceToView(TotalProductPrice,
+                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                            FinalPrice,
+                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
                 }
             });
         }
@@ -124,6 +130,16 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
             });
         }
 
+    }
+    public void updateTotalPriceAfterDelete(Product product, ShoppingCartItem item) {
+        double currentItemPrice = getDiscountedPrice(product) * item.getQuantity();
+        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                TotalProductPrice.getText().toString());
+        currentTotalPrice -= currentItemPrice;
+        setPriceToView(TotalProductPrice,
+                MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                FinalPrice,
+                MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
     }
 
     private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, String currentTotalPrice1) {

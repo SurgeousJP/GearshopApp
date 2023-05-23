@@ -3010,8 +3010,7 @@ id carryVelocity
 id cart_icon_account_main
 id cart_icon_product
 id cart_layout
-id cart_layout_category_detail
-id cart_text
+id cart_order_detail
 id cart_text_2
 id category_discount
 id category_item_category_detail
@@ -3157,7 +3156,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id escape_cart
-id escape_category_detail
+id escape_order_detail
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3362,7 +3361,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id more_category
-id more_info_category_detail
+id more_info_order_detail
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3399,7 +3398,9 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id next_arrow_support
 id next_arrow_transport
+id next_arrow_user_info
 id next_arrow_voucher
 id next_shipping_info
 id noScroll
@@ -3419,6 +3420,7 @@ id on
 id onInterceptTouchReturnSwipe
 id or_form
 id or_text
+id order_detail_label
 id order_detail_text
 id order_management_text
 id order_status_border
@@ -3731,7 +3733,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
-id wayback_icon_category_layout_detail
+id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product
 id west
@@ -3942,6 +3944,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout order_detail
 layout order_management
 layout product_detail
 layout product_spec_item

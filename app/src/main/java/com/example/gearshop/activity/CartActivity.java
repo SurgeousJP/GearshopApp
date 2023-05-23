@@ -87,11 +87,14 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
     private void deleteCartItem(int position, CartListAdapter cartListAdapter) {
         if (position >= 0 && position < CartItemList.size()) {
+            Product product = ProductList.get(position);
+            ShoppingCartItem item = CartItemList.get(position);
             CartItemList.remove(position);
             ProductList.remove(position);
             ((Cart) getApplication()).setCartItemList(CartItemList);
             ((Cart) getApplication()).setProductList(ProductList);
             cartListAdapter.notifyItemRemoved(position);
+            cartListAdapter.updateTotalPriceAfterDelete(product, item);
         }
     }
 
@@ -116,6 +119,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     @Override
     public void onDialogResult(boolean result) {
         int itemPosition = getCartItemPosition();
-        if (result) deleteCartItem(itemPosition, CartAdapter);
+        if (result){
+            deleteCartItem(itemPosition, CartAdapter);
+        }
     }
 }
