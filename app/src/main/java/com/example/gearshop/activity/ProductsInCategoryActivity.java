@@ -51,7 +51,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
-        MoreInformationLayout = findViewById(R.id.more_info_category_detail);
+        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
         MoreInformationLayout.setOnClickListener(view -> {
 
         });

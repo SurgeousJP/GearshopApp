@@ -41,15 +41,15 @@ public class CartActivity extends AppCompatActivity {
         CartRecyclerView.setAdapter(cartListAdapter);
         cartListAdapter.setData(ProductList);
         CartRecyclerView.setAdapter(cartListAdapter);
-        TotalProductPrice = findViewById(R.id.total_price);
+        TotalProductPrice = findViewById(R.id.total_price_order_detail);
         TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
-        FinalPrice = findViewById(R.id.final_price);
+        FinalPrice = findViewById(R.id.final_price_order_detail);
         FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
 
         cartListAdapter.setTotalProductPrice(TotalProductPrice);
         cartListAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_category_layout_detail);
+        ReturnView = findViewById(R.id.wayback_icon_order_detail);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();
