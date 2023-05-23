@@ -13,16 +13,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <View
-            android:id="@+id/wayback_icon_cart"
-            android:layout_width="11dp"
-            android:layout_height="16dp"
-            android:layout_marginLeft="24dp"
-            android:background="@drawable/wayback_icon"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/wayback_icon_category_layout_detail"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="10dp"
+                android:layout_height="12dp"
+                android:background="@drawable/wayback_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/cart_text"
@@ -34,7 +42,7 @@
             android:textAppearance="@style/title_screen"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/wayback_icon_cart"
+            app:layout_constraintStart_toEndOf="@id/wayback_icon_category_layout_detail"
             android:layout_marginStart="16dp"
             android:textStyle="bold" />
 

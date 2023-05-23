@@ -2,13 +2,11 @@ package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -18,8 +16,6 @@ import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyFormat;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -53,7 +49,7 @@ public class CartActivity extends AppCompatActivity {
         cartListAdapter.setTotalProductPrice(TotalProductPrice);
         cartListAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_cart);
+        ReturnView = findViewById(R.id.wayback_icon_category_layout_detail);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();

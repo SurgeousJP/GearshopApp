@@ -9,13 +9,13 @@
         android:id="@+id/grid_view_list_product"
         android:layout_width="match_parent"
         android:layout_height="641sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
         android:columnWidth="20sp"
         android:horizontalSpacing="10sp"
         android:numColumns="2"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10sp"
-        android:layout_marginLeft="10sp"
-        android:layout_marginRight="10sp">
+        android:verticalSpacing="10sp">
 
     </GridView>
 

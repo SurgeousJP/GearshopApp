@@ -61,7 +61,7 @@
             app:layout_constraintTop_toTopOf="@id/first_bar">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/more_info"
+                android:id="@+id/more_info_category_detail"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
@@ -76,7 +76,7 @@
                 android:layout_height="17dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/more_info"
+                android:layout_toRightOf="@id/more_info_category_detail"
                 android:background="@drawable/thin" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -164,49 +164,49 @@
         app:layout_constraintBottom_toBottomOf="parent">
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/home_item"
+            android:id="@+id/home_item_category_detail"
             app:layout_constraintStart_toStartOf="@id/bottom_bar"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
-            app:layout_constraintEnd_toStartOf="@id/category_item"
+            app:layout_constraintEnd_toStartOf="@id/category_item_category_detail"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:background="@drawable/bottom_bar___home_blue"
             />
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/category_item"
+            android:id="@+id/category_item_category_detail"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
-            app:layout_constraintStart_toEndOf="@id/home_item"
-            app:layout_constraintEnd_toStartOf="@id/search_item"
+            app:layout_constraintStart_toEndOf="@id/home_item_category_detail"
+            app:layout_constraintEnd_toStartOf="@id/search_item_category_detail"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_toRightOf="@id/home_item"
+            android:layout_toRightOf="@id/home_item_category_detail"
             android:background="@drawable/bottom_bar___category_item"
             />
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/search_item"
+            android:id="@+id/search_item_category_detail"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
-            app:layout_constraintStart_toEndOf="@id/category_item"
-            app:layout_constraintEnd_toStartOf="@id/account_item"
+            app:layout_constraintStart_toEndOf="@id/category_item_category_detail"
+            app:layout_constraintEnd_toStartOf="@id/account_item_category_detail"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_toRightOf="@id/category_item"
+            android:layout_toRightOf="@id/category_item_category_detail"
             android:background="@drawable/bottom_bar___search_item"
             />
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/account_item"
+            android:id="@+id/account_item_category_detail"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintEnd_toEndOf="@id/bottom_bar"
-            app:layout_constraintStart_toEndOf="@id/search_item"
+            app:layout_constraintStart_toEndOf="@id/search_item_category_detail"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_toRightOf="@id/search_item"
+            android:layout_toRightOf="@id/search_item_category_detail"
             android:background="@drawable/bottom_bar___account_item"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

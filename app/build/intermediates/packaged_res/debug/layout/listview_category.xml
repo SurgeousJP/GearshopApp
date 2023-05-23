@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/listview_category"
     android:layout_width="fill_parent"
-    android:layout_height="150dp"
-    android:background="@drawable/list_item">
+    android:layout_height="wrap_content"
+    android:background="@drawable/cart_box">
     <androidx.cardview.widget.CardView
         app:layout_constraintTop_toTopOf="@id/listview_category"
         app:layout_constraintBottom_toBottomOf="@id/listview_category"
@@ -13,8 +13,8 @@
         android:id="@+id/list_category"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginVertical="16dp"
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/white">
         <androidx.cardview.widget.CardView
@@ -30,20 +30,22 @@
                 android:src="@drawable/a1" />
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/label_category"
-        app:layout_constraintTop_toTopOf="@id/listview_category"
-        app:layout_constraintBottom_toBottomOf="@id/listview_category"
-        app:layout_constraintStart_toEndOf="@id/list_category"
-        android:layout_marginLeft="24dp"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:text="Danh mục 1"
-        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="14dp"
-        android:textColor="#27272A"
-        android:textSize="28sp"
         android:lineSpacingExtra="4sp"
+        android:text="Danh mục 1"
+        android:singleLine="false"
+        android:textColor="#27272A"
+        android:textSize="24sp"
+        android:textStyle="bold"
         android:translationY="-2.03sp"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/listview_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/list_category"
+        app:layout_constraintTop_toTopOf="@id/listview_category" />
 </androidx.constraintlayout.widget.ConstraintLayout>
