@@ -84,7 +84,7 @@
                 android:layout_height="48dp"
                 android:layout_marginHorizontal="20dp"
                 android:background="@null"
-                android:text="Tên đăng nhập"
+                android:hint="Tên đăng nhập"
                 android:textColor="#808089"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -110,7 +110,7 @@
             android:layout_height="48dp"
             android:layout_marginHorizontal="20dp"
             android:background="@null"
-            android:text="Mật khẩu"
+            android:hint="Mật khẩu"
             android:textColor="#808089"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -147,14 +147,13 @@
             <TextView
                 android:id="@+id/login_text"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="Đăng nhập"
                 android:textAppearance="@style/cta_reset_0"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

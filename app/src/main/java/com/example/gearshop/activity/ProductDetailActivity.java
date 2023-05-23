@@ -5,24 +5,22 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.model.Cart;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.MoneyFormat;
 import com.squareup.picasso.Picasso;
 
@@ -127,7 +125,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         CartIconLayout = findViewById(R.id.cart_icon_product);
         CartIconLayout.setOnClickListener(view -> {
-            startTargetActivity(getBaseContext(), CartActivity.class);
+            ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
         MoreInformationLayout = findViewById(R.id.dots_icon_product);
@@ -148,7 +146,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         BuyProductNow = findViewById(R.id.buy_now_text);
         BuyProductNow.setOnClickListener(view -> {
             addNewProductToCart(clickedProduct);
-            startTargetActivity(getBaseContext(), CartActivity.class);
+            ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
 
@@ -161,11 +159,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
     }
 
-    public void startTargetActivity(Context context, Class<?> targetActivityClass) {
-        Intent intent = new Intent(context, targetActivityClass)
-                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+
     private void addNewProductToCart(Product product) {
         List<ShoppingCartItem> currentShoppingCartList = ((Cart) getApplication()).getCartItemList();
         List<Product> currentProductList = ((Cart)getApplication()).getProductList();

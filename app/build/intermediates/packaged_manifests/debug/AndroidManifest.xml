@@ -30,6 +30,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
+            android:name="com.example.gearshop.activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.CartActivity"
             android:exported="false" />
         <activity

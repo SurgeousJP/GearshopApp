@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.gearshop.R;
 import com.example.gearshop.fragment.FilterSortBar;
 import com.example.gearshop.fragment.ListProduct;
+import com.example.gearshop.utility.ActivityStartManager;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
     private FilterSortBar CategoryProductFilterSortBar;
@@ -70,7 +71,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         });
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
