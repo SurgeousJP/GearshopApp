@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <View
-            android:id="@+id/vector"
+            android:id="@+id/close_sex_setting"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="24dp"
@@ -31,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal|center_vertical"
             android:lineSpacingExtra="5sp"
-            android:text="Sắp xếp"
+            android:text="Giới tính"
             android:textAppearance="@style/title_filter"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +43,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sheet_content"
         android:layout_width="0dp"
-        android:layout_height="148dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -56,11 +57,11 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/label_option1"
+                android:id="@+id/male_option"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
                 android:lineSpacingExtra="4sp"
-                android:text="Phổ biến"
+                android:text="Nam"
                 android:textStyle="bold"
                 android:layout_marginLeft="16dp"
                 android:textSize="18dp"
@@ -69,80 +70,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/components_1"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/check_icon"
-                android:layout_marginRight="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/list_item_sex_2"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
-            app:layout_constraintBottom_toTopOf="@id/list_item3"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_sex_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/label_option2"
+                android:id="@+id/female_option"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
-                android:lineSpacingExtra="4sp"
-                android:text="Bán chạy"
                 android:layout_marginLeft="16dp"
-                android:textSize="18dp"
+                android:lineSpacingExtra="4sp"
+                android:text="Nữ"
                 android:textAppearance="@style/content_pro"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/components_2"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@null"
-                android:layout_marginRight="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item3"
-            android:layout_width="0dp"
-            android:layout_height="37dp"
-            android:background="@drawable/option_item"
-            app:layout_constraintBottom_toTopOf="@id/list_item_sex_3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                android:id="@+id/label_option3"
-                android:layout_width="0dp"
-                android:layout_height="22dp"
-                android:lineSpacingExtra="4sp"
-                android:text="Giá: Thấp đến cao"
-                android:layout_marginLeft="16dp"
-                android:textSize="18dp"
-                android:textAppearance="@style/content_pro"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/components_3"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@null"
-                android:layout_marginRight="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/list_item_sex_3"
             android:layout_width="0dp"
@@ -153,26 +106,16 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/label_option4"
+                android:id="@+id/other_option"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
                 android:lineSpacingExtra="4sp"
-                android:text="Giá: Cao đến thấp"
+                android:text="Khác"
                 android:layout_marginLeft="16dp"
                 android:textSize="18dp"
                 android:textAppearance="@style/content_pro"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/components_4"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@null"
-                android:layout_marginRight="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
