@@ -3121,6 +3121,10 @@ id discount_name
 id discount_percent
 id discount_text
 id disjoint
+id dob
+id dob_box
+id dob_edit
+id dob_edit_box
 id dots_account_main
 id dots_cart
 id dots_icon_product
@@ -3169,6 +3173,10 @@ id filter_icon
 id final_price
 id final_price_box
 id first_bar
+id first_name
+id first_name_box
+id first_name_edit
+id firstname_box
 id fitCenter
 id fitEnd
 id fitStart
@@ -3183,7 +3191,10 @@ id forgotpassword_form
 id fragment_container_view_tag
 id fragment_filter_box
 id fragment_grid_view
+id free_space
+id free_space_2
 id frost
+id full_name_box
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
@@ -3274,6 +3285,10 @@ id label_user_info_desc
 id label_voucher
 id label_voucher_apply
 id labeled
+id last_name
+id last_name_box
+id last_name_edit
+id lastname_box
 id layout
 id layout_price_info
 id left
@@ -3372,9 +3387,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id name
-id name_box
-id name_edit
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3411,6 +3423,7 @@ id order_management_text
 id order_status_border
 id order_status_box
 id original_price
+id other_info_box
 id outline
 id outward
 id overshoot
@@ -3430,6 +3443,9 @@ id pathRelative
 id peekHeight
 id percent
 id percent_discount
+id phone_number
+id phone_number_box
+id phone_number_edit
 id pin
 id position
 id postLayout
@@ -3532,6 +3548,10 @@ id selling_price
 id selling_price_text
 id send_text
 id sendcode
+id sex
+id sex_box
+id sex_edit
+id sex_edit_box
 id sharedValueSet
 id sharedValueUnset
 id sheet_content
@@ -3548,6 +3568,7 @@ id show_category
 id show_list_category
 id show_order
 id signup
+id signup_icon
 id sin
 id skipCollapsed
 id skipped
@@ -3923,11 +3944,11 @@ layout notification_template_part_time
 layout order_management
 layout product_detail
 layout product_spec_item
-layout register
 layout search_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout sign_up
 layout sort_setting
 layout support_simple_spinner_dropdown_item
 layout voucher_setting
