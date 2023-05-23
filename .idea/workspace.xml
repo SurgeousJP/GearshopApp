@@ -9,8 +9,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Design lại account_main.xml">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/product_spec_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/product_spec_item.xml" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Design cấu hình sp">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/order_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/ProductsInCategoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/ProductsInCategoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/category_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/category_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/category_layout_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/category_layout_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_layout.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +73,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -458,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684830101443</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Design cấu hình sp">
+      <created>1684830523747</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1684830523747</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Tạo gridview adapter cho fragment ListProduct" />
     <MESSAGE value="Sửa lỗi UI của navigation &amp; sort bar và product grid view chồng đè lên nhau" />
     <MESSAGE value="Taọ class SelectSQL và tạo package adapter để tổ chức rõ hơn" />
     <MESSAGE value="Xử lý async task lấy data của product về" />
@@ -511,7 +525,8 @@
     <MESSAGE value="Sử dụng recycler view thay thế cho list view trong màn hình cart, cập nhật các thay đổi sau khi merge" />
     <MESSAGE value="Design lại login và register(sign_up)" />
     <MESSAGE value="Design lại account_main.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design lại account_main.xml" />
+    <MESSAGE value="Design cấu hình sp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Design cấu hình sp" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -61,7 +61,7 @@
             app:layout_constraintTop_toTopOf="@id/first_bar">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/more_info_category_detail"
+                android:id="@+id/more_info_order_detail"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
@@ -76,7 +76,7 @@
                 android:layout_height="17dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/more_info_category_detail"
+                android:layout_toRightOf="@id/more_info_order_detail"
                 android:background="@drawable/thin" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
