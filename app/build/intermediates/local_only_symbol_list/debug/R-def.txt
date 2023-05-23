@@ -162,6 +162,7 @@ id cta_viewmore
 id custom_price
 id decrease_box
 id delete_product
+id delete_product_view
 id delivered_box
 id delivered_order
 id delivery_box

@@ -52,11 +52,9 @@ public class ProductDetailActivity extends AppCompatActivity {
         String[] parts = productSpec.split("\\|\\n");
         Map<String, String> result = new HashMap<>();
         for (String part : parts) {
-            System.out.println(part);
             String[] headerAndDetail = part.split(" {4}");
             try {
                 result.put(headerAndDetail[0], headerAndDetail[1]);
-                System.out.println(headerAndDetail[0] + "\t" + headerAndDetail[1]);
             } catch (NullPointerException | IndexOutOfBoundsException e) {
                 e.printStackTrace();
             }

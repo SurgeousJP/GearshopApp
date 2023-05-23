@@ -19,10 +19,14 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartListViewHolder> {
+
     private List<ShoppingCartItem> ListCartItems;
     private List<Product> ProductList;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
+    private OnDeleteItemClickListener onDeleteItemClickListener;
+
+
     public void setTotalProductPrice(TextView totalProductPrice) {
         TotalProductPrice = totalProductPrice;
     }
@@ -40,6 +44,14 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
     public void setData(List <Product> productlist){
         this.ProductList=productlist;
         notifyDataSetChanged();
+    }
+
+    public interface OnDeleteItemClickListener {
+        void onDeleteItemClick(int position);
+    }
+
+    public void setOnDeleteItemClickListener(OnDeleteItemClickListener listener) {
+        this.onDeleteItemClickListener = listener;
     }
 
     @NonNull
@@ -104,6 +116,14 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
             });
         }
 
+        if (holder.DeleteProductInCartView != null){
+            holder.DeleteProductInCartView.setOnClickListener(v -> {
+                if (onDeleteItemClickListener != null) {
+                    onDeleteItemClickListener.onDeleteItemClick(position);
+                }
+            });
+        }
+
     }
 
     private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, String currentTotalPrice1) {
@@ -133,6 +153,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
         private TextView NumberOfCartItemText;
         private View DecreaseCartItemView;
         private View IncreaseCartItemView;
+        private View DeleteProductInCartView;
         public CartListViewHolder(@NonNull View itemView){
             super(itemView);
             CartItemImage = itemView.findViewById(R.id.item_image_list_cart);
@@ -141,6 +162,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
             NumberOfCartItemText = itemView.findViewById(R.id.input_value);
             DecreaseCartItemView = itemView.findViewById(R.id.decrease_box);
             IncreaseCartItemView = itemView.findViewById(R.id.increase_box);
+            DeleteProductInCartView = itemView.findViewById(R.id.delete_product_view);
         }
     }
 }

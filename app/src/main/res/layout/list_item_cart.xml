@@ -113,6 +113,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <View
+            android:id="@+id/delete_product_view"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_marginHorizontal="16dp"
