@@ -3519,6 +3519,7 @@ id search_bar
 id search_bar_text_view
 id search_button
 id search_close_btn
+id search_constraint_layout
 id search_edit_frame
 id search_go_btn
 id search_icon

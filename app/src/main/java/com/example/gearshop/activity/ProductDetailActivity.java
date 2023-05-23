@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductDetailActivity extends AppCompatActivity {
-
     private View returnView;
     private ImageView ProductImageView;
     private TextView ProductNameTextView;
@@ -39,7 +38,6 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView ProductDiscountTextView;
     private RecyclerView ProductSpecsGridView;
     private TextView ProductDetailTextView;
-
     private RelativeLayout CartIconLayout;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
