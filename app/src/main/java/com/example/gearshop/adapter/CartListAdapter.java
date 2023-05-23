@@ -1,15 +1,14 @@
 package com.example.gearshop.adapter;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
@@ -19,11 +18,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
-    int resource;
+public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartListViewHolder> {
     private List<ShoppingCartItem> ListCartItems;
     private List<Product> ProductList;
-
+    private TextView TotalProductPrice;
+    private TextView FinalPrice;
     public void setTotalProductPrice(TextView totalProductPrice) {
         TotalProductPrice = totalProductPrice;
     }
@@ -31,81 +30,92 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
     public void setFinalPrice(TextView finalPrice) {
         FinalPrice = finalPrice;
     }
-
-    private TextView TotalProductPrice;
-    private TextView FinalPrice;
-    public CartListAdapter(Context context, int resource, List<ShoppingCartItem> shoppingCartItems,
+    public CartListAdapter(List<ShoppingCartItem> shoppingCartItems,
                            List<Product> products){
-        super(context, resource, shoppingCartItems);
         this.ListCartItems = shoppingCartItems;
         this.ProductList = products;
-        this.resource = resource;
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setData(List <Product> productlist){
+        this.ProductList=productlist;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
-        View v = convertView;
-        if (v == null){
-            LayoutInflater vi;
-            vi = LayoutInflater.from(this.getContext());
-            v = vi.inflate(R.layout.list_item_cart, parent, false);
+    public CartListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view =LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_cart,parent,false);
+        return new CartListViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CartListViewHolder holder, int position) {
+        Product product = ProductList.get(position);
+        ShoppingCartItem cartItem = ListCartItems.get(position);
+
+        if (product == null) return;
+
+        setPriceToView(holder.ProductNameText, product.getName(), holder.PriceText, String.valueOf(product.getPrice()));
+
+        if (holder.CartItemImage != null){
+                String imageURL = product.getImageURL();
+                Picasso.get().load(imageURL).into(holder.CartItemImage);
         }
-        ShoppingCartItem s = getItem(position);
-        Product p = ProductList.get(position);
-        if (s != null){
-            ImageView cartItemImage = v.findViewById(R.id.item_image_list_cart);
-            TextView productNameText = v.findViewById(R.id.label_product_cart);
-            TextView priceText = v.findViewById(R.id.label_price_cart);
-            TextView numberOfCartItemText = v.findViewById(R.id.input_value);
-            View decreaseCartItemView = v.findViewById(R.id.decrease_box);
-            View increaseCartItemView = v.findViewById(R.id.increase_box);
 
-            if (cartItemImage != null){
-                String imageURL = p.getImageURL();
-                Picasso.get()
-                        .load(imageURL)
-                        .into(cartItemImage);
-            }
-            if (productNameText != null){
-                productNameText.setText(p.getName());
-            }
-            if (priceText != null){
-                double discountedPrice = getDiscountedPrice(p);
-                priceText.setText(MoneyFormat.getVietnameseMoneyStringFormatted(discountedPrice));
-            }
-            if (numberOfCartItemText != null){
-                numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
-            }
-            if (decreaseCartItemView != null){
-                decreaseCartItemView.setOnClickListener(view -> {
-                    if (numberOfCartItemText != null && s.getQuantity() > 1){
-                        s.setQuantity(s.getQuantity() - 1);
-                        numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
-
-                        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
-                                TotalProductPrice.getText().toString());
-                        currentTotalPrice -= getDiscountedPrice(p);
-                        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
-                        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
-                    }
-                });
-            }
-            if (increaseCartItemView != null){
-                increaseCartItemView.setOnClickListener(view -> {
-                    if (numberOfCartItemText != null ){
-                        s.setQuantity(s.getQuantity() + 1);
-                        numberOfCartItemText.setText(String.valueOf(s.getQuantity()));
-
-                        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
-                                TotalProductPrice.getText().toString());
-                        currentTotalPrice += getDiscountedPrice(p);
-                        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
-                        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
-                    }
-                });
-            }
+        if (holder.ProductNameText != null){
+            holder.ProductNameText.setText(product.getName());
         }
-        return v;
+
+        if (holder.PriceText != null){
+            double discountedPrice = getDiscountedPrice(product);
+            holder.PriceText.setText(MoneyFormat.getVietnameseMoneyStringFormatted(discountedPrice));
+        }
+
+        if (holder.NumberOfCartItemText != null){
+                holder.NumberOfCartItemText.setText(String.valueOf(cartItem.getQuantity()));
+        }
+
+        if (holder.DecreaseCartItemView != null){
+            holder.DecreaseCartItemView.setOnClickListener(view -> {
+                if (holder.NumberOfCartItemText != null && cartItem.getQuantity() > 1){
+                    cartItem.setQuantity(cartItem.getQuantity() - 1);
+                    holder.NumberOfCartItemText.setText(String.valueOf(cartItem.getQuantity()));
+
+                    double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                            TotalProductPrice.getText().toString());
+                    currentTotalPrice -= getDiscountedPrice(product);
+                    setPriceToView(TotalProductPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice), FinalPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                }
+            });
+        }
+
+        if (holder.IncreaseCartItemView != null){
+            holder.IncreaseCartItemView.setOnClickListener(view -> {
+                if (holder.NumberOfCartItemText != null ){
+                    cartItem.setQuantity(cartItem.getQuantity() + 1);
+                    holder.NumberOfCartItemText.setText(String.valueOf(cartItem.getQuantity()));
+
+                    double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                            TotalProductPrice.getText().toString());
+                    currentTotalPrice += getDiscountedPrice(product);
+                    setPriceToView(TotalProductPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice), FinalPrice, MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                }
+            });
+        }
+
+    }
+
+    private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, String currentTotalPrice1) {
+        totalProductPrice.setText(currentTotalPrice);
+        finalPrice.setText(currentTotalPrice1);
+    }
+
+    @Override
+    public int getItemCount() {
+        if (ProductList!=null)
+            return ProductList.size();
+        return 0;
     }
 
     private double getDiscountedPrice(Product p) {
@@ -114,5 +124,23 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCartItem> {
             price = price * (100 - p.getDiscountInformation().getDiscountPercentage()) / 100;
         }
         return price;
+    }
+
+    public class CartListViewHolder extends RecyclerView.ViewHolder{
+        private ImageView CartItemImage;
+        private TextView ProductNameText;
+        private TextView PriceText;
+        private TextView NumberOfCartItemText;
+        private View DecreaseCartItemView;
+        private View IncreaseCartItemView;
+        public CartListViewHolder(@NonNull View itemView){
+            super(itemView);
+            CartItemImage = itemView.findViewById(R.id.item_image_list_cart);
+            ProductNameText = itemView.findViewById(R.id.label_product_cart);
+            PriceText = itemView.findViewById(R.id.label_price_cart);
+            NumberOfCartItemText = itemView.findViewById(R.id.input_value);
+            DecreaseCartItemView = itemView.findViewById(R.id.decrease_box);
+            IncreaseCartItemView = itemView.findViewById(R.id.increase_box);
+        }
     }
 }

@@ -1,11 +1,12 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -22,24 +23,24 @@ public class CartActivity extends AppCompatActivity {
     private List<ShoppingCartItem> CartItemList;
     private List<Product> ProductList;
     private View ReturnView;
-    private ListView CartListView;
+    private RecyclerView CartRecyclerView;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
-
         CartItemList = ((Cart) getApplication()).getCartItemList();
         ProductList = ((Cart) getApplication()).getProductList();
-        CartListView = findViewById(R.id.list_product);
-        CartListAdapter cartListAdapter = new CartListAdapter(getBaseContext(), R.id.list_product,
-                CartItemList, ProductList);
-        CartListView.setAdapter(cartListAdapter);
-
+        CartRecyclerView = findViewById(R.id.list_product);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
+        CartListAdapter cartListAdapter = new CartListAdapter(CartItemList, ProductList);
+        CartRecyclerView.setLayoutManager(gridLayoutManager);
+        CartRecyclerView.setAdapter(cartListAdapter);
+        cartListAdapter.setData(ProductList);
+        CartRecyclerView.setAdapter(cartListAdapter);
         TotalProductPrice = findViewById(R.id.total_price);
         TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price);
@@ -48,7 +49,7 @@ public class CartActivity extends AppCompatActivity {
         cartListAdapter.setTotalProductPrice(TotalProductPrice);
         cartListAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_cart);
+        ReturnView = findViewById(R.id.wayback_icon_category_layout_detail);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();
@@ -74,5 +75,4 @@ public class CartActivity extends AppCompatActivity {
         }
         return resultPrice;
     }
-
 }

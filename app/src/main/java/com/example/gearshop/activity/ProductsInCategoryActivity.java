@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -52,7 +51,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
-        MoreInformationLayout = findViewById(R.id.more_info);
+        MoreInformationLayout = findViewById(R.id.more_info_category_detail);
         MoreInformationLayout.setOnClickListener(view -> {
 
         });
@@ -61,19 +60,19 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         });
 
-        HomeItem = findViewById(R.id.home_item);
+        HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
 
         });
-        CategoryItem = findViewById(R.id.category_item);
+        CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
 
         });
-        SearchItem = findViewById(R.id.search_item);
+        SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
 
         });
-        AccountItem = findViewById(R.id.account_item);
+        AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
         });
 

@@ -2751,6 +2751,7 @@ drawable fb
 drawable fill_blue_box
 drawable fill_blue_box_2
 drawable filter_icon
+drawable gear_shop_icon
 drawable gg
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2860,6 +2861,7 @@ drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
+drawable selection_band_overlay
 drawable sheet_header
 drawable shipped
 drawable shipping_box
@@ -2882,6 +2884,7 @@ drawable voucher_image
 drawable wayback_icon
 drawable white_blue_box
 drawable x
+drawable x_grey
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2932,7 +2935,7 @@ id accessibility_custom_action_8
 id accessibility_custom_action_9
 id account_avartar
 id account_avatar_item
-id account_item
+id account_item_category_detail
 id actionDown
 id actionDownUp
 id actionUp
@@ -2968,6 +2971,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id app_only_tag
 id arc
 id asConfigured
 id async
@@ -2997,16 +3001,21 @@ id buy_now
 id buy_now_text
 id cache_measures
 id callMeasure
+id cancel_buttom_confirm_box
 id cancel_button
 id cancel_listvoucher
 id cancel_order
+id cardView
 id carryVelocity
 id cart_icon_account_main
 id cart_icon_product
 id cart_layout
+id cart_layout_category_detail
 id cart_text
 id cart_text_2
-id category_item
+id category_discount
+id category_item_category_detail
+id category_tag
 id center
 id centerCrop
 id centerInside
@@ -3038,6 +3047,7 @@ id components_4
 id components_list_voucher
 id compress
 id confirm_button
+id confirm_button_confirm_box
 id confirm_code
 id confirm_code_box
 id confirm_code_edit
@@ -3062,6 +3072,7 @@ id content_emp
 id content_pro1
 id content_pro2
 id content_processing
+id content_rem
 id content_sta
 id contiguous
 id continuousVelocity
@@ -3086,6 +3097,7 @@ id decelerateAndComplete
 id decor_content_parent
 id decrease_box
 id default_activity_button
+id delete_product
 id delivered_box
 id delivered_order
 id delivery_box
@@ -3105,6 +3117,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id discount_name
 id discount_percent
 id discount_text
 id disjoint
@@ -3139,9 +3152,11 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id escape_cart
+id escape_category_detail
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expired_day
 id facebook_icon
 id fade
 id fields
@@ -3186,7 +3201,7 @@ id hideable
 id high_price
 id home
 id homeAsUp
-id home_item
+id home_item_category_detail
 id honorRequest
 id horizontal_only
 id horizontal_scrollview_order_status
@@ -3197,12 +3212,15 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_voucher
+id image_voucher_list_voucher
 id imagelayout
 id immediateStop
 id included
 id increase_box
 id indeterminate
 id info
+id info_box
 id input_field1
 id input_field2
 id input_value
@@ -3211,6 +3229,7 @@ id inward
 id italic
 id item_cart_image_layout
 id item_category
+id item_constraint
 id item_image
 id item_image_cart
 id item_image_list_cart
@@ -3280,6 +3299,7 @@ id list_product
 id list_view_order_management
 id listgear
 id listview_category
+id listview_category_layout
 id listview_voucher
 id location_icon
 id login_button
@@ -3326,7 +3346,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id more_category
-id more_info
+id more_info_category_detail
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3409,6 +3429,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id percent_discount
 id pin
 id position
 id postLayout
@@ -3443,6 +3464,7 @@ id rate_star4
 id rate_star5
 id rating_display
 id rating_number
+id rating_number_product_detail
 id ratio
 id rectangles
 id register_button
@@ -3457,6 +3479,7 @@ id rounded
 id roundx_account_main
 id roundx_order_management
 id row_index_key
+id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3471,6 +3494,7 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scrollable
+id scrollview_search_layout
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -3480,7 +3504,7 @@ id search_edit_frame
 id search_go_btn
 id search_icon
 id search_input
-id search_item
+id search_item_category_detail
 id search_mag_icon
 id search_plate
 id search_src_text
@@ -3513,7 +3537,9 @@ id sharedValueUnset
 id sheet_content
 id shipping_box
 id shipping_info
-id shopping_bo
+id shopping_bottom
+id shopping_bottom_category_detail
+id shopping_bottom_search
 id shortcut
 id showCustom
 id showHome
@@ -3609,6 +3635,7 @@ id titleDividerNoCustom
 id title_1
 id title_categ
 id title_category
+id title_confi
 id title_empty
 id title_filter
 id title_product_config
@@ -3682,7 +3709,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
-id wayback_icon_cart
+id wayback_icon_category_layout_detail
 id wayback_icon_order_management
 id wayback_icon_product
 id west
@@ -3803,7 +3830,10 @@ layout abc_tooltip
 layout account_main
 layout activity_main
 layout cart
+layout category_layout
+layout category_layout_detail
 layout category_panel
+layout confirm_box
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3894,7 +3924,7 @@ layout order_management
 layout product_detail
 layout product_spec_item
 layout register
-layout search_bar
+layout search_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -5182,6 +5212,7 @@ style selling_price
 style text
 style title_category
 style title_config
+style title_confirm
 style title_empty
 style title_filter
 style title_screen
