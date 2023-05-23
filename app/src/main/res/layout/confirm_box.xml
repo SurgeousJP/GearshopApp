@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="165dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_marginHorizontal="16dp"
         android:background="@drawable/cart_box"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
