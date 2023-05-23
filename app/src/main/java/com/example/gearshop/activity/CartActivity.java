@@ -70,7 +70,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_category_layout_detail);
+        ReturnView = findViewById(R.id.wayback_icon_order_detail);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();

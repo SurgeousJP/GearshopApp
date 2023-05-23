@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/first_bar"
@@ -38,7 +38,7 @@
             android:layout_height="27dp"
             android:gravity="center_vertical"
             android:lineSpacingExtra="5sp"
-            android:text="Laptop"
+            android:text="Chi tiết đơn hàng"
             android:textAppearance="@style/title_screen"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -100,73 +100,20 @@
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <GridView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/shopping_bottom_category_detail"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_bar">
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@id/first_bar">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </GridView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/shopping_bottom_category_detail"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/shopping_bo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/home_item_category_detail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/category_item_category_detail"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:background="@drawable/bottom_bar___home_item"
-            />
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/category_item_category_detail"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/home_item_category_detail"
-            app:layout_constraintEnd_toStartOf="@id/search_item_category_detail"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_toRightOf="@id/home_item_category_detail"
-            android:background="@drawable/bottom_bar___categoty_blue"
-            />
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/search_item_category_detail"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/category_item_category_detail"
-            app:layout_constraintEnd_toStartOf="@id/account_item_category_detail"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_toRightOf="@id/category_item_category_detail"
-            android:background="@drawable/bottom_bar___search_item"
-            />
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/account_item_category_detail"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/search_item_category_detail"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_toRightOf="@id/search_item_category_detail"
-            android:background="@drawable/bottom_bar___account_item"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

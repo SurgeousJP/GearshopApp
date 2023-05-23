@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/wayback_icon_category_layout_detail"
+            android:id="@+id/wayback_icon_order_detail"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -33,7 +33,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/cart_text"
+            android:id="@+id/order_detail_label"
             android:layout_width="224dp"
             android:layout_height="27dp"
             android:gravity="center_vertical"
@@ -42,7 +42,7 @@
             android:textAppearance="@style/title_screen"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/wayback_icon_category_layout_detail"
+            app:layout_constraintStart_toEndOf="@id/wayback_icon_order_detail"
             android:layout_marginStart="16dp"
             android:textStyle="bold" />
 
@@ -332,7 +332,7 @@
                                 android:layout_marginTop="4dp"
                                 android:gravity="top"
                                 android:lineSpacingExtra="4sp"
-                                android:text="Tiki Now"
+                                android:text="Giao Hàng Nhanh"
                                 android:textAppearance="@style/label_ship"
                                 android:textStyle="bold"
                                 android:translationY="-2.03sp"
