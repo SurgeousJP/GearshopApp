@@ -47,11 +47,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item1"
+            android:id="@+id/list_item_sex_1"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item_color"
-            app:layout_constraintBottom_toTopOf="@id/list_item2"
+            app:layout_constraintBottom_toTopOf="@id/list_item_sex_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item2"
+            android:id="@+id/list_item_sex_2"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
@@ -116,7 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
-            app:layout_constraintBottom_toTopOf="@id/list_item4"
+            app:layout_constraintBottom_toTopOf="@id/list_item_sex_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -144,7 +144,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item4"
+            android:id="@+id/list_item_sex_3"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"

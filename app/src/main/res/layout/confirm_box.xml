@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/title_confi"
+            android:id="@+id/title_choose_province"
             android:layout_width="0dp"
             android:layout_height="27dp"
             android:gravity="center_horizontal|center_vertical"
@@ -39,7 +39,7 @@
             android:translationY="-2.03sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_confi"/>
+            app:layout_constraintTop_toBottomOf="@id/title_choose_province"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/confirm_button_confirm_box"
             android:layout_width="120dp"
