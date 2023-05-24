@@ -1,4 +1,4 @@
-package com.example.gearshop.adapter;
+package com.example.gearshop.fragment;
 
 import android.os.Bundle;
 

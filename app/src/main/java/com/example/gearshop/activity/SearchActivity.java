@@ -2,7 +2,6 @@ package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,13 +11,12 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.adapter.SearchNotFoundFragment;
+import com.example.gearshop.fragment.SearchNotFoundFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class SearchActivity extends AppCompatActivity implements SearchNotFoundFragment.OnFragmentViewCreatedListener {
     private List<Product> ProductList;

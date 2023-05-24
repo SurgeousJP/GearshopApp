@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class ListProduct extends Fragment {
+public class ListProductFragment extends Fragment {
     private Context context;
     private GridView ProductGridView;
     private List<Product> ProductList = new ArrayList<Product>();
@@ -37,12 +37,12 @@ public class ListProduct extends Fragment {
         super.onAttach(context);
         this.context = context;
     }
-    public ListProduct() {
+    public ListProductFragment() {
         // Required empty public constructor
     }
 
-    public static ListProduct newInstance(String param1, String param2) {
-        ListProduct fragment = new ListProduct();
+    public static ListProductFragment newInstance(String param1, String param2) {
+        ListProductFragment fragment = new ListProductFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

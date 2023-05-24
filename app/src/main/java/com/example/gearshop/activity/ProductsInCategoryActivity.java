@@ -8,13 +8,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.fragment.FilterSortBar;
-import com.example.gearshop.fragment.ListProduct;
+import com.example.gearshop.fragment.FilterSortBarFragment;
+import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.utility.ActivityStartManager;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
-    private FilterSortBar CategoryProductFilterSortBar;
-    private ListProduct CategoryListProduct;
+    private FilterSortBarFragment categoryProductFilterSortBarFragment;
+    private ListProductFragment categoryListProductFragment;
 
     private RelativeLayout CartIconLayout;
     private RelativeLayout MoreInformationLayout;
@@ -31,8 +31,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
-        CategoryListProduct = new ListProduct();
-        CategoryProductFilterSortBar = new FilterSortBar();
+        categoryListProductFragment = new ListProductFragment();
+        categoryProductFilterSortBarFragment = new FilterSortBarFragment();
 
 //        // Adding fragments
 //        CompletableFuture<Void> futureFragment = CompletableFuture.runAsync(() -> {
