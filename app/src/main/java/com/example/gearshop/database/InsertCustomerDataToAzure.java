@@ -1,0 +1,30 @@
+package com.example.gearshop.database;
+
+import com.example.gearshop.model.Customer;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class InsertCustomerDataToAzure extends AzureSQLDatabase {
+
+    @Override
+    protected ResultSet doInBackground(String... SqlCommand) {
+        try {
+            Connection connection = DriverManager.getConnection(AzureConnectionString);
+            Statement statement = connection.createStatement();
+
+            statement.execute(SqlCommand[0]);
+
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+}
