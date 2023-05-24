@@ -49,16 +49,16 @@ public class CartActivity extends AppCompatActivity {
         cartListAdapter.setTotalProductPrice(TotalProductPrice);
         cartListAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_order_detail);
+        ReturnView = findViewById(R.id.wayback_icon_user_info);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();
         });
-        MoreInformationLayout = findViewById(R.id.dots_cart);
+        MoreInformationLayout = findViewById(R.id.dots_user_info);
         MoreInformationLayout.setOnClickListener(view -> {
 
         });
-        EscapeLayout = findViewById(R.id.escape_cart);
+        EscapeLayout = findViewById(R.id.escape_user_info);
         EscapeLayout.setOnClickListener(view -> {
 
         });
