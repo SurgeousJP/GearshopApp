@@ -3526,6 +3526,7 @@ int id search_input 0x7f08027d
 int id search_item_category_detail 0x7f08027e
 int id search_mag_icon 0x7f08027f
 int id search_plate 0x7f080280
+int id search_result_layout 0x7f08035e
 int id search_src_text 0x7f080281
 int id search_text 0x7f080282
 int id search_view_background 0x7f080283
@@ -3877,6 +3878,7 @@ int layout design_text_input_start_icon 0x7f0b0032
 int layout filter_setting 0x7f0b0033
 int layout filter_sort_bar 0x7f0b0034
 int layout forgot_password 0x7f0b0035
+int layout fragment_search_result 0x7f0b0085
 int layout framelayout_filter_sort_bar 0x7f0b0036
 int layout framelayout_list_product 0x7f0b0037
 int layout gridview_category 0x7f0b0038

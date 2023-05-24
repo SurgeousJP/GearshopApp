@@ -369,6 +369,7 @@ id search_constraint_layout
 id search_icon
 id search_input
 id search_item_category_detail
+id search_result_layout
 id search_text
 id section
 id section_con
@@ -474,6 +475,7 @@ layout confirm_box
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
+layout fragment_search_result
 layout framelayout_filter_sort_bar
 layout framelayout_list_product
 layout gridview_category
