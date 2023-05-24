@@ -1,6 +1,6 @@
 package com.example.gearshop.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Customer {
     private int ID;
