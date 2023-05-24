@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/components_"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/search_input"
+        app:layout_constraintBottom_toTopOf="@+id/priceRange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/cancel_edit_shipping"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/x"
+            android:layout_marginRight="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="thông tin vận chuyển"
+            android:textAppearance="@style/title_filter"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/priceRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/label_adress_edit_shipping"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Địa chỉ"
+                android:textAppearance="@style/label_filter"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/province_box"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/normal_box_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_adress_edit_shipping">
+
+                <EditText
+                    android:id="@+id/province_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@null"
+                    android:hint="Tỉnh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/homeadress_box"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/normal_box_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/province_box">
+
+                <EditText
+                    android:id="@+id/homeadress_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@null"
+                    android:hint="Số nhà"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:id="@+id/line"
+                app:layout_constraintTop_toBottomOf="@id/homeadress_box"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#DDDDE3"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="32dp"/>
+            <TextView
+                android:id="@+id/label_phonenumber_edit_shipping"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Số điện thoại"
+                android:textAppearance="@style/label_filter"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:translationY="-2.32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/phonemuber_box"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/normal_box_3"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_phonenumber_edit_shipping"
+                app:layout_constraintBottom_toTopOf="@id/none">
+
+                <EditText
+                    android:id="@+id/phonemuber_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@null"
+                    android:hint="Số điện thoại"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/none"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:background="#DDDDE3"
+                app:layout_constraintBottom_toTopOf="@id/button_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_bar"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/brand_button_2"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/fill_blue_box"
+                    android:clipToOutline="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/cta_apply"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:lineSpacingExtra="5sp"
+                        android:text="Xác nhận"
+                        android:textAppearance="@style/cta_apply_0"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
