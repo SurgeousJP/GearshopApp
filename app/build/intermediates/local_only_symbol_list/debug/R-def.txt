@@ -104,6 +104,7 @@ id bottom_bar
 id box_text
 id brand_button_1
 id brand_button_2
+id btn_confirm_sign_up
 id button_bar
 id buy_now
 id buy_now_text
@@ -140,7 +141,6 @@ id confirm_code_edit
 id confirm_password
 id confirm_password_box
 id confirm_password_box_layout
-id confirm_password_edit
 id confirm_password_edit_text
 id confirm_password_text
 id confirm_text
@@ -163,7 +163,6 @@ id cta_reset
 id cta_viewmor
 id cta_viewmore
 id custom_price
-id day_edit
 id decrease_box
 id delete_product
 id delivered_box
@@ -184,11 +183,21 @@ id dots_order_management
 id editText
 id email
 id email_box
-id email_edit
 id endtext
 id escape
 id escape_cart
 id escape_order_detail
+id et_sign_up_born_day
+id et_sign_up_born_month
+id et_sign_up_born_year
+id et_sign_up_confirm_password
+id et_sign_up_email
+id et_sign_up_first_name
+id et_sign_up_gender
+id et_sign_up_last_name
+id et_sign_up_password
+id et_sign_up_phone_number
+id et_sign_up_username
 id expired_day
 id facebook_icon
 id female_option
@@ -200,9 +209,8 @@ id final_price_order_detail
 id first_bar
 id first_name
 id first_name_box
-id first_name_edit
 id firstname_box
-id forgotpassword
+id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_filter_box
 id fragment_grid_view
@@ -274,7 +282,6 @@ id label_voucher_apply
 id lable_ship_description_order_detail
 id last_name
 id last_name_box
-id last_name_edit
 id lastname_box
 id layout_price_info
 id line
@@ -310,7 +317,6 @@ id male_option
 id module_price
 id module_product
 id module_rate
-id month_edit
 id more_category
 id more_info_order_detail
 id navigation_box
@@ -348,14 +354,12 @@ id other_option
 id password
 id password_box
 id password_edit
-id password_text
 id payment_methods_order_detail
 id payment_methods_order_detail_box
 id payment_methods_order_detail_inside
 id percent_discount
 id phone_number
 id phone_number_box
-id phone_number_edit
 id priceRange
 id price_box
 id price_box_order_detail
@@ -387,7 +391,6 @@ id rating_display
 id rating_number
 id rating_number_product_detail
 id recycler_view_order_detail
-id register_button
 id register_text
 id registerform
 id roundx_account_main
@@ -410,7 +413,6 @@ id send_text
 id sendcode
 id sex
 id sex_box
-id sex_edit
 id sex_edit_box
 id shape_line
 id sheet_content
@@ -422,7 +424,8 @@ id shopping_bottom_search
 id show_category
 id show_list_category
 id show_order
-id signup
+id sign_in_nav_from_sign_up
+id sign_up_nav_from_sign_in
 id signup_icon
 id sort_icon
 id star1
@@ -482,7 +485,6 @@ id user_info_box
 id user_info_image
 id username
 id username_box
-id username_edit
 id username_text
 id vector
 id version
@@ -506,7 +508,6 @@ id wayback_icon
 id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product
-id year_edit
 layout account_main
 layout activity_main
 layout cart

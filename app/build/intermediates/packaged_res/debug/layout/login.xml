@@ -105,7 +105,7 @@
             app:layout_constraintTop_toBottomOf="@id/username_box">
 
         <EditText
-            android:id="@+id/password_text"
+            android:id="@+id/et_sign_up_password"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginHorizontal="20dp"
@@ -121,7 +121,7 @@
 
         <TextView
             android:layout_marginTop="10dp"
-            android:id="@+id/forgotpassword"
+            android:id="@+id/forgot_password_nav_from_sign_in"
             android:layout_width="0dp"
             android:layout_height="24dp"
             android:text="Quên mật khẩu?"
@@ -142,7 +142,7 @@
             android:background="@drawable/blue_box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/forgotpassword">
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password_nav_from_sign_in">
 
             <TextView
                 android:id="@+id/login_text"
@@ -301,11 +301,11 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/signup"
+            app:layout_constraintEnd_toStartOf="@id/sign_up_nav_from_sign_in"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
-            android:id="@+id/signup"
+            android:id="@+id/sign_up_nav_from_sign_in"
             android:layout_width="60dp"
             android:layout_height="24dp"
             android:text="Đăng ký"
