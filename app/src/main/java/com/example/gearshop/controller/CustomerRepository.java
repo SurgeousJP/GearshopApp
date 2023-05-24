@@ -2,27 +2,41 @@ package com.example.gearshop.controller;
 
 import android.annotation.SuppressLint;
 
+import com.example.gearshop.database.GetCustomerDataFromAzure;
+import com.example.gearshop.database.InsertCustomerDataToAzure;
 import com.example.gearshop.model.Customer;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class CustomerRepository {
     private final List<Customer> CustomerList = new ArrayList<>();
 
     @SuppressLint("SimpleDateFormat")
     public CustomerRepository() {
-        try {
-            CustomerList.add(new Customer(1, "test_username", "test_password", "test_email",
-                    "test_first_name", "test_last_name", "test_gender", "phone_number",
-                    new SimpleDateFormat("dd/MM/yyyy").parse("11/03/2003")));
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
+        // Get Customer List in Database
+        GetCustomerDataFromAzure[] getCustomerDataInAzure = new GetCustomerDataFromAzure[1];
+        getCustomerDataInAzure[0] = new GetCustomerDataFromAzure();
+        getCustomerDataInAzure[0].execute(
+                "SELECT customer.*\n" +
+                        "FROM customer\n"
+        );
+        System.out.println("Async Task get Customers is running");
 
+        try {
+            getCustomerDataInAzure[0].get();
+            } catch (ExecutionException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        System.out.println("Async Task get Customers ended");
+
+
+
+        if (getCustomerDataInAzure[0].getCustomerList() != null){
+            CustomerList.addAll(getCustomerDataInAzure[0].getCustomerList());
+        }
     }
 
     public List<Customer> getCustomers() {
@@ -41,6 +55,33 @@ public class CustomerRepository {
 
     public void signUp(Customer customer) {
         CustomerList.add(customer);
+        String dob = customer.getDateOfBirth().toString();
+
+        InsertCustomerDataToAzure[] insertCustomerDataToAzure = new InsertCustomerDataToAzure[1];
+        insertCustomerDataToAzure[0] = new InsertCustomerDataToAzure();
+        System.out.println("Async Task insert Customers is running");
+
+        insertCustomerDataToAzure[0].execute(
+                        "INSERT INTO customer (id, username, password, email, first_name, last_name, gender, phone_number, date_of_birth)\n" +
+                        "VALUES(" + customer.getID()   + ", " +
+                        "'" + customer.getUsername()    + "', " +
+                        "'" + customer.getPassword()    + "', " +
+                        "'" + customer.getEmail()       + "', " +
+                        "'" + customer.getFirstName()   + "', " +
+                        "'" + customer.getLastName()    + "', " +
+                        "'" + customer.getGender()      + "', " +
+                        "'" + customer.getPhoneNumber() + "', " +
+                        "'" + customer.getDateOfBirth() + "')\n");
+
+
+
+        try {
+            insertCustomerDataToAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Async Task insert Customers ended");
     }
 
     public void changePassword(String email, String newPassword) {
