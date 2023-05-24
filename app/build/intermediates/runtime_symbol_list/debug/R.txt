@@ -3518,6 +3518,7 @@ int id search_bar 0x7f080276
 int id search_bar_text_view 0x7f080277
 int id search_button 0x7f080278
 int id search_close_btn 0x7f080279
+int id search_constraint_layout 0x7f08035c
 int id search_edit_frame 0x7f08027a
 int id search_go_btn 0x7f08027b
 int id search_icon 0x7f08027c

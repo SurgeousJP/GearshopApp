@@ -365,6 +365,7 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scrollview_search_layout
+id search_constraint_layout
 id search_icon
 id search_input
 id search_item_category_detail

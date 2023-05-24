@@ -25,6 +25,7 @@ public class SearchNotFoundFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private OnFragmentViewCreatedListener callback;
 
     public SearchNotFoundFragment() {
         // Required empty public constructor
@@ -39,6 +40,7 @@ public class SearchNotFoundFragment extends Fragment {
      * @return A new instance of fragment SearchNotFoundFragment.
      */
     // TODO: Rename and change types and number of parameters
+
     public static SearchNotFoundFragment newInstance(String param1, String param2) {
         SearchNotFoundFragment fragment = new SearchNotFoundFragment();
         Bundle args = new Bundle();
@@ -60,7 +62,17 @@ public class SearchNotFoundFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.not_found_search, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.not_found_search, container, false);
+        if (callback != null) {
+            callback.onFragmentViewCreated(view);
+        }
+        return view;
+    }
+    public interface OnFragmentViewCreatedListener {
+        void onFragmentViewCreated(View fragmentView);
+    }
+    public void setOnFragmentViewCreatedListener(OnFragmentViewCreatedListener callback) {
+        this.callback = callback;
     }
 }

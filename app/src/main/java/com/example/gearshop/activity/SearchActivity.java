@@ -1,6 +1,8 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -16,8 +18,9 @@ import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements SearchNotFoundFragment.OnFragmentViewCreatedListener {
     private List<Product> ProductList;
     private View SearchIconView;
     private EditText SearchEditText;
@@ -38,6 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         SearchIconView.setOnClickListener(view -> {
             String searchText = SearchEditText.getText().toString();
             SearchNotFoundFragment searchNotFoundFragment = new SearchNotFoundFragment();
+            searchNotFoundFragment.setOnFragmentViewCreatedListener(this);
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.add(R.id.search_constraint_layout, searchNotFoundFragment);
@@ -71,5 +75,18 @@ public class SearchActivity extends AppCompatActivity {
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
         });
+    }
+
+    @Override
+    public void onFragmentViewCreated(View fragmentView) {
+        // Apply constraints to the fragmentView (root view)
+        ConstraintLayout searchConstraintLayout = findViewById(R.id.search_constraint_layout);
+        ConstraintLayout searchInputLayout = findViewById(R.id.search_input);
+
+        ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) fragmentView.getLayoutParams();
+        layoutParams.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
+        layoutParams.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
+        layoutParams.topToBottom = searchInputLayout.getId();
+        fragmentView.setLayoutParams(layoutParams);
     }
 }
