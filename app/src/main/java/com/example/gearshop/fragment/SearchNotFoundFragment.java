@@ -9,13 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gearshop.R;
+import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SearchNotFoundFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SearchNotFoundFragment extends Fragment {
+public class SearchNotFoundFragment extends Fragment implements OnFragmentViewCreatedListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,8 +70,10 @@ public class SearchNotFoundFragment extends Fragment {
         }
         return view;
     }
-    public interface OnFragmentViewCreatedListener {
-        void onFragmentViewCreated(View fragmentView);
+
+    @Override
+    public void onFragmentViewCreated(View fragmentView) {
+
     }
     public void setOnFragmentViewCreatedListener(OnFragmentViewCreatedListener callback) {
         this.callback = callback;

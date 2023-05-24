@@ -3527,6 +3527,7 @@ id search_input
 id search_item_category_detail
 id search_mag_icon
 id search_plate
+id search_result_layout
 id search_src_text
 id search_text
 id search_view_background
@@ -3878,6 +3879,7 @@ layout design_text_input_start_icon
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
+layout fragment_search_result
 layout framelayout_filter_sort_bar
 layout framelayout_list_product
 layout gridview_category

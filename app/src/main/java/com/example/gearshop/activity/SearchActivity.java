@@ -2,6 +2,7 @@ package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -11,14 +12,18 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.fragment.SearchNotFoundFragment;
+import com.example.gearshop.fragment.SearchResultFragment;
+import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-public class SearchActivity extends AppCompatActivity implements SearchNotFoundFragment.OnFragmentViewCreatedListener {
+public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener {
     private List<Product> ProductList;
     private View SearchIconView;
     private EditText SearchEditText;
@@ -28,6 +33,24 @@ public class SearchActivity extends AppCompatActivity implements SearchNotFoundF
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout AccountItem;
+    private void setProductListFromAzure(){
+        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
+        getProductDataFromAzure[0] = new GetProductDataFromAzure();
+        getProductDataFromAzure[0].execute(
+                "SELECT * FROM product"
+        );
+        System.out.println("Async Task running");
+        try {
+            getProductDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task ended");
+        if (getProductDataFromAzure[0].getProductList() != null)
+            ProductList = getProductDataFromAzure[0].getProductList();
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +59,23 @@ public class SearchActivity extends AppCompatActivity implements SearchNotFoundF
         ProductList = new ArrayList<>();
         SearchEditText = findViewById(R.id.search_text);
         SearchIconView = findViewById(R.id.search_icon);
+        SearchResultFragment searchResultFragment = new SearchResultFragment();
+        searchResultFragment.setOnFragmentViewCreatedListener(this);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.search_constraint_layout, searchResultFragment);
+        fragmentTransaction.commit();
+
         SearchIconView.setOnClickListener(view -> {
             String searchText = SearchEditText.getText().toString();
-            SearchNotFoundFragment searchNotFoundFragment = new SearchNotFoundFragment();
-            searchNotFoundFragment.setOnFragmentViewCreatedListener(this);
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.search_constraint_layout, searchNotFoundFragment);
-            fragmentTransaction.commit();
+            if (searchText.isEmpty()){
+                SearchNotFoundFragment searchNotFoundFragment = new SearchNotFoundFragment();
+                searchNotFoundFragment.setOnFragmentViewCreatedListener(this);
+                replaceSearchFragmentResult(searchNotFoundFragment, R.id.search_constraint_layout);
+            }
+            else{
+                replaceSearchFragmentResult(searchResultFragment, R.id.search_constraint_layout);
+            }
         });
 
 
@@ -73,6 +105,13 @@ public class SearchActivity extends AppCompatActivity implements SearchNotFoundF
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
         });
+    }
+
+    private void replaceSearchFragmentResult(Fragment fragment, int layoutID) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(layoutID, fragment);
+        fragmentTransaction.commit();
     }
 
     @Override
