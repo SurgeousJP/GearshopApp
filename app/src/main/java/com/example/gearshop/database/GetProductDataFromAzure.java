@@ -5,6 +5,7 @@ import com.example.gearshop.model.Product;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,20 +15,31 @@ import java.util.List;
 
 public class GetProductDataFromAzure extends AzureSQLDatabase{
     private List<Product> ProductList;
+    public int CategoryID = 0;
     public GetProductDataFromAzure() {
         this.ProductList = new ArrayList<>();
     }
+
     public List<Product> getProductList(){
         return ProductList;
+    }
+    public int getCategoryID() {
+        return CategoryID;
+    }
+    public void setCategoryID(int categoryID) {
+        CategoryID = categoryID;
     }
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
         try {
             Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
+            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sqlCommand[0]);
             if (sqlCommand[0].contains("SELECT")){
-                resultSet = statement.executeQuery(sqlCommand[0]);
+                if (sqlCommand[0].contains("?") && getCategoryID() != 0){
+                    statement.setInt(1, getCategoryID());
+                }
+                resultSet = statement.executeQuery();
             }
             else{
                 statement.execute(sqlCommand[0]);

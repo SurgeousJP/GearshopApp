@@ -62,24 +62,24 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartRecyclerView.setAdapter(CartAdapter);
 
 
-        TotalProductPrice = findViewById(R.id.total_price);
+        TotalProductPrice = findViewById(R.id.total_price_order_detail);
         TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
-        FinalPrice = findViewById(R.id.final_price);
+        FinalPrice = findViewById(R.id.final_price_order_detail);
         FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.wayback_icon_order_detail);
+        ReturnView = findViewById(R.id.return_cart_icon);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();
         });
-        MoreInformationLayout = findViewById(R.id.dots_cart);
+        MoreInformationLayout = findViewById(R.id.dots_user_info);
         MoreInformationLayout.setOnClickListener(view -> {
 
         });
-        EscapeLayout = findViewById(R.id.escape_cart);
+        EscapeLayout = findViewById(R.id.escape_user_info);
         EscapeLayout.setOnClickListener(view -> {
 
         });

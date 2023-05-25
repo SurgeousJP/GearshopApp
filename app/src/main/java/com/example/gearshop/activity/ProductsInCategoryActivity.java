@@ -1,9 +1,15 @@
 package com.example.gearshop.activity;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -12,6 +18,10 @@ import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.utility.ActivityStartManager;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
 public class ProductsInCategoryActivity extends AppCompatActivity {
     private FilterSortBarFragment categoryProductFilterSortBarFragment;
     private ListProductFragment categoryListProductFragment;
@@ -19,7 +29,6 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private RelativeLayout CartIconLayout;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
-
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
@@ -31,22 +40,14 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
-        categoryListProductFragment = new ListProductFragment();
-        categoryProductFilterSortBarFragment = new FilterSortBarFragment();
 
-//        // Adding fragments
-//        CompletableFuture<Void> futureFragment = CompletableFuture.runAsync(() -> {
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.add(R.id.fragment_filter_box, CategoryProductFilterSortBar);
-//            fragmentTransaction.add(R.id.fragment_grid_view, CategoryListProduct);
-//            fragmentTransaction.commit();
-//        });
-//        try {
-//            futureFragment.get();
-//        } catch (InterruptedException | ExecutionException e) {
-//            e.printStackTrace();
-//        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        categoryListProductFragment =
+                (ListProductFragment) fragmentManager.findFragmentById(R.id.fragment_grid_view);
+        categoryProductFilterSortBarFragment =
+                (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
+        categoryListProductFragment.setProductCategoryID(6);
+
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
