@@ -75,7 +75,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pricebox1"
-                android:layout_width="131dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 app:layout_constraintEnd_toStartOf="@id/pricebox2"
                 android:layout_marginTop="44dp"
@@ -84,8 +84,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/text_price1"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="4sp"
@@ -101,7 +102,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pricebox2"
-                android:layout_width="170dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="44dp"
                 android:background="@drawable/normal_box_2"
@@ -110,8 +111,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/text_price2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="4sp"
@@ -127,7 +129,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pricebox3"
-                android:layout_width="170dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="82dp"
                 android:background="@drawable/normal_box_2"
@@ -136,8 +138,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/text_price3"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="4sp"
@@ -153,7 +156,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pricebox4"
-                android:layout_width="131dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="82dp"
                 android:background="@drawable/normal_box_2"
@@ -162,8 +165,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/text_price4"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:lineSpacingExtra="4sp"
@@ -379,20 +383,21 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/chip1"
-                    android:layout_width="87dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="32dp"
-                    android:background="@drawable/normal_box"
+                    android:background="@drawable/normal_box_2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:layout_marginHorizontal="16dp"
                         android:id="@+id/content_pro1"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:gravity="center_horizontal|center_vertical"
                         android:lineSpacingExtra="4sp"
-                        android:text="Hàng mới"
+                        android:text="Đánh giá cao"
                         android:textAppearance="@style/content_pro"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -401,7 +406,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/chip2"
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/normal_box_2"
@@ -410,8 +415,9 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:layout_marginHorizontal="16dp"
                         android:id="@+id/content_pro2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:gravity="center_horizontal|center_vertical"
                         android:lineSpacingExtra="4sp"

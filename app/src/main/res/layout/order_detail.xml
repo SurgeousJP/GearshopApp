@@ -810,42 +810,44 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/price_box" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transport_fee_box"
                     android:layout_width="0dp"
                     android:layout_height="37dp"
-                    app:layout_constraintTop_toBottomOf="@id/line6"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/transport_fee_box">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line6">
 
                     <TextView
                         android:id="@+id/label_transport_fee"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
+                        android:layout_marginLeft="16dp"
                         android:gravity="top"
                         android:lineSpacingExtra="4sp"
                         android:text="Phí vận chuyển"
-                        android:layout_marginLeft="16dp"
                         android:textAppearance="@style/label_price"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/transport_fee_price_order_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
+                        android:layout_marginRight="16dp"
                         android:gravity="top"
                         android:lineSpacingExtra="4sp"
                         android:text="00.000 đ"
-                        android:textStyle="bold"
-                        android:layout_marginRight="16dp"
                         android:textAppearance="@style/label_price"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
-                    android:id="@+id/line6"
+                    android:id="@+id/line7"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="#EBEBF0"
@@ -856,7 +858,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="37dp"
-                    app:layout_constraintTop_toBottomOf="@id/line6"
+                    app:layout_constraintTop_toBottomOf="@id/line7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:id="@+id/voucher_apply_box">
@@ -888,7 +890,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
-                    android:id="@+id/line7"
+                    android:id="@+id/line8"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="#EBEBF0"
@@ -900,7 +902,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/line7"
+                    app:layout_constraintTop_toBottomOf="@id/line8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:id="@+id/final_price_box">

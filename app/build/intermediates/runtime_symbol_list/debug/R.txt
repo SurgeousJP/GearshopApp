@@ -3058,6 +3058,7 @@ int id components_1 0x7f0800a0
 int id components_2 0x7f0800a1
 int id components_3 0x7f0800a2
 int id components_4 0x7f0800a3
+int id components_5 0x7f0803b6
 int id components_list_voucher 0x7f0800a4
 int id compress 0x7f0800a5
 int id confirm_button 0x7f0800a6
@@ -3300,6 +3301,7 @@ int id label_option1 0x7f080192
 int id label_option2 0x7f080193
 int id label_option3 0x7f080194
 int id label_option4 0x7f080195
+int id label_option5 0x7f0803b7
 int id label_payme 0x7f080196
 int id label_payment 0x7f080197
 int id label_payment_name 0x7f080198
@@ -3353,7 +3355,11 @@ int id lineend 0x7f0801c7
 int id listMode 0x7f0801c8
 int id list_category 0x7f0801c9
 int id list_item 0x7f0801ca
-int id list_item3 0x7f0801cb
+int id list_item_1 0x7f0803b8
+int id list_item_2 0x7f0803b9
+int id list_item_3 0x7f0803ba
+int id list_item_4 0x7f0803bb
+int id list_item_5 0x7f0803bc
 int id list_item_sex_1 0x7f0801cc
 int id list_item_sex_2 0x7f0801cd
 int id list_item_sex_3 0x7f0801ce
