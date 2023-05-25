@@ -42,29 +42,31 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sheet_content"
         android:layout_width="0dp"
-        android:layout_height="148dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item_sex_1"
+            android:id="@+id/list_item_1"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item_color"
-            app:layout_constraintBottom_toTopOf="@id/list_item_sex_2"
+            app:layout_constraintBottom_toTopOf="@id/list_item_2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/label_option1"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
+                android:layout_marginLeft="16dp"
                 android:lineSpacingExtra="4sp"
                 android:text="Phổ biến"
-                android:textStyle="bold"
-                android:layout_marginLeft="16dp"
-                android:textSize="18dp"
                 android:textAppearance="@style/content_pro"
+                android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -73,18 +75,19 @@
                 android:id="@+id/components_1"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/check_icon"
                 android:layout_marginRight="16dp"
+                android:background="@drawable/check_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item_sex_2"
+            android:id="@+id/list_item_2"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
-            app:layout_constraintBottom_toTopOf="@id/list_item3"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -92,11 +95,11 @@
                 android:id="@+id/label_option2"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
-                android:lineSpacingExtra="4sp"
-                android:text="Bán chạy"
                 android:layout_marginLeft="16dp"
-                android:textSize="18dp"
+                android:lineSpacingExtra="4sp"
+                android:text="Từ A đến Z"
                 android:textAppearance="@style/content_pro"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -105,18 +108,19 @@
                 android:id="@+id/components_2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@null"
                 android:layout_marginRight="16dp"
+                android:background="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item3"
+            android:id="@+id/list_item_3"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
-            app:layout_constraintBottom_toTopOf="@id/list_item_sex_3"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -124,11 +128,11 @@
                 android:id="@+id/label_option3"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
-                android:lineSpacingExtra="4sp"
-                android:text="Giá: Thấp đến cao"
                 android:layout_marginLeft="16dp"
-                android:textSize="18dp"
+                android:lineSpacingExtra="4sp"
+                android:text="Từ Z đến A"
                 android:textAppearance="@style/content_pro"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -137,14 +141,47 @@
                 android:id="@+id/components_3"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@null"
                 android:layout_marginRight="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_4"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:background="@drawable/option_item"
+            app:layout_constraintBottom_toTopOf="@+id/list_item_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/label_option4"
+                android:layout_width="0dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="16dp"
+                android:lineSpacingExtra="4sp"
+                android:text="Giá: Thấp đến cao"
+                android:textAppearance="@style/content_pro"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/components_4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="16dp"
+                android:background="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/list_item_sex_3"
+            android:id="@+id/list_item_5"
             android:layout_width="0dp"
             android:layout_height="37dp"
             android:background="@drawable/option_item"
@@ -153,7 +190,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/label_option4"
+                android:id="@+id/label_option5"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
                 android:lineSpacingExtra="4sp"
@@ -166,7 +203,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/components_4"
+                android:id="@+id/components_5"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@null"

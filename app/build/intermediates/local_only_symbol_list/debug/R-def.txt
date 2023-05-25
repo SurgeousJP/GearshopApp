@@ -27,9 +27,14 @@ drawable bottom_bar___search_blue
 drawable bottom_bar___search_item
 drawable cancel_box
 drawable cart_box
+drawable cart_grey_image
 drawable cart_image
 drawable check_icon
 drawable circle_blue
+drawable click_cart_image
+drawable click_fill_blue_box
+drawable click_fill_blue_box_2
+drawable click_wayback_color
 drawable decrement_invalid_button
 drawable decrement_valid_button
 drawable delivered_box
@@ -44,6 +49,8 @@ drawable escape
 drawable fb
 drawable fill_blue_box
 drawable fill_blue_box_2
+drawable fill_dark_blue_box
+drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
@@ -112,6 +119,7 @@ id button_bar
 id buy_now
 id buy_now_text
 id cancel_buttom_confirm_box
+id cancel_edit_shipping
 id cancel_listvoucher
 id cancel_order
 id cardView
@@ -235,6 +243,8 @@ id grid_item_g
 id grid_view_list_product
 id high_price
 id home_item_category_detail
+id homeadress_box
+id homeadress_edittext
 id horizontal_scrollview_order_status
 id imageView
 id image_payment
@@ -259,6 +269,7 @@ id item_image_order_detial
 id label
 id label2
 id label_address
+id label_adress_edit_shipping
 id label_category
 id label_delivered
 id label_delivery
@@ -272,6 +283,7 @@ id label_option4
 id label_payme
 id label_payment
 id label_payment_name
+id label_phonenumber_edit_shipping
 id label_price
 id label_price1
 id label_price2
@@ -323,6 +335,7 @@ id list_view_order_management
 id listgear
 id listview_category
 id listview_category_layout
+id listview_choose_province
 id listview_voucher
 id location_icon
 id login_button
@@ -383,6 +396,8 @@ id personal_info_user_info_box
 id phone_number
 id phone_number_box
 id phone_number_edit
+id phonemuber_box
+id phonemuber_edittext
 id phonenumber_box_user_info
 id phonenumber_text_user_info
 id phonenumber_user_info
@@ -408,6 +423,8 @@ id product_image
 id product_info_order_detail
 id product_item
 id product_number_box
+id province_box
+id province_edittext
 id rate_star1
 id rate_star2
 id rate_star3
@@ -483,7 +500,7 @@ id time_of_transport_order_detail
 id title_1
 id title_categ
 id title_category
-id title_confi
+id title_choose_province
 id title_empty
 id title_filter
 id title_login_user_info
@@ -553,6 +570,7 @@ layout category_layout
 layout category_layout_detail
 layout category_panel
 layout confirm_box
+layout edit_shipping_info
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -570,6 +588,7 @@ layout order_detail
 layout order_management
 layout product_detail
 layout product_spec_item
+layout province_picker
 layout search_layout
 layout sex_setting
 layout sign_up
