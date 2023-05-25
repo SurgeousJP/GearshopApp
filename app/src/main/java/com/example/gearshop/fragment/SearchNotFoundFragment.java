@@ -1,81 +1,43 @@
 package com.example.gearshop.fragment;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchNotFoundFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class SearchNotFoundFragment extends Fragment implements OnFragmentViewCreatedListener {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    private OnFragmentViewCreatedListener callback;
-
+public class SearchNotFoundFragment extends DialogFragment implements OnFragmentViewCreatedListener {
+    public interface DialogListener {
+        void onDialogResult(boolean result);
+    }
     public SearchNotFoundFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchNotFoundFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-
-    public static SearchNotFoundFragment newInstance(String param1, String param2) {
-        SearchNotFoundFragment fragment = new SearchNotFoundFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    private ConfirmDeleteCartItemDialogFragment.DialogListener dialogListener;
+    @NonNull
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        @SuppressLint("InflateParams") View dialogView = inflater.inflate(R.layout.not_found_search, null);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.not_found_search, container, false);
-        // Inflate the layout for this fragment
-        if (callback != null) {
-            callback.onFragmentViewCreated(view);
-        }
-        return view;
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(dialogView).setCancelable(true);
+        return builder.create();
     }
-
+    public void setDialogListener(ConfirmDeleteCartItemDialogFragment.DialogListener listener) {
+        this.dialogListener = listener;
+    }
     @Override
     public void onFragmentViewCreated(View fragmentView) {
 
-    }
-    public void setOnFragmentViewCreatedListener(OnFragmentViewCreatedListener callback) {
-        this.callback = callback;
     }
 }

@@ -44,6 +44,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
+
         CartItemList = ((Cart) getApplication()).getCartItemList();
         ProductList = ((Cart) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);

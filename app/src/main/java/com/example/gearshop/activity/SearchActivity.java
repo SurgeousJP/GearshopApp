@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.database.GetProductDataFromAzure;
+import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.SearchNotFoundFragment;
 import com.example.gearshop.fragment.SearchResultFragment;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
@@ -23,7 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener {
+public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener,
+SearchNotFoundFragment.DialogListener{
     private List<Product> ProductList;
     private View SearchIconView;
     private EditText SearchEditText;
@@ -47,20 +49,18 @@ public class SearchActivity extends AppCompatActivity implements OnFragmentViewC
 
         SearchResultFragment searchResultFragment = new SearchResultFragment();
         searchResultFragment.setOnFragmentViewCreatedListener(this);
-
-        SearchNotFoundFragment searchNotFoundFragment = new SearchNotFoundFragment();
-        searchNotFoundFragment.setOnFragmentViewCreatedListener(this);
-
+        fragmentTransaction.add(R.id.search_constraint_layout, searchResultFragment);
         fragmentTransaction.commit();
 
         SearchIconView.setOnClickListener(view -> {
             String searchText = SearchEditText.getText().toString();
-            if (searchText.isEmpty()){
-                replaceSearchFragmentResult(searchNotFoundFragment, R.id.search_constraint_layout);
+            List<Product> searchResults = searchForProducts(searchText);
+            if (searchText.isEmpty() || searchResults.size() == 0){
+                searchResultFragment.UpdateDataOntoAdapter(new ArrayList<>());
+                showSearchNotFoundDialog();
             }
             else{
-                searchResultFragment.UpdateDataOntoAdapter(searchForProducts(searchText));
-                replaceSearchFragmentResult(searchResultFragment, R.id.search_constraint_layout);
+                searchResultFragment.UpdateDataOntoAdapter(searchResults);
             }
         });
 
@@ -125,17 +125,9 @@ public class SearchActivity extends AppCompatActivity implements OnFragmentViewC
         return result;
     }
     protected boolean checkProductContainsInformation(Product product, String info){
-        String productName = product.getName();
-        String productDescription = product.getDescription();
-        String productSpec = product.getSpecs();
-        return (productName.contains(info) || productDescription.contains(info) || productSpec.contains(info));
-    }
-
-    private <T extends Fragment> void replaceSearchFragmentResult(T fragment, int layoutID) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(layoutID, fragment);
-        fragmentTransaction.commit();
+        if (info.isEmpty())
+            return false;
+        return product.getName().contains(info);
     }
 
     @Override
@@ -149,5 +141,16 @@ public class SearchActivity extends AppCompatActivity implements OnFragmentViewC
         layoutParams.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
         layoutParams.topToBottom = searchInputLayout.getId();
         fragmentView.setLayoutParams(layoutParams);
+    }
+
+    private void showSearchNotFoundDialog() {
+        SearchNotFoundFragment dialogFragment = new SearchNotFoundFragment();
+        dialogFragment.setDialogListener(this::onDialogResult);
+        dialogFragment.show(getSupportFragmentManager(), "");
+    }
+
+    @Override
+    public void onDialogResult(boolean result) {
+
     }
 }

@@ -83,8 +83,10 @@ public class SearchResultFragment extends Fragment implements OnFragmentViewCrea
     }
 
     public void UpdateDataOntoAdapter(List<Product> products){
-        ProductAdapter.setData(products);
-        ProductAdapter.notifyDataSetChanged();
+        if (ProductAdapter != null && products != null){
+            ProductAdapter.setData(products);
+            ProductAdapter.notifyDataSetChanged();
+        }
     }
     @Override
     public void onFragmentViewCreated(View fragmentView) {
