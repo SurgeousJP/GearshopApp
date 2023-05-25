@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
-import com.example.gearshop.model.Cart;
+import com.example.gearshop.controller.CartRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
@@ -159,8 +159,8 @@ public class ProductDetailActivity extends AppCompatActivity {
 
 
     private void addNewProductToCart(Product product) {
-        List<ShoppingCartItem> currentShoppingCartList = ((Cart) getApplication()).getCartItemList();
-        List<Product> currentProductList = ((Cart)getApplication()).getProductList();
+        List<ShoppingCartItem> currentShoppingCartList = ((CartRepository) getApplication()).getCartItemList();
+        List<Product> currentProductList = ((CartRepository)getApplication()).getProductList();
         ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
                 1, product.getID(), 1, new Date());
 

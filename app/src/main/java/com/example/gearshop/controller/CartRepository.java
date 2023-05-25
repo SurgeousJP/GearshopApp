@@ -1,14 +1,17 @@
-package com.example.gearshop.model;
+package com.example.gearshop.controller;
 
 import android.app.Application;
+
+import com.example.gearshop.model.Product;
+import com.example.gearshop.model.ShoppingCartItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart extends Application {
+public class CartRepository extends Application {
     private List<Product> ProductList;
     private List<ShoppingCartItem> CartItemList;
-    public Cart(){
+    public CartRepository(){
         CartItemList = new ArrayList<>();
         ProductList = new ArrayList<>();
     }

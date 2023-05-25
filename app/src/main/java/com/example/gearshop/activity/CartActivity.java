@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
-import com.example.gearshop.model.Cart;
+import com.example.gearshop.controller.CartRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyFormat;
@@ -45,8 +45,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
-        CartItemList = ((Cart) getApplication()).getCartItemList();
-        ProductList = ((Cart) getApplication()).getProductList();
+        CartItemList = ((CartRepository) getApplication()).getCartItemList();
+        ProductList = ((CartRepository) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
         CartAdapter = new CartListAdapter(CartItemList, ProductList);
@@ -92,8 +92,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             ShoppingCartItem item = CartItemList.get(position);
             CartItemList.remove(position);
             ProductList.remove(position);
-            ((Cart) getApplication()).setCartItemList(CartItemList);
-            ((Cart) getApplication()).setProductList(ProductList);
+            ((CartRepository) getApplication()).setCartItemList(CartItemList);
+            ((CartRepository) getApplication()).setProductList(ProductList);
             cartListAdapter.notifyItemRemoved(position);
             cartListAdapter.updateTotalPriceAfterDelete(product, item);
         }
