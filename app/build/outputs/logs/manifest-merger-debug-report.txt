@@ -109,7 +109,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\tuanb\.gradle\cach
 	android:dataExtractionRules
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:10:9-65
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:8:9-50
 activity#com.example.gearshop.activity.SearchActivity
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported

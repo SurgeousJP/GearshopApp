@@ -16,7 +16,7 @@ import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.controller.CartRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
-import com.example.gearshop.utility.MoneyFormat;
+import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;
 
@@ -64,9 +64,9 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
 
         TotalProductPrice = findViewById(R.id.total_price_order_detail);
-        TotalProductPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
-        FinalPrice.setText(MoneyFormat.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);

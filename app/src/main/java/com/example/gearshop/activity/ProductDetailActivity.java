@@ -21,7 +21,7 @@ import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.ActivityStartManager;
-import com.example.gearshop.utility.MoneyFormat;
+import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.Date;
@@ -76,7 +76,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         ProductNameTextView.setText(inputtedProduct.getName());
 
         double originalPrice = inputtedProduct.getPrice();
-        ProductOriginalPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(originalPrice));
+        ProductOriginalPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(originalPrice));
         ProductOriginalPriceTextView.setPaintFlags(
                 ProductOriginalPriceTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
@@ -90,7 +90,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         else{
             ProductDiscountTextView.setText("Không giảm giá");
         }
-        ProductSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
+        ProductSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
         Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
         ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1,RecyclerView.VERTICAL, false);

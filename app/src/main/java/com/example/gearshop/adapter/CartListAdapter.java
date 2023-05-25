@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
-import com.example.gearshop.utility.MoneyFormat;
+import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -81,7 +81,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
 
         if (holder.PriceText != null){
             double discountedPrice = getDiscountedPrice(product);
-            holder.PriceText.setText(MoneyFormat.getVietnameseMoneyStringFormatted(discountedPrice));
+            holder.PriceText.setText(MoneyHelper.getVietnameseMoneyStringFormatted(discountedPrice));
         }
 
         if (holder.NumberOfCartItemText != null){
@@ -94,13 +94,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     cartItem.setQuantity(cartItem.getQuantity() - 1);
                     holder.NumberOfCartItemText.setText(String.valueOf(cartItem.getQuantity()));
 
-                    double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                    double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
                     currentTotalPrice -= getDiscountedPrice(product);
                     setPriceToView(TotalProductPrice,
-                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                             FinalPrice,
-                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
                 }
             });
         }
@@ -111,13 +111,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     cartItem.setQuantity(cartItem.getQuantity() + 1);
                     holder.NumberOfCartItemText.setText(String.valueOf(cartItem.getQuantity()));
 
-                    double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+                    double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
                     currentTotalPrice += getDiscountedPrice(product);
                     setPriceToView(TotalProductPrice,
-                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                             FinalPrice,
-                            MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
                 }
             });
         }
@@ -133,13 +133,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
     }
     public void updateTotalPriceAfterDelete(Product product, ShoppingCartItem item) {
         double currentItemPrice = getDiscountedPrice(product) * item.getQuantity();
-        double currentTotalPrice = MoneyFormat.getVietnameseMoneyDouble(
+        double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                 TotalProductPrice.getText().toString());
         currentTotalPrice -= currentItemPrice;
         setPriceToView(TotalProductPrice,
-                MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice),
+                MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                 FinalPrice,
-                MoneyFormat.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
     }
 
     private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, String currentTotalPrice1) {

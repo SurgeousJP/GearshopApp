@@ -17,7 +17,7 @@
     <uses-permission android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.example.gearshop.model.Cart"
+        android:name="com.example.gearshop.controller.CartRepository"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"

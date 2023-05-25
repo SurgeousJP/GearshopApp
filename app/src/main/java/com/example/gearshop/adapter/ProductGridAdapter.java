@@ -15,7 +15,7 @@ import com.example.gearshop.model.Product;
 
 import java.util.List;
 
-import com.example.gearshop.utility.MoneyFormat;
+import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
 public class ProductGridAdapter extends BaseAdapter {
@@ -76,7 +76,7 @@ public class ProductGridAdapter extends BaseAdapter {
         else{
             productDiscountTextView.setText("Không giảm giá");
         }
-        productSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
+        productSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

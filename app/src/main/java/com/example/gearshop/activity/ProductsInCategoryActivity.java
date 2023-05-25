@@ -1,4 +1,5 @@
 package com.example.gearshop.activity;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,13 +20,18 @@ import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
+import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.MoneyHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
+    private List<Product> ProductList;
+
     private FilterSortBarFragment categoryProductFilterSortBarFragment;
     private ListProductFragment categoryListProductFragment;
 
@@ -55,28 +62,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
                 (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
         categoryListProductFragment.setProductCategoryID(6);
 
-        View.OnClickListener filterOnClickListener = view -> {
-            FilterBottomSheetDialogFragment bottomSheetDialogFragment =
-                    new FilterBottomSheetDialogFragment();
-            bottomSheetDialogFragment.show(getSupportFragmentManager(),
-                    bottomSheetDialogFragment.getTag());
-        };
-
-        View.OnClickListener sortOnClickListener = view -> {
-            SortBottomSheetDialogFragment bottomSheetDialogFragment =
-                    new SortBottomSheetDialogFragment();
-            bottomSheetDialogFragment.show(getSupportFragmentManager(),
-                    bottomSheetDialogFragment.getTag());
-        };
-
-        FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();
-        FilterIconView.setOnClickListener(filterOnClickListener);
-        FilterTextView = categoryProductFilterSortBarFragment.getFilterTextView();
-        FilterTextView.setOnClickListener(filterOnClickListener);
-        SortIconView = categoryProductFilterSortBarFragment.getSortIconView();
-        SortIconView.setOnClickListener(sortOnClickListener);
-        SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
-        SortTextView.setOnClickListener(sortOnClickListener);
+        ProductList = categoryListProductFragment.getProductList();
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
@@ -88,6 +74,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         MoreInformationLayout.setOnClickListener(view -> {
 
         });
+
         EscapeLayout = findViewById(R.id.escape);
         EscapeLayout.setOnClickListener(view -> {
 
@@ -105,11 +92,36 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SearchItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
+
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
         });
 
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
         titleScreen.setText(userId);
+
+        View.OnClickListener filterOnClickListener = view -> {
+            FilterBottomSheetDialogFragment bottomSheetDialogFragment =
+                    new FilterBottomSheetDialogFragment(categoryListProductFragment, ProductList);
+            bottomSheetDialogFragment.show(getSupportFragmentManager(),
+                    bottomSheetDialogFragment.getTag());
+
+        };
+
+        View.OnClickListener sortOnClickListener = view -> {
+            SortBottomSheetDialogFragment bottomSheetDialogFragment =
+                    new SortBottomSheetDialogFragment();
+            bottomSheetDialogFragment.show(getSupportFragmentManager(),
+                    bottomSheetDialogFragment.getTag());
+        };
+
+        FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();
+        FilterIconView.setOnClickListener(filterOnClickListener);
+        FilterTextView = categoryProductFilterSortBarFragment.getFilterTextView();
+        FilterTextView.setOnClickListener(filterOnClickListener);
+        SortIconView = categoryProductFilterSortBarFragment.getSortIconView();
+        SortIconView.setOnClickListener(sortOnClickListener);
+        SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
+        SortTextView.setOnClickListener(sortOnClickListener);
     }
 }

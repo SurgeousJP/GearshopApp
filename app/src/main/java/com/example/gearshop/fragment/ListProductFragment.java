@@ -29,6 +29,9 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
     private List<Product> ProductList = new ArrayList<Product>();
     private ProductGridAdapter ProductAdapter;
     private OnFragmentViewCreatedListener callback;
+    public List<Product> getProductList() {
+        return ProductList;
+    }
 
     public GridView getProductGridView(){
         return ProductGridView;
@@ -78,6 +81,13 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
         ProductAdapter = new ProductGridAdapter(getContext(), ProductList);
         ProductGridView.setAdapter(ProductAdapter);
 
+        if (ProductList == null || ProductList.size() == 0){
+            initializeProductsInCategory();
+        }
+        return view;
+    }
+
+    private void initializeProductsInCategory() {
         final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
         getProductDataFromAzure[0] = new GetProductDataFromAzure();
         getProductDataFromAzure[0].setCategoryID(5);
@@ -101,7 +111,6 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
         System.out.println("Async Task ended");
 
         if (getProductDataFromAzure[0].getProductList() != null) this.UpdateDataOntoAdapter(getProductDataFromAzure[0].getProductList());
-        return view;
     }
 
     public void UpdateDataOntoAdapter(List<Product> products){
