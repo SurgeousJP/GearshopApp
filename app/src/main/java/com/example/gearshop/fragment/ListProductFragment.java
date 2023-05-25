@@ -105,10 +105,8 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
     }
 
     public void UpdateDataOntoAdapter(List<Product> products){
-        synchronized (ProductAdapter) {
-            ProductAdapter.setData(products);
-            ProductAdapter.notify();
-        }
+        ProductAdapter.setData(products);
+        ProductAdapter.notifyDataSetChanged();
     }
 
     @Override
