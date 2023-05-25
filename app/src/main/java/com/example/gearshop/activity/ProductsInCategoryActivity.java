@@ -14,8 +14,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
+import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
 import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.List;
@@ -33,6 +35,11 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
     private RelativeLayout AccountItem;
+
+    private View FilterIconView;
+    private TextView FilterTextView;
+    private View SortIconView;
+    private TextView SortTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +55,35 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
                 (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
         categoryListProductFragment.setProductCategoryID(6);
 
+        View.OnClickListener filterOnClickListener = view -> {
+            FilterBottomSheetDialogFragment bottomSheetDialogFragment =
+                    new FilterBottomSheetDialogFragment();
+            bottomSheetDialogFragment.show(getSupportFragmentManager(),
+                    bottomSheetDialogFragment.getTag());
+        };
+
+        View.OnClickListener sortOnClickListener = view -> {
+            SortBottomSheetDialogFragment bottomSheetDialogFragment =
+                    new SortBottomSheetDialogFragment();
+            bottomSheetDialogFragment.show(getSupportFragmentManager(),
+                    bottomSheetDialogFragment.getTag());
+        };
+
+        FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();
+        FilterIconView.setOnClickListener(filterOnClickListener);
+        FilterTextView = categoryProductFilterSortBarFragment.getFilterTextView();
+        FilterTextView.setOnClickListener(filterOnClickListener);
+        SortIconView = categoryProductFilterSortBarFragment.getSortIconView();
+        SortIconView.setOnClickListener(sortOnClickListener);
+        SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
+        SortTextView.setOnClickListener(sortOnClickListener);
+
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
+
         MoreInformationLayout = findViewById(R.id.more_info_order_detail);
         MoreInformationLayout.setOnClickListener(view -> {
 

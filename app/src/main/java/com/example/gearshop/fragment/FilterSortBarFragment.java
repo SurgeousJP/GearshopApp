@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.gearshop.R;
 
@@ -26,6 +27,26 @@ public class FilterSortBarFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private View FilterIconView;
+    private TextView FilterTextView;
+    private View SortIconView;
+    private TextView SortTextView;
+
+    public View getFilterIconView() {
+        return FilterIconView;
+    }
+
+    public TextView getFilterTextView() {
+        return FilterTextView;
+    }
+
+    public View getSortIconView() {
+        return SortIconView;
+    }
+
+    public TextView getSortTextView() {
+        return SortTextView;
+    }
     public FilterSortBarFragment() {
         // Required empty public constructor
     }
@@ -61,6 +82,11 @@ public class FilterSortBarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.framelayout_filter_sort_bar, container, false);
+        View view = inflater.inflate(R.layout.framelayout_filter_sort_bar, container, false);
+        FilterIconView = view.findViewById(R.id.filter_icon);
+        FilterTextView = view.findViewById(R.id.label_filter);
+        SortIconView = view.findViewById(R.id.sort_icon);
+        SortTextView = view.findViewById(R.id.label_sort_);
+        return view;
     }
 }
