@@ -45,7 +45,7 @@
             app:layout_constraintEnd_toStartOf="@id/navigation_box"
             android:layout_toRightOf="@id/title_wrap"
             android:layout_marginRight="10dp"
-            android:background="@drawable/cart_image"
+            android:background="@drawable/click_cart_image"
             tools:layout_editor_absoluteX="296dp"
             tools:layout_editor_absoluteY="0dp" />
 

@@ -2730,9 +2730,14 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable cancel_box
 drawable cart_box
+drawable cart_grey_image
 drawable cart_image
 drawable check_icon
 drawable circle_blue
+drawable click_cart_image
+drawable click_fill_blue_box
+drawable click_fill_blue_box_2
+drawable click_wayback_color
 drawable decrement_invalid_button
 drawable decrement_valid_button
 drawable delivered_box
@@ -2752,6 +2757,8 @@ drawable escape
 drawable fb
 drawable fill_blue_box
 drawable fill_blue_box_2
+drawable fill_dark_blue_box
+drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
@@ -3052,6 +3059,7 @@ id components_1
 id components_2
 id components_3
 id components_4
+id components_5
 id components_list_voucher
 id compress
 id confirm_button
@@ -3295,6 +3303,7 @@ id label_option1
 id label_option2
 id label_option3
 id label_option4
+id label_option5
 id label_payme
 id label_payment
 id label_payment_name
@@ -3348,7 +3357,11 @@ id lineend
 id listMode
 id list_category
 id list_item
-id list_item3
+id list_item_1
+id list_item_2
+id list_item_3
+id list_item_4
+id list_item_5
 id list_item_sex_1
 id list_item_sex_2
 id list_item_sex_3
