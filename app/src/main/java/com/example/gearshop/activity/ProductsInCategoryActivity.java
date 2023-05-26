@@ -111,7 +111,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         View.OnClickListener sortOnClickListener = view -> {
             SortBottomSheetDialogFragment bottomSheetDialogFragment =
-                    new SortBottomSheetDialogFragment();
+                    new SortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
             bottomSheetDialogFragment.show(getSupportFragmentManager(),
                     bottomSheetDialogFragment.getTag());
         };

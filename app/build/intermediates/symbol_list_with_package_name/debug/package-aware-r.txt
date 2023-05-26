@@ -3663,6 +3663,7 @@ id snackbar_text
 id snap
 id snapMargins
 id sort_icon
+id sort_vector
 id south
 id spacer
 id special_effects_controller_view_tag
