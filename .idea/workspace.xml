@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Demo một số hiệu ứng, sửa sắp xếp">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/normal_box_2_fill_blue.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/normal_box_3_fill_blue.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/normal_box_fill_blue.xml" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="thêm drawable">
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/filter_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/filter_setting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -510,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685011858338</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="thêm drawable">
+      <created>1685095470774</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685095470774</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString" />
     <MESSAGE value="fix bug khi merge nhánh UI" />
     <MESSAGE value="fix một số bug xảy ra do merge nhánh (cụ thể là mất package và sai tên id)" />
     <MESSAGE value="Thêm ProductDetailActivity và set event mở, quay trở lại" />
@@ -563,7 +567,8 @@
     <MESSAGE value="Refractor fragment và class" />
     <MESSAGE value="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search" />
     <MESSAGE value="Demo một số hiệu ứng, sửa sắp xếp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Demo một số hiệu ứng, sửa sắp xếp" />
+    <MESSAGE value="thêm drawable" />
+    <option name="LAST_COMMIT_MESSAGE" value="thêm drawable" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
