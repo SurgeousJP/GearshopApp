@@ -40,16 +40,6 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
         return ProductAdapter;
     }
 
-    private int ProductCategoryID;
-    public int getProductCategoryID() {
-        return ProductCategoryID;
-    }
-
-    public void setProductCategoryID(int productCategoryID) {
-        ProductCategoryID = productCategoryID;
-        this.onCreateView(getLayoutInflater(), (ViewGroup) requireView().getParent(), null);
-    }
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -76,42 +66,12 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.framelayout_list_product, container, false);
-
         ProductGridView = (GridView) view.findViewById(R.id.grid_view_list_product);
         ProductAdapter = new ProductGridAdapter(getContext(), ProductList);
         ProductGridView.setAdapter(ProductAdapter);
-
-        if (ProductList == null || ProductList.size() == 0){
-            initializeProductsInCategory();
-        }
         return view;
     }
 
-    private void initializeProductsInCategory() {
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].setCategoryID(5);
-        getProductDataFromAzure[0].execute(
-                "SELECT product.*,\n" +
-                        "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
-                        "\t   discount_percentage, start_date_utc, end_date_utc\n" +
-                        "FROM product\n" +
-                        "JOIN product_category ON product.category_id = product_category.id\n" +
-                        "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
-                        "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
-                        "WHERE product.category_id = ?"
-        );
-
-        System.out.println("Async Task running");
-        try {
-            getProductDataFromAzure[0].get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Async Task ended");
-
-        if (getProductDataFromAzure[0].getProductList() != null) this.UpdateDataOntoAdapter(getProductDataFromAzure[0].getProductList());
-    }
 
     public void UpdateDataOntoAdapter(List<Product> products){
         ProductAdapter.setData(products);

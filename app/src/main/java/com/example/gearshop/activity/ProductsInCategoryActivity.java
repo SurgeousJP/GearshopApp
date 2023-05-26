@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
@@ -31,7 +32,7 @@ import java.util.concurrent.ExecutionException;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
     private List<Product> ProductList;
-
+    private int ProductCategoryID;
     private FilterSortBarFragment categoryProductFilterSortBarFragment;
     private ListProductFragment categoryListProductFragment;
 
@@ -51,19 +52,19 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
+
+        ProductCategoryID = 1;
+        initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         categoryListProductFragment =
                 (ListProductFragment) fragmentManager.findFragmentById(R.id.fragment_grid_view);
+        if (categoryListProductFragment != null)
+            categoryListProductFragment.UpdateDataOntoAdapter(ProductList);
         categoryProductFilterSortBarFragment =
                 (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
-        categoryListProductFragment.setProductCategoryID(6);
-
-        ProductList = categoryListProductFragment.getProductList();
-
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -123,5 +124,31 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SortIconView.setOnClickListener(sortOnClickListener);
         SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
         SortTextView.setOnClickListener(sortOnClickListener);
+    }
+    private void initializeProductsInCategory() {
+        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
+        getProductDataFromAzure[0] = new GetProductDataFromAzure();
+        getProductDataFromAzure[0].setCategoryID(ProductCategoryID);
+        getProductDataFromAzure[0].execute(
+                "SELECT product.*,\n" +
+                        "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
+                        "\t   discount_percentage, start_date_utc, end_date_utc\n" +
+                        "FROM product\n" +
+                        "JOIN product_category ON product.category_id = product_category.id\n" +
+                        "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
+                        "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
+                        "WHERE product.category_id = ?"
+        );
+
+        System.out.println("Async Task running");
+        try {
+            getProductDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task ended");
+
+        if (getProductDataFromAzure[0].getProductList() != null)
+            ProductList = getProductDataFromAzure[0].getProductList();
     }
 }
