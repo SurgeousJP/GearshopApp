@@ -22,7 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
+public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment implements 
+ConfirmFilterDialogFragment.DialogListener{
     private View DismissView;
     private TextView UnderPriceTextView;
     private TextView RangePrice1TextView;
@@ -34,6 +35,7 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
     private TextView ResetFilterTextView;
     private TextView ApplyFilterTextView;
     private List<Product> ProductList;
+    private List<Product> FilterProductResult;
     private ListProductFragment CategoryListProductFragment;
 
     public FilterBottomSheetDialogFragment(){}
@@ -107,7 +109,8 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
         UnderPriceTextView.setOnClickListener(view1 -> {
             List<Product> result = filter(ProductList, product -> getDiscountedPrice(product)
                     < MoneyHelper.extractVietnameseMoneyFromString(UnderPriceTextView.getText().toString()));
-            CategoryListProductFragment.UpdateDataOntoAdapter(result);
+            FilterProductResult = result;
+            showConfirmFilterDialog();
         });
         RangePrice1TextView.setOnClickListener(view1 -> {
             String[] pricePair = RangePrice1TextView.getText().toString().split("-");
@@ -117,7 +120,8 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
             List<Product> result = filter(ProductList,
                     product -> biggerThanPrice <= getDiscountedPrice(product)
                             && getDiscountedPrice(product) <= lesserThanPrice);
-            CategoryListProductFragment.UpdateDataOntoAdapter(result);
+            FilterProductResult = result;
+            showConfirmFilterDialog();
         });
 
         RangePrice2TextView.setOnClickListener(view1 -> {
@@ -128,22 +132,26 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
             List<Product> result = filter(ProductList,
                     product -> biggerThanPrice <= getDiscountedPrice(product)
                             && getDiscountedPrice(product) <= lesserThanPrice);
-            CategoryListProductFragment.UpdateDataOntoAdapter(result);
+            FilterProductResult = result;
+            showConfirmFilterDialog();
         });
 
         OverPriceTextView.setOnClickListener(view1 -> {
             List<Product> result = filter(ProductList, product -> getDiscountedPrice(product)
                     > MoneyHelper.extractVietnameseMoneyFromString(OverPriceTextView.getText().toString()));
-            CategoryListProductFragment.UpdateDataOntoAdapter(result);
+            FilterProductResult = result;
+            showConfirmFilterDialog();
         });
 
         HavingDiscountTextView.setOnClickListener(view1 -> {
             List<Product> result = filter(ProductList, product -> product.getDiscountInformation().isActive());
-            CategoryListProductFragment.UpdateDataOntoAdapter(result);
+            FilterProductResult = result;
+            showConfirmFilterDialog();
         });
 
         ResetFilterTextView.setOnClickListener(view1 -> {
-            CategoryListProductFragment.UpdateDataOntoAdapter(ProductList);
+            FilterProductResult = ProductList;
+            showConfirmFilterDialog();
         });
         ApplyFilterTextView.setOnClickListener(view1 -> {
             String lesserThanPriceText = LesserThanPriceEditText.getText().toString();
@@ -161,7 +169,8 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
                     List<Product> result = filter(ProductList, product ->
                             getDiscountedPrice(product) < lesserThanPrice &&
                                     getDiscountedPrice(product) > biggerThanPrice);
-                    CategoryListProductFragment.UpdateDataOntoAdapter(result);
+                    FilterProductResult = result;
+                    showConfirmFilterDialog();
                 }
             }
         });
@@ -183,5 +192,18 @@ public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment {
             price = price * (100 - p.getDiscountInformation().getDiscountPercentage()) / 100;
         }
         return price;
+    }
+
+    private void showConfirmFilterDialog() {
+        ConfirmFilterDialogFragment dialogFragment = new ConfirmFilterDialogFragment();
+        dialogFragment.setDialogListener(this);
+        dialogFragment.show(getParentFragmentManager(), "");
+    }
+    
+    @Override
+    public void onDialogResult(boolean result) {
+        if (result){
+            CategoryListProductFragment.UpdateDataOntoAdapter(FilterProductResult);
+        }
     }
 }

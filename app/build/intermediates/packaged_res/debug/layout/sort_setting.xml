@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <View
-            android:id="@+id/vector"
+            android:id="@+id/sort_vector"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="24dp"

@@ -20,8 +20,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment {
+public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment
+        implements ConfirmSortDialogFragment.DialogListener {
     private List<Product> ProductList;
+    private List<Product> SortProductResult;
     private ListProductFragment CategoryListProductFragment;
     private View DismissView;
 
@@ -35,6 +37,7 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment {
     private ConstraintLayout TickedLayoutLowToHighPrice;
     private ConstraintLayout TickedLayoutHighToLowPrice;
 
+    private boolean checkConfirmUpdateUI;
     public SortBottomSheetDialogFragment(){}
     public SortBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
         this.ProductList = products;
@@ -65,11 +68,15 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
         TickedLayoutLowToHighPrice.setOnClickListener(view1 -> {
             ResetSortOption();
-            LayoutLowToHighPrice.setBackgroundResource(R.drawable.option_item_color);
-            LowToHighTextView.setTypeface(Typeface.DEFAULT_BOLD);
-            TickedLayoutLowToHighPrice.setBackgroundResource(R.drawable.check_icon);
             ProductList.sort((a, b) -> Double.compare(getDiscountedPrice(a), getDiscountedPrice(b)));
-            CategoryListProductFragment.UpdateDataOntoAdapter(ProductList);
+            SortProductResult = ProductList;
+            showConfirmSortDialog();
+            if (checkConfirmUpdateUI){
+                LayoutLowToHighPrice.setBackgroundResource(R.drawable.option_item_color);
+                LowToHighTextView.setTypeface(Typeface.DEFAULT_BOLD);
+                TickedLayoutLowToHighPrice.setBackgroundResource(R.drawable.check_icon);
+                checkConfirmUpdateUI = false;
+            }
         });
 
         LayoutHighToLowPrice = view.findViewById(R.id.list_item_sex_3);
@@ -77,11 +84,15 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment {
         TickedLayoutHighToLowPrice = view.findViewById(R.id.components_4);
         TickedLayoutHighToLowPrice.setOnClickListener(view1 -> {
             ResetSortOption();
-            LayoutHighToLowPrice.setBackgroundResource(R.drawable.option_item_color);
-            HighToLowTextView.setTypeface(Typeface.DEFAULT_BOLD);
-            TickedLayoutHighToLowPrice.setBackgroundResource(R.drawable.check_icon);
             ProductList.sort((a, b) -> Double.compare(getDiscountedPrice(b), getDiscountedPrice(a)));
-            CategoryListProductFragment.UpdateDataOntoAdapter(ProductList);
+            SortProductResult = ProductList;
+            showConfirmSortDialog();
+            if (checkConfirmUpdateUI){
+                LayoutHighToLowPrice.setBackgroundResource(R.drawable.option_item_color);
+                HighToLowTextView.setTypeface(Typeface.DEFAULT_BOLD);
+                TickedLayoutHighToLowPrice.setBackgroundResource(R.drawable.check_icon);
+                checkConfirmUpdateUI = false;
+            }
         });
 
         return view;
@@ -106,5 +117,17 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment {
         }
         return price;
     }
+    private void showConfirmSortDialog() {
+        ConfirmSortDialogFragment dialogFragment = new ConfirmSortDialogFragment();
+        dialogFragment.setDialogListener(this);
+        dialogFragment.show(getParentFragmentManager(), "");
+    }
 
+    @Override
+    public void onDialogResult(boolean result) {
+        if (result){
+            CategoryListProductFragment.UpdateDataOntoAdapter(SortProductResult);
+        }
+        checkConfirmUpdateUI = result;
+    }
 }

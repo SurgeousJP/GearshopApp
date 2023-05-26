@@ -473,6 +473,7 @@ id show_order
 id signup
 id signup_icon
 id sort_icon
+id sort_vector
 id star1
 id star2
 id star3
