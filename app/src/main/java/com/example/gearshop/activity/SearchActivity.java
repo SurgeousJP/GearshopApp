@@ -22,6 +22,7 @@ import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener,
@@ -127,7 +128,7 @@ SearchNotFoundFragment.DialogListener{
     protected boolean checkProductContainsInformation(Product product, String info){
         if (info.isEmpty())
             return false;
-        return product.getName().contains(info);
+        return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }
 
     @Override
