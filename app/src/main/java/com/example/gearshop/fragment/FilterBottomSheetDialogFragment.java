@@ -1,5 +1,6 @@
 package com.example.gearshop.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.support.annotation.Nullable;
@@ -10,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
@@ -25,6 +28,11 @@ import java.util.function.Predicate;
 public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment implements 
 ConfirmFilterDialogFragment.DialogListener{
     private View DismissView;
+    private ConstraintLayout UnderPriceLayout;
+    private ConstraintLayout RangePrice1Layout;
+    private ConstraintLayout RangePrice2Layout;
+    private ConstraintLayout OverPriceLayout;
+    private ConstraintLayout HavingDiscountLayout;
     private TextView UnderPriceTextView;
     private TextView RangePrice1TextView;
     private TextView RangePrice2TextView;
@@ -82,6 +90,8 @@ ConfirmFilterDialogFragment.DialogListener{
         return ApplyFilterTextView;
     }
 
+    private ConstraintLayout tempLayout;
+    private TextView tempTextView;
 
     @Nullable
     @Override
@@ -91,6 +101,13 @@ ConfirmFilterDialogFragment.DialogListener{
         DismissView.setOnClickListener(view1 -> {
             dismiss();
         });
+
+        UnderPriceLayout = view.findViewById(R.id.pricebox1);
+        RangePrice1Layout = view.findViewById(R.id.pricebox2);
+        RangePrice2Layout = view.findViewById(R.id.pricebox3);
+        OverPriceLayout = view.findViewById(R.id.pricebox4);
+        HavingDiscountLayout = view.findViewById(R.id.chip2);
+
         UnderPriceTextView = view.findViewById(R.id.text_price1);
         RangePrice1TextView = view.findViewById(R.id.text_price2);
         RangePrice2TextView = view.findViewById(R.id.text_price3);
@@ -109,6 +126,7 @@ ConfirmFilterDialogFragment.DialogListener{
             List<Product> result = filter(ProductList, product -> getDiscountedPrice(product)
                     < MoneyHelper.extractVietnameseMoneyFromString(UnderPriceTextView.getText().toString()));
             FilterProductResult = result;
+            setUIComponentTempsForUpdate(UnderPriceLayout, UnderPriceTextView);
             showConfirmFilterDialog();
         });
         RangePrice1TextView.setOnClickListener(view1 -> {
@@ -120,6 +138,7 @@ ConfirmFilterDialogFragment.DialogListener{
                     product -> biggerThanPrice <= getDiscountedPrice(product)
                             && getDiscountedPrice(product) <= lesserThanPrice);
             FilterProductResult = result;
+            setUIComponentTempsForUpdate(RangePrice1Layout, RangePrice1TextView);
             showConfirmFilterDialog();
         });
 
@@ -132,6 +151,7 @@ ConfirmFilterDialogFragment.DialogListener{
                     product -> biggerThanPrice <= getDiscountedPrice(product)
                             && getDiscountedPrice(product) <= lesserThanPrice);
             FilterProductResult = result;
+            setUIComponentTempsForUpdate(RangePrice2Layout, RangePrice2TextView);
             showConfirmFilterDialog();
         });
 
@@ -139,12 +159,14 @@ ConfirmFilterDialogFragment.DialogListener{
             List<Product> result = filter(ProductList, product -> getDiscountedPrice(product)
                     > MoneyHelper.extractVietnameseMoneyFromString(OverPriceTextView.getText().toString()));
             FilterProductResult = result;
+            setUIComponentTempsForUpdate(OverPriceLayout, OverPriceTextView);
             showConfirmFilterDialog();
         });
 
         HavingDiscountTextView.setOnClickListener(view1 -> {
             List<Product> result = filter(ProductList, product -> product.getDiscountInformation().isActive());
             FilterProductResult = result;
+            setUIComponentTempsForUpdate(HavingDiscountLayout, HavingDiscountTextView);
             showConfirmFilterDialog();
         });
 
@@ -175,6 +197,26 @@ ConfirmFilterDialogFragment.DialogListener{
         });
         return view;
     }
+    private void setUIComponentTempsForUpdate(ConstraintLayout layout, TextView textView){
+        tempLayout = layout;
+        tempTextView = textView;
+    }
+    private void UpdateUIFilterOnChosen(ConstraintLayout layout, TextView textView){
+        ResetUIFilterOptionForAll();
+        layout.setBackgroundResource(R.drawable.normal_box_2_fill_blue);
+        textView.setTextColor(Color.WHITE);
+    }
+    private void ResetUIFilterOptionForAll(){
+        ResetFilterOption(UnderPriceLayout, UnderPriceTextView);
+        ResetFilterOption(RangePrice1Layout, RangePrice1TextView);
+        ResetFilterOption(RangePrice2Layout, RangePrice2TextView);
+        ResetFilterOption(OverPriceLayout, OverPriceTextView);
+        ResetFilterOption(HavingDiscountLayout, HavingDiscountTextView);
+    }
+    private void ResetFilterOption(ConstraintLayout layout, TextView textView){
+        layout.setBackgroundResource(R.drawable.normal_box_2);
+        textView.setTextColor(Color.parseColor("#27272A"));
+    }
     public List<Product> filter(List<Product> products, Predicate<Product> checkFunction) {
         List<Product> result = new ArrayList<>();
         for (int i = 0; i < products.size(); i++){
@@ -203,6 +245,7 @@ ConfirmFilterDialogFragment.DialogListener{
     public void onDialogResult(boolean result) {
         if (result){
             CategoryListProductFragment.UpdateDataOntoAdapter(FilterProductResult);
+            UpdateUIFilterOnChosen(tempLayout, tempTextView);
         }
     }
 }
