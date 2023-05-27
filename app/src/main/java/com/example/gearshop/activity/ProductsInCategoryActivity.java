@@ -55,7 +55,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
 
-        ProductCategoryID = 6;
+        ProductCategoryID = 1;
         initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();

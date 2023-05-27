@@ -75,6 +75,7 @@ public class ProductGridAdapter extends BaseAdapter {
         }
         else{
             productDiscountTextView.setText("Không giảm giá");
+            productDiscountTextView.setVisibility(View.GONE);
         }
         productSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
         convertView.setOnClickListener(new View.OnClickListener() {
