@@ -55,7 +55,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
 
-        ProductCategoryID = 1;
+        ProductCategoryID = 6;
         initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -101,19 +101,23 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         TextView titleScreen = (TextView) findViewById(R.id.title_screen);
         titleScreen.setText(userId);
 
+        final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =
+                new FilterBottomSheetDialogFragment[1];
+        final SortBottomSheetDialogFragment[] sortBottomSheetDialogFragment =
+                new SortBottomSheetDialogFragment[1];
         View.OnClickListener filterOnClickListener = view -> {
-            FilterBottomSheetDialogFragment bottomSheetDialogFragment =
+            filterBottomSheetDialogFragment[0] =
                     new FilterBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            bottomSheetDialogFragment.show(getSupportFragmentManager(),
-                    bottomSheetDialogFragment.getTag());
+            filterBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
+                    filterBottomSheetDialogFragment[0].getTag());
 
         };
 
         View.OnClickListener sortOnClickListener = view -> {
-            SortBottomSheetDialogFragment bottomSheetDialogFragment =
+            sortBottomSheetDialogFragment[0] =
                     new SortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            bottomSheetDialogFragment.show(getSupportFragmentManager(),
-                    bottomSheetDialogFragment.getTag());
+            sortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
+                    sortBottomSheetDialogFragment[0].getTag());
         };
 
         FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();

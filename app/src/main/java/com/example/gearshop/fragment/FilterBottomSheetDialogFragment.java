@@ -37,7 +37,6 @@ ConfirmFilterDialogFragment.DialogListener{
     private List<Product> ProductList;
     private List<Product> FilterProductResult;
     private ListProductFragment CategoryListProductFragment;
-
     public FilterBottomSheetDialogFragment(){}
     public FilterBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
         this.ProductList = products;

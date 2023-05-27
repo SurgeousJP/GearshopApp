@@ -2849,7 +2849,10 @@ drawable navigation_empty_icon
 drawable next_arrow
 drawable normal_box
 drawable normal_box_2
+drawable normal_box_2_fill_blue
 drawable normal_box_3
+drawable normal_box_3_fill_blue
+drawable normal_box_fill_blue
 drawable not_found
 drawable notification_action_background
 drawable notification_bg
@@ -3350,6 +3353,7 @@ id line4
 id line5
 id line6
 id line7
+id line8
 id line_view
 id linear
 id linebegin
