@@ -51,6 +51,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
+
         MoreInformationLayout = findViewById(R.id.more_info_order_detail);
         MoreInformationLayout.setOnClickListener(view -> {
 
@@ -64,16 +65,21 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         HomeItem.setOnClickListener(view -> {
 
         });
+
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-
+            Intent intent = new Intent(getBaseContext(), CategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getBaseContext().startActivity(intent);
         });
+
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
 
         });
+
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+
         });
 
     }
