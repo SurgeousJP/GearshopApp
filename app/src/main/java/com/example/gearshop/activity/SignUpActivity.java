@@ -16,6 +16,9 @@ import com.example.gearshop.model.Customer;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     CustomerRepository customerRepository;
@@ -52,46 +55,119 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = edtPassword.getText().toString();
                 String confirmPassword = edtConfirmPassword.getText().toString();
                 if (password.equals(confirmPassword)){
-                    int newCustomerId = customerRepository.generateNewCustomerId();
-                    String newCustomerUsername = edtUsername.getText().toString();
-                    String newCustomerPassword = edtPassword.getText().toString();
-                    String newCustomerFirstName = edtFirstName.getText().toString();
-                    String newCustomerLastName = edtLastName.getText().toString();
-                    String newCustomerEmail = edtEmail.getText().toString();
-                    String newCustomerGender = edtGender.getText().toString();
-                    String newCustomerPhoneNumber = edtPhoneNumber.getText().toString();
-                    Customer newCustomer;
-
-
-                    String dayString = edtDay.getText().toString();
-                    String monthString = edtMonth.getText().toString();
-                    String yearString = edtYear.getText().toString();
-
-                    String dateString = yearString + "-" + monthString + "-" + dayString;
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                    java.util.Date parsedDate;
-
-                    try {
-                        parsedDate = dateFormat.parse(dateString);
-                    } catch (ParseException e) {
-                        // Handle the parsing exception
-                        e.printStackTrace();
-                        return;
-                    }
-
-                    java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
-
-                    newCustomer = new Customer(newCustomerId, newCustomerUsername, newCustomerPassword, newCustomerEmail,
-                            newCustomerFirstName, newCustomerLastName, newCustomerGender, newCustomerPhoneNumber, sqlDate);
-
-                    customerRepository.signUp(newCustomer);
-                    Toast.makeText(getApplicationContext(), "Đăng ký tài khoản thành công!", Toast.LENGTH_SHORT).show();
-
-                    finish();
+                    AddCustomerToDatabase(password);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Mật khẩu xác nhận không chính xác", Toast.LENGTH_SHORT).show();
                 }
+            }
+
+            private void AddCustomerToDatabase(String password) {
+                int newCustomerId = customerRepository.generateNewCustomerId();
+                String newCustomerUsername = edtUsername.getText().toString();
+                String newCustomerPassword = edtPassword.getText().toString();
+                String newCustomerFirstName = edtFirstName.getText().toString();
+                String newCustomerLastName = edtLastName.getText().toString();
+                String newCustomerEmail = edtEmail.getText().toString();
+                String newCustomerGender = edtGender.getText().toString();
+                String newCustomerPhoneNumber = edtPhoneNumber.getText().toString();
+
+                String dayString = edtDay.getText().toString();
+                int dayInt = Integer.parseInt(dayString);
+                String monthString = edtMonth.getText().toString();
+                int monthInt = Integer.parseInt(monthString);
+                String yearString = edtYear.getText().toString();
+                int yearInt = Integer.parseInt(monthString);
+
+                String dateString = yearString + "-" + monthString + "-" + dayString;
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                java.util.Date parsedDate;
+
+                if (!validatePhoneNumber(newCustomerPhoneNumber)) {
+                    // Handle phone number validation error
+                    return;
+                }
+
+                if (!validateDate(dayInt, monthInt, yearInt)) {
+                    // Handle date validation error
+                    return;
+                }
+
+                if (!validateName(newCustomerFirstName) || !validateName(newCustomerLastName)) {
+                    // Handle name validation error
+                    return;
+                }
+
+                if (!validateEmail(newCustomerEmail)) {
+                    // Handle email validation error
+                    return;
+                }
+
+                if (!validatePassword(password)) {
+                    // Handle password validation error
+                    return;
+                }
+
+                try {
+                    parsedDate = dateFormat.parse(dateString);
+                } catch (ParseException e) {
+                    // Handle the parsing exception
+                    e.printStackTrace();
+                    return;
+                }
+
+                java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
+
+                Customer newCustomer = new Customer(newCustomerId, newCustomerUsername, newCustomerPassword, newCustomerEmail,
+                        newCustomerFirstName, newCustomerLastName, newCustomerGender, newCustomerPhoneNumber, sqlDate);
+
+                customerRepository.signUp(newCustomer);
+                Toast.makeText(getApplicationContext(), "Đăng ký tài khoản thành công!", Toast.LENGTH_SHORT).show();
+
+                finish();
+            }
+
+            private boolean validatePhoneNumber(String phoneNumber) {
+                return phoneNumber.length() <= 10;
+            }
+
+            private boolean validateDate(int day, int month, int year) {
+                if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2100) {
+                    return false;
+                }
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.setLenient(false);
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month - 1);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
+
+                try {
+                    calendar.getTime();
+                    return true;
+                } catch (IllegalArgumentException e) {
+                    return false;
+                }
+            }
+
+            private boolean validateName(String name) {
+                return !name.matches(".*\\d.*");
+            }
+
+            private boolean validateEmail(String email) {
+                Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
+                Matcher matcher = emailPattern.matcher(email);
+                return matcher.matches();
+            }
+
+            private boolean validatePassword(String password) {
+                int minPasswordLength = 8;
+                boolean hasUpperCase = !password.equals(password.toLowerCase());
+                boolean hasLowerCase = !password.equals(password.toUpperCase());
+                boolean hasNumber = password.matches(".*\\d.*");
+                boolean hasSpecialChar = !password.matches("[a-zA-Z0-9 ]*");
+
+                return password.length() >= minPasswordLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
             }
         });
 
@@ -110,4 +186,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
