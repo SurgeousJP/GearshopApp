@@ -10,18 +10,21 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class CategoryRepository {
+    private final String BASE_GET_CATEGORY_SQL = "SELECT *\n" +
+            "FROM product_category\n";
     private final List<Category> CategoryList = new ArrayList<>();
+    private final GetCategoryDataFromAzure[] getCategoryDataInAzure;
+
 
     @SuppressLint("SimpleDateFormat")
     public CategoryRepository() {
         // Get Category List in Database
-        GetCategoryDataFromAzure[] getCategoryDataInAzure = new GetCategoryDataFromAzure[1];
+        getCategoryDataInAzure = new GetCategoryDataFromAzure[2];
+    }
+
+    public List<Category> getCategories() {
         getCategoryDataInAzure[0] = new GetCategoryDataFromAzure();
-        getCategoryDataInAzure[0].execute(
-                "SELECT *\n" +
-                        "FROM product_category\n"
-        );
-        System.out.println("Async Task get Category is running");
+        getCategoryDataInAzure[0].execute(BASE_GET_CATEGORY_SQL);
 
         try {
             getCategoryDataInAzure[0].get();
@@ -29,17 +32,30 @@ public class CategoryRepository {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Async Task get Category ended");
-
-
-
         if (getCategoryDataInAzure[0].getCategoryList() != null){
             CategoryList.addAll(getCategoryDataInAzure[0].getCategoryList());
         }
+
+        return CategoryList;
     }
 
-    public List<Category> getCategories() {
-        return CategoryList;
+    public Category getCategoryById(String categoryId){
+        getCategoryDataInAzure[1] = new GetCategoryDataFromAzure();
+        getCategoryDataInAzure[1].execute(BASE_GET_CATEGORY_SQL +
+                        "WHERE id = " + categoryId
+        );
+
+        try {
+            getCategoryDataInAzure[1].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (getCategoryDataInAzure[1].getCategoryList() != null){
+            return getCategoryDataInAzure[1].getCategoryList().get(0);
+        }
+
+        return null;
     }
 
     public int generateNewCategoryId() {
