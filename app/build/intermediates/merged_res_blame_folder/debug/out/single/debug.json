@@ -256,10 +256,6 @@
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\order_management.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_sign_up.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_sign_up.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\sign_up.xml"
     },
@@ -482,6 +478,10 @@
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_thin.xml.flat",
         "source": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\thin.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_category_layout_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/category_layout_detail.xml"
     },
     {
         "merged": "C:\\Users\\Asus\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_product_spec_item.xml.flat",

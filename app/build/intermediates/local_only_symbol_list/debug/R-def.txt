@@ -117,8 +117,10 @@ id cart_icon_product
 id cart_layout
 id cart_order_detail
 id cart_text_2
+id category_detail_label
 id category_discount
 id category_item_category_detail
+id category_product_gridview
 id category_tag
 id check_out_button
 id check_out_text
@@ -505,6 +507,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
+id wayback_icon_category_detail
 id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product

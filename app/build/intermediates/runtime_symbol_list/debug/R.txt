@@ -3014,8 +3014,10 @@ int id cart_icon_product 0x7f08007c
 int id cart_layout 0x7f08007d
 int id cart_order_detail 0x7f08007e
 int id cart_text_2 0x7f08007f
+int id category_detail_label 0x7f080388
 int id category_discount 0x7f080080
 int id category_item_category_detail 0x7f080081
+int id category_product_gridview 0x7f080387
 int id category_tag 0x7f080082
 int id center 0x7f080083
 int id centerCrop 0x7f080084
@@ -3777,6 +3779,7 @@ int id voucher_image 0x7f080377
 int id voucher_mini_box 0x7f080378
 int id wayback 0x7f080379
 int id wayback_icon 0x7f08037a
+int id wayback_icon_category_detail 0x7f080389
 int id wayback_icon_order_detail 0x7f08037b
 int id wayback_icon_order_management 0x7f08037c
 int id wayback_icon_product 0x7f08037d
