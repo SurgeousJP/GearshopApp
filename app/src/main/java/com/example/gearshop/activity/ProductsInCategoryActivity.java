@@ -76,7 +76,5 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         AccountItem.setOnClickListener(view -> {
         });
 
-        TextView titleScreen = (TextView) findViewById(R.id.title_screen);
-        titleScreen.setText(userId);
     }
 }
