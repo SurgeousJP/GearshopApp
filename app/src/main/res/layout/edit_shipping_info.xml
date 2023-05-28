@@ -32,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal|center_vertical"
             android:lineSpacingExtra="5sp"
-            android:text="thông tin vận chuyển"
+            android:text="Thông tin vận chuyển"
             android:textAppearance="@style/title_filter"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

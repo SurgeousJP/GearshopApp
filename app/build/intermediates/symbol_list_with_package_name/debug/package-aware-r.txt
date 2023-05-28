@@ -2754,6 +2754,7 @@ drawable discount_badge
 drawable dots
 drawable edit_icon
 drawable escape
+drawable facebook_icon
 drawable fb
 drawable fill_blue_box
 drawable fill_blue_box_2
@@ -2762,6 +2763,7 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
+drawable hotline_icon
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -2784,6 +2786,7 @@ drawable line
 drawable list_item
 drawable listgear
 drawable location_icon
+drawable location_image
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2898,6 +2901,7 @@ drawable wayback_icon
 drawable white_blue_box
 drawable x
 drawable x_grey
+drawable zalo_icon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3151,6 +3155,7 @@ id dob_user_info
 id dots_account_main
 id dots_icon_product
 id dots_order_management
+id dots_support_info
 id dots_user_info
 id dragAnticlockwise
 id dragClockwise
@@ -3190,12 +3195,14 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id escape_order_detail
+id escape_support_info
 id escape_user_info
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id expired_day
 id facebook_icon
+id facebook_support_box
 id fade
 id female_option
 id fields
@@ -3258,6 +3265,7 @@ id homeadress_edittext
 id honorRequest
 id horizontal_only
 id horizontal_scrollview_order_status
+id hotline_support_box
 id icon
 id icon_group
 id ifRoom
@@ -3265,9 +3273,13 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_facebook_support
+id image_hotline_support
+id image_location_support
 id image_payment
 id image_voucher
 id image_voucher_list_voucher
+id image_zalo_support
 id imagelayout
 id immediateStop
 id included
@@ -3301,9 +3313,15 @@ id label_adress_edit_shipping
 id label_category
 id label_delivered
 id label_delivery
+id label_facebook
+id label_facebook_name
 id label_filter
 id label_filter_text
 id label_final_price
+id label_hotline
+id label_hotline_name
+id label_location
+id label_location_name
 id label_option1
 id label_option2
 id label_option3
@@ -3333,6 +3351,8 @@ id label_user_info
 id label_user_info_desc
 id label_voucher
 id label_voucher_apply
+id label_zalo
+id label_zalo_name
 id labeled
 id lable_ship_description_order_detail
 id last_name
@@ -3378,8 +3398,10 @@ id listgear
 id listview_category
 id listview_category_layout
 id listview_choose_province
+id listview_support
 id listview_voucher
 id location_icon
+id location_support_box
 id login_button
 id login_info_user_info_box
 id login_text
@@ -3608,7 +3630,6 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scrollable
-id scrollview_search_layout
 id search_and_result
 id search_badge
 id search_bar
@@ -3716,6 +3737,7 @@ id submit_area
 id supportScrollUp
 id support_box
 id support_box_image
+id support_info_label
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3776,6 +3798,7 @@ id title_product_detail
 id title_screen
 id title_ship
 id title_shipping_info_user_info
+id title_support
 id title_template
 id title_username
 id title_username_user_info
@@ -3853,6 +3876,7 @@ id wayback
 id wayback_icon
 id wayback_icon_order_management
 id wayback_icon_product
+id wayback_icon_support_info
 id wayback_icon_user_info
 id west
 id withText
@@ -3864,6 +3888,7 @@ id wrap_content_constrained
 id x_left
 id x_right
 id year_edit
+id zalo_support_box
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -4077,6 +4102,7 @@ layout select_dialog_singlechoice_material
 layout sex_setting
 layout sign_up
 layout sort_setting
+layout support_info
 layout support_simple_spinner_dropdown_item
 layout user_info
 layout voucher_setting
