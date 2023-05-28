@@ -40,6 +40,10 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\save_box.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_search_layout.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/search_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_cart_grey_image.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\cart_grey_image.xml"
     },
@@ -302,10 +306,6 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_momo.png.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\momo.png"
-    },
-    {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_filter_setting.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/filter_setting.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-hdpi_ic_launcher.webp.flat",

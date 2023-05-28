@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
+import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.SearchNotFoundFragment;
 import com.example.gearshop.fragment.SearchResultFragment;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
@@ -27,6 +28,7 @@ import java.util.concurrent.ExecutionException;
 
 public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener,
 SearchNotFoundFragment.DialogListener{
+    private FilterSortBarFragment SearchFilterSortBarFragment;
     private List<Product> ProductList;
     private View SearchIconView;
     private EditText SearchEditText;
@@ -48,10 +50,16 @@ SearchNotFoundFragment.DialogListener{
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        SearchResultFragment searchResultFragment = new SearchResultFragment();
-        searchResultFragment.setOnFragmentViewCreatedListener(this);
-        fragmentTransaction.add(R.id.search_constraint_layout, searchResultFragment);
-        fragmentTransaction.commit();
+        SearchResultFragment searchResultFragment =
+                (SearchResultFragment) fragmentManager.findFragmentById(R.id.fragment_grid_view_search);
+        FilterSortBarFragment searchFilterSortBarFragment =
+                (FilterSortBarFragment) fragmentManager.findFragmentById(R.id.fragment_filter_box_search);
+//        if (searchResultFragment != null) {
+//            searchResultFragment.setOnFragmentViewCreatedListener(this);
+//            fragmentTransaction.add(R.id.search_constraint_layout, searchResultFragment);
+//            fragmentTransaction.commit();
+//        }
+
 
         SearchIconView.setOnClickListener(view -> {
             String searchText = SearchEditText.getText().toString();
