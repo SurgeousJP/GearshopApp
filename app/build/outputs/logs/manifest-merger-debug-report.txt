@@ -120,12 +120,6 @@ ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:22:13-59
-activity#com.example.gearshop.activity.SignInActivity
-ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:24:9-25:39
-	android:exported
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:25:13-37
-	android:name
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:24:19-58
 activity#com.example.gearshop.activity.SignUpActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:26:9-27:39
 	android:exported
@@ -138,12 +132,12 @@ ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:28:19-60
-activity#com.example.gearshop.activity.CategoryDetailActivity
+activity#com.example.gearshop.activity.ProductsInCategoryActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:30:9-31:39
 	android:exported
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:30:19-66
+		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:30:19-70
 activity#com.example.gearshop.activity.AccountActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:32:9-33:39
 	android:exported
@@ -156,12 +150,12 @@ ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:35:13-37
 	android:name
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:34:19-64
-activity#com.example.gearshop.activity.ProductsInCategoryActivity
+activity#com.example.gearshop.activity.SignInActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:38:9-46:20
 	android:exported
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:40:13-36
 	android:name
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:39:13-64
+		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:39:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN

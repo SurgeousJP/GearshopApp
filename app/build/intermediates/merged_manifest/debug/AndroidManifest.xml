@@ -35,9 +35,8 @@
         <activity
             android:name="com.example.gearshop.activity.ProductDetailActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.gearshop.activity.SignInActivity"
-            android:exported="false" />
+        <!-- <activity android:name=".activity.SignInActivity" -->
+        <!-- android:exported="false"/> -->
         <activity
             android:name="com.example.gearshop.activity.SignUpActivity"
             android:exported="false" />
@@ -45,7 +44,7 @@
             android:name="com.example.gearshop.activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CategoryDetailActivity"
+            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
             android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.AccountActivity"
@@ -54,7 +53,7 @@
             android:name="com.example.gearshop.activity.EditUserInfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
+            android:name="com.example.gearshop.activity.SignInActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
