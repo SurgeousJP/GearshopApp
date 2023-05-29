@@ -1,7 +1,6 @@
 package com.example.gearshop.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
@@ -16,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.controller.CustomerRepository;
+import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
 
 public class EditUserInfoActivity extends AppCompatActivity {

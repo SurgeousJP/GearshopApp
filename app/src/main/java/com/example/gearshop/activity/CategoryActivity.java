@@ -6,15 +6,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
-import com.example.gearshop.controller.CategoryRepository;
+import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Category;
 
 public class CategoryActivity extends AppCompatActivity {

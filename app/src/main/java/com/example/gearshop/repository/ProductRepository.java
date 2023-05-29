@@ -1,9 +1,8 @@
-package com.example.gearshop.controller;
+package com.example.gearshop.repository;
 
 import android.annotation.SuppressLint;
 
 import com.example.gearshop.database.GetProductDataFromAzure;
-import com.example.gearshop.model.Product;
 import com.example.gearshop.model.Product;
 
 import java.util.ArrayList;

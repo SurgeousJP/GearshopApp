@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
-import com.example.gearshop.controller.CartRepository;
+import com.example.gearshop.repository.CartRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyHelper;

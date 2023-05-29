@@ -12,10 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.controller.ProductRepository;
+import com.example.gearshop.repository.ProductRepository;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Product;
-import com.squareup.picasso.Picasso;
 
 public class CategoryListViewAdapter extends ArrayAdapter<Category> {
     int resource;

@@ -1,4 +1,4 @@
-package com.example.gearshop.controller;
+package com.example.gearshop.repository;
 
 import android.annotation.SuppressLint;
 

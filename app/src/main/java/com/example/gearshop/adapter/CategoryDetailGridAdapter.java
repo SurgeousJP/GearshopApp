@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.activity.ProductDetailActivity;
-import com.example.gearshop.controller.CategoryRepository;
-import com.example.gearshop.model.Category;
+import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;

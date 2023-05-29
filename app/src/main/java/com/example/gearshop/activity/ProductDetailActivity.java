@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
-import com.example.gearshop.controller.CartRepository;
+import com.example.gearshop.repository.CartRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;

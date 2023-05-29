@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.controller.CustomerRepository;
+import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
 
 public class SignInActivity extends AppCompatActivity {
