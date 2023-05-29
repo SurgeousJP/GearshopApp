@@ -20,6 +20,7 @@ import com.example.gearshop.fragment.SearchResultFragment;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.VietnameseStringConverter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,6 +129,10 @@ SearchNotFoundFragment.DialogListener{
     protected boolean checkProductContainsInformation(Product product, String info){
         if (info.isEmpty())
             return false;
+        String productPlainString = VietnameseStringConverter.convertToPlainString(product.getName().toLowerCase(Locale.ROOT));
+        if (VietnameseStringConverter.convertToPlainString(info).equals(info)){
+            return productPlainString.contains(info);
+        }
         return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }
 
