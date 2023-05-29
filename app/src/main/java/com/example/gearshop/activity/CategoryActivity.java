@@ -4,16 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.CategoryGridAdapter;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
+import com.example.gearshop.adapter.CategoryRecyclerAdapter;
 import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Category;
+
+import java.util.List;
 
 public class CategoryActivity extends AppCompatActivity {
 
@@ -28,19 +36,18 @@ public class CategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.category_layout);
+        this.setContentView(R.layout.activity_main);
 
 
         //Get Categories
         CategoryRepository categoryRepository = new CategoryRepository();
-        Category[] categories = categoryRepository.getCategories().toArray(new Category[0]);
+        List<Category> categoriesList = categoryRepository.getCategories();
+        Category[] categories = categoriesList.toArray(new Category[0]);
 
-        // Set up Category ListView
-        ListView lvCategories = (ListView)findViewById(R.id.listview_category_layout);
-        lvCategories.setAdapter(new
-                CategoryListViewAdapter(this, R.layout.listview_category, categories));
-
-        lvCategories.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        // Populate Category GridView
+        GridView categoryGridView = (GridView) findViewById(R.id.show_grid_category);
+        categoryGridView.setAdapter(new CategoryGridAdapter(getBaseContext(), categoriesList));
+        categoryGridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent to start products by category page
@@ -49,6 +56,26 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        RecyclerView categoryRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_category_main);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);;
+        categoryRecyclerView.setLayoutManager(layoutManager);
+        categoryRecyclerView.setAdapter(new CategoryRecyclerAdapter(categoriesList, getBaseContext()));
+
+//        // Set up Category ListView
+//        ListView lvCategories = (ListView)findViewById(R.id.listview_category_layout);
+//        lvCategories.setAdapter(new
+//                CategoryListViewAdapter(this, R.layout.listview_category, categories));
+//
+//        lvCategories.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                // Intent to start products by category page
+//                Intent intent = new Intent(getBaseContext(), ProductsInCategoryActivity.class);
+//                intent.putExtra("categoryId", categories[position].getID());
+//                startActivity(intent);
+//            }
+//        });
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
