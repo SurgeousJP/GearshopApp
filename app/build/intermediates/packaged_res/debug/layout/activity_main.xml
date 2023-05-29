@@ -164,7 +164,7 @@
                             android:text="@string/cta_viewmore"
                             android:textAppearance="@style/cta_viewmore" />
 
-                        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        <RelativeLayout
                             android:id="@+id/trailing_ic"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -176,11 +176,12 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <GridView
-                    android:id="@+id/show_list_category"
+                    android:id="@+id/show_grid_category"
                     android:layout_width="match_parent"
                     android:layout_height="254dp"
                     android:layout_below="@id/show_category"
                     android:layout_marginHorizontal="16dp"
+                    android:numColumns="4"
                     app:layout_constraintBottom_toBottomOf="@id/section"
                     app:layout_constraintEnd_toEndOf="@id/section"
                     app:layout_constraintStart_toStartOf="@id/section"

@@ -511,6 +511,7 @@ id shopping_bottom
 id shopping_bottom_category_detail
 id shopping_bottom_search
 id show_category
+id show_grid_category
 id show_list_category
 id show_order
 id sign_in_nav_from_sign_up
@@ -626,9 +627,9 @@ layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout list_item_cart
+layout list_item_category
 layout list_order_status
 layout list_voucher
-layout listview_category
 layout login
 layout not_found_search
 layout order_detail
@@ -643,8 +644,16 @@ layout sort_setting
 layout support_info
 layout user_info
 layout voucher_setting
+mipmap apple_icon
+mipmap headphone_icon
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap keyboard_icon
+mipmap laptop_icon
+mipmap mouse_icon
+mipmap pc_component_icon
+mipmap pc_icon
+mipmap screen_icon
 string app_name
 string cta_viewmore
 string hello_blank_fragment
