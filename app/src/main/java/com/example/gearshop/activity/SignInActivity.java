@@ -49,7 +49,7 @@ public class SignInActivity extends AppCompatActivity {
                     editor.apply();
 
                     // go to main activity (home page)
-                    Intent intent = new Intent(v.getContext(), ProductsInCategoryActivity.class);
+                    Intent intent = new Intent(v.getContext(), CategoryActivity.class);
                     v.getContext().startActivity(intent);
 
                     // end this activity after logged in so customer can't back to this activity

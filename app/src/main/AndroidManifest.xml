@@ -30,8 +30,8 @@
             android:exported="false"/>
         <activity android:name=".activity.CategoryActivity"
             android:exported="false"/>
-        <activity android:name=".activity.CategoryDetailActivity"
-            android:exported="false"/>
+<!--        <activity android:name=".activity.CategoryDetailActivity"-->
+<!--            android:exported="false"/>-->
         <activity android:name=".activity.AccountActivity"
             android:exported="false"/>
         <activity android:name=".activity.EditUserInfoActivity"

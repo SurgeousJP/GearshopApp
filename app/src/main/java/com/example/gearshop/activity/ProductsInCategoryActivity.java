@@ -51,11 +51,13 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.category_layout_detail);
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("customerId", null);
 
-        ProductCategoryID = 4;
+        Intent comingIntent = getIntent();
+        ProductCategoryID = comingIntent.getIntExtra("categoryId", 0);
+
         initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -83,7 +85,9 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
-
+            Intent intent = new Intent(getBaseContext(), ProductsInCategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getBaseContext().startActivity(intent);
+            finish();
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
@@ -97,9 +101,6 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
         });
-
-        TextView titleScreen = (TextView) findViewById(R.id.title_screen);
-        titleScreen.setText(userId);
 
         final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =
                 new FilterBottomSheetDialogFragment[1];

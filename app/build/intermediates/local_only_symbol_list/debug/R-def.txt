@@ -138,7 +138,6 @@ id cart_text_2
 id category_detail_label
 id category_discount
 id category_item_category_detail
-id category_product_gridview
 id category_tag
 id check_out_button
 id check_out_text

@@ -45,7 +45,7 @@
             app:layout_constraintEnd_toStartOf="@id/navigation_box"
             android:layout_toRightOf="@id/title_wrap"
             android:layout_marginRight="10dp"
-            android:background="@drawable/click_cart_image"
+            android:background="@drawable/cart_image"
             tools:layout_editor_absoluteX="296dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -101,43 +101,94 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_bar" />
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/main_screen"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_below="@id/none"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/none2"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/none"/>-->
-
-    <RelativeLayout
-        android:id="@+id/main_screen"
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_below="@id/none"
+        app:layout_constraintBottom_toTopOf="@+id/none2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/none2"
         app:layout_constraintTop_toBottomOf="@+id/none">
-        <fragment
-            android:layout_alignParentTop="true"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fragment_filter_box"
-            android:name="com.example.gearshop.fragment.FilterSortBarFragment">
-        </fragment>
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fragment_grid_view"
-            android:name="com.example.gearshop.fragment.ListProductFragment"
-            android:layout_below="@id/fragment_filter_box"
-            >
-        </fragment>
-    </RelativeLayout>
+            android:layout_height="match_parent">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/section"
+                android:layout_width="match_parent"
+                android:layout_height="314dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/show_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/section"
+                    app:layout_constraintStart_toStartOf="@id/section"
+                    app:layout_constraintTop_toTopOf="@id/section">
+
+                    <TextView
+                        android:id="@+id/title_category"
+                        android:layout_width="220dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="5sp"
+                        android:text="@string/title_category"
+                        android:textAppearance="@style/title_category"
+                        android:textStyle="bold"
+                        android:translationY="-2.32sp"
+                        app:layout_constraintBottom_toBottomOf="@id/show_category"
+                        app:layout_constraintStart_toStartOf="@id/show_category"
+                        app:layout_constraintTop_toTopOf="@id/show_category" />
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/more_category"
+                        android:layout_width="110dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/show_category"
+                        app:layout_constraintEnd_toEndOf="@id/show_category"
+                        app:layout_constraintTop_toTopOf="@id/show_category">
+
+                        <TextView
+                            android:id="@+id/cta_viewmore"
+                            android:layout_width="68dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="1.5dp"
+                            android:lineHeight="21sp"
+                            android:lineSpacingExtra="4sp"
+                            android:text="@string/cta_viewmore"
+                            android:textAppearance="@style/cta_viewmore" />
+
+                        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/trailing_ic"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toRightOf="@id/cta_viewmore"
+                            android:background="@drawable/vicon"
+                            android:clipToOutline="true" />
+                    </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <GridView
+                    android:id="@+id/show_list_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="254dp"
+                    android:layout_below="@id/show_category"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/section"
+                    app:layout_constraintEnd_toEndOf="@id/section"
+                    app:layout_constraintStart_toStartOf="@id/section"
+                    app:layout_constraintTop_toBottomOf="@id/show_category" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--            Add data here-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -148,7 +199,6 @@
         android:layout_width="0dp"
         android:layout_height="8dp"
         android:background="#F5F5FA"
-        android:layout_below="@id/main_screen"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
