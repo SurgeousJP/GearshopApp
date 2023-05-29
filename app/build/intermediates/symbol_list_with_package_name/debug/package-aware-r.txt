@@ -3242,7 +3242,6 @@ id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_container_view_tag
 id fragment_filter_box
-id fragment_filter_box_search
 id fragment_grid_view
 id fragment_grid_view_search
 id free_space
@@ -3415,6 +3414,7 @@ id loginform
 id low_price
 id m3_side_sheet
 id main_screen
+id main_search_screen
 id male_option
 id marquee
 id masked
@@ -3488,7 +3488,6 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_box
 id navigation_header_container
-id nested_scroll_grid_view_search
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3633,13 +3632,11 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scrollable
-id search_and_result
 id search_badge
 id search_bar
 id search_bar_text_view
 id search_button
 id search_close_btn
-id search_constraint_layout
 id search_edit_frame
 id search_go_btn
 id search_icon

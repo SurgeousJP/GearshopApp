@@ -253,7 +253,6 @@ id firstname_user_info
 id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_filter_box
-id fragment_filter_box_search
 id fragment_grid_view
 id fragment_grid_view_search
 id free_space
@@ -385,6 +384,7 @@ id login_text
 id loginform
 id low_price
 id main_screen
+id main_search_screen
 id male_option
 id module_price
 id module_product
@@ -392,7 +392,6 @@ id module_rate
 id more_category
 id more_info_order_detail
 id navigation_box
-id nested_scroll_grid_view_search
 id next_arrow_order_detail
 id next_arrow_support
 id next_arrow_user_info
@@ -484,8 +483,6 @@ id scrollView_cart
 id scrollView_product
 id scroll_box
 id scroll_box_cart
-id search_and_result
-id search_constraint_layout
 id search_icon
 id search_input
 id search_item_category_detail

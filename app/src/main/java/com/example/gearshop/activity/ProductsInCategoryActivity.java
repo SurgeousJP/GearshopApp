@@ -49,6 +49,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private View SortIconView;
     private TextView SortTextView;
     private View ReturnView;
+    private TextView CategoryLabel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +59,9 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         Intent comingIntent = getIntent();
         ProductCategoryID = comingIntent.getIntExtra("categoryId", 0);
-
+        String categoryName = comingIntent.getStringExtra("categoryName");
+        CategoryLabel = findViewById(R.id.category_detail_label);
+        CategoryLabel.setText(categoryName);
         initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
