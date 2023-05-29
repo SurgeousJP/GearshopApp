@@ -46,7 +46,7 @@ public class CategoryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent to start products by category page
-                Intent intent = new Intent(getBaseContext(), CategoryDetailActivity.class);
+                Intent intent = new Intent(getBaseContext(), ProductsInCategoryActivity.class);
                 intent.putExtra("categoryId", Integer.toString(categories[position].getID()));
                 startActivity(intent);
             }

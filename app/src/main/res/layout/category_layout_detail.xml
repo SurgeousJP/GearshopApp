@@ -62,7 +62,6 @@
             android:id="@+id/navigation_box"
             android:layout_width="72dp"
             android:layout_height="27dp"
-            android:layout_toRightOf="@id/cart_order_detail"
             android:background="@drawable/_navigation_box"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,20 +99,31 @@
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <GridView
-        android:id="@+id/category_product_gridview"
+    <RelativeLayout
+        android:id="@+id/main_screen"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:numColumns="2"
-        android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/shopping_bottom_category_detail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_bar"
-        app:layout_constraintVertical_bias="0.0">
-
-    </GridView>
+        app:layout_constraintBottom_toTopOf="@+id/shopping_bottom_category_detail"
+        app:layout_constraintTop_toBottomOf="@+id/first_bar">
+                <fragment
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_filter_box"
+                    android:name="com.example.gearshop.fragment.FilterSortBar">
+                </fragment>
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_grid_view"
+                    android:name="com.example.gearshop.fragment.ListProduct"
+                    android:layout_below="@id/fragment_filter_box"
+                    >
+                </fragment>
+    </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

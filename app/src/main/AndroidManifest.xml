@@ -21,13 +21,13 @@
         <activity
             android:name=".activity.ProductDetailActivity"
             android:exported="false" />
-        <activity android:name=".activity.SignInActivity"
-            android:exported="false"/>
+<!--        <activity android:name=".activity.SignInActivity"-->
+<!--            android:exported="false"/>-->
         <activity android:name=".activity.SignUpActivity"
             android:exported="false"/>
         <activity android:name=".activity.CategoryActivity"
             android:exported="false"/>
-        <activity android:name=".activity.CategoryDetailActivity"
+        <activity android:name=".activity.ProductsInCategoryActivity"
             android:exported="false"/>
         <activity android:name=".activity.AccountActivity"
             android:exported="false"/>
@@ -36,7 +36,7 @@
 
 
         <activity
-            android:name=".activity.ProductsInCategoryActivity"
+            android:name=".activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
