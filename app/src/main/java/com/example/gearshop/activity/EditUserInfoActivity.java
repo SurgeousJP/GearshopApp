@@ -44,28 +44,27 @@ public class EditUserInfoActivity extends AppCompatActivity {
         TextView tvUsername = findViewById(R.id.username_user_info);
         tvUsername.setText(userInfo.getUsername());
 
-        TextView tvLastName = findViewById(R.id.lastname_user_info);
-        tvLastName.setText(userInfo.getLastName());
+        EditText edtLastName = findViewById(R.id.lastname_user_info);
+        edtLastName.setText(userInfo.getLastName());
 
-        TextView tvFirstName = findViewById(R.id.firstname_user_info);
-        tvFirstName.setText(userInfo.getFirstName());
+        EditText edtFirstName = findViewById(R.id.firstname_user_info);
+        edtFirstName.setText(userInfo.getFirstName());
 
-        TextView tvGender = findViewById(R.id.sex_user_info);
-        tvGender.setText(userInfo.getGender());
+        EditText edtGender = findViewById(R.id.sex_user_info);
+        edtGender.setText(userInfo.getGender());
 
-        TextView tvDob = findViewById(R.id.dob_user_info);
-        tvDob.setText(userInfo.getDateOfBirth().toString());
+        EditText edtDob = findViewById(R.id.dob_user_info);
+        edtDob.setText(userInfo.getDateOfBirth().toString());
 
-        TextView tvEmail = findViewById(R.id.email_user_info);
-        tvEmail.setText(userInfo.getEmail());
+        EditText edtEmail = findViewById(R.id.email_user_info);
+        edtEmail.setText(userInfo.getEmail());
 
-        TextView tvAddress = findViewById(R.id.address_user_info);
+        EditText tvAddress = findViewById(R.id.address_user_info);
 
-        TextView tvPhoneNumber = findViewById(R.id.phonenumber_user_info);
-        tvPhoneNumber.setText(userInfo.getPhoneNumber());
+        EditText edtPhoneNumber = findViewById(R.id.phonenumber_user_info);
+        edtPhoneNumber.setText(userInfo.getPhoneNumber());
 
         View btnEditLastName = findViewById(R.id.edit_lastname_icon);
-        EditText edtLastName = findViewById(R.id.lastname_user_info);
         btnEditLastName.setOnClickListener(view -> {
             if (edtLastName.isEnabled()){
                 //save data
@@ -81,6 +80,79 @@ public class EditUserInfoActivity extends AppCompatActivity {
         });
 
         View btnEditFirstName = findViewById(R.id.edit_firstname_icon);
+        btnEditFirstName.setOnClickListener(view -> {
+            if (edtFirstName.isEnabled()){
+                //save data
+
+
+                // disable
+                DisableEditText(edtFirstName);
+            }
+            else{
+                EnableEditText(edtFirstName, InputType.TYPE_CLASS_TEXT);
+                //then typing
+            }
+        });
+
+        View btnEditGender = findViewById(R.id.edit_sex_icon);
+        btnEditGender.setOnClickListener(view -> {
+            if (edtGender.isEnabled()){
+                //save data
+
+
+                // disable
+                DisableEditText(edtGender);
+            }
+            else{
+                EnableEditText(edtGender, InputType.TYPE_CLASS_TEXT);
+                //then typing
+            }
+        });
+
+        View btnEditDob = findViewById(R.id.edit_dob_icon);
+        btnEditDob.setOnClickListener(view -> {
+            if (edtDob.isEnabled()){
+                //save data
+
+
+                // disable
+                DisableEditText(edtDob);
+            }
+            else{
+                EnableEditText(edtDob, InputType.TYPE_CLASS_TEXT);
+                //then typing
+            }
+        });
+
+        View btnEditEmail = findViewById(R.id.edit_email_icon);
+        btnEditEmail.setOnClickListener(view -> {
+            if (edtEmail.isEnabled()){
+                //save data
+
+
+                // disable
+                DisableEditText(edtEmail);
+            }
+            else{
+                EnableEditText(edtEmail, InputType.TYPE_CLASS_TEXT);
+                //then typing
+            }
+        });
+
+        View btnEditPhoneNumber = findViewById(R.id.edit_phonenumber_icon);
+        btnEditPhoneNumber.setOnClickListener(view -> {
+            if (edtPhoneNumber.isEnabled()){
+                //save data
+
+
+                // disable
+                DisableEditText(edtPhoneNumber);
+            }
+            else{
+                EnableEditText(edtPhoneNumber, InputType.TYPE_CLASS_TEXT);
+                //then typing
+            }
+        });
 
 
 
