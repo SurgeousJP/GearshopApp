@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class CustomerRepository {
-    private final String SQL_GET_CUSTOMER_BASE = "SELECT customer.*\n" +
+    private final String SQL_GET_CUSTOMER_BASE = "SELECT *\n" +
             "FROM customer\n";
     private final List<Customer> CustomerList = new ArrayList<>();
     private final GetCustomerDataFromAzure[] getCustomerDataFromAzure;
@@ -20,8 +20,7 @@ public class CustomerRepository {
     public CustomerRepository() {
         // Get Customer List in Database
         getCustomerDataFromAzure = new GetCustomerDataFromAzure[2];
-        getCustomers();
-
+        CustomerList.addAll(getCustomers());
     }
     public Customer getCustomerById(String customerId) {
         getCustomerDataFromAzure[1] = new GetCustomerDataFromAzure();
@@ -54,10 +53,10 @@ public class CustomerRepository {
         }
 
         if (getCustomerDataFromAzure[0].getCustomerList() != null){
-            CustomerList.addAll(getCustomerDataFromAzure[0].getCustomerList());
+            return getCustomerDataFromAzure[0].getCustomerList();
         }
 
-        return CustomerList;
+        return null;
     }
 
     public Customer signIn(String username, String password) {
