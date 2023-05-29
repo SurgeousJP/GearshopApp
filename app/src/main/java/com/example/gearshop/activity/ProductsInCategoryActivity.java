@@ -87,7 +87,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {

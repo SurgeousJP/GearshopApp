@@ -1,6 +1,7 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +24,7 @@ import java.util.List;
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
     private List<Product> ProductList;
-    private View ReturnView;
+    private ConstraintLayout ReturnView;
     private RecyclerView CartRecyclerView;
     private RelativeLayout MoreInformationLayout;
     private RelativeLayout EscapeLayout;
@@ -71,16 +72,17 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
 
-        ReturnView = findViewById(R.id.return_cart_icon);
+        ReturnView = findViewById(R.id.wayback_icon_order_detail);
         ReturnView.setOnClickListener(view -> {
             setResult(Activity.RESULT_OK);
             finish();
         });
-        MoreInformationLayout = findViewById(R.id.dots_user_info);
+
+        MoreInformationLayout = findViewById(R.id.dots_cart);
         MoreInformationLayout.setOnClickListener(view -> {
 
         });
-        EscapeLayout = findViewById(R.id.escape_user_info);
+        EscapeLayout = findViewById(R.id.escape_cart);
         EscapeLayout.setOnClickListener(view -> {
 
         });

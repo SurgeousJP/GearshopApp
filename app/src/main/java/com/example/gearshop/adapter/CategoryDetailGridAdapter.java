@@ -15,7 +15,7 @@ import com.example.gearshop.controller.CategoryRepository;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
-import com.example.gearshop.utility.MoneyFormat;
+import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -82,7 +82,7 @@ public class CategoryDetailGridAdapter extends BaseAdapter {
         else{
             productDiscountTextView.setText("Không giảm giá");
         }
-        productSellingPriceTextView.setText(MoneyFormat.getVietnameseMoneyStringFormatted(sellingPrice));
+        productSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

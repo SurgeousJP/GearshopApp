@@ -20,6 +20,7 @@ public class CustomerRepository {
     public CustomerRepository() {
         // Get Customer List in Database
         getCustomerDataFromAzure = new GetCustomerDataFromAzure[2];
+        getCustomers();
 
     }
     public Customer getCustomerById(String customerId) {

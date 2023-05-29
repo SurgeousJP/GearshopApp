@@ -3015,6 +3015,7 @@ id bounceStart
 id box_text
 id brand_button_1
 id brand_button_2
+id btn_confirm_sign_up
 id buttonPanel
 id button_bar
 id buy_now
@@ -3028,13 +3029,14 @@ id cancel_listvoucher
 id cancel_order
 id cardView
 id carryVelocity
-id cart_icon_account_main
 id cart_icon_product
 id cart_layout
 id cart_order_detail
 id cart_text_2
+id category_detail_label
 id category_discount
 id category_item_category_detail
+id category_product_gridview
 id category_tag
 id center
 id centerCrop
@@ -3077,7 +3079,6 @@ id confirm_code_edit
 id confirm_password
 id confirm_password_box
 id confirm_password_box_layout
-id confirm_password_edit
 id confirm_password_edit_text
 id confirm_password_text
 id confirm_text
@@ -3115,7 +3116,6 @@ id customPanel
 id custom_price
 id cut
 id date_picker_actions
-id day_edit
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3152,11 +3152,10 @@ id dob_box_user_info
 id dob_edit_box
 id dob_text_user_info
 id dob_user_info
-id dots_account_main
+id dots_cart
 id dots_icon_product
 id dots_order_management
 id dots_support_info
-id dots_user_info
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3184,7 +3183,6 @@ id elastic
 id email
 id email_box
 id email_box_user_info
-id email_edit
 id email_text_user_info
 id email_user_info
 id embed
@@ -3194,9 +3192,20 @@ id endtext
 id enterAlways
 id enterAlwaysCollapsed
 id escape
+id escape_cart
 id escape_order_detail
 id escape_support_info
-id escape_user_info
+id et_sign_up_born_day
+id et_sign_up_born_month
+id et_sign_up_born_year
+id et_sign_up_confirm_password
+id et_sign_up_email
+id et_sign_up_first_name
+id et_sign_up_gender
+id et_sign_up_last_name
+id et_sign_up_password
+id et_sign_up_phone_number
+id et_sign_up_username
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3217,7 +3226,6 @@ id final_price_order_detail
 id first_bar
 id first_name
 id first_name_box
-id first_name_edit
 id firstname_box
 id firstname_box_user_info
 id firstname_text_user_info
@@ -3231,7 +3239,7 @@ id fixed
 id flip
 id floating
 id forever
-id forgotpassword
+id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_container_view_tag
 id fragment_filter_box
@@ -3357,7 +3365,6 @@ id labeled
 id lable_ship_description_order_detail
 id last_name
 id last_name_box
-id last_name_edit
 id lastname_box
 id lastname_box_user_info
 id lastname_text_user_info
@@ -3441,7 +3448,6 @@ id mini
 id module_price
 id module_product
 id module_rate
-id month_edit
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3539,7 +3545,6 @@ id password
 id password_box
 id password_box_user_info
 id password_edit
-id password_text
 id password_text_user_info
 id password_toggle
 id password_user_info
@@ -3554,7 +3559,6 @@ id percent_discount
 id personal_info_user_info_box
 id phone_number
 id phone_number_box
-id phone_number_edit
 id phonemuber_box
 id phonemuber_edittext
 id phonenumber_box_user_info
@@ -3602,7 +3606,6 @@ id rating_number_product_detail
 id ratio
 id rectangles
 id recycler_view_order_detail
-id register_button
 id register_text
 id registerform
 id return_cart_icon
@@ -3612,7 +3615,6 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
-id roundx_account_main
 id roundx_order_management
 id row_index_key
 id save_button_list_voucher
@@ -3673,7 +3675,6 @@ id sendcode
 id sex
 id sex_box
 id sex_box_user_info
-id sex_edit
 id sex_edit_box
 id sex_text_user_info
 id sex_user_info
@@ -3694,7 +3695,8 @@ id showTitle
 id show_category
 id show_list_category
 id show_order
-id signup
+id sign_in_nav_from_sign_up
+id sign_up_nav_from_sign_in
 id signup_icon
 id sin
 id skipCollapsed
@@ -3842,7 +3844,6 @@ id user_info_label
 id username
 id username_box
 id username_box_user_info
-id username_edit
 id username_text
 id username_text_user_info
 id username_user_info
@@ -3874,6 +3875,8 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
+id wayback_icon_category_detail
+id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product
 id wayback_icon_support_info
@@ -3887,7 +3890,6 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
-id year_edit
 id zalo_support_box
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
