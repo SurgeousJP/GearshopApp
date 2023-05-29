@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/dots_account_main"
+                    android:id="@+id/more_info_order_detail"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentTop="true"
@@ -82,13 +82,13 @@
                     android:layout_height="17dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@id/dots_account_main"
+                    android:layout_toRightOf="@id/more_info_order_detail"
                     android:background="@drawable/thin" />
 
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/roundx_account_main"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
+                <RelativeLayout
+                    android:id="@+id/escape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@id/thin"
@@ -97,7 +97,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/cart_icon_account_main"
+                android:id="@+id/cart_layout"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:layout_marginTop="14.5dp"

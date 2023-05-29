@@ -110,12 +110,13 @@
                             app:layout_constraintTop_toBottomOf="@id/last_name">
 
                             <EditText
-                                android:id="@+id/last_name_edit"
+                                android:id="@+id/et_sign_up_last_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_marginHorizontal="20dp"
                                 android:background="@null"
                                 android:hint="Họ"
+                                android:inputType="textPersonName"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -168,12 +169,13 @@
                             app:layout_constraintTop_toBottomOf="@id/first_name">
 
                             <EditText
-                                android:id="@+id/first_name_edit"
+                                android:id="@+id/et_sign_up_first_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_marginHorizontal="20dp"
                                 android:background="@null"
                                 android:hint="Tên"
+                                android:inputType="textPersonName"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -213,7 +215,7 @@
                     app:layout_constraintTop_toBottomOf="@id/username">
 
                     <EditText
-                        android:id="@+id/username_edit"
+                        android:id="@+id/et_sign_up_username"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginHorizontal="20dp"
@@ -255,12 +257,13 @@
                     app:layout_constraintTop_toBottomOf="@id/email">
 
                     <EditText
-                        android:id="@+id/email_edit"
+                        android:id="@+id/et_sign_up_email"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginHorizontal="20dp"
                         android:background="@null"
                         android:hint="Email"
+                        android:inputType="textEmailAddress"
                         android:textColor="#808089"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -297,12 +300,13 @@
                     app:layout_constraintTop_toBottomOf="@id/phone_number">
 
                     <EditText
-                        android:id="@+id/phone_number_edit"
+                        android:id="@+id/et_sign_up_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginHorizontal="20dp"
                         android:background="@null"
                         android:hint="Số điện thoại"
+                        android:inputType="phone"
                         android:textColor="#808089"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -355,7 +359,7 @@
                             app:layout_constraintTop_toBottomOf="@id/sex">
 
                             <EditText
-                                android:id="@+id/sex_edit"
+                                android:id="@+id/et_sign_up_gender"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_marginHorizontal="20dp"
@@ -413,13 +417,14 @@
                             app:layout_constraintTop_toBottomOf="@id/dob">
 
                             <EditText
-                                android:id="@+id/day_edit"
+                                android:id="@+id/et_sign_up_born_day"
                                 android:paddingRight="8dp"
                                 android:paddingLeft="20dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
                                 android:hint="dd"
+                                android:inputType="date"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
                                 app:layout_constraintEnd_toStartOf="@id/line1"
@@ -433,18 +438,19 @@
                                 android:layout_width="2dp"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/line"
-                                app:layout_constraintEnd_toStartOf="@id/month_edit"
+                                app:layout_constraintEnd_toStartOf="@id/et_sign_up_born_month"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@id/day_edit"
+                                app:layout_constraintStart_toEndOf="@id/et_sign_up_born_day"
                                 app:layout_constraintTop_toTopOf="parent" />
                             <EditText
-                                android:id="@+id/month_edit"
+                                android:id="@+id/et_sign_up_born_month"
                                 android:paddingRight="8dp"
                                 android:paddingLeft="8dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
                                 android:hint="mm"
+                                android:inputType="date"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
                                 app:layout_constraintEnd_toStartOf="@id/line2"
@@ -457,17 +463,18 @@
                                 android:layout_width="2dp"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/line"
-                                app:layout_constraintEnd_toStartOf="@id/year_edit"
+                                app:layout_constraintEnd_toStartOf="@id/et_sign_up_born_year"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@id/month_edit"
+                                app:layout_constraintStart_toEndOf="@id/et_sign_up_born_month"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <EditText
-                                android:id="@+id/year_edit"
+                                android:id="@+id/et_sign_up_born_year"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
                                 android:hint="yyyy"
+                                android:inputType="date"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="20dp"
                                 android:textColor="#808089"
@@ -510,12 +517,13 @@
                     app:layout_constraintTop_toBottomOf="@id/password">
 
                     <EditText
-                        android:id="@+id/password_text"
+                        android:id="@+id/et_sign_up_password"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginHorizontal="20dp"
                         android:background="@null"
                         android:hint="Mật khẩu"
+                        android:inputType="textPassword"
                         android:textColor="#808089"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -554,12 +562,13 @@
                     app:layout_constraintTop_toBottomOf="@id/confirm_password">
 
                     <EditText
-                        android:id="@+id/confirm_password_edit"
+                        android:id="@+id/et_sign_up_confirm_password"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginHorizontal="20dp"
                         android:background="@null"
                         android:hint="Xác nhận mật khẩu"
+                        android:inputType="textPassword"
                         android:textColor="#808089"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -570,7 +579,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/register_button"
+                android:id="@+id/btn_confirm_sign_up"
                 android:layout_width="160dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="24dp"
@@ -599,7 +608,7 @@
                 android:layout_marginTop="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/register_button">
+                app:layout_constraintTop_toBottomOf="@id/btn_confirm_sign_up">
 
                 <TextView
                     android:id="@+id/normaltext"
@@ -609,11 +618,11 @@
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/signup"
+                    app:layout_constraintEnd_toStartOf="@id/sign_in_nav_from_sign_up"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <TextView
-                    android:id="@+id/signup"
+                    android:id="@+id/sign_in_nav_from_sign_up"
                     android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:text="Đăng nhập"
