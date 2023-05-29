@@ -3603,6 +3603,7 @@ int id rating_number 0x7f0802ba
 int id rating_number_product_detail 0x7f0802bb
 int id ratio 0x7f0802bc
 int id rectangles 0x7f0802bd
+int id recycler_view_category_main 0x7f0803dc
 int id recycler_view_order_detail 0x7f0802be
 int id register_text 0x7f0802bf
 int id registerform 0x7f0802c0

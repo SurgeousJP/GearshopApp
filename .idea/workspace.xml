@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="link category to product">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="add recyclerview" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,13 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Sửa lỗi UI của navigation &amp; sort bar và product grid view chồng đè lên nhau">
-      <created>1684147259061</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684147259061</updated>
     </task>
     <task id="LOCAL-00014" summary="Taọ class SelectSQL và tạo package adapter để tổ chức rõ hơn">
       <created>1684152067741</created>
@@ -541,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685328779282</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="add recyclerview">
+      <created>1685329004358</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1685329004358</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update debug" />
     <MESSAGE value="Sửa đổi price khi xóa item trong cart" />
     <MESSAGE value="Xử lý sửa đổi price khi xóa item trong cart" />
     <MESSAGE value="Tạo SearchActivity" />
@@ -594,7 +591,8 @@
     <MESSAGE value="merge duy's branch" />
     <MESSAGE value="fix 1 vài bug sau khi merge thành công" />
     <MESSAGE value="link category to product" />
-    <option name="LAST_COMMIT_MESSAGE" value="link category to product" />
+    <MESSAGE value="add recyclerview" />
+    <option name="LAST_COMMIT_MESSAGE" value="add recyclerview" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

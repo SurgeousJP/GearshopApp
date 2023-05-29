@@ -472,6 +472,7 @@ id rate_star5
 id rating_display
 id rating_number
 id rating_number_product_detail
+id recycler_view_category_main
 id recycler_view_order_detail
 id register_text
 id registerform
