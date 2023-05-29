@@ -48,6 +48,12 @@
             android:name="com.example.gearshop.activity.CategoryDetailActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.gearshop.activity.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.EditUserInfoActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
             android:exported="true" >
             <intent-filter>

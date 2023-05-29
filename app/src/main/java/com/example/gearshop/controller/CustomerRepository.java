@@ -11,35 +11,51 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class CustomerRepository {
+    private final String SQL_GET_CUSTOMER_BASE = "SELECT customer.*\n" +
+            "FROM customer\n";
     private final List<Customer> CustomerList = new ArrayList<>();
+    private final GetCustomerDataFromAzure[] getCustomerDataFromAzure;
 
     @SuppressLint("SimpleDateFormat")
     public CustomerRepository() {
         // Get Customer List in Database
-        GetCustomerDataFromAzure[] getCustomerDataInAzure = new GetCustomerDataFromAzure[1];
-        getCustomerDataInAzure[0] = new GetCustomerDataFromAzure();
-        getCustomerDataInAzure[0].execute(
-                "SELECT customer.*\n" +
-                        "FROM customer\n"
+        getCustomerDataFromAzure = new GetCustomerDataFromAzure[2];
+
+    }
+    public Customer getCustomerById(String customerId) {
+        getCustomerDataFromAzure[1] = new GetCustomerDataFromAzure();
+        getCustomerDataFromAzure[1].execute(
+                SQL_GET_CUSTOMER_BASE +
+                "WHERE id = " + customerId
         );
-        System.out.println("Async Task get Customers is running");
 
         try {
-            getCustomerDataInAzure[0].get();
-            } catch (ExecutionException | InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
-        System.out.println("Async Task get Customers ended");
-
-
-
-        if (getCustomerDataInAzure[0].getCustomerList() != null){
-            CustomerList.addAll(getCustomerDataInAzure[0].getCustomerList());
+            getCustomerDataFromAzure[1].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
         }
+
+        if (getCustomerDataFromAzure[1].getCustomerList().size() > 0){
+            return getCustomerDataFromAzure[1].getCustomerList().get(0);
+        }
+
+        return null;
     }
 
     public List<Customer> getCustomers() {
+        getCustomerDataFromAzure[0] = new GetCustomerDataFromAzure();
+        getCustomerDataFromAzure[0].execute(SQL_GET_CUSTOMER_BASE);
+
+        try {
+            getCustomerDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (getCustomerDataFromAzure[0].getCustomerList() != null){
+            CustomerList.addAll(getCustomerDataFromAzure[0].getCustomerList());
+        }
+
         return CustomerList;
     }
 

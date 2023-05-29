@@ -1,6 +1,7 @@
 package com.example.gearshop.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -79,7 +80,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
-
+            Intent intent = new Intent(getBaseContext(), AccountActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getBaseContext().startActivity(intent);
         });
 
     }

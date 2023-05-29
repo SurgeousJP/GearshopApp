@@ -29,6 +29,11 @@
             android:exported="false"/>
         <activity android:name=".activity.CategoryDetailActivity"
             android:exported="false"/>
+        <activity android:name=".activity.AccountActivity"
+            android:exported="false"/>
+        <activity android:name=".activity.EditUserInfoActivity"
+            android:exported="false"/>
+
 
         <activity
             android:name=".activity.ProductsInCategoryActivity"
