@@ -3228,9 +3228,7 @@ id forgotpassword
 id forgotpassword_form
 id fragment_container_view_tag
 id fragment_filter_box
-id fragment_filter_box_search
 id fragment_grid_view
-id fragment_grid_view_search
 id free_space
 id free_space_2
 id frost
@@ -3461,7 +3459,6 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_box
 id navigation_header_container
-id nested_scroll_grid_view_search
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3609,7 +3606,6 @@ id scroll_box
 id scroll_box_cart
 id scrollable
 id scrollview_search_layout
-id search_and_result
 id search_badge
 id search_bar
 id search_bar_text_view
