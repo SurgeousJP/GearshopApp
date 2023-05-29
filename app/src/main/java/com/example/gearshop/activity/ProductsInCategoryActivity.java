@@ -48,6 +48,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private TextView FilterTextView;
     private View SortIconView;
     private TextView SortTextView;
+    private View ReturnView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,12 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             categoryListProductFragment.UpdateDataOntoAdapter(ProductList);
         categoryProductFilterSortBarFragment =
                 (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
+
+        ReturnView = findViewById(R.id.return_to_category);
+        ReturnView.setOnClickListener(view -> {
+            finish();
+        });
+
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

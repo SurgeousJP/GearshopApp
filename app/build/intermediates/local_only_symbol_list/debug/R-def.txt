@@ -477,6 +477,7 @@ id recycler_view_order_detail
 id register_text
 id registerform
 id return_cart_icon
+id return_to_category
 id roundx_order_management
 id save_button_list_voucher
 id scrollView_cart

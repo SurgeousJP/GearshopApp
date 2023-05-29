@@ -3608,6 +3608,7 @@ int id recycler_view_order_detail 0x7f0802bf
 int id register_text 0x7f0802c0
 int id registerform 0x7f0802c1
 int id return_cart_icon 0x7f0802c2
+int id return_to_category 0x7f0803de
 int id reverseSawtooth 0x7f0802c3
 int id right 0x7f0802c4
 int id rightToLeft 0x7f0802c5
@@ -4030,9 +4031,9 @@ int layout framelayout_list_product 0x7f0b0039
 int layout gridview_category 0x7f0b003a
 int layout list_item 0x7f0b003b
 int layout list_item_cart 0x7f0b003c
-int layout list_item_category 0x7f0b008b
-int layout list_order_status 0x7f0b003d
-int layout list_voucher 0x7f0b003e
+int layout list_item_category 0x7f0b003d
+int layout list_order_status 0x7f0b003e
+int layout list_voucher 0x7f0b003f
 int layout login 0x7f0b0040
 int layout m3_alert_dialog 0x7f0b0041
 int layout m3_alert_dialog_actions 0x7f0b0042
@@ -4108,10 +4109,10 @@ int layout support_info 0x7f0b0087
 int layout support_simple_spinner_dropdown_item 0x7f0b0088
 int layout user_info 0x7f0b0089
 int layout voucher_setting 0x7f0b008a
-int mipmap apple_icon 0x7f0d0002
-int mipmap headphone_icon 0x7f0d0003
-int mipmap ic_launcher 0x7f0d0000
-int mipmap ic_launcher_round 0x7f0d0001
+int mipmap apple_icon 0x7f0d0000
+int mipmap headphone_icon 0x7f0d0001
+int mipmap ic_launcher 0x7f0d0002
+int mipmap ic_launcher_round 0x7f0d0003
 int mipmap keyboard_icon 0x7f0d0004
 int mipmap laptop_icon 0x7f0d0005
 int mipmap mouse_icon 0x7f0d0006
