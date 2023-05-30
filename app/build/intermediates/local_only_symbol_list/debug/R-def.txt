@@ -55,6 +55,7 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
+drawable home_icon
 drawable hotline_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -82,7 +83,6 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable processing_icon
-drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
@@ -237,6 +237,7 @@ id et_sign_up_username
 id expired_day
 id facebook_icon
 id facebook_support_box
+id faq_item
 id female_option
 id fields
 id filter_box
@@ -383,6 +384,7 @@ id login_button
 id login_info_user_info_box
 id login_text
 id loginform
+id logout_item
 id low_price
 id main_screen
 id male_option
@@ -622,6 +624,7 @@ layout category_layout_detail
 layout category_panel
 layout confirm_box
 layout edit_shipping_info
+layout faq_layout
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -649,6 +652,7 @@ layout sort_setting
 layout support_info
 layout user_info
 layout voucher_setting
+menu dots_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

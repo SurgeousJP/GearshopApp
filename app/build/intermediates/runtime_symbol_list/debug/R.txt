@@ -2762,6 +2762,7 @@ int drawable fill_dark_blue_box_2 0x7f0700b0
 int drawable filter_icon 0x7f0700b1
 int drawable gear_shop_icon 0x7f0700b2
 int drawable gg 0x7f0700b3
+int drawable home_icon 0x7f07013f
 int drawable hotline_icon 0x7f0700b4
 int drawable ic_arrow_back_black_24 0x7f0700b5
 int drawable ic_clear_black_24 0x7f0700b6
@@ -2872,7 +2873,6 @@ int drawable number_of_prod_box 0x7f07011e
 int drawable option_item 0x7f07011f
 int drawable option_item_color 0x7f070120
 int drawable processing_icon 0x7f070121
-int drawable roundx 0x7f070122
 int drawable save_box 0x7f070123
 int drawable search_icon 0x7f070124
 int drawable search_input 0x7f070125
@@ -3211,6 +3211,7 @@ int id expired_day 0x7f080132
 int id facebook_icon 0x7f080133
 int id facebook_support_box 0x7f080134
 int id fade 0x7f080135
+int id faq_item 0x7f0803e4
 int id female_option 0x7f080136
 int id fields 0x7f080137
 int id fill 0x7f080138
@@ -3411,6 +3412,7 @@ int id login_button 0x7f0801fa
 int id login_info_user_info_box 0x7f0801fb
 int id login_text 0x7f0801fc
 int id loginform 0x7f0801fd
+int id logout_item 0x7f0803e2
 int id low_price 0x7f0801fe
 int id m3_side_sheet 0x7f0801ff
 int id main_screen 0x7f080200
@@ -4025,6 +4027,7 @@ int layout design_navigation_menu_item 0x7f0b0030
 int layout design_text_input_end_icon 0x7f0b0031
 int layout design_text_input_start_icon 0x7f0b0032
 int layout edit_shipping_info 0x7f0b0033
+int layout faq_layout 0x7f0b008c
 int layout filter_setting 0x7f0b0034
 int layout filter_sort_bar 0x7f0b0035
 int layout forgot_password 0x7f0b0036
@@ -4113,6 +4116,7 @@ int layout support_info 0x7f0b0088
 int layout support_simple_spinner_dropdown_item 0x7f0b0089
 int layout user_info 0x7f0b008a
 int layout voucher_setting 0x7f0b008b
+int menu dots_menu 0x7f130001
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
 int plurals mtrl_badge_content_description 0x7f0e0000

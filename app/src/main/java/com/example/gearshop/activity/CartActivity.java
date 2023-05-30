@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -79,12 +83,18 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         });
 
         MoreInformationLayout = findViewById(R.id.dots_cart);
-        MoreInformationLayout.setOnClickListener(view -> {
-
+        MoreInformationLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
         });
         EscapeLayout = findViewById(R.id.escape_cart);
-        EscapeLayout.setOnClickListener(view -> {
-
+        EscapeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //intent MainActivity
+            }
         });
     }
 
@@ -125,5 +135,28 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         if (result){
             deleteCartItem(itemPosition, CartAdapter);
         }
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(CartActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(CartActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }
