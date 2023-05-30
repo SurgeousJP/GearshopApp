@@ -17,7 +17,7 @@
     <uses-permission android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.example.gearshop.repository.CartRepository"
+        android:name="com.example.gearshop.repository.GlobalRepository"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -28,8 +28,10 @@
         android:icon="@drawable/gear_shop_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
+        <activity
+            android:name="com.example.gearshop.activity.ProvincePickActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.SearchActivity"
             android:exported="false" />
@@ -47,8 +49,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.CategoryActivity"
-            android:exported="false" />
-        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
+            android:exported="false" /> <!-- <activity android:name=".activity.CategoryDetailActivity" -->
         <!-- android:exported="false"/> -->
         <activity
             android:name="com.example.gearshop.activity.AccountActivity"

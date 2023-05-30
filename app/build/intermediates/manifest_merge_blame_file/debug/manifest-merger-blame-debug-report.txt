@@ -6,147 +6,152 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="28"
-8-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml
+8-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml
+9-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:5:5-67
-11-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <permission
-13-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+13-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 14        android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+14-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+15-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 16
 17    <uses-permission android:name="com.example.gearshop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+17-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:7:5-50:19
-20        android:name="com.example.gearshop.repository.CartRepository"
-20-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:8:9-50
+19-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:7:5-55:19
+20        android:name="com.example.gearshop.repository.GlobalRepository"
+20-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:8:9-52
 21        android:allowBackup="true"
-21-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:9:9-35
+21-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] C:\Users\Asus\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22-->[androidx.core:core:1.9.0] C:\Users\tuanb\.gradle\caches\transforms-3\ec4f76f6c0c02de8ba18086e7bd9baf5\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:10:9-65
+23-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:10:9-65
 24        android:debuggable="true"
 25        android:enableOnBackInvokedCallback="true"
-25-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:17:9-51
+25-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:11:9-51
 26        android:extractNativeLibs="false"
 27        android:fullBackupContent="@xml/backup_rules"
-27-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:11:9-54
+27-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:12:9-54
 28        android:icon="@drawable/gear_shop_icon"
-28-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:12:9-48
+28-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:13:9-48
 29        android:label="@string/app_name"
-29-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:13:9-41
+29-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:14:9-41
 30        android:supportsRtl="true"
-30-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:14:9-35
+30-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:15:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.GearShop" >
-32-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:15:9-46
+32-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:16:9-46
 33        <activity
-33-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:18:9-20:40
-34            android:name="com.example.gearshop.activity.SearchActivity"
-34-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:19:13-72
+33-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:18:9-20:40
+34            android:name="com.example.gearshop.activity.ProvincePickActivity"
+34-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:19:13-58
 35            android:exported="false" />
-35-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:20:13-37
+35-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:20:13-37
 36        <activity
-36-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:21:9-23:40
-37            android:name="com.example.gearshop.activity.CartActivity"
-37-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:22:13-50
+36-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:21:9-23:40
+37            android:name="com.example.gearshop.activity.SearchActivity"
+37-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:22:13-52
 38            android:exported="false" />
-38-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:23:13-37
+38-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:23:13-37
 39        <activity
-39-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:24:9-26:40
-40            android:name="com.example.gearshop.activity.ProductDetailActivity"
-40-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:25:13-59
+39-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:24:9-26:40
+40            android:name="com.example.gearshop.activity.CartActivity"
+40-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:25:13-50
 41            android:exported="false" />
-41-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:26:13-37
+41-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:26:13-37
 42        <activity
-42-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:27:9-28:39
-43            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
-43-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:27:19-70
+42-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:27:9-29:40
+43            android:name="com.example.gearshop.activity.ProductDetailActivity"
+43-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:28:13-59
 44            android:exported="false" />
-44-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:28:13-37
+44-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:29:13-37
 45        <activity
-45-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:29:9-30:39
-46            android:name="com.example.gearshop.activity.SignUpActivity"
-46-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:29:19-58
+45-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:30:9-32:40
+46            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
+46-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:31:13-64
 47            android:exported="false" />
-47-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:30:13-37
+47-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:32:13-37
 48        <activity
-48-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:31:9-32:39
-49            android:name="com.example.gearshop.activity.CategoryActivity"
-49-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:31:19-60
+48-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:33:9-35:40
+49            android:name="com.example.gearshop.activity.SignUpActivity"
+49-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:34:13-52
 50            android:exported="false" />
-50-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:32:13-37
-51        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
-52        <!-- android:exported="false"/> -->
-53        <activity
-53-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:35:9-36:39
-54            android:name="com.example.gearshop.activity.AccountActivity"
-54-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:35:19-59
-55            android:exported="false" />
-55-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:36:13-37
-56        <activity
-56-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:37:9-38:39
-57            android:name="com.example.gearshop.activity.EditUserInfoActivity"
-57-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:37:19-64
-58            android:exported="false" />
-58-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:38:13-37
-59        <activity
-59-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:41:9-49:20
-60            android:name="com.example.gearshop.activity.SignInActivity"
-60-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:42:13-52
-61            android:exported="true" >
-61-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:43:13-36
-62            <intent-filter>
-62-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:44:13-48:29
-63                <action android:name="android.intent.action.MAIN" />
-63-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:45:17-69
-63-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:45:25-66
-64
-65                <category android:name="android.intent.category.LAUNCHER" />
-65-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:47:17-77
-65-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:47:27-74
-66            </intent-filter>
-67        </activity>
-68
-69        <provider
-69-->[com.squareup.picasso:picasso:2.71828] C:\Users\Asus\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
-70            android:name="com.squareup.picasso.PicassoProvider"
-70-->[com.squareup.picasso:picasso:2.71828] C:\Users\Asus\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
-71            android:authorities="com.example.gearshop.com.squareup.picasso"
-71-->[com.squareup.picasso:picasso:2.71828] C:\Users\Asus\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
-72            android:exported="false" />
-72-->[com.squareup.picasso:picasso:2.71828] C:\Users\Asus\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
-73        <provider
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-74            android:name="androidx.startup.InitializationProvider"
-74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-75            android:authorities="com.example.gearshop.androidx-startup"
-75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-76            android:exported="false" >
-76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-77            <meta-data
-77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-78                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-79                android:value="androidx.startup" />
-79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Asus\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-80            <meta-data
-80-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Asus\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-81                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-81-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Asus\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-82                android:value="androidx.startup" />
-82-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Asus\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-83        </provider>
-84    </application>
-85
-86</manifest>
+50-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:35:13-37
+51        <activity
+51-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:36:9-38:40
+52            android:name="com.example.gearshop.activity.CategoryActivity"
+52-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:37:13-54
+53            android:exported="false" /> <!-- <activity android:name=".activity.CategoryDetailActivity" -->
+53-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:38:13-37
+54        <!-- android:exported="false"/> -->
+55        <activity
+55-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:40:9-42:40
+56            android:name="com.example.gearshop.activity.AccountActivity"
+56-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:41:13-53
+57            android:exported="false" />
+57-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:42:13-37
+58        <activity
+58-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:43:9-45:40
+59            android:name="com.example.gearshop.activity.EditUserInfoActivity"
+59-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:44:13-58
+60            android:exported="false" />
+60-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:45:13-37
+61        <activity
+61-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:46:9-54:20
+62            android:name="com.example.gearshop.activity.SignInActivity"
+62-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:47:13-52
+63            android:exported="true" >
+63-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:48:13-36
+64            <intent-filter>
+64-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:49:13-53:29
+65                <action android:name="android.intent.action.MAIN" />
+65-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:50:17-69
+65-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:50:25-66
+66
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:52:17-77
+67-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:52:27-74
+68            </intent-filter>
+69        </activity>
+70
+71        <provider
+71-->[com.squareup.picasso:picasso:2.71828] C:\Users\tuanb\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+72            android:name="com.squareup.picasso.PicassoProvider"
+72-->[com.squareup.picasso:picasso:2.71828] C:\Users\tuanb\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+73            android:authorities="com.example.gearshop.com.squareup.picasso"
+73-->[com.squareup.picasso:picasso:2.71828] C:\Users\tuanb\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+74            android:exported="false" />
+74-->[com.squareup.picasso:picasso:2.71828] C:\Users\tuanb\.gradle\caches\transforms-3\606ed2428811195b8467773399e613aa\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+75        <provider
+75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+76            android:name="androidx.startup.InitializationProvider"
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+77            android:authorities="com.example.gearshop.androidx-startup"
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+78            android:exported="false" >
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+79            <meta-data
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+81                android:value="androidx.startup" />
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\tuanb\.gradle\caches\transforms-3\791b39fe68826e8543c46f2d7f8b152e\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+82            <meta-data
+82-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\tuanb\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+83                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+83-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\tuanb\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+84                android:value="androidx.startup" />
+84-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\tuanb\.gradle\caches\transforms-3\86041ab2b0d2128b301212662b855cec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+85        </provider>
+86    </application>
+87
+88</manifest>

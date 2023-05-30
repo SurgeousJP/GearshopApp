@@ -9,13 +9,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Debug Files" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Xử lý thông tin nếu bị nhập sai khi sửa thông tin vận chuyển">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Asus\.android\avd\Pixel_6_Pro_API_UpsideDownCake.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\tuanb\.android\avd\Pixel_6_Pro_API_UpsideDownCake.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -62,20 +76,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/ModelBranch" />
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="MergeKienModel" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,8 +115,9 @@
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;ToolWindowDebug.ShowToolbar&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/src/main/java&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/Downloads/Documents/UIT Courses/2ndYear 2ndSemester/SE114 - Mobile Application/Github/GearshopApp/app/src/main/res/drawable&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/libs&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
@@ -113,6 +127,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\libs" />
+    </key>
+    <key name="android.template.1888041482">
+      <recent name="com.example.gearshop.activity" />
     </key>
     <key name="android.template.-1818904504">
       <recent name="com.example.gearshop.adapter" />
@@ -196,6 +213,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString">
+      <created>1684318973289</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684318973289</updated>
     </task>
     <task id="LOCAL-00021" summary="fix bug khi merge nhánh UI">
       <created>1684373095009</created>
@@ -491,56 +515,49 @@
       <option name="project" value="LOCAL" />
       <updated>1685329004358</updated>
     </task>
-    <task id="LOCAL-00063" summary="uodate ui">
-      <created>1685416845916</created>
+    <task id="LOCAL-00063" summary="fix lỗi không return về CategoryActivity">
+      <created>1685359446307</created>
       <option name="number" value="00063" />
       <option name="presentableId" value="LOCAL-00063" />
       <option name="project" value="LOCAL" />
-      <updated>1685416845916</updated>
+      <updated>1685359446307</updated>
     </task>
-    <task id="LOCAL-00064" summary="Fix vấn đề bo góc">
-      <created>1685419987789</created>
+    <task id="LOCAL-00064" summary="Sửa fragment không hiển thị đủ sản phẩm trong SearchActivity">
+      <created>1685365894465</created>
       <option name="number" value="00064" />
       <option name="presentableId" value="LOCAL-00064" />
       <option name="project" value="LOCAL" />
-      <updated>1685419987789</updated>
+      <updated>1685365894465</updated>
     </task>
-    <task id="LOCAL-00065" summary="Fix vấn đề bo góc">
-      <created>1685420033158</created>
+    <task id="LOCAL-00065" summary="Set event sửa thông tin giao hàng">
+      <created>1685410827389</created>
       <option name="number" value="00065" />
       <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1685420033158</updated>
+      <updated>1685410827390</updated>
     </task>
-    <task id="LOCAL-00066" summary="Fix nút x thành nút home">
-      <created>1685420623186</created>
+    <task id="LOCAL-00066" summary="làm province picker activity">
+      <created>1685422741584</created>
       <option name="number" value="00066" />
       <option name="presentableId" value="LOCAL-00066" />
       <option name="project" value="LOCAL" />
-      <updated>1685420623186</updated>
+      <updated>1685422741584</updated>
     </task>
-    <task id="LOCAL-00067" summary="Fix nút x thành nút home">
-      <created>1685420813511</created>
+    <task id="LOCAL-00067" summary="Finish edit shipping info">
+      <created>1685431859038</created>
       <option name="number" value="00067" />
       <option name="presentableId" value="LOCAL-00067" />
       <option name="project" value="LOCAL" />
-      <updated>1685420813511</updated>
+      <updated>1685431859038</updated>
     </task>
-    <task id="LOCAL-00068" summary="Merge from UI branch">
-      <created>1685449572136</created>
+    <task id="LOCAL-00068" summary="Xử lý thông tin nếu bị nhập sai khi sửa thông tin vận chuyển">
+      <created>1685435774792</created>
       <option name="number" value="00068" />
       <option name="presentableId" value="LOCAL-00068" />
       <option name="project" value="LOCAL" />
-      <updated>1685449572136</updated>
+      <updated>1685435774792</updated>
     </task>
-    <task id="LOCAL-00069" summary="Debug Files">
-      <created>1685450098442</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1685450098442</updated>
-    </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,19 +565,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Duy's_branch" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -568,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Refractor fragment và class" />
     <MESSAGE value="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search" />
     <MESSAGE value="Tham số hóa category trong screen khi hiển thị danh sách product" />
     <MESSAGE value="Sửa việc phản hồi chậm khi search" />
@@ -588,21 +592,28 @@
     <MESSAGE value="fix 1 vài bug sau khi merge thành công" />
     <MESSAGE value="link category to product" />
     <MESSAGE value="add recyclerview" />
-    <MESSAGE value="uodate ui" />
-    <MESSAGE value="Fix vấn đề bo góc" />
-    <MESSAGE value="Fix nút x thành nút home" />
-    <MESSAGE value="Merge from UI branch" />
-    <MESSAGE value="Debug Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debug Files" />
+    <MESSAGE value="fix lỗi không return về CategoryActivity" />
+    <MESSAGE value="Sửa fragment không hiển thị đủ sản phẩm trong SearchActivity" />
+    <MESSAGE value="Set event sửa thông tin giao hàng" />
+    <MESSAGE value="làm province picker activity" />
+    <MESSAGE value="Finish edit shipping info" />
+    <MESSAGE value="Xử lý thông tin nếu bị nhập sai khi sửa thông tin vận chuyển" />
+    <option name="LAST_COMMIT_MESSAGE" value="Xử lý thông tin nếu bị nhập sai khi sửa thông tin vận chuyển" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.example.gearshop.database.SelectSQL" memberName="mFuture" />
         <PinnedItemInfo parentTag="com.example.gearshop.adapter.ProductGridAdapter" memberName="products" />
+        <PinnedItemInfo parentTag="com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment$$ExternalSyntheticLambda0" memberName="shadow$_klass_" />
         <PinnedItemInfo parentTag="com.example.gearshop.database.GetCustomerDataFromAzure" memberName="CustomerList" />
         <PinnedItemInfo parentTag="android.os.Bundle" memberName="mClassLoader" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="AndroidRunConfigurationType">
+        <watch expression="((CartActivity)this).CartItemList" custom="com.example.gearshop.activity.CartActivity" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

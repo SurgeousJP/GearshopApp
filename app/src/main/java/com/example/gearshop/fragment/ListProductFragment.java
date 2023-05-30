@@ -1,5 +1,8 @@
 package com.example.gearshop.fragment;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -10,18 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
-import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 import com.example.gearshop.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.ExecutionException;
 
 public class ListProductFragment extends Fragment implements OnFragmentViewCreatedListener {
     private Context context;
@@ -84,5 +83,23 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
     }
     public void setOnFragmentViewCreatedListener(OnFragmentViewCreatedListener callback) {
         this.callback = callback;
+    }
+
+    public interface DialogListener {
+        void onDialogResult(boolean result);
+    }
+    private ConfirmDeleteCartItemDialogFragment.DialogListener dialogListener;
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        @SuppressLint("InflateParams") View dialogView = inflater.inflate(R.layout.not_found_search, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(dialogView).setCancelable(true);
+        return builder.create();
+    }
+    public void setDialogListener(ConfirmDeleteCartItemDialogFragment.DialogListener listener) {
+        this.dialogListener = listener;
     }
 }

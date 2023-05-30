@@ -48,6 +48,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private TextView FilterTextView;
     private View SortIconView;
     private TextView SortTextView;
+    private View ReturnView;
+    private TextView CategoryLabel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +59,9 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         Intent comingIntent = getIntent();
         ProductCategoryID = comingIntent.getIntExtra("categoryId", 0);
-
+        String categoryName = comingIntent.getStringExtra("categoryName");
+        CategoryLabel = findViewById(R.id.category_detail_label);
+        CategoryLabel.setText(categoryName);
         initializeProductsInCategory();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -67,6 +71,12 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             categoryListProductFragment.UpdateDataOntoAdapter(ProductList);
         categoryProductFilterSortBarFragment =
                 (FilterSortBarFragment)fragmentManager.findFragmentById(R.id.fragment_filter_box);
+
+        ReturnView = findViewById(R.id.return_to_category);
+        ReturnView.setOnClickListener(view -> {
+            finish();
+        });
+
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -100,6 +110,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
 
         final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =

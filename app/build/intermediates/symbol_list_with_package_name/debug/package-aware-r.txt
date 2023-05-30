@@ -2763,7 +2763,6 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
-drawable home_icon
 drawable hotline_icon
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2874,6 +2873,7 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable processing_icon
+drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
@@ -3045,6 +3045,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id change_shipping_info
 id check_out_button
 id check_out_text
 id checkbox
@@ -3129,6 +3130,7 @@ id delivery_order
 id deltaRelative
 id dependency_ordering
 id description
+id description_shipping_product
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3212,7 +3214,6 @@ id expired_day
 id facebook_icon
 id facebook_support_box
 id fade
-id faq_item
 id female_option
 id fields
 id fill
@@ -3243,7 +3244,6 @@ id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_container_view_tag
 id fragment_filter_box
-id fragment_filter_box_search
 id fragment_grid_view
 id fragment_grid_view_search
 id free_space
@@ -3413,10 +3413,10 @@ id login_button
 id login_info_user_info_box
 id login_text
 id loginform
-id logout_item
 id low_price
 id m3_side_sheet
 id main_screen
+id main_search_screen
 id male_option
 id marquee
 id masked
@@ -3490,7 +3490,6 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_box
 id navigation_header_container
-id nested_scroll_grid_view_search
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3598,6 +3597,7 @@ id province_apply
 id province_box
 id province_edittext
 id province_name
+id province_shipping_price
 id radio
 id rate_star1
 id rate_star2
@@ -3614,6 +3614,7 @@ id recycler_view_order_detail
 id register_text
 id registerform
 id return_cart_icon
+id return_to_category
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3625,7 +3626,6 @@ id row_index_key
 id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
-id save_user_info
 id sawtooth
 id scale
 id screen
@@ -3638,13 +3638,11 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scrollable
-id search_and_result
 id search_badge
 id search_bar
 id search_bar_text_view
 id search_button
 id search_close_btn
-id search_constraint_layout
 id search_edit_frame
 id search_go_btn
 id search_icon
@@ -3769,7 +3767,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4029,7 +4026,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_shipping_info
-layout faq_layout
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -4118,7 +4114,6 @@ layout support_info
 layout support_simple_spinner_dropdown_item
 layout user_info
 layout voucher_setting
-menu dots_menu
 mipmap apple_icon
 mipmap headphone_icon
 mipmap ic_launcher

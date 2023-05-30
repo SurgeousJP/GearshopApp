@@ -55,7 +55,6 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
-drawable home_icon
 drawable hotline_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -83,6 +82,7 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable processing_icon
+drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
@@ -139,6 +139,7 @@ id category_detail_label
 id category_discount
 id category_item_category_detail
 id category_tag
+id change_shipping_info
 id check_out_button
 id check_out_text
 id chip
@@ -191,6 +192,7 @@ id delivered_order
 id delivery_box
 id delivery_order
 id description
+id description_shipping_product
 id discount_name
 id discount_percent
 id discount_text
@@ -237,7 +239,6 @@ id et_sign_up_username
 id expired_day
 id facebook_icon
 id facebook_support_box
-id faq_item
 id female_option
 id fields
 id filter_box
@@ -254,7 +255,6 @@ id firstname_user_info
 id forgot_password_nav_from_sign_in
 id forgotpassword_form
 id fragment_filter_box
-id fragment_filter_box_search
 id fragment_grid_view
 id fragment_grid_view_search
 id free_space
@@ -384,9 +384,9 @@ id login_button
 id login_info_user_info_box
 id login_text
 id loginform
-id logout_item
 id low_price
 id main_screen
+id main_search_screen
 id male_option
 id module_price
 id module_product
@@ -394,7 +394,6 @@ id module_rate
 id more_category
 id more_info_order_detail
 id navigation_box
-id nested_scroll_grid_view_search
 id next_arrow_order_detail
 id next_arrow_support
 id next_arrow_user_info
@@ -469,6 +468,7 @@ id province_apply
 id province_box
 id province_edittext
 id province_name
+id province_shipping_price
 id rate_star1
 id rate_star2
 id rate_star3
@@ -482,15 +482,13 @@ id recycler_view_order_detail
 id register_text
 id registerform
 id return_cart_icon
+id return_to_category
 id roundx_order_management
 id save_button_list_voucher
-id save_user_info
 id scrollView_cart
 id scrollView_product
 id scroll_box
 id scroll_box_cart
-id search_and_result
-id search_constraint_layout
 id search_icon
 id search_input
 id search_item_category_detail
@@ -535,7 +533,6 @@ id support_box_image
 id support_info_label
 id text
 id text1
-id textView2
 id text_order_day
 id text_order_status
 id text_price1
@@ -625,7 +622,6 @@ layout category_layout_detail
 layout category_panel
 layout confirm_box
 layout edit_shipping_info
-layout faq_layout
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -653,7 +649,6 @@ layout sort_setting
 layout support_info
 layout user_info
 layout voucher_setting
-menu dots_menu
 mipmap apple_icon
 mipmap headphone_icon
 mipmap ic_launcher

@@ -1,23 +1,21 @@
 package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.database.GetProductDataFromAzure;
-import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
+import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
+import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.fragment.SearchNotFoundFragment;
-import com.example.gearshop.fragment.SearchResultFragment;
-import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
+import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.VietnameseStringConverter;
@@ -27,8 +25,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
-public class SearchActivity extends AppCompatActivity implements OnFragmentViewCreatedListener,
-SearchNotFoundFragment.DialogListener{
+public class SearchActivity extends AppCompatActivity implements ListProductFragment.DialogListener{
     private List<Product> ProductList;
     private View SearchIconView;
     private EditText SearchEditText;
@@ -48,21 +45,21 @@ SearchNotFoundFragment.DialogListener{
         SearchIconView = findViewById(R.id.search_icon);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        SearchResultFragment searchResultFragment = new SearchResultFragment();
-        searchResultFragment.setOnFragmentViewCreatedListener(this);
-        fragmentTransaction.add(R.id.search_constraint_layout, searchResultFragment);
-        fragmentTransaction.commit();
-
+        ListProductFragment listProductFragment =
+                (ListProductFragment) fragmentManager.findFragmentById(R.id.fragment_grid_view_search);
         SearchIconView.setOnClickListener(view -> {
             String searchText = SearchEditText.getText().toString();
             List<Product> searchResults = searchForProducts(searchText);
             if (searchText.isEmpty() || searchResults.size() == 0){
-                searchResultFragment.UpdateDataOntoAdapter(new ArrayList<>());
+                if (listProductFragment != null) {
+                    listProductFragment.UpdateDataOntoAdapter(new ArrayList<>());
+                }
                 showSearchNotFoundDialog();
             }
             else{
-                searchResultFragment.UpdateDataOntoAdapter(searchResults);
+                if (listProductFragment != null) {
+                    listProductFragment.UpdateDataOntoAdapter(searchResults);
+                }
             }
         });
 
@@ -88,10 +85,11 @@ SearchNotFoundFragment.DialogListener{
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
     }
 
@@ -134,19 +132,6 @@ SearchNotFoundFragment.DialogListener{
             return productPlainString.contains(info);
         }
         return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
-    }
-
-    @Override
-    public void onFragmentViewCreated(View fragmentView) {
-        // Apply constraints to the fragmentView (root view)
-        ConstraintLayout searchConstraintLayout = findViewById(R.id.search_constraint_layout);
-        ConstraintLayout searchInputLayout = findViewById(R.id.search_input);
-
-        ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) fragmentView.getLayoutParams();
-        layoutParams.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
-        layoutParams.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
-        layoutParams.topToBottom = searchInputLayout.getId();
-        fragmentView.setLayoutParams(layoutParams);
     }
 
     private void showSearchNotFoundDialog() {
