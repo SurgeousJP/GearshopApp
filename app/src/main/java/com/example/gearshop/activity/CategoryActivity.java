@@ -18,6 +18,7 @@ import com.example.gearshop.adapter.CategoryGridAdapter;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.repository.CategoryRepository;
+import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.List;
 
@@ -76,24 +77,19 @@ public class CategoryActivity extends AppCompatActivity {
 
         HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
-            finish();
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
-
 //        CategoryItem = findViewById(R.id.category_item_category_detail);
 //        CategoryItem.setOnClickListener(view -> {
-//            Intent intent = new Intent(getBaseContext(), CategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            getBaseContext().startActivity(intent);
+//            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
 //        });
-
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
-
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
     }
 }
