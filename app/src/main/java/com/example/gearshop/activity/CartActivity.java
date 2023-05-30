@@ -56,7 +56,16 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
+        ShippingInfoLayout = findViewById(R.id.transport_info_box);
+
+        Address globalAddress = GlobalRepository.getCustomerAddress();
+        updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
+                GlobalRepository.getCurrentCustomer().getPhoneNumber());
         TransportFee = findViewById(R.id.transport_fee_price_order_detail);
+        TransportFee.setText(
+                MoneyHelper.getVietnameseMoneyStringFormatted(
+                        GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID())));
+
         CartItemList = ((GlobalRepository) getApplication()).getCartItemList();
         ProductList = ((GlobalRepository) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
@@ -96,16 +105,6 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         EscapeLayout.setOnClickListener(view -> {
 
         });
-
-        ShippingInfoLayout = findViewById(R.id.transport_info_box);
-
-        Address globalAddress = GlobalRepository.getCustomerAddress();
-        updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
-                GlobalRepository.getCurrentCustomer().getPhoneNumber());
-
-        TransportFee.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(
-                        GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID())));
 
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
         ChangeShippingInfoView.setOnClickListener(view -> {
@@ -148,7 +147,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             }
             resultPrice += price;
         }
-        return resultPrice;
+        return resultPrice + MoneyHelper.getVietnameseMoneyDouble(TransportFee.getText().toString());
     }
     private void showConfirmDeleteDialog() {
         ConfirmDeleteCartItemDialogFragment dialogFragment = new ConfirmDeleteCartItemDialogFragment();
