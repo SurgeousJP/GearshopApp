@@ -440,6 +440,7 @@ id phonemuber_edittext
 id phonenumber_box_user_info
 id phonenumber_text_user_info
 id phonenumber_user_info
+id pick_province_button
 id priceRange
 id price_box
 id price_box_order_detail
@@ -462,8 +463,10 @@ id product_image
 id product_info_order_detail
 id product_item
 id product_number_box
+id province_apply
 id province_box
 id province_edittext
+id province_name
 id rate_star1
 id rate_star2
 id rate_star3
@@ -479,6 +482,7 @@ id registerform
 id return_cart_icon
 id roundx_order_management
 id save_button_list_voucher
+id save_user_info
 id scrollView_cart
 id scrollView_product
 id scroll_box
@@ -528,6 +532,7 @@ id support_box_image
 id support_info_label
 id text
 id text1
+id textView2
 id text_order_day
 id text_order_status
 id text_price1
@@ -626,6 +631,7 @@ layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout list_item_cart
+layout list_item_province
 layout list_order_status
 layout list_voucher
 layout listview_category

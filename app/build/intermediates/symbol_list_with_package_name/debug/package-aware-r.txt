@@ -3563,6 +3563,7 @@ id phonemuber_edittext
 id phonenumber_box_user_info
 id phonenumber_text_user_info
 id phonenumber_user_info
+id pick_province_button
 id pin
 id position
 id postLayout
@@ -3591,8 +3592,10 @@ id product_item
 id product_number_box
 id progress_circular
 id progress_horizontal
+id province_apply
 id province_box
 id province_edittext
+id province_name
 id radio
 id rate_star1
 id rate_star2
@@ -3620,6 +3623,7 @@ id row_index_key
 id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
+id save_user_info
 id sawtooth
 id scale
 id screen
@@ -3762,6 +3766,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4030,6 +4035,7 @@ layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout list_item_cart
+layout list_item_province
 layout list_order_status
 layout list_voucher
 layout listview_category

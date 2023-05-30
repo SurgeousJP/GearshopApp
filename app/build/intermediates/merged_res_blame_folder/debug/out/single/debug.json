@@ -132,6 +132,10 @@
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\confirm_box.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_user_info.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/user_info.xml"
+    },
+    {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_province_picker.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\province_picker.xml"
     },
@@ -340,6 +344,10 @@
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\sort_setting.xml"
     },
     {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_filter_setting.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/filter_setting.xml"
+    },
+    {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_next_arrow.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\next_arrow.xml"
     },
@@ -440,6 +448,10 @@
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\list_item.xml"
     },
     {
+        "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_list_item_province.xml.flat",
+        "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\list_item_province.xml"
+    },
+    {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_shopping_bo.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\shopping_bo.xml"
     },
@@ -530,10 +542,6 @@
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_x.xml.flat",
         "source": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\x.xml"
-    },
-    {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_activity_main.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\duyvi\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_edit_shipping_info.xml.flat",
