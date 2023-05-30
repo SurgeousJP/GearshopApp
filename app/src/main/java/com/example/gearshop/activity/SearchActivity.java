@@ -85,10 +85,11 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
     }
 

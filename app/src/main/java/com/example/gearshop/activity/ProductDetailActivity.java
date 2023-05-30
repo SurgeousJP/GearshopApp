@@ -20,7 +20,7 @@ import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
-import com.example.gearshop.repository.CartRepository;
+import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
@@ -165,9 +165,9 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
         });
 
-        Address globalAddress = CartRepository.getCustomerAddress();
+        Address globalAddress = GlobalRepository.getCustomerAddress();
         updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
-                CartRepository.getCurrentCustomer().getPhoneNumber());
+                GlobalRepository.getCurrentCustomer().getPhoneNumber());
 
         EditShippingInfoView.setOnClickListener(view -> {
             ShippingInfoBottomSheetDialogFragment dialogFragment = new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout);
@@ -178,13 +178,14 @@ public class ProductDetailActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void updateShippingInfo(String houseNumber, String street, String phoneNumber){
         TextView AddressTextView = ShippingInfoLayout.findViewById(R.id.label_address);
-        CartRepository.setCustomerAddress(new Address(1, houseNumber, street, 1));
+        TextView PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description_shipping_product);
         AddressTextView.setText(houseNumber + "\n" + street);
+        PhoneNumberTextView.setText(phoneNumber);
     }
 
     private void addNewProductToCart(Product product) {
-        List<ShoppingCartItem> currentShoppingCartList = ((CartRepository) getApplication()).getCartItemList();
-        List<Product> currentProductList = ((CartRepository)getApplication()).getProductList();
+        List<ShoppingCartItem> currentShoppingCartList = ((GlobalRepository) getApplication()).getCartItemList();
+        List<Product> currentProductList = ((GlobalRepository)getApplication()).getProductList();
         ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
                 1, product.getID(), 1, new Date());
 

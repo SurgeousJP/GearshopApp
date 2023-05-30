@@ -192,6 +192,7 @@ id delivered_order
 id delivery_box
 id delivery_order
 id description
+id description_shipping_product
 id discount_name
 id discount_percent
 id discount_text

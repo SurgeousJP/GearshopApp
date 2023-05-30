@@ -110,6 +110,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
 
         final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =

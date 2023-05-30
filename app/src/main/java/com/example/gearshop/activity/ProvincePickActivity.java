@@ -2,7 +2,10 @@ package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.gearshop.R;
@@ -28,6 +31,16 @@ public class ProvincePickActivity extends AppCompatActivity {
         ProvinceListView = findViewById(R.id.listview_choose_province);
         ProvinceAdapter = new ProvinceListAdapter(getApplicationContext(), R.layout.list_item_province, provinceList);
         ProvinceListView.setAdapter(ProvinceAdapter);
+        ProvinceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Province pickedProvince = (Province) adapterView.getItemAtPosition(i);
+                Intent pickProvinceIntent = new Intent();
+                pickProvinceIntent.putExtra("pickedProvince", pickedProvince);
+                setResult(RESULT_OK, pickProvinceIntent);
+                finish();
+            }
+        });
     }
     private void initializeProvinceList(){
         final GetProvinceDataFromAzure[] getProvinceDataFromAzure = new GetProvinceDataFromAzure[1];

@@ -2,12 +2,9 @@ package com.example.gearshop.repository;
 
 import android.annotation.SuppressLint;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.InsertCustomerDataToAzure;
 import com.example.gearshop.model.Customer;
-import com.example.gearshop.repository.CartRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +63,7 @@ public class CustomerRepository {
     public Customer signIn(String username, String password) {
         for (Customer customer : CustomerList) {
             if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
-                CartRepository.setCurrentCustomer(customer);
+                GlobalRepository.setCurrentCustomer(customer);
                 return customer;
             }
         }

@@ -17,14 +17,12 @@ import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
-import com.example.gearshop.repository.CartRepository;
+import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
-import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;
-import java.util.Objects;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
@@ -53,8 +51,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
-        CartItemList = ((CartRepository) getApplication()).getCartItemList();
-        ProductList = ((CartRepository) getApplication()).getProductList();
+        CartItemList = ((GlobalRepository) getApplication()).getCartItemList();
+        ProductList = ((GlobalRepository) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
         CartAdapter = new CartListAdapter(CartItemList, ProductList);
@@ -95,9 +93,9 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
         ShippingInfoLayout = findViewById(R.id.transport_info_box);
 
-        Address globalAddress = CartRepository.getCustomerAddress();
+        Address globalAddress = GlobalRepository.getCustomerAddress();
         updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
-                CartRepository.getCurrentCustomer().getPhoneNumber());
+                GlobalRepository.getCurrentCustomer().getPhoneNumber());
 
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
         ChangeShippingInfoView.setOnClickListener(view -> {
@@ -120,8 +118,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             ShoppingCartItem item = CartItemList.get(position);
             CartItemList.remove(position);
             ProductList.remove(position);
-            ((CartRepository) getApplication()).setCartItemList(CartItemList);
-            ((CartRepository) getApplication()).setProductList(ProductList);
+            ((GlobalRepository) getApplication()).setCartItemList(CartItemList);
+            ((GlobalRepository) getApplication()).setProductList(ProductList);
             cartListAdapter.notifyItemRemoved(position);
             cartListAdapter.updateTotalPriceAfterDelete(product, item);
         }

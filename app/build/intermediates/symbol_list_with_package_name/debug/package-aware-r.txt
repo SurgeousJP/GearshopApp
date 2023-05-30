@@ -3130,6 +3130,7 @@ id delivery_order
 id deltaRelative
 id dependency_ordering
 id description
+id description_shipping_product
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub

@@ -10,7 +10,7 @@ import com.example.gearshop.model.ShoppingCartItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartRepository extends Application {
+public class GlobalRepository extends Application {
     private List<Product> ProductList;
     private List<ShoppingCartItem> CartItemList;
     private static Address CustomerAddress;
@@ -18,7 +18,7 @@ public class CartRepository extends Application {
     public Address demoAddress(){
         return new Address(1, "82C/2", "Dong Nai", 1);
     }
-    public CartRepository(){
+    public GlobalRepository(){
         CartItemList = new ArrayList<>();
         ProductList = new ArrayList<>();
 
