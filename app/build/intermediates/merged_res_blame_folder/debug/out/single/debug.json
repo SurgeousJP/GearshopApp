@@ -392,10 +392,6 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\mipmap-mdpi\\keyboard_icon.png"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_product_detail.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/product_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-xhdpi_apple_icon.png.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\mipmap-xhdpi\\apple_icon.png"
     },
@@ -458,6 +454,10 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_roundx.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\roundx.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_province_picker.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/province_picker.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-xxxhdpi_headphone_icon.png.flat",
@@ -710,6 +710,10 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-mdpi_pc_icon.png.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\mipmap-mdpi\\pc_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_list_item_province.xml.flat",
+        "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\list_item_province.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-hdpi_headphone_icon.png.flat",
