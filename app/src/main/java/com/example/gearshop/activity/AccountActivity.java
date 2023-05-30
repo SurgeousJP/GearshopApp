@@ -79,7 +79,7 @@ public class AccountActivity extends AppCompatActivity {
 
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Intent intent = new Intent(getBaseContext(), HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
             finish();
         });

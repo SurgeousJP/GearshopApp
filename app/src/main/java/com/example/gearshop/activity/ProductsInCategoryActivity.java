@@ -1,17 +1,11 @@
 package com.example.gearshop.activity;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -23,11 +17,8 @@ import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
-import com.example.gearshop.utility.MoneyHelper;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
@@ -101,7 +92,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
