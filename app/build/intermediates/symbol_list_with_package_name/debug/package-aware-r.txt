@@ -2763,6 +2763,7 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
+drawable home_icon
 drawable hotline_icon
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2873,7 +2874,6 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable processing_icon
-drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
@@ -3212,6 +3212,7 @@ id expired_day
 id facebook_icon
 id facebook_support_box
 id fade
+id faq_item
 id female_option
 id fields
 id fill
@@ -3412,6 +3413,7 @@ id login_button
 id login_info_user_info_box
 id login_text
 id loginform
+id logout_item
 id low_price
 id m3_side_sheet
 id main_screen
@@ -3563,6 +3565,7 @@ id phonemuber_edittext
 id phonenumber_box_user_info
 id phonenumber_text_user_info
 id phonenumber_user_info
+id pick_province_button
 id pin
 id position
 id postLayout
@@ -3591,8 +3594,10 @@ id product_item
 id product_number_box
 id progress_circular
 id progress_horizontal
+id province_apply
 id province_box
 id province_edittext
+id province_name
 id radio
 id rate_star1
 id rate_star2
@@ -3620,6 +3625,7 @@ id row_index_key
 id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
+id save_user_info
 id sawtooth
 id scale
 id screen
@@ -3693,7 +3699,6 @@ id showCustom
 id showHome
 id showTitle
 id show_category
-id show_grid_category
 id show_list_category
 id show_order
 id sign_in_nav_from_sign_up
@@ -3763,6 +3768,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4022,6 +4028,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_shipping_info
+layout faq_layout
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -4031,9 +4038,10 @@ layout framelayout_list_product
 layout gridview_category
 layout list_item
 layout list_item_cart
-layout list_item_category
+layout list_item_province
 layout list_order_status
 layout list_voucher
+layout listview_category
 layout login
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4109,16 +4117,9 @@ layout support_info
 layout support_simple_spinner_dropdown_item
 layout user_info
 layout voucher_setting
-mipmap apple_icon
-mipmap headphone_icon
+menu dots_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
-mipmap keyboard_icon
-mipmap laptop_icon
-mipmap mouse_icon
-mipmap pc_component_icon
-mipmap pc_icon
-mipmap screen_icon
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description

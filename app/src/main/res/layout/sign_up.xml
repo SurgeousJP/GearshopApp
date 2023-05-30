@@ -104,7 +104,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
-                            android:background="@drawable/normal_box_2"
+                            android:background="@drawable/normal_box"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/last_name">
@@ -163,7 +163,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
-                            android:background="@drawable/normal_box_2"
+                            android:background="@drawable/normal_box"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/first_name">
@@ -353,7 +353,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
-                            android:background="@drawable/normal_box_2"
+                            android:background="@drawable/normal_box"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/sex">
@@ -411,7 +411,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
-                            android:background="@drawable/normal_box_2"
+                            android:background="@drawable/normal_box"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/dob">

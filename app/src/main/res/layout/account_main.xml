@@ -92,7 +92,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@id/thin"
-                    android:background="@drawable/roundx"
+                    android:background="@drawable/home_icon"
                     android:clipToOutline="true" />
             </RelativeLayout>
 
