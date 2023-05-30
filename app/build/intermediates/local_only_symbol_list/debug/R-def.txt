@@ -139,6 +139,7 @@ id category_detail_label
 id category_discount
 id category_item_category_detail
 id category_tag
+id change_shipping_info
 id check_out_button
 id check_out_text
 id chip

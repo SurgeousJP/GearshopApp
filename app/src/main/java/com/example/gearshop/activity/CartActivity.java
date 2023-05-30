@@ -24,6 +24,7 @@ import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
@@ -69,7 +70,6 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         });
         CartRecyclerView.setAdapter(CartAdapter);
 
-
         TotalProductPrice = findViewById(R.id.total_price_order_detail);
         TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
@@ -105,14 +105,13 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
     }
+
     @SuppressLint("SetTextI18n")
     private void updateShippingInfo(String houseNumber, String street, String phoneNumber){
         TextView AddressTextView = ShippingInfoLayout.findViewById(R.id.label_ship_order_detail);
         TextView PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description);
         AddressTextView.setText(houseNumber + "\n" + street);
         PhoneNumberTextView.setText(phoneNumber);
-        CartRepository.setCustomerAddress(new Address(1, houseNumber, street, 1));
-        CartRepository.getCurrentCustomer().setPhoneNumber(phoneNumber);
     }
 
     private void deleteCartItem(int position, CartListAdapter cartListAdapter) {
