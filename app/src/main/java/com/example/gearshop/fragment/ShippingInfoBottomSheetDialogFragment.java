@@ -20,13 +20,19 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.activity.ProvincePickActivity;
+import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
+import com.example.gearshop.utility.MoneyHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFragment
         implements ConfirmChangeShippingInfoDialogFragment.DialogListener {
+    private int ProvinceID;
     private View CancelEditShipping;
     private ConstraintLayout ShippingInfoLayout;
     private EditText ProvinceEditText;
@@ -34,10 +40,16 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     private EditText PhoneNumberEditText;
     private TextView ApplyChangeShippingInfo;
     private TextView ProvincePickerApply;
+    private TextView TransportFeeTextView;
     private ActivityResultLauncher<Intent> ProvincePickerLauncher;
     public ShippingInfoBottomSheetDialogFragment(){}
     public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout){
         this.ShippingInfoLayout = shippingInfoLayout;
+    }
+
+    public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout, TextView transportFeeTextView){
+        this.ShippingInfoLayout = shippingInfoLayout;
+        this.TransportFeeTextView = transportFeeTextView;
     }
     @Nullable
     @Override
@@ -59,6 +71,7 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
                             Province pickedProvince = (Province) data.getSerializableExtra("pickedProvince");
                             String pickedProvinceName = pickedProvince.getName();
                             ProvinceEditText.setText(pickedProvinceName);
+                            ProvinceID = pickedProvince.getID();
                         }
                     }
                 });
@@ -72,7 +85,22 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
         PhoneNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
         ApplyChangeShippingInfo = view.findViewById(R.id.cta_apply);
         ApplyChangeShippingInfo.setOnClickListener(view1 -> {
-            if (PhoneNumberEditText.getText().toString().length() != 10){
+            if (ProvinceEditText.getText().toString().equals("")){
+                Toast.makeText(getActivity(), "Chưa chọn tỉnh, vui lòng chọn tỉnh", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String houseNumberChecking = HouseNumberAddressEditText.getText().toString();
+            String pattern = "^[A-Z\\d/]+$";
+
+            Pattern regex = Pattern.compile(pattern);
+            Matcher matcher = regex.matcher(houseNumberChecking);
+            if (!matcher.matches()){
+                Toast.makeText(getActivity(), "Số nhà không hợp lệ", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            String phoneNumberChecking = PhoneNumberEditText.getText().toString();
+            if (phoneNumberChecking.charAt(0) != '0' || phoneNumberChecking.length() != 10){
                 Toast.makeText(getActivity(), "Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -84,15 +112,21 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     private void updateShippingInfo(String houseNumber, String province, String phoneNumber){
         TextView AddressTextView = ShippingInfoLayout.findViewById(R.id.label_ship_order_detail);
         TextView PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description);
+
         if (AddressTextView == null){
             AddressTextView = ShippingInfoLayout.findViewById(R.id.label_address);
         }
+        AddressTextView.setText(houseNumber + "\n" + province);
+
         if (PhoneNumberTextView == null){
             PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description_shipping_product);
         }
-        AddressTextView.setText(houseNumber + "\n" + province);
         PhoneNumberTextView.setText(phoneNumber);
-        GlobalRepository.setCustomerAddress(new Address(1, houseNumber, province, 1));
+
+        Address globalAddress = GlobalRepository.getCustomerAddress();
+        GlobalRepository.setCustomerAddress(
+                new Address(globalAddress.getID(), houseNumber,
+                        province, ProvinceID));
         GlobalRepository.getCurrentCustomer().setPhoneNumber(phoneNumber);
     }
 
@@ -110,6 +144,10 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
                     ProvinceEditText.getText().toString(),
                     PhoneNumberEditText.getText().toString()
             );
+            if (TransportFeeTextView != null){
+                double newShippingPrice = GetProvinceDataFromAzure.getShippingCharge(ProvinceID);
+                TransportFeeTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(newShippingPrice));
+            }
             dismiss();
         }
     }

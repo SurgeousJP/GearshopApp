@@ -27,8 +27,8 @@
 18
 19    <application
 19-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:7:5-55:19
-20        android:name="com.example.gearshop.repository.CartRepository"
-20-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:8:9-50
+20        android:name="com.example.gearshop.repository.GlobalRepository"
+20-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:8:9-52
 21        android:allowBackup="true"
 21-->C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"

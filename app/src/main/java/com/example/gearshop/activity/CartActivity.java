@@ -14,15 +14,19 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
+import com.example.gearshop.database.GetProductDataFromAzure;
+import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
@@ -33,6 +37,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     private RelativeLayout EscapeLayout;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
+    private TextView TransportFee;
     private CartListAdapter CartAdapter;
     private int CartItemPosition;
 
@@ -51,6 +56,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
+        TransportFee = findViewById(R.id.transport_fee_price_order_detail);
         CartItemList = ((GlobalRepository) getApplication()).getCartItemList();
         ProductList = ((GlobalRepository) getApplication()).getProductList();
         CartRecyclerView = findViewById(R.id.list_product);
@@ -97,12 +103,19 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
                 GlobalRepository.getCurrentCustomer().getPhoneNumber());
 
+        TransportFee.setText(
+                MoneyHelper.getVietnameseMoneyStringFormatted(
+                        GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID())));
+
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
         ChangeShippingInfoView.setOnClickListener(view -> {
-            ShippingInfoBottomSheetDialogFragment dialogFragment = new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout);
+            ShippingInfoBottomSheetDialogFragment dialogFragment =
+                    new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout, TransportFee);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
+
     }
+
 
     @SuppressLint("SetTextI18n")
     private void updateShippingInfo(String houseNumber, String street, String phoneNumber){
