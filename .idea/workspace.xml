@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Fix nút x thành nút home">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/CartActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Merge from UI branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +70,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/Login_branch" />
+    <option name="BRANCH" value="origin/ModelBranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -199,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Import picasso và implement để lấy ảnh product về">
-      <created>1684314786766</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1684314786766</updated>
     </task>
     <task id="LOCAL-00020" summary="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString">
       <created>1684318973289</created>
@@ -543,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685420813511</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Merge from UI branch">
+      <created>1685449572136</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1685449572136</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add trường hợp không tìm thấy product khi search" />
     <MESSAGE value="Fix search layout bị chồng đè lên thanh tìm kiếm" />
     <MESSAGE value="Refractor fragment và class" />
     <MESSAGE value="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search" />
@@ -596,7 +592,8 @@
     <MESSAGE value="uodate ui" />
     <MESSAGE value="Fix vấn đề bo góc" />
     <MESSAGE value="Fix nút x thành nút home" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix nút x thành nút home" />
+    <MESSAGE value="Merge from UI branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge from UI branch" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
