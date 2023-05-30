@@ -48,14 +48,14 @@ public class ProductGridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.list_item, parent, false);
+            convertView = inflater.inflate(R.layout.list_item_product, parent, false);
         }
 
         // Get UI components in xml file
         ImageView productImageView = convertView.findViewById(R.id.item_image_list_item);
         TextView productSellingPriceTextView = convertView.findViewById(R.id.selling_price);
         TextView productNameTextView = convertView.findViewById(R.id.label_product);
-        TextView productDiscountTextView = convertView.findViewById(R.id.text);
+        TextView productDiscountTextView = convertView.findViewById(R.id.discount_text);
         // Set data to UI components
         Product product = products.get(position);
 

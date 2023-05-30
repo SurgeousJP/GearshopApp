@@ -155,7 +155,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/badge"
+            android:id="@+id/discount_holder"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="4dp"
@@ -166,7 +166,7 @@
             android:background="@drawable/discount_badge">
 
             <TextView
-                android:id="@+id/text"
+                android:id="@+id/discount_text"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:layout_marginHorizontal="8dp"
