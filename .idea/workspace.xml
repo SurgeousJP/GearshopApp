@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Merge from UI branch" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Debug Files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString">
-      <created>1684318973289</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1684318973289</updated>
     </task>
     <task id="LOCAL-00021" summary="fix bug khi merge nhánh UI">
       <created>1684373095009</created>
@@ -540,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685449572136</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Debug Files">
+      <created>1685450098442</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1685450098442</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix search layout bị chồng đè lên thanh tìm kiếm" />
     <MESSAGE value="Refractor fragment và class" />
     <MESSAGE value="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search" />
     <MESSAGE value="Tham số hóa category trong screen khi hiển thị danh sách product" />
@@ -593,7 +592,8 @@
     <MESSAGE value="Fix vấn đề bo góc" />
     <MESSAGE value="Fix nút x thành nút home" />
     <MESSAGE value="Merge from UI branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge from UI branch" />
+    <MESSAGE value="Debug Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug Files" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
