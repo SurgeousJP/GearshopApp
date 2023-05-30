@@ -3045,6 +3045,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id change_shipping_info
 id check_out_button
 id check_out_text
 id checkbox

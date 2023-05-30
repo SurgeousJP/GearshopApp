@@ -48,10 +48,6 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\save_box.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_search_layout.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/search_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-xxhdpi_keyboard_icon.png.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\mipmap-xxhdpi\\keyboard_icon.png"
     },
@@ -394,6 +390,10 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-mdpi_keyboard_icon.png.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\mipmap-mdpi\\keyboard_icon.png"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_product_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/product_detail.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\mipmap-xhdpi_apple_icon.png.flat",

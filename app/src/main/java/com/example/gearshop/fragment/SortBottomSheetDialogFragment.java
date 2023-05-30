@@ -182,6 +182,5 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment
             CategoryListProductFragment.UpdateDataOntoAdapter(SortProductResult);
             setUpdateSortOptionUI(tempLayout, tempTextView, tempTickedLayout);
         }
-
     }
 }

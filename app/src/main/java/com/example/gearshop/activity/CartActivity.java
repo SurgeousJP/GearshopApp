@@ -5,17 +5,22 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
+import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
+import com.example.gearshop.model.Address;
 import com.example.gearshop.repository.CartRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;
@@ -32,6 +37,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     private CartListAdapter CartAdapter;
     private int CartItemPosition;
 
+    private View ChangeShippingInfoView;
+    private ConstraintLayout ShippingInfoLayout;
     public int getCartItemPosition() {
         return CartItemPosition;
     }
@@ -85,6 +92,27 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         EscapeLayout.setOnClickListener(view -> {
 
         });
+
+        ShippingInfoLayout = findViewById(R.id.transport_info_box);
+
+        Address globalAddress = CartRepository.getCustomerAddress();
+        updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
+                CartRepository.getCurrentCustomer().getPhoneNumber());
+
+        ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
+        ChangeShippingInfoView.setOnClickListener(view -> {
+            ShippingInfoBottomSheetDialogFragment dialogFragment = new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout);
+            dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
+        });
+    }
+    @SuppressLint("SetTextI18n")
+    private void updateShippingInfo(String houseNumber, String street, String phoneNumber){
+        TextView AddressTextView = ShippingInfoLayout.findViewById(R.id.label_ship_order_detail);
+        TextView PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description);
+        AddressTextView.setText(houseNumber + "\n" + street);
+        PhoneNumberTextView.setText(phoneNumber);
+        CartRepository.setCustomerAddress(new Address(1, houseNumber, street, 1));
+        CartRepository.getCurrentCustomer().setPhoneNumber(phoneNumber);
     }
 
     private void deleteCartItem(int position, CartListAdapter cartListAdapter) {

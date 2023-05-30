@@ -2,9 +2,12 @@ package com.example.gearshop.repository;
 
 import android.annotation.SuppressLint;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.InsertCustomerDataToAzure;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.repository.CartRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,7 @@ public class CustomerRepository {
         getCustomerDataFromAzure = new GetCustomerDataFromAzure[2];
         CustomerList.addAll(getCustomers());
     }
+
     public Customer getCustomerById(String customerId) {
         getCustomerDataFromAzure[1] = new GetCustomerDataFromAzure();
         getCustomerDataFromAzure[1].execute(
@@ -62,6 +66,7 @@ public class CustomerRepository {
     public Customer signIn(String username, String password) {
         for (Customer customer : CustomerList) {
             if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
+                CartRepository.setCurrentCustomer(customer);
                 return customer;
             }
         }
