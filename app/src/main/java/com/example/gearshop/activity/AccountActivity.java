@@ -22,6 +22,14 @@ import com.example.gearshop.utility.ActivityStartManager;
 public class AccountActivity extends AppCompatActivity {
     CustomerRepository customerRepository;
 
+    private TextView ViewAllOrderTextView;
+    private View TrailingAllOrderView;
+    private TextView ViewAllProcessingOrderTextView;
+    private View IconViewAllProcessingOrder;
+    private TextView ViewAllDeliveryOrderTextView;
+    private View IconViewAllDeliveryOrder;
+    private TextView ViewAllDeliveredOrderTextView;
+    private View IconViewAllDeliveredOrder;
 
     private RelativeLayout CartIconLayout;
     private RelativeLayout MoreInformationLayout;
@@ -87,6 +95,53 @@ public class AccountActivity extends AppCompatActivity {
 //        AccountItem.setOnClickListener(view -> {
 //            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
 //        });
+        View.OnClickListener viewAllOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllProcessingOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_PROCESSING_ORDER");
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllDeliveryOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_DELIVERY_ORDER");
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllDeliveredOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_DELIVERED_ORDER");
+            getBaseContext().startActivity(intent);
+        };
+
+        ViewAllOrderTextView = findViewById(R.id.cta_viewmor);
+        ViewAllOrderTextView.setOnClickListener(viewAllOrderListener);
+        TrailingAllOrderView = findViewById(R.id.trailing_ic);
+        TrailingAllOrderView.setOnClickListener(viewAllOrderListener);
+
+        ViewAllProcessingOrderTextView = findViewById(R.id.label_processing);
+        ViewAllProcessingOrderTextView.setOnClickListener(viewAllProcessingOrderListener);
+        IconViewAllProcessingOrder = findViewById(R.id.view1);
+        IconViewAllProcessingOrder.setOnClickListener(viewAllProcessingOrderListener);
+
+        ViewAllDeliveryOrderTextView = findViewById(R.id.label_delivery);
+        ViewAllDeliveryOrderTextView.setOnClickListener(viewAllDeliveryOrderListener);
+        IconViewAllDeliveryOrder = findViewById(R.id.view2);
+        IconViewAllDeliveryOrder.setOnClickListener(viewAllDeliveryOrderListener);
+
+        ViewAllDeliveredOrderTextView = findViewById(R.id.label_delivered);
+        ViewAllDeliveredOrderTextView.setOnClickListener(viewAllDeliveredOrderListener);
+        IconViewAllDeliveredOrder = findViewById(R.id.view3);
+        IconViewAllDeliveredOrder.setOnClickListener(viewAllDeliveredOrderListener);
     }
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
