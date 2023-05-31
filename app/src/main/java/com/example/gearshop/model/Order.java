@@ -81,6 +81,7 @@ public class Order {
     public void setPaid(boolean paid) {
         IsPaid = paid;
     }
+    public Order(){};
 
     public Order(int ID, Date createdOnUtc, int customerID, int shippingAddressID,
                  int shipmentMethodID, int paymentMethodID, double totalPrice,

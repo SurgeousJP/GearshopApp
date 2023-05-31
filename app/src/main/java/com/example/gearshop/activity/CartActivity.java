@@ -19,12 +19,16 @@ import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Order;
+import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyHelper;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -39,6 +43,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     private TextView FinalPrice;
     private TextView TransportFee;
     private CartListAdapter CartAdapter;
+    private TextView CheckoutTextView;
+    private ConstraintLayout CheckoutLayout;
     private int CartItemPosition;
 
     private View ChangeShippingInfoView;
@@ -113,6 +119,28 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
 
+        View.OnClickListener checkoutListener = view -> {
+            Order newOrder = new Order();
+            newOrder.setID(1);
+            newOrder.setTotalPrice(MoneyHelper.getVietnameseMoneyDouble(TotalProductPrice.getText().toString()));
+            newOrder.setPaymentMethodID(1);
+            newOrder.setCreatedOnUtc(new Date());
+            newOrder.setCustomerID(GlobalRepository.getCurrentCustomer().getID());
+            newOrder.setPaid(false);
+            newOrder.setStatus("Đang xử lý");
+            newOrder.setShipmentMethodID(1);
+            newOrder.setShippingAddressID(GlobalRepository.getCustomerAddress().getID());
+
+            List<OrderItem> orderItems = new ArrayList<>();
+            for (int i = 0; i < CartItemList.size(); i++){
+                orderItems.add(
+                        new OrderItem(i+1, newOrder.getID(),
+                                CartItemList.get(i).getProductID(),
+                                CartItemList.get(i).getQuantity()));
+            }
+        };
+        CheckoutTextView = findViewById(R.id.check_out_text);
+        CheckoutLayout = findViewById(R.id.check_out_button);
     }
 
 
