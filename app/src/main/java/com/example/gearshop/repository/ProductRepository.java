@@ -6,6 +6,7 @@ import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.model.Product;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -25,7 +26,7 @@ public class ProductRepository {
         // Get Product List in Database
         getProductDataInAzure = new GetProductDataFromAzure[2];
 
-
+        getProducts();
     }
 
     public List<Product> getProductsByCategoryId(String categoryId){
@@ -60,6 +61,7 @@ public class ProductRepository {
         }
 
         if (getProductDataInAzure[0].getProductList() != null){
+            ProductList.clear();
             ProductList.addAll(getProductDataInAzure[0].getProductList());
         }
 
@@ -68,5 +70,15 @@ public class ProductRepository {
 
     public int generateNewProductId() {
         return ProductList.size() + 1;
+    }
+
+    public List<Product> getRandomProducts(int numProducts){
+        List<Product> randomProducts = new ArrayList<>(ProductList);
+
+        // Shuffle the list
+        Collections.shuffle(randomProducts);
+
+        // Retrieve the first 'count' elements
+        return randomProducts.subList(0, numProducts);
     }
 }

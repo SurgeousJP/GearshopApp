@@ -7,15 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.database.GetProductDataFromAzure;
-import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
-import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.fragment.SearchNotFoundFragment;
-import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.VietnameseStringConverter;
@@ -81,12 +77,16 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
 
         HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
+//        SearchItem = findViewById(R.id.search_item_category_detail);
+//        SearchItem.setOnClickListener(view -> {
+//            ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
+//        });
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);

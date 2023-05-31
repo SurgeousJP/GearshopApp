@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/logout_item"
+        android:title="Đăng xuất" />
+    <item
+        android:id="@+id/faq_item"
+        android:title="FAQ" />
+</menu>

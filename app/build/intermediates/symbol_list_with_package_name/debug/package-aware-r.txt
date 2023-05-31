@@ -2763,6 +2763,7 @@ drawable fill_dark_blue_box_2
 drawable filter_icon
 drawable gear_shop_icon
 drawable gg
+drawable home_icon
 drawable hotline_icon
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2873,7 +2874,6 @@ drawable number_of_prod_box
 drawable option_item
 drawable option_item_color
 drawable processing_icon
-drawable roundx
 drawable save_box
 drawable search_icon
 drawable search_input
@@ -2999,7 +2999,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id badge
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3143,6 +3142,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id discount_holder
 id discount_name
 id discount_percent
 id discount_text
@@ -3214,6 +3214,7 @@ id expired_day
 id facebook_icon
 id facebook_support_box
 id fade
+id faq_item
 id female_option
 id fields
 id fill
@@ -3413,6 +3414,7 @@ id login_button
 id login_info_user_info_box
 id login_text
 id loginform
+id logout_item
 id low_price
 id m3_side_sheet
 id main_screen
@@ -3626,6 +3628,7 @@ id row_index_key
 id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
+id save_user_info
 id sawtooth
 id scale
 id screen
@@ -4026,6 +4029,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_shipping_info
+layout faq_layout
 layout filter_setting
 layout filter_sort_bar
 layout forgot_password
@@ -4033,9 +4037,9 @@ layout fragment_search_result
 layout framelayout_filter_sort_bar
 layout framelayout_list_product
 layout gridview_category
-layout list_item
 layout list_item_cart
 layout list_item_category
+layout list_item_product
 layout list_item_province
 layout list_order_status
 layout list_voucher
@@ -4114,6 +4118,7 @@ layout support_info
 layout support_simple_spinner_dropdown_item
 layout user_info
 layout voucher_setting
+menu dots_menu
 mipmap apple_icon
 mipmap headphone_icon
 mipmap ic_launcher

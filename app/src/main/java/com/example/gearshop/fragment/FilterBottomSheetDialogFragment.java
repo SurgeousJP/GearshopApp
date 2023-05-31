@@ -2,7 +2,6 @@ package com.example.gearshop.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.support.annotation.Nullable;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -18,8 +17,6 @@ import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -214,7 +211,7 @@ ConfirmFilterDialogFragment.DialogListener{
         ResetFilterOption(HavingDiscountLayout, HavingDiscountTextView);
     }
     private void ResetFilterOption(ConstraintLayout layout, TextView textView){
-        layout.setBackgroundResource(R.drawable.normal_box_2);
+        layout.setBackgroundResource(R.drawable.normal_box);
         textView.setTextColor(Color.parseColor("#27272A"));
     }
     public List<Product> filter(List<Product> products, Predicate<Product> checkFunction) {

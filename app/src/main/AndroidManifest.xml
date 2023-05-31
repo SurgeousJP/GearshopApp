@@ -34,8 +34,9 @@
             android:name=".activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CategoryActivity"
-            android:exported="false" /> <!-- <activity android:name=".activity.CategoryDetailActivity" -->
+            android:name=".activity.HomeActivity"
+            android:exported="false" />
+        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
         <!-- android:exported="false"/> -->
         <activity
             android:name=".activity.AccountActivity"
@@ -43,6 +44,9 @@
         <activity
             android:name=".activity.EditUserInfoActivity"
             android:exported="false" />
+        <activity android:name=".activity.CategoryActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".activity.SignInActivity"
             android:exported="true">

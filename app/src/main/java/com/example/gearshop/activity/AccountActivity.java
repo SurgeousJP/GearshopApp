@@ -3,6 +3,10 @@ package com.example.gearshop.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.utility.ActivityStartManager;
 
 public class AccountActivity extends AppCompatActivity {
     CustomerRepository customerRepository;
@@ -54,8 +59,11 @@ public class AccountActivity extends AppCompatActivity {
         });
 
         MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(view -> {
-
+        MoreInformationLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
         });
 
         EscapeLayout = findViewById(R.id.escape);
@@ -65,21 +73,41 @@ public class AccountActivity extends AppCompatActivity {
 
         HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), ProductsInCategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
-            finish();
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
-
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CategoryActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
-            finish();
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
-
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
+//        AccountItem = findViewById(R.id.account_item_category_detail);
+//        AccountItem.setOnClickListener(view -> {
+//            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
+//        });
+    }
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(AccountActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(AccountActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }
