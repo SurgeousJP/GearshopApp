@@ -88,8 +88,8 @@
 50-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:35:13-37
 51        <activity
 51-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:36:9-38:40
-52            android:name="com.example.gearshop.activity.SignInActivity"
-52-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:37:13-52
+52            android:name="com.example.gearshop.activity.HomeActivity"
+52-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:37:13-50
 53            android:exported="false" />
 53-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:38:13-37
 54        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
@@ -114,8 +114,8 @@
 64-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:48:13-37
 65        <activity
 65-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:50:9-58:20
-66            android:name="com.example.gearshop.activity.HomeActivity"
-66-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:51:13-50
+66            android:name="com.example.gearshop.activity.SignInActivity"
+66-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:51:13-52
 67            android:exported="true" >
 67-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:52:13-36
 68            <intent-filter>

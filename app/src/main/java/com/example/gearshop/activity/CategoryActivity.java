@@ -58,10 +58,7 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout rlMoreCategories = (RelativeLayout)findViewById(R.id.more_category);
-        rlMoreCategories.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
-        });
+
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
