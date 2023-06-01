@@ -164,7 +164,6 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CheckoutTextView.setOnClickListener(checkoutListener);
         CheckoutTextView.setOnClickListener(checkoutListener);
     }
-
     private void insertOrderToAzure(Order newOrder){
         String inputPattern = "yyyy-MM-dd"; // Input date format
         SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.getDefault());
