@@ -38,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_main);
 
 
+        System.out.println("In Home");
+
         //Get Random 10 Products
         ProductRepository productRepository = new ProductRepository();
         List<Product> productList = productRepository.getRandomProducts(10);
@@ -66,6 +68,11 @@ public class HomeActivity extends AppCompatActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         productRecyclerView.setLayoutManager(layoutManager);
         productRecyclerView.setAdapter(new ProductRecyclerAdapter(productList, getBaseContext()));
+
+        RelativeLayout rlMoreCategories = (RelativeLayout)findViewById(R.id.more_category);
+        rlMoreCategories.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
+        });
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {

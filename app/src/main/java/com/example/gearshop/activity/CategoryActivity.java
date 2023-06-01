@@ -59,10 +59,10 @@ public class CategoryActivity extends AppCompatActivity {
         });
 
 
+
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
+            ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
         MoreInformationLayout = findViewById(R.id.more_info_order_detail);
