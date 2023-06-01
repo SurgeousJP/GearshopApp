@@ -58,11 +58,14 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
 
+        RelativeLayout rlMoreCategories = (RelativeLayout)findViewById(R.id.more_category);
+        rlMoreCategories.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
+        });
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getBaseContext().startActivity(intent);
+            ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
         MoreInformationLayout = findViewById(R.id.more_info_order_detail);
