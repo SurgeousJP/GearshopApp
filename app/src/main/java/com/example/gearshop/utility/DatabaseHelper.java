@@ -1,8 +1,12 @@
 package com.example.gearshop.utility;
 
+import android.provider.Telephony;
+
+import com.example.gearshop.database.GetAddressDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
-import com.example.gearshop.database.InsertDataToAzure;
+import com.example.gearshop.database.InsertUpdateDataToAzure;
+import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 
@@ -13,10 +17,46 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class DatabaseHelper {
+    public static void updateAddressToAzure(Address oldAddress, Address newAddress){
+        InsertUpdateDataToAzure updateAddressDataToAzure = new InsertUpdateDataToAzure();
+        System.out.println("Async Task update Address is running");
+        updateAddressDataToAzure.execute("UPDATE address\n" +
+                "SET house_number = '" + newAddress.getHouseNumber() + "',\n" +
+                "    street = N'"      + newAddress.getStreet() + "',\n" +
+                "    province_id = '"  + newAddress.getProvinceID() +"'\n" +
+                "WHERE id = '" + oldAddress.getID() +"';");
+        try{
+            updateAddressDataToAzure.get();
+        }
+        catch (ExecutionException | InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task update Address ended");
+    }
+    public static void insertAddressToAzure(Address newAddress){
+        InsertUpdateDataToAzure insertAddressDataToAzure = new InsertUpdateDataToAzure();
+
+        System.out.println("Async Task insert Address is running");
+        insertAddressDataToAzure.execute(
+                "INSERT INTO address (id, house_number, " +
+                        "street," +
+                        " province_id)\n" +
+                        "VALUES(" + newAddress.getID()        + ", " +
+                        "'" + newAddress.getHouseNumber()     + "', " +
+                        "'" + newAddress.getStreet()          + "', " +
+                        "'" + newAddress.getProvinceID()      + "')\n");
+        try {
+            insertAddressDataToAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task insert Address ended");
+    }
+
     public static void insertOrderToAzure(Order newOrder){
         String inputPattern = "yyyy-MM-dd"; // Input date format
         SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.getDefault());
-        InsertDataToAzure insertOrderDataToAzure = new InsertDataToAzure();
+        InsertUpdateDataToAzure insertOrderDataToAzure = new InsertUpdateDataToAzure();
 
         System.out.println("Async Task insert Orders is running");
         insertOrderDataToAzure.execute(
@@ -42,7 +82,7 @@ public class DatabaseHelper {
     }
 
     public static void insertOrderItemToAzure(OrderItem orderItem){
-        InsertDataToAzure insertOrderItemDataToAzure = new InsertDataToAzure();
+        InsertUpdateDataToAzure insertOrderItemDataToAzure = new InsertUpdateDataToAzure();
 
         System.out.println("Async Task insert OrderItem is running");
         insertOrderItemDataToAzure.execute(
@@ -64,7 +104,26 @@ public class DatabaseHelper {
 
         System.out.println("Async Task insert OrderItem ended");
     }
+    public static List<Address> getAddressList() {
+        List<Address> resultAddressList = new ArrayList<>();
+        GetAddressDataFromAzure[] getAddressDataFromAzure = new GetAddressDataFromAzure[1];
+        getAddressDataFromAzure[0] = new GetAddressDataFromAzure();
+        getAddressDataFromAzure[0].execute(
+                "SELECT * FROM address"
+        );
 
+        System.out.println("Async Task Address running");
+        try {
+            getAddressDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task Address ended");
+        if (getAddressDataFromAzure[0].getAddressList() != null){
+            return getAddressDataFromAzure[0].getAddressList();
+        }
+        else return resultAddressList;
+    }
     public static List<Order> getOrderList() {
         List<Order> resultOrderList = new ArrayList<>();
         GetOrderDataFromAzure[] getOrderDataFromAzure = new GetOrderDataFromAzure[1];

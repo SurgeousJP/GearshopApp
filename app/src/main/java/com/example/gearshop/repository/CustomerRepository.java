@@ -3,7 +3,7 @@ package com.example.gearshop.repository;
 import android.annotation.SuppressLint;
 
 import com.example.gearshop.database.GetCustomerDataFromAzure;
-import com.example.gearshop.database.InsertDataToAzure;
+import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Customer;
 
 import java.util.ArrayList;
@@ -75,8 +75,8 @@ public class CustomerRepository {
         CustomerList.add(customer);
         String dob = customer.getDateOfBirth().toString();
 
-        InsertDataToAzure[] insertCustomerDataToAzure = new InsertDataToAzure[1];
-        insertCustomerDataToAzure[0] = new InsertDataToAzure();
+        InsertUpdateDataToAzure[] insertCustomerDataToAzure = new InsertUpdateDataToAzure[1];
+        insertCustomerDataToAzure[0] = new InsertUpdateDataToAzure();
         System.out.println("Async Task insert Customers is running");
 
         insertCustomerDataToAzure[0].execute(

@@ -24,6 +24,7 @@ import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
+import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -124,9 +125,17 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
         PhoneNumberTextView.setText(phoneNumber);
 
         Address globalAddress = GlobalRepository.getCustomerAddress();
-        GlobalRepository.setCustomerAddress(
-                new Address(globalAddress.getID(), houseNumber,
-                        province, ProvinceID));
+        Address newAddress = new Address(globalAddress.getID(), houseNumber,
+                province, ProvinceID);
+        if (globalAddress.getID() == -1){
+            newAddress.setID(DatabaseHelper.getAddressList().size() + 1);
+            DatabaseHelper.insertAddressToAzure(newAddress);
+        }
+        else{
+            DatabaseHelper.updateAddressToAzure(globalAddress, newAddress);
+        }
+        GlobalRepository.setCustomerAddress(newAddress);
+
         GlobalRepository.getCurrentCustomer().setPhoneNumber(phoneNumber);
     }
 

@@ -17,7 +17,6 @@ import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
-import com.example.gearshop.database.InsertDataToAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
@@ -29,11 +28,8 @@ import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.ExecutionException;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
@@ -52,8 +48,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
     private View ChangeShippingInfoView;
     private ConstraintLayout ShippingInfoLayout;
-    private GetOrderDataFromAzure[] getOrderDataFromAzure;
-    private GetOrderItemDataFromAzure[] getOrderItemDataFromAzure;
+    private List<Order> OrderList;
+    private List<OrderItem> OrderItemList;
     public int getCartItemPosition() {
         return CartItemPosition;
     }
@@ -62,6 +58,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartItemPosition = cartItemPosition;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +97,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
         FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
-        CheckoutTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        CheckoutTextView.setText
+                ("Thanh toán: " + MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
@@ -130,11 +128,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
         View.OnClickListener checkoutListener = view -> {
             Order newOrder = new Order();
-            int newOrderID;
-            if (getOrderDataFromAzure == null){
-                DatabaseHelper.getOrderList();
-            }
-            newOrder.setID(getOrderDataFromAzure[0].getOrderList().size());
+            OrderList = DatabaseHelper.getOrderList();
+            newOrder.setID(OrderList.size() + 1);
             newOrder.setShipmentMethodID(1);
             newOrder.setPaymentMethodID(2);
             newOrder.setShippingAddressID(GlobalRepository.getCustomerAddress().getID());
@@ -146,13 +141,11 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
             DatabaseHelper.insertOrderToAzure(newOrder);
 
-            if (getOrderItemDataFromAzure == null){
-                DatabaseHelper.getOrderItemList();
-            }
+            OrderItemList = DatabaseHelper.getOrderItemList();
             for (int i = 0; i < CartItemList.size(); i++){
                 OrderItem newOrderItem =
                         new OrderItem(
-                                getOrderItemDataFromAzure[0].getOrderItemList().size() + i + 1,
+                                OrderItemList.size() + i + 1,
                                 newOrder.getID(),
                                 CartItemList.get(i).getProductID(),
                                 CartItemList.get(i).getQuantity(), 5, "");
