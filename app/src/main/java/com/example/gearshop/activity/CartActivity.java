@@ -14,8 +14,11 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
+import com.example.gearshop.database.GetOrderDataFromAzure;
+import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
+import com.example.gearshop.database.InsertDataToAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
@@ -27,9 +30,11 @@ import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
@@ -49,6 +54,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
     private View ChangeShippingInfoView;
     private ConstraintLayout ShippingInfoLayout;
+    private GetOrderDataFromAzure[] getOrderDataFromAzure;
+    private GetOrderItemDataFromAzure[] getOrderItemDataFromAzure;
     public int getCartItemPosition() {
         return CartItemPosition;
     }
@@ -62,6 +69,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
+        CheckoutTextView = findViewById(R.id.check_out_text);
+        CheckoutLayout = findViewById(R.id.check_out_button);
         ShippingInfoLayout = findViewById(R.id.transport_info_box);
 
         Address globalAddress = GlobalRepository.getCustomerAddress();
@@ -93,9 +102,11 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
         FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        CheckoutTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
+        CartAdapter.setCheckoutPrice(CheckoutTextView);
 
         ReturnView = findViewById(R.id.wayback_icon_order_detail);
         ReturnView.setOnClickListener(view -> {
@@ -121,28 +132,122 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
         View.OnClickListener checkoutListener = view -> {
             Order newOrder = new Order();
-            newOrder.setID(1);
-            newOrder.setTotalPrice(MoneyHelper.getVietnameseMoneyDouble(TotalProductPrice.getText().toString()));
-            newOrder.setPaymentMethodID(1);
-            newOrder.setCreatedOnUtc(new Date());
+            int newOrderID;
+            if (getOrderDataFromAzure == null){
+                initializeOrderList();
+            }
+            newOrder.setID(getOrderDataFromAzure[0].getOrderList().size());
+            newOrder.setShipmentMethodID(1);
+            newOrder.setPaymentMethodID(2);
+            newOrder.setShippingAddressID(GlobalRepository.getCustomerAddress().getID());
             newOrder.setCustomerID(GlobalRepository.getCurrentCustomer().getID());
+            newOrder.setTotalPrice(MoneyHelper.getVietnameseMoneyDouble(TotalProductPrice.getText().toString()));
+            newOrder.setCreatedOnUtc(new Date());
             newOrder.setPaid(false);
             newOrder.setStatus("Đang xử lý");
-            newOrder.setShipmentMethodID(1);
-            newOrder.setShippingAddressID(GlobalRepository.getCustomerAddress().getID());
 
-            List<OrderItem> orderItems = new ArrayList<>();
+            insertOrderToAzure(newOrder);
+
+            if (getOrderItemDataFromAzure == null){
+                initializeOrderItemList();
+            }
             for (int i = 0; i < CartItemList.size(); i++){
-                orderItems.add(
-                        new OrderItem(i+1, newOrder.getID(),
+                OrderItem newOrderItem =
+                        new OrderItem(
+                                getOrderItemDataFromAzure[0].getOrderItemList().size() + i + 1,
+                                newOrder.getID(),
                                 CartItemList.get(i).getProductID(),
-                                CartItemList.get(i).getQuantity()));
+                                CartItemList.get(i).getQuantity(), 5, "");
+                insertOrderItemToAzure(newOrderItem);
             }
         };
-        CheckoutTextView = findViewById(R.id.check_out_text);
-        CheckoutLayout = findViewById(R.id.check_out_button);
+        CheckoutTextView.setOnClickListener(checkoutListener);
+        CheckoutTextView.setOnClickListener(checkoutListener);
     }
 
+    private void insertOrderToAzure(Order newOrder){
+        String inputPattern = "yyyy-MM-dd"; // Input date format
+        SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.getDefault());
+        InsertDataToAzure insertOrderDataToAzure = new InsertDataToAzure();
+
+        System.out.println("Async Task insert Orders is running");
+        insertOrderDataToAzure.execute(
+                "INSERT INTO orders (id, note, created_on_utc, " +
+                        "customer_id, shipping_address_id, shipping_method_id," +
+                        " payment_method_id, total_price, status, is_paid)\n" +
+                        "VALUES(" + newOrder.getID()  + ", " +
+                        "'" +                                     "', " +
+                        "'" + inputFormat.format(newOrder.getCreatedOnUtc())        + "', " +
+                        "'" + newOrder.getCustomerID()          + "', " +
+                        "'" + newOrder.getShippingAddressID()   + "', " +
+                        "'" + newOrder.getShipmentMethodID()    + "', " +
+                        "'" + newOrder.getPaymentMethodID()     + "', " +
+                        "'" + newOrder.getTotalPrice()          + "', " +
+                        "'" + newOrder.getStatus()              + "', " +
+                        "'" + newOrder.isPaid()                 + "')\n");
+        try {
+            insertOrderDataToAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Async Task insert Orders ended");
+    }
+
+    private void insertOrderItemToAzure(OrderItem orderItem){
+        InsertDataToAzure insertOrderItemDataToAzure = new InsertDataToAzure();
+
+        System.out.println("Async Task insert OrderItem is running");
+        insertOrderItemDataToAzure.execute(
+                "INSERT INTO order_item (id, order_id, product_id, " +
+                        "quantity, rate," +
+                        "comment)\n" +
+                        "VALUES(" +
+                        "'" + orderItem.getID()           + "', " +
+                        "'" + orderItem.getOrderID()      + "', " +
+                        "'" + orderItem.getProductID()    + "', " +
+                        "'" + orderItem.getQuantity()     + "', " +
+                        "'" + 5                           + "', " +
+                        "'"                               + "')\n");
+        try {
+            insertOrderItemDataToAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Async Task insert OrderItem ended");
+    }
+
+    private void initializeOrderList() {
+        getOrderDataFromAzure = new GetOrderDataFromAzure[1];
+        getOrderDataFromAzure[0] = new GetOrderDataFromAzure();
+        getOrderDataFromAzure[0].execute(
+                "SELECT * FROM orders"
+        );
+
+        System.out.println("Async Task Order running");
+        try {
+            getOrderDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task Order ended");
+    }
+
+    private void initializeOrderItemList(){
+        getOrderItemDataFromAzure = new GetOrderItemDataFromAzure[1];
+        getOrderItemDataFromAzure[0] = new GetOrderItemDataFromAzure();
+        getOrderItemDataFromAzure[0].execute(
+                "SELECT * FROM order_item"
+        );
+        System.out.println("Async Task OrderItem running");
+        try {
+            getOrderItemDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task OrderItem ended");
+    }
 
     @SuppressLint("SetTextI18n")
     private void updateShippingInfo(String houseNumber, String street, String phoneNumber){

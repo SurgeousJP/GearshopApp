@@ -2,6 +2,24 @@ package com.example.gearshop.model;
 
 public class OrderItem {
     private int ID, OrderID, ProductID, Quantity;
+    private int Rate;
+    private String Comment;
+
+    public int getRate() {
+        return Rate;
+    }
+
+    public void setRate(int rate) {
+        Rate = rate;
+    }
+
+    public String getComment() {
+        return Comment;
+    }
+
+    public void setComment(String comment) {
+        Comment = comment;
+    }
 
     public int getID() {
         return ID;
@@ -35,10 +53,12 @@ public class OrderItem {
         Quantity = quantity;
     }
 
-    public OrderItem(int ID, int orderID, int productID, int quantity) {
+    public OrderItem(int ID, int orderID, int productID, int quantity, int rate, String comment) {
         this.ID = ID;
-        OrderID = orderID;
-        ProductID = productID;
-        Quantity = quantity;
+        this.OrderID = orderID;
+        this.ProductID = productID;
+        this.Quantity = quantity;
+        this.Rate = rate;
+        this.Comment = comment;
     }
 }

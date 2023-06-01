@@ -24,6 +24,16 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
     private List<Product> ProductList;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
+
+    public TextView getCheckoutPrice() {
+        return CheckoutPriceTextView;
+    }
+
+    public void setCheckoutPrice(TextView checkoutPrice) {
+        CheckoutPriceTextView = checkoutPrice;
+    }
+
+    private TextView CheckoutPriceTextView;
     private OnDeleteItemClickListener onDeleteItemClickListener;
 
 
@@ -67,9 +77,10 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
         ShoppingCartItem cartItem = ListCartItems.get(position);
 
         if (product == null) return;
-
-        setPriceToView(holder.ProductNameText, product.getName(), holder.PriceText, String.valueOf(product.getPrice()));
-
+        else{
+            holder.ProductNameText.setText(product.getName());
+            holder.PriceText.setText(String.valueOf(product.getPrice()));
+        }
         if (holder.CartItemImage != null){
                 String imageURL = product.getImageURL();
                 Picasso.get().load(imageURL).into(holder.CartItemImage);
@@ -100,7 +111,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     setPriceToView(TotalProductPrice,
                             MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                             FinalPrice,
-                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                            CheckoutPriceTextView);
                 }
             });
         }
@@ -117,7 +128,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
                     setPriceToView(TotalProductPrice,
                             MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                             FinalPrice,
-                            MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                            CheckoutPriceTextView);
                 }
             });
         }
@@ -139,12 +150,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
         setPriceToView(TotalProductPrice,
                 MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
                 FinalPrice,
-                MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice));
+                CheckoutPriceTextView);
     }
 
-    private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, String currentTotalPrice1) {
+    private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, TextView checkoutPrice) {
         totalProductPrice.setText(currentTotalPrice);
-        finalPrice.setText(currentTotalPrice1);
+        finalPrice.setText(currentTotalPrice);
+        checkoutPrice.setText("Thanh toán: " + currentTotalPrice);
     }
 
     @Override
