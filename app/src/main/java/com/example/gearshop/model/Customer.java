@@ -8,6 +8,7 @@ public class Customer {
     private String Gender;
     private String PhoneNumber;
     private Date DateOfBirth;
+    private int AddressId;
     private int CardID;
 
     public Customer(int ID, String username, String password, String email,
@@ -94,6 +95,14 @@ public class Customer {
 
     public void setDateOfBirth(Date dateOfBirth) {
         DateOfBirth = dateOfBirth;
+    }
+
+    public int getAddressID() {
+        return AddressId;
+    }
+
+    public void setAddressID(int addressID) {
+        AddressId = addressID;
     }
 
     public int getCardID() {

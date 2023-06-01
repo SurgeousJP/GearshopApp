@@ -38,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_main);
 
 
+        System.out.println("In Home");
+
         //Get Random 10 Products
         ProductRepository productRepository = new ProductRepository();
         List<Product> productList = productRepository.getRandomProducts(10);
