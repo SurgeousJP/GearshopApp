@@ -1,4 +1,3 @@
-﻿
 
 GO
 --1 discount, product_category, shipment_method, province, credit_card_type, admin | 6 tables
@@ -9,7 +8,7 @@ CREATE TABLE admin(
 	password VARCHAR(1000) UNIQUE,
 	CONSTRAINT pk_admin PRIMARY KEY (id)
 )
-INSERT INTO admin VALUES(1, 'DOZLAP', 'BESTSERVICE')
+INSERT INTO admin VALUES(1, 'dozlap', 'dozlap')
 
 -- 1 discount để demo
 CREATE TABLE discount(
@@ -1515,6 +1514,12 @@ CREATE TABLE address(
 	CONSTRAINT pk_address PRIMARY KEY (id),
 	CONSTRAINT fk_address_province FOREIGN KEY (province_id) REFERENCES province(id)
 )
+
+INSERT INTO address VALUES(1, '116B', N'Điện Biên Phủ', 4)
+INSERT INTO address VALUES(2, '313A', N'Hoàng Diệu 2', 4)
+INSERT INTO address VALUES(3, '478D', N'Hai Bà Trưng', 4)
+INSERT INTO address VALUES(4, '90E', N'Linh Trung', 4)
+
 -- 4 - 5 cái thẻ :>
 -- !!!!!!! LEAVE AT HERE
 CREATE TABLE credit_card(
@@ -1543,10 +1548,15 @@ CREATE TABLE customer(
 	gender VARCHAR(6), 
 	phone_number CHAR(10), 
 	date_of_birth DATETIME, 
+	address_id BIGINT,
 	card_id BIGINT,
 	CONSTRAINT pk_customer PRIMARY KEY (id),
-	CONSTRAINT fk_customer_card FOREIGN KEY (card_id) REFERENCES credit_card(id)
+	CONSTRAINT fk_customer_card FOREIGN KEY (card_id) REFERENCES credit_card(id),
+	CONSTRAINT fk_customer_address FOREIGN KEY (address_id) REFERENCES address(id),
 )
+
+INSERT INTO customer VALUES (1, 'username1', 'password1', 'nguyenVanA@gmail.com', N'A', N'Nguyễn Văn', 'male', '0987654321', '27-02-2003', null, null)
+INSERT INTO customer VALUES (2, 'username2', 'password2', 'nguyenTranB@gmail.com', N'B', N'Nguyễn Trần', 'female', '0123456789', '23-09-2004', null, null)
 
 --4 shopping_cart_item, product_review, order, | 4 tables
 
@@ -1560,6 +1570,8 @@ CREATE TABLE shopping_cart_item(
 	CONSTRAINT fk_cart_customer FOREIGN KEY (customer_id) REFERENCES customer(id),
 	CONSTRAINT fk_cart_product FOREIGN KEY (product_id) REFERENCES product(id)
 )
+
+
 
 -- USING orders since order cause an error in sql syntax
 CREATE TABLE orders(
@@ -1593,3 +1605,4 @@ CREATE TABLE order_item(
 	CONSTRAINT fk_item_product FOREIGN KEY (product_id) REFERENCES product(id),
 	CONSTRAINT pk_item PRIMARY KEY (id)
 )
+
