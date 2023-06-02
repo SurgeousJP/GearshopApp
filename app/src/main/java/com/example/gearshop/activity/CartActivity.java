@@ -72,9 +72,9 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
                 GlobalRepository.getCurrentCustomer().getPhoneNumber());
         TransportFee = findViewById(R.id.transport_fee_price_order_detail);
+        double shippingCharge = GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID());
         TransportFee.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(
-                        GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID())));
+                MoneyHelper.getVietnameseMoneyStringFormatted(shippingCharge));
 
         CartItemList = ((GlobalRepository) getApplication()).getCartItemList();
         ProductList = ((GlobalRepository) getApplication()).getProductList();
@@ -96,9 +96,11 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         TotalProductPrice = findViewById(R.id.total_price_order_detail);
         TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
-        FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(
+                getTotalProductPrice(ProductList) + shippingCharge));
         CheckoutTextView.setText
-                ("Thanh toán: " + MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+                ("Thanh toán: " + MoneyHelper.getVietnameseMoneyStringFormatted(
+                        getTotalProductPrice(ProductList) + shippingCharge));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
@@ -137,7 +139,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             newOrder.setTotalPrice(MoneyHelper.getVietnameseMoneyDouble(TotalProductPrice.getText().toString()));
             newOrder.setCreatedOnUtc(new Date());
             newOrder.setPaid(false);
-            newOrder.setStatus("Đang xử lý");
+            newOrder.setStatus("PROCESSING");
 
             DatabaseHelper.insertOrderToAzure(newOrder);
 
@@ -188,7 +190,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             }
             resultPrice += price;
         }
-        return resultPrice + MoneyHelper.getVietnameseMoneyDouble(TransportFee.getText().toString());
+        return resultPrice;
     }
     private void showConfirmDeleteDialog() {
         ConfirmDeleteCartItemDialogFragment dialogFragment = new ConfirmDeleteCartItemDialogFragment();

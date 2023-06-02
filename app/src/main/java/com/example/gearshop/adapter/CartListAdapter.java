@@ -107,11 +107,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
 
                     double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
+                    double currentFinalPrice = MoneyHelper.getVietnameseMoneyDouble(
+                            FinalPrice.getText().toString());
                     currentTotalPrice -= getDiscountedPrice(product);
-                    setPriceToView(TotalProductPrice,
+                    currentFinalPrice -= getDiscountedPrice(product);
+                    setPriceToView(TotalProductPrice, FinalPrice, CheckoutPriceTextView,
                             MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
-                            FinalPrice,
-                            CheckoutPriceTextView);
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentFinalPrice));
                 }
             });
         }
@@ -124,11 +126,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
 
                     double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                             TotalProductPrice.getText().toString());
+                    double currentFinalPrice = MoneyHelper.getVietnameseMoneyDouble(
+                            FinalPrice.getText().toString());
                     currentTotalPrice += getDiscountedPrice(product);
-                    setPriceToView(TotalProductPrice,
+                    currentFinalPrice += getDiscountedPrice(product);
+                    setPriceToView(TotalProductPrice, FinalPrice, CheckoutPriceTextView,
                             MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
-                            FinalPrice,
-                            CheckoutPriceTextView);
+                            MoneyHelper.getVietnameseMoneyStringFormatted(currentFinalPrice));
                 }
             });
         }
@@ -146,17 +150,20 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
         double currentItemPrice = getDiscountedPrice(product) * item.getQuantity();
         double currentTotalPrice = MoneyHelper.getVietnameseMoneyDouble(
                 TotalProductPrice.getText().toString());
+        double currentFinalPrice = MoneyHelper.getVietnameseMoneyDouble(
+                FinalPrice.getText().toString());
         currentTotalPrice -= currentItemPrice;
-        setPriceToView(TotalProductPrice,
+        currentFinalPrice -= currentItemPrice;
+        setPriceToView(TotalProductPrice, FinalPrice, CheckoutPriceTextView,
                 MoneyHelper.getVietnameseMoneyStringFormatted(currentTotalPrice),
-                FinalPrice,
-                CheckoutPriceTextView);
+                MoneyHelper.getVietnameseMoneyStringFormatted(currentFinalPrice));
     }
 
-    private void setPriceToView(TextView totalProductPrice, String currentTotalPrice, TextView finalPrice, TextView checkoutPrice) {
+    private void setPriceToView(TextView totalProductPrice, TextView finalPrice, TextView checkoutPrice,
+                                String currentTotalPrice, String currentFinalPrice) {
         totalProductPrice.setText(currentTotalPrice);
-        finalPrice.setText(currentTotalPrice);
-        checkoutPrice.setText("Thanh toán: " + currentTotalPrice);
+        finalPrice.setText(currentFinalPrice);
+        checkoutPrice.setText("Thanh toán: " + currentFinalPrice);
     }
 
     @Override

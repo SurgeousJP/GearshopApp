@@ -40,14 +40,14 @@ public class GetOrderDataFromAzure extends AzureSQLDatabase{
                     if (!resultSet.next()) break;
                     Order newOrder = new Order();
                     newOrder.setID(resultSet.getInt("id"));
-                    newOrder.setShipmentMethodID(resultSet.getInt("shipment_method_id"));
+                    newOrder.setShipmentMethodID(resultSet.getInt("shipping_method_id"));
                     newOrder.setPaymentMethodID(resultSet.getInt("payment_method_id"));
                     newOrder.setShippingAddressID(resultSet.getInt("shipping_address_id"));
                     newOrder.setCustomerID(resultSet.getInt("customer_id"));
                     newOrder.setTotalPrice(resultSet.getDouble("total_price"));
                     newOrder.setCreatedOnUtc(resultSet.getDate("created_on_utc"));
                     newOrder.setPaid(resultSet.getBoolean("is_paid"));
-                    newOrder.setStatus("Đang xử lý");
+                    newOrder.setStatus(resultSet.getString("status"));
                     OrderList.add(newOrder);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
