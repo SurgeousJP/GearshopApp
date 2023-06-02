@@ -105,21 +105,21 @@ public class AccountActivity extends AppCompatActivity {
         View.OnClickListener viewAllProcessingOrderListener = view -> {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("ORDER_TYPE", "ALL_PROCESSING_ORDER");
+            intent.putExtra("ORDER_TYPE", "PROCESSING");
             getBaseContext().startActivity(intent);
         };
 
         View.OnClickListener viewAllDeliveryOrderListener = view -> {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("ORDER_TYPE", "ALL_DELIVERY_ORDER");
+            intent.putExtra("ORDER_TYPE", "DELIVERY");
             getBaseContext().startActivity(intent);
         };
 
         View.OnClickListener viewAllDeliveredOrderListener = view -> {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("ORDER_TYPE", "ALL_DELIVERED_ORDER");
+            intent.putExtra("ORDER_TYPE", "DELIVERED");
             getBaseContext().startActivity(intent);
         };
 

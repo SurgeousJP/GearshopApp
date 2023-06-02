@@ -5,10 +5,12 @@ import android.provider.Telephony;
 import com.example.gearshop.database.GetAddressDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
+import com.example.gearshop.database.GetPaymentMethodDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
+import com.example.gearshop.model.PaymentMethod;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -103,15 +105,34 @@ public class DatabaseHelper {
 
         System.out.println("Async Task insert OrderItem ended");
     }
+    public static List<PaymentMethod> getPaymentMethod(String... particularPaymentMethod){
+        String sqlCommand = "SELECT * FROM payment_method";
+        if (particularPaymentMethod != null){
+            sqlCommand = sqlCommand + particularPaymentMethod[0];
+        }
+        List<PaymentMethod> paymentMethodList = new ArrayList<>();
+        GetPaymentMethodDataFromAzure getPaymentMethodDataFromAzure = new GetPaymentMethodDataFromAzure();
+        getPaymentMethodDataFromAzure.execute(sqlCommand);
+        System.out.println("Async Task get PaymentMethod running");
+        try{
+            getPaymentMethodDataFromAzure.get();
+        }
+        catch (ExecutionException | InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task get PaymentMethod ended");
+        if (getPaymentMethodDataFromAzure.getPaymentMethodList() != null)
+            return getPaymentMethodDataFromAzure.getPaymentMethodList();
+        return new ArrayList<>();
+
+    }
     public static List<Address> getAddressList(String... particularAddress) {
         String sqlCommand = "SELECT * FROM address";
         if (particularAddress != null){
             sqlCommand = sqlCommand + particularAddress[0];
         }
-        List<Address> resultAddressList = new ArrayList<>();
         GetAddressDataFromAzure[] getAddressDataFromAzure = new GetAddressDataFromAzure[1];
         getAddressDataFromAzure[0] = new GetAddressDataFromAzure();
-        System.out.println(sqlCommand);
         getAddressDataFromAzure[0].execute(sqlCommand);
 
         System.out.println("Async Task Address running");
@@ -124,15 +145,16 @@ public class DatabaseHelper {
         if (getAddressDataFromAzure[0].getAddressList() != null){
             return getAddressDataFromAzure[0].getAddressList();
         }
-        else return resultAddressList;
+        return new ArrayList<>();
     }
-    public static List<Order> getOrderList() {
-        List<Order> resultOrderList = new ArrayList<>();
+    public static List<Order> getOrderList(String... particularOrder) {
+        String sqlCommand = "SELECT * FROM orders";
+        if (particularOrder != null){
+            sqlCommand = sqlCommand + particularOrder[0];
+        }
         GetOrderDataFromAzure[] getOrderDataFromAzure = new GetOrderDataFromAzure[1];
         getOrderDataFromAzure[0] = new GetOrderDataFromAzure();
-        getOrderDataFromAzure[0].execute(
-                "SELECT * FROM orders"
-        );
+        getOrderDataFromAzure[0].execute(sqlCommand);
 
         System.out.println("Async Task Order running");
         try {
@@ -144,11 +166,10 @@ public class DatabaseHelper {
         if (getOrderDataFromAzure[0].getOrderList() != null){
             return getOrderDataFromAzure[0].getOrderList();
         }
-        else return resultOrderList;
+        return new ArrayList<>();
     }
 
     public static List<OrderItem> getOrderItemList(){
-        List<OrderItem> orderItems = new ArrayList<>();
         GetOrderItemDataFromAzure[] getOrderItemDataFromAzure = new GetOrderItemDataFromAzure[1];
         getOrderItemDataFromAzure[0] = new GetOrderItemDataFromAzure();
         getOrderItemDataFromAzure[0].execute(
@@ -164,6 +185,6 @@ public class DatabaseHelper {
         if (getOrderItemDataFromAzure[0].getOrderItemList() != null){
             return getOrderItemDataFromAzure[0].getOrderItemList();
         }
-        else return orderItems;
+        return new ArrayList<>();
     }
 }

@@ -91,12 +91,6 @@ public class CategoryDetailGridAdapter extends BaseAdapter {
                 mContext.startActivity(intent);
             }
         });
-
-
-
-
-
-
         return v;
     }
 }

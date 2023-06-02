@@ -325,7 +325,6 @@ id label_price2
 id label_price_cart
 id label_price_order
 id label_processing
-id label_produ
 id label_product
 id label_product_cart
 id label_product_text
@@ -413,10 +412,12 @@ id order_day_box
 id order_detail_text
 id order_id
 id order_management_text
+id order_name
 id order_status
 id order_status_border
 id order_status_box
 id order_status_detail_box
+id order_total_price
 id order_tracking_box
 id order_tracking_box_inside
 id order_tracking_status_box
