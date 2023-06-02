@@ -13,6 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.repository.GlobalRepository;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -119,7 +121,7 @@ public class SignUpActivity extends AppCompatActivity {
                 java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
 
                 Customer newCustomer = new Customer(newCustomerId, newCustomerUsername, newCustomerPassword, newCustomerEmail,
-                        newCustomerFirstName, newCustomerLastName, newCustomerGender, newCustomerPhoneNumber, sqlDate);
+                        newCustomerFirstName, newCustomerLastName, newCustomerGender, newCustomerPhoneNumber, sqlDate, -1);
 
                 customerRepository.signUp(newCustomer);
                 Toast.makeText(getApplicationContext(), "Đăng ký tài khoản thành công!", Toast.LENGTH_SHORT).show();

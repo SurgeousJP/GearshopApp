@@ -44,7 +44,8 @@ public class GetCustomerDataFromAzure extends AzureSQLDatabase{
                             resultSet.getString("last_name"),
                             resultSet.getString("gender"),
                             resultSet.getString("phone_number"),
-                            resultSet.getDate("date_of_birth"));
+                            resultSet.getDate("date_of_birth"),
+                            resultSet.getInt("address_id"));
                     CustomerList.add(newCustomer);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);

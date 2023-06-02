@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
-
 public class DatabaseHelper {
     public static void updateAddressToAzure(Address oldAddress, Address newAddress){
         InsertUpdateDataToAzure updateAddressDataToAzure = new InsertUpdateDataToAzure();
@@ -104,13 +103,16 @@ public class DatabaseHelper {
 
         System.out.println("Async Task insert OrderItem ended");
     }
-    public static List<Address> getAddressList() {
+    public static List<Address> getAddressList(String... particularAddress) {
+        String sqlCommand = "SELECT * FROM address";
+        if (particularAddress != null){
+            sqlCommand = sqlCommand + particularAddress[0];
+        }
         List<Address> resultAddressList = new ArrayList<>();
         GetAddressDataFromAzure[] getAddressDataFromAzure = new GetAddressDataFromAzure[1];
         getAddressDataFromAzure[0] = new GetAddressDataFromAzure();
-        getAddressDataFromAzure[0].execute(
-                "SELECT * FROM address"
-        );
+        System.out.println(sqlCommand);
+        getAddressDataFromAzure[0].execute(sqlCommand);
 
         System.out.println("Async Task Address running");
         try {

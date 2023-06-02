@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 
 import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
+import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +66,9 @@ public class CustomerRepository {
         for (Customer customer : CustomerList) {
             if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
                 GlobalRepository.setCurrentCustomer(customer);
+                List<Address> currentAddressList = DatabaseHelper.getAddressList(" WHERE id ='"+ customer.getAddressID() + "'");
+                if (currentAddressList.size() > 0)
+                    GlobalRepository.setCustomerAddress(currentAddressList.get(0));
                 return customer;
             }
         }

@@ -15,7 +15,7 @@ public class GlobalRepository extends Application {
     private List<ShoppingCartItem> CartItemList;
     private static Address CustomerAddress;
     private static Customer CurrentCustomer;
-    public Address demoAddress(){
+    public static Address demoAddress(){
         return new Address(-1, "", "", 1);
     }
     public GlobalRepository(){
