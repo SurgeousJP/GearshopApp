@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -25,6 +26,7 @@ import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
@@ -153,6 +155,10 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
                                 CartItemList.get(i).getQuantity(), 5, "");
                 DatabaseHelper.insertOrderItemToAzure(newOrderItem);
             }
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            getBaseContext().startActivity(intent);
         };
         CheckoutTextView.setOnClickListener(checkoutListener);
         CheckoutTextView.setOnClickListener(checkoutListener);
