@@ -164,7 +164,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/order_id"
+                        android:id="@+id/customer_order_id"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_marginVertical="8dp"

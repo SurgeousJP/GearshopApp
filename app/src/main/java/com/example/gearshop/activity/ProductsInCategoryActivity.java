@@ -17,6 +17,7 @@ import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -53,7 +54,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         String categoryName = comingIntent.getStringExtra("categoryName");
         CategoryLabel = findViewById(R.id.category_detail_label);
         CategoryLabel.setText(categoryName);
-        initializeProductsInCategory();
+        ProductList = DatabaseHelper.getProductListFromCategory(ProductCategoryID);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         categoryListProductFragment =
@@ -129,30 +130,5 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
         SortTextView.setOnClickListener(sortOnClickListener);
     }
-    private void initializeProductsInCategory() {
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].setCategoryID(ProductCategoryID);
-        getProductDataFromAzure[0].execute(
-                "SELECT product.*,\n" +
-                        "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
-                        "\t   discount_percentage, start_date_utc, end_date_utc\n" +
-                        "FROM product\n" +
-                        "JOIN product_category ON product.category_id = product_category.id\n" +
-                        "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
-                        "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
-                        "WHERE product.category_id = ?"
-        );
 
-        System.out.println("Async Task running");
-        try {
-            getProductDataFromAzure[0].get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Async Task ended");
-
-        if (getProductDataFromAzure[0].getProductList() != null)
-            ProductList = getProductDataFromAzure[0].getProductList();
-    }
 }

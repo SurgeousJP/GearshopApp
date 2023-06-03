@@ -33,7 +33,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void setData(List <Product> listProductItems){
+    public void setData(List<Product> listProductItems){
         this.listProductItems = listProductItems;
         notifyDataSetChanged();
     }

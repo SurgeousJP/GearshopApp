@@ -90,8 +90,7 @@ public class OrderListAdapter extends BaseAdapter {
             }
             TextView OrderNameTextView = v.findViewById(R.id.order_name);
             if (OrderNameTextView != null)
-                OrderNameTextView.setText("Đơn hàng ngày" +
-                        new SimpleDateFormat("dd/MM/yyyy").format(order.getCreatedOnUtc()));
+                OrderNameTextView.setText("Đơn hàng " + order.getID());
             TextView OrderTotalPriceTextView = v.findViewById(R.id.order_total_price);
             if (OrderTotalPriceTextView != null)
                 OrderTotalPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(order.getTotalPrice()));

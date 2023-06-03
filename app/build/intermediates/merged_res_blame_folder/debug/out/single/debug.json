@@ -372,10 +372,6 @@
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\drawable\\dots.xml"
     },
     {
-        "merged": "com.example.gearshop.app-merged_res-30:/layout_order_management.xml.flat",
-        "source": "com.example.gearshop.app-main-32:/layout/order_management.xml"
-    },
-    {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_order_management.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\order_management.xml"
     },
@@ -490,6 +486,10 @@
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\layout_support_info.xml.flat",
         "source": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-main-32:\\layout\\support_info.xml"
+    },
+    {
+        "merged": "com.example.gearshop.app-merged_res-30:/layout_order_detail.xml.flat",
+        "source": "com.example.gearshop.app-main-32:/layout/order_detail.xml"
     },
     {
         "merged": "C:\\Users\\tuanb\\.gradle\\daemon\\7.5\\com.example.gearshop.app-merged_res-30:\\drawable_search_icon.xml.flat",
