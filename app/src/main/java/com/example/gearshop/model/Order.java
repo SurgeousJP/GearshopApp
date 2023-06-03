@@ -1,8 +1,9 @@
 package com.example.gearshop.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable {
     private int ID;
     private Date CreatedOnUtc;
     private int CustomerID, ShippingAddressID, ShipmentMethodID, PaymentMethodID;

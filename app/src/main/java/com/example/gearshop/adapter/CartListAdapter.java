@@ -52,7 +52,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartLi
 
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List <Product> productlist){
-        this.ProductList=productlist;
+        this.ProductList= productlist;
         notifyDataSetChanged();
     }
 

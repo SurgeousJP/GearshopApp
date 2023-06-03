@@ -6,11 +6,13 @@ import com.example.gearshop.database.GetAddressDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetPaymentMethodDataFromAzure;
+import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.PaymentMethod;
+import com.example.gearshop.model.Province;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -185,6 +187,28 @@ public class DatabaseHelper {
         if (getOrderItemDataFromAzure[0].getOrderItemList() != null){
             return getOrderItemDataFromAzure[0].getOrderItemList();
         }
+        return new ArrayList<>();
+    }
+
+    public static List<Province> getProvinceList(String... particularProvince){
+        String sqlCommand = "SELECT * FROM orders";
+        if (particularProvince != null){
+            sqlCommand = sqlCommand + particularProvince[0];
+        }
+        final GetProvinceDataFromAzure[] getProvinceDataFromAzure = new GetProvinceDataFromAzure[1];
+        getProvinceDataFromAzure[0] = new GetProvinceDataFromAzure();
+        getProvinceDataFromAzure[0].execute(sqlCommand);
+
+        System.out.println("Async Task running");
+        try {
+            getProvinceDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task ended");
+
+        if (getProvinceDataFromAzure[0].getProvinceList() != null)
+            return getProvinceDataFromAzure[0].getProvinceList();
         return new ArrayList<>();
     }
 }

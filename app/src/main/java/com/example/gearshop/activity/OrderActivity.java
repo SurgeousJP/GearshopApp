@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -114,6 +115,16 @@ public class OrderActivity extends AppCompatActivity {
         ReturnHomeLayout = findViewById(R.id.roundx_order_management);
         ReturnHomeLayout.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
+        });
+        OrderListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getBaseContext(), OrderDetailActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("clickedOrder",(Order) adapterView.getItemAtPosition(i));
+                getBaseContext().startActivity(intent);
+                return true;
+            }
         });
     }
 
