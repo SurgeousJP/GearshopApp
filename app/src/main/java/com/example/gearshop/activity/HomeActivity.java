@@ -2,9 +2,12 @@ package com.example.gearshop.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
@@ -25,8 +28,8 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
@@ -80,20 +83,14 @@ public class HomeActivity extends AppCompatActivity {
             getBaseContext().startActivity(intent);
         });
 
-        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(view -> {
+        OptionsLayout = findViewById(R.id.more_info_order_detail);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            // do nothing since in home
         });
 
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
-        });
-
-//        HomeItem = findViewById(R.id.home_item_category_detail);
-//        HomeItem.setOnClickListener(view -> {
-//            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
-//        });
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
@@ -106,5 +103,27 @@ public class HomeActivity extends AppCompatActivity {
         AccountItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
+    }
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(HomeActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(HomeActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }

@@ -183,6 +183,7 @@ id cta_reset
 id cta_viewmor
 id cta_viewmore
 id custom_price
+id customer_order_id
 id decrease_box
 id delete_product
 id delete_product_view
@@ -329,6 +330,7 @@ id label_product
 id label_product_cart
 id label_product_text
 id label_ship
+id label_ship_description_order_detail
 id label_ship_order_detail
 id label_sort_
 id label_support
@@ -340,7 +342,6 @@ id label_voucher
 id label_voucher_apply
 id label_zalo
 id label_zalo_name
-id lable_ship_description_order_detail
 id last_name
 id last_name_box
 id lastname_box
@@ -410,7 +411,6 @@ id or_text
 id order_day
 id order_day_box
 id order_detail_text
-id order_id
 id order_management_text
 id order_name
 id order_status
@@ -421,8 +421,8 @@ id order_total_price
 id order_tracking_box
 id order_tracking_box_inside
 id order_tracking_status_box
-id order_transport_uint
 id order_transport_uint_box
+id order_transport_unit
 id original_price
 id other_info_box
 id other_option

@@ -32,8 +32,8 @@ public class AccountActivity extends AppCompatActivity {
     private View IconViewAllDeliveredOrder;
 
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
@@ -66,17 +66,12 @@ public class AccountActivity extends AppCompatActivity {
             getBaseContext().startActivity(intent);
         });
 
-        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu(v);
-            }
-        });
+        OptionsLayout = findViewById(R.id.more_info_order_detail);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         HomeItem = findViewById(R.id.home_item_category_detail);
@@ -91,10 +86,7 @@ public class AccountActivity extends AppCompatActivity {
         SearchItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
-//        AccountItem = findViewById(R.id.account_item_category_detail);
-//        AccountItem.setOnClickListener(view -> {
-//            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
-//        });
+
         View.OnClickListener viewAllOrderListener = view -> {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

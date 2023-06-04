@@ -9,14 +9,15 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
-import com.example.gearshop.database.GetOrderDataFromAzure;
-import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
@@ -38,8 +39,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
     private List<Product> ProductList;
     private ConstraintLayout ReturnView;
     private RecyclerView CartRecyclerView;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
     private TextView TransportFee;
@@ -114,13 +115,11 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             finish();
         });
 
-        MoreInformationLayout = findViewById(R.id.dots_cart);
-        MoreInformationLayout.setOnClickListener(view -> {
-
-        });
-        EscapeLayout = findViewById(R.id.escape_cart);
-        EscapeLayout.setOnClickListener(view -> {
-
+        OptionsLayout = findViewById(R.id.dots_cart);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
+        ReturnHomeLayout = findViewById(R.id.escape_cart);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
@@ -210,5 +209,28 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         if (result){
             deleteCartItem(itemPosition, CartAdapter);
         }
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(CartActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(CartActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }

@@ -28,7 +28,15 @@
         android:icon="@drawable/gear_shop_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
+        <activity
+            android:name="com.example.gearshop.activity.FAQActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="com.example.gearshop.activity.OrderDetailActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.OrderActivity"
             android:exported="false" />
@@ -52,8 +60,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.HomeActivity"
-            android:exported="false" /> <!-- <activity android:name=".activity.CategoryDetailActivity" -->
-        <!-- android:exported="false"/> -->
+            android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.AccountActivity"
             android:exported="false" />

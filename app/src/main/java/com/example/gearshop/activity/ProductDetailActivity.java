@@ -11,8 +11,11 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -43,8 +46,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     private RecyclerView ProductSpecsGridView;
     private TextView ProductDetailTextView;
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
 
     private ConstraintLayout ShippingInfoLayout;
     private View EditShippingInfoView;
@@ -135,14 +138,12 @@ public class ProductDetailActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
-        MoreInformationLayout = findViewById(R.id.dots_icon_product);
-        MoreInformationLayout.setOnClickListener(view -> {
+        OptionsLayout = findViewById(R.id.dots_icon_product);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        });
-
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         AddToCart = findViewById(R.id.add_to_cart_text);
@@ -193,5 +194,28 @@ public class ProductDetailActivity extends AppCompatActivity {
             currentShoppingCartList.add(newItem);
         if (!currentProductList.contains(product))
             currentProductList.add(product);
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(ProductDetailActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(ProductDetailActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }
