@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="27dp"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="16dp"
             android:gravity="center_vertical"
             android:lineSpacingExtra="5sp"
             android:text="Quản lý khách hàng"
@@ -209,18 +209,11 @@
             android:layout_height="56dp">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/blue"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-            <View
                 android:layout_marginTop="2dp"
                 android:id="@+id/product_manage_customer"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/product_management_icon_blue"
+                android:background="@drawable/product_management_icon_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -233,7 +226,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="Quản lý sản phẩm"
-                android:textColor="@color/blue"
+                android:textColor="@color/grey"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/product_manage_customer"
@@ -251,11 +244,19 @@
             android:layout_height="56dp">
 
             <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
                 android:layout_marginTop="2dp"
                 android:id="@+id/customer_manage_customer"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/customer_management_icon_grey"
+                android:background="@drawable/customer_management_icon_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -268,7 +269,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="Quản lý khách hàng"
-                android:textColor="@color/grey"
+                android:textColor="@color/blue"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/customer_manage_customer"
@@ -281,7 +282,7 @@
             app:layout_constraintStart_toEndOf="@id/box2_admin_customer"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
-            app:layout_constraintEnd_toStartOf="@id/box4_admin_customer"
+            app:layout_constraintEnd_toStartOf="@id/box4_admin_order"
             android:layout_width="100dp"
             android:layout_height="56dp">
 
@@ -313,7 +314,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/box4_admin_customer"
+            android:id="@+id/box4_admin_order"
             android:layout_width="100dp"
             android:layout_height="56dp"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
