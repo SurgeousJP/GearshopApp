@@ -1,8 +1,9 @@
 package com.example.gearshop.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Customer {
+public class Customer implements Serializable {
     private int ID;
     private String Username, Password, Email, FirstName, LastName;
     private String Gender;

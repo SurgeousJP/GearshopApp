@@ -87,12 +87,9 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartRecyclerView.setLayoutManager(gridLayoutManager);
         CartRecyclerView.setAdapter(CartAdapter);
         CartAdapter.setData(ProductList);
-        CartAdapter.setOnDeleteItemClickListener(new CartListAdapter.OnDeleteItemClickListener() {
-            @Override
-            public void onDeleteItemClick(int position) {
-                setCartItemPosition(position);
-                showConfirmDeleteDialog();
-            }
+        CartAdapter.setOnDeleteItemClickListener(position -> {
+            setCartItemPosition(position);
+            showConfirmDeleteDialog();
         });
         CartRecyclerView.setAdapter(CartAdapter);
 
@@ -156,7 +153,10 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             }
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            int customerID = GlobalRepository.getCurrentCustomer().getID();
             intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
         };
         CheckoutTextView.setOnClickListener(checkoutListener);

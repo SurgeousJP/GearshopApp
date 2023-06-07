@@ -17,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.utility.ActivityStartManager;
 
 public class AccountActivity extends AppCompatActivity {
@@ -87,10 +88,13 @@ public class AccountActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
 
+        int customerID = GlobalRepository.getCurrentCustomer().getID();
+
         View.OnClickListener viewAllOrderListener = view -> {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
         };
 
@@ -98,6 +102,7 @@ public class AccountActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "PROCESSING");
+            intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
         };
 
@@ -105,6 +110,7 @@ public class AccountActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "DELIVERY");
+            intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
         };
 
@@ -112,6 +118,7 @@ public class AccountActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), OrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "DELIVERED");
+            intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
         };
 

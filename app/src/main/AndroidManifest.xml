@@ -16,6 +16,9 @@
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
         <activity
+            android:name=".activity.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.FAQActivity"
             android:exported="false" />
         <activity
@@ -55,10 +58,10 @@
             android:name=".activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.CustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerManagementActivity"
+            android:name=".activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3186,6 +3186,7 @@ int id currentState 0x7f08010b
 int id custom 0x7f08010c
 int id customPanel 0x7f08010d
 int id custom_price 0x7f08010e
+int id customer_detail_return_view 0x7f08048f
 int id customer_id 0x7f08010f
 int id customer_id_box 0x7f080110
 int id customer_id_label 0x7f080111

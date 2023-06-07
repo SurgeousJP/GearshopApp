@@ -2,6 +2,7 @@ package com.example.gearshop.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.CustomerDetailActivity;
+import com.example.gearshop.activity.OrderActivity;
 import com.example.gearshop.model.Customer;
 
 
@@ -71,6 +74,12 @@ public class CustomerListAdapter extends BaseAdapter {
             if (CustomerNameTextView != null){
                 CustomerNameTextView.setText(customer.getLastName() + " " + customer.getFirstName());
             }
+            v.setOnClickListener(view -> {
+                Intent intent = new Intent(context, CustomerDetailActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("clickedCustomer", customer);
+                context.startActivity(intent);
+            });
         }
         return v;
     }

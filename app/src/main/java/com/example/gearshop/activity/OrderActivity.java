@@ -42,15 +42,20 @@ public class OrderActivity extends AppCompatActivity {
     private List<Order> CustomerOrderList;
     private List<Order> CustomerParticularTypeOrderList;
     private OrderListAdapter CustomerOrderAdapter;
+    private int CustomerID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_management);
 
+        Intent getDataIntent = getIntent();
+        OrderType = getDataIntent.getStringExtra("ORDER_TYPE");
+        CustomerID = getDataIntent.getIntExtra("customerID", 0);
+
         OrderListView = findViewById(R.id.list_view_order_management);
         CustomerOrderList = DatabaseHelper.getOrderList(
-                " WHERE customer_id ='" + GlobalRepository.getCurrentCustomer().getID() +"'");
+                " WHERE customer_id ='" + CustomerID +"'");
         CustomerOrderAdapter = new OrderListAdapter(getBaseContext(),
                 R.layout.list_order_status, CustomerOrderList);
         OrderListView.setAdapter(CustomerOrderAdapter);
@@ -86,8 +91,6 @@ public class OrderActivity extends AppCompatActivity {
         });
         UnderlineAllCancelledOrder = findViewById(R.id.view5);
 
-        Intent getOrderTypeIntent = getIntent();
-        OrderType = getOrderTypeIntent.getStringExtra("ORDER_TYPE");
         ResetOrderType();
         switch (OrderType){
             case "PROCESSING":

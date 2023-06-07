@@ -31,6 +31,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
+            android:name="com.example.gearshop.activity.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.FAQActivity"
             android:exported="false" />
         <activity
@@ -70,10 +73,10 @@
             android:name="com.example.gearshop.activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.SignInActivity"
+            android:name="com.example.gearshop.activity.CustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CustomerManagementActivity"
+            android:name="com.example.gearshop.activity.SignInActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

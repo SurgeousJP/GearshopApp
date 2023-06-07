@@ -257,6 +257,7 @@ id cta_reset
 id cta_viewmor
 id cta_viewmore
 id custom_price
+id customer_detail_return_view
 id customer_id
 id customer_id_box
 id customer_id_label

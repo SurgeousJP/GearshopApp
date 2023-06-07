@@ -66,6 +66,8 @@ public class OrderListAdapter extends BaseAdapter {
 
         Order order = getItem(position);
         if (order != null){
+            TextView CurrentCustomerIDTextView = v.findViewById(R.id.customer_id_number);
+            CurrentCustomerIDTextView.setText(String.valueOf(order.getCustomerID()));
             TextView OrderStatusTextView = v.findViewById(R.id.content_sta);
             if (OrderStatusTextView != null)
                 OrderStatusTextView.setText(order.getStatus());

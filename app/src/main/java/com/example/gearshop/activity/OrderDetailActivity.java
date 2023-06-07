@@ -49,8 +49,7 @@ public class OrderDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_detail);
-        // Order, Address (co san trong GlobalRepository), Customer (co san trong Global Repository)
-        // OrderDetail (Get tu Order), Province (co san trong Global Repository)
+
         Intent getClickedOrderIntent = getIntent();
         Order clickedOrder = (Order) getClickedOrderIntent.getSerializableExtra("clickedOrder");
 
