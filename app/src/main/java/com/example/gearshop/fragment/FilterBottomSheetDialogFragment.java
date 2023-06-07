@@ -169,6 +169,7 @@ ConfirmFilterDialogFragment.DialogListener{
 
         ResetFilterTextView.setOnClickListener(view1 -> {
             FilterProductResult = ProductList;
+            setUIComponentTempsForUpdate(null, null);
             showConfirmFilterDialog();
         });
         ApplyFilterTextView.setOnClickListener(view1 -> {
@@ -188,6 +189,7 @@ ConfirmFilterDialogFragment.DialogListener{
                             getDiscountedPrice(product) < lesserThanPrice &&
                                     getDiscountedPrice(product) > biggerThanPrice);
                     FilterProductResult = result;
+                    setUIComponentTempsForUpdate(null, null);
                     showConfirmFilterDialog();
                 }
             }
@@ -200,8 +202,10 @@ ConfirmFilterDialogFragment.DialogListener{
     }
     private void UpdateUIFilterOnChosen(ConstraintLayout layout, TextView textView){
         ResetUIFilterOptionForAll();
-        layout.setBackgroundResource(R.drawable.normal_box_2_fill_blue);
-        textView.setTextColor(Color.WHITE);
+        if (layout != null && textView != null){
+            layout.setBackgroundResource(R.drawable.normal_box_2_fill_blue);
+            textView.setTextColor(Color.WHITE);
+        }
     }
     private void ResetUIFilterOptionForAll(){
         ResetFilterOption(UnderPriceLayout, UnderPriceTextView);

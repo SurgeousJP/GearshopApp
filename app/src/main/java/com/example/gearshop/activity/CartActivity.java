@@ -131,7 +131,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
         View.OnClickListener checkoutListener = view -> {
             Order newOrder = new Order();
-            OrderList = DatabaseHelper.getOrderList();
+            OrderList = DatabaseHelper.getOrderList("ALL");
             newOrder.setID(OrderList.size() + 1);
             newOrder.setShipmentMethodID(1);
             newOrder.setPaymentMethodID(2);
@@ -144,7 +144,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
             DatabaseHelper.insertOrderToAzure(newOrder);
 
-            OrderItemList = DatabaseHelper.getOrderItemList();
+            OrderItemList = DatabaseHelper.getOrderItemList("ALL");
             for (int i = 0; i < CartItemList.size(); i++){
                 OrderItem newOrderItem =
                         new OrderItem(

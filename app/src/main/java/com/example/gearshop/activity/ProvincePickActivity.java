@@ -26,7 +26,7 @@ public class ProvincePickActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.province_picker);
-        provinceList = DatabaseHelper.getProvinceList();
+        provinceList = DatabaseHelper.getProvinceList("ALL");
         ProvinceListView = findViewById(R.id.listview_choose_province);
         ProvinceAdapter = new ProvinceListAdapter(getApplicationContext(), R.layout.list_item_province, provinceList);
         ProvinceListView.setAdapter(ProvinceAdapter);

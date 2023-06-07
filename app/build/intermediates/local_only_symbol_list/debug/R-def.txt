@@ -50,6 +50,8 @@ drawable discount_badge
 drawable dots
 drawable edit_icon
 drawable escape
+drawable eye_close_icon
+drawable eye_open_icon
 drawable facebook_icon
 drawable fb
 drawable fill_blue_box
@@ -639,6 +641,7 @@ id recycler_view_order_detail
 id register_text
 id registerform
 id return_cart_icon
+id return_faq_icon
 id return_to_category
 id roundx_order_management
 id save_button_list_voucher
@@ -769,6 +772,7 @@ id view3
 id view4
 id view5
 id view_more_order
+id view_password_icon
 id voucher_apply_box
 id voucher_apply_price_order_detail
 id voucher_box

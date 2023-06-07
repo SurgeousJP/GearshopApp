@@ -128,7 +128,7 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
         Address newAddress = new Address(globalAddress.getID(), houseNumber,
                 "", ProvinceID);
         if (globalAddress.getID() == -1){
-            newAddress.setID(DatabaseHelper.getAddressList().size() + 1);
+            newAddress.setID(DatabaseHelper.getAddressList("ALL").size() + 1);
             DatabaseHelper.insertAddressToAzure(newAddress);
         }
         else{

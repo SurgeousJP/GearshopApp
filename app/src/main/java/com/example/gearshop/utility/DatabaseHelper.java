@@ -109,10 +109,10 @@ public class DatabaseHelper {
 
         System.out.println("Async Task insert OrderItem ended");
     }
-    public static List<PaymentMethod> getPaymentMethod(String... particularPaymentMethod){
+    public static List<PaymentMethod> getPaymentMethod(String particularPaymentMethod){
         String sqlCommand = "SELECT * FROM payment_method";
-        if (particularPaymentMethod != null && particularPaymentMethod.length > 0){
-            sqlCommand = sqlCommand + particularPaymentMethod[0];
+        if (!particularPaymentMethod.equals("ALL")){
+            sqlCommand = sqlCommand + particularPaymentMethod;
         }
         List<PaymentMethod> paymentMethodList = new ArrayList<>();
         GetPaymentMethodDataFromAzure getPaymentMethodDataFromAzure = new GetPaymentMethodDataFromAzure();
@@ -130,10 +130,10 @@ public class DatabaseHelper {
         return new ArrayList<>();
 
     }
-    public static List<Address> getAddressList(String... particularAddress) {
+    public static List<Address> getAddressList(String particularAddress) {
         String sqlCommand = "SELECT * FROM address";
-        if (particularAddress != null && particularAddress.length > 0){
-            sqlCommand = sqlCommand + particularAddress[0];
+        if (!particularAddress.equals("ALL")){
+            sqlCommand = sqlCommand + particularAddress;
         }
         GetAddressDataFromAzure[] getAddressDataFromAzure = new GetAddressDataFromAzure[1];
         getAddressDataFromAzure[0] = new GetAddressDataFromAzure();
@@ -151,10 +151,10 @@ public class DatabaseHelper {
         }
         return new ArrayList<>();
     }
-    public static List<Order> getOrderList(String... particularOrder) {
+    public static List<Order> getOrderList(String particularOrder) {
         String sqlCommand = "SELECT * FROM orders";
-        if (particularOrder != null && particularOrder.length > 0){
-            sqlCommand = sqlCommand + particularOrder[0];
+        if (!particularOrder.equals("ALL")){
+            sqlCommand = sqlCommand + particularOrder;
         }
         GetOrderDataFromAzure[] getOrderDataFromAzure = new GetOrderDataFromAzure[1];
         getOrderDataFromAzure[0] = new GetOrderDataFromAzure();
@@ -173,10 +173,10 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
-    public static List<OrderItem> getOrderItemList(String... particularOrder){
+    public static List<OrderItem> getOrderItemList(String particularOrder){
         String sqlCommand = "SELECT * FROM order_item";
-        if (particularOrder != null && particularOrder.length > 0){
-            sqlCommand = sqlCommand + particularOrder[0];
+        if (!particularOrder.equals("ALL")){
+            sqlCommand = sqlCommand + particularOrder;
         }
         GetOrderItemDataFromAzure[] getOrderItemDataFromAzure = new GetOrderItemDataFromAzure[1];
         getOrderItemDataFromAzure[0] = new GetOrderItemDataFromAzure();
@@ -194,10 +194,10 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
-    public static List<Province> getProvinceList(String... particularProvince){
+    public static List<Province> getProvinceList(String particularProvince){
         String sqlCommand = "SELECT * FROM province";
-        if (particularProvince != null && particularProvince.length > 0){
-            sqlCommand = sqlCommand + particularProvince[0];
+        if (!particularProvince.equals("ALL")){
+            sqlCommand = sqlCommand + particularProvince;
         }
         final GetProvinceDataFromAzure[] getProvinceDataFromAzure = new GetProvinceDataFromAzure[1];
         getProvinceDataFromAzure[0] = new GetProvinceDataFromAzure();
@@ -216,7 +216,8 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
-    public static List<Product> getProductListFromCategory(int categoryID, String... particularProduct) {
+    public static List<Product> getProductListFromCategory(int categoryID, String particularProduct) {
+        System.out.println("getProductList running");
         String sqlCommand = "SELECT product.*,\n" +
                 "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
                 "\t   discount_percentage, start_date_utc, end_date_utc\n" +
@@ -225,8 +226,8 @@ public class DatabaseHelper {
                 "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
                 "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
                 "WHERE product.category_id = ?";
-        if (particularProduct != null){
-            sqlCommand = sqlCommand + particularProduct[0];
+        if (!particularProduct.equals("ALL")){
+            sqlCommand = sqlCommand + particularProduct;
         }
         final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
         getProductDataFromAzure[0] = new GetProductDataFromAzure();
@@ -246,7 +247,7 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
-    public static List<Product> getProductListGivenID(String... particularProduct) {
+    public static List<Product> getProductListGivenID(String particularProduct) {
         String sqlCommand = "SELECT product.*,\n" +
                 "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
                 "\t   discount_percentage, start_date_utc, end_date_utc\n" +
@@ -254,8 +255,8 @@ public class DatabaseHelper {
                 "JOIN product_category ON product.category_id = product_category.id\n" +
                 "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
                 "JOIN discount ON discount.id = discount_applied_category.discount_id\n";
-        if (particularProduct != null && particularProduct.length > 0){
-            sqlCommand = sqlCommand + particularProduct[0];
+        if (!particularProduct.equals("ALL")){
+            sqlCommand = sqlCommand + particularProduct;
         }
         final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
         getProductDataFromAzure[0] = new GetProductDataFromAzure();

@@ -55,9 +55,10 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView AddToCart;
     private TextView BuyProductNow;
     protected Map<String, String> ConvertProductSpecsToMap(String productSpec){
-        String[] parts = productSpec.split("\\|\\n");
+        String[] parts = productSpec.split("[|\\r\\n]");
         Map<String, String> result = new HashMap<>();
         for (String part : parts) {
+            if (part.equals("")) continue;
             String[] headerAndDetail = part.split(" {4}");
             try {
                 result.put(headerAndDetail[0], headerAndDetail[1]);
@@ -69,7 +70,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
     protected String ConvertToHTMLBulletText(String s){
         if (s == null) return "";
-        String[] bulletParts = s.split("\\|\\n");
+        String[] bulletParts = s.split("[|\\r\\n]");
         String result = "<ul>\n";
         for (int i = 0; i < bulletParts.length; i++){
             bulletParts[i] = "<li>" + bulletParts[i] + "<\\li>\n";

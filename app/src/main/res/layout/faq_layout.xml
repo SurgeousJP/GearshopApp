@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <View
-                android:id="@+id/return_cart_icon"
+                android:id="@+id/return_faq_icon"
                 android:layout_width="10dp"
                 android:layout_height="12dp"
                 android:layout_marginHorizontal="16dp"
@@ -42,7 +42,7 @@
             android:layout_marginStart="16dp"
             android:gravity="center_vertical"
             android:lineSpacingExtra="5sp"
-            android:text="câu hỏi thường gặp"
+            android:text="Câu hỏi thường gặp (FAQs)"
             android:textAppearance="@style/title_screen"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,8 @@
                 android:text="@string/faq_text"
                 android:textAppearance="@style/title_empty"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="0dp" />
+                tools:layout_editor_absoluteY="0dp"
+                tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

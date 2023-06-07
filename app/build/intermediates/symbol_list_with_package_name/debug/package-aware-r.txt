@@ -2758,6 +2758,8 @@ drawable discount_badge
 drawable dots
 drawable edit_icon
 drawable escape
+drawable eye_close_icon
+drawable eye_open_icon
 drawable facebook_icon
 drawable fb
 drawable fill_blue_box
@@ -3771,6 +3773,7 @@ id recycler_view_order_detail
 id register_text
 id registerform
 id return_cart_icon
+id return_faq_icon
 id return_to_category
 id reverseSawtooth
 id right
@@ -4036,6 +4039,7 @@ id view4
 id view5
 id view_more_order
 id view_offset_helper
+id view_password_icon
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner

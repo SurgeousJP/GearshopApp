@@ -55,7 +55,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         String categoryName = comingIntent.getStringExtra("categoryName");
         CategoryLabel = findViewById(R.id.category_detail_label);
         CategoryLabel.setText(categoryName);
-        ProductList = DatabaseHelper.getProductListFromCategory(ProductCategoryID);
+        ProductList = DatabaseHelper.getProductListFromCategory(ProductCategoryID, "ALL");
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         categoryListProductFragment =
