@@ -17,4 +17,43 @@
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="faq_text">
+1. Gearshop có những sản phẩm nào?\n
+Gearshop cung cấp một loạt các sản phẩm bao gồm máy tính, laptop, phụ kiện máy tính như chuột, bàn phím, tai nghe, ổ cứng di động và nhiều hơn nữa.\n
+\n
+2. Các sản phẩm có bảo hành không?\n
+Có, các sản phẩm được bán trên Gearshop thường đi kèm với chế độ bảo hành từ nhà sản xuất. Thời gian và điều kiện bảo hành có thể khác nhau tùy theo sản phẩm. Chi tiết về chế độ bảo hành cụ thể có thể được tìm thấy trên trang sản phẩm hoặc liên hệ với bộ phận chăm sóc khách hàng của Gearshop.\n
+\n
+3. Gearshop có chính sách đổi trả hàng như thế nào?\n
+Gearshop có chính sách đổi trả hàng linh hoạt. Nếu bạn không hài lòng với sản phẩm mua từ Gearshop, bạn có thể đổi hoặc trả lại trong một khoảng thời gian nhất định. Chi tiết về chính sách đổi trả hàng và quy trình đổi trả có thể được tìm thấy trên trang web của Gearshop hoặc liên hệ với bộ phận chăm sóc khách hàng.\n
+\n
+4. Làm thế nào để đặt hàng trên Gearshop?\n
+Để đặt hàng trên Gearshop, bạn có thể làm như sau:\n
+- Truy cập trang web Gearshop.\n
+- Duyệt qua danh mục sản phẩm hoặc sử dụng chức năng tìm kiếm để tìm sản phẩm mong muốn.\n
+- Chọn sản phẩm và thêm vào giỏ hàng.\n
+- Tiến hành thanh toán và cung cấp thông tin giao hàng.\n
+- Xác nhận đơn hàng và chờ nhận sản phẩm tại địa chỉ giao hàng.\n
+\n
+5. Gearshop có hỗ trợ thanh toán trực tuyến không?\n
+Có, Gearshop hỗ trợ nhiều phương thức thanh toán trực tuyến như thẻ tín dụng, thẻ ghi nợ, ví điện tử và chuyển khoản ngân hàng. Bạn có thể lựa chọn phương thức thanh toán phù hợp với bạn trong quá trình thanh toán đơn hàng.\n
+\n
+6. Gearshop giao hàng trong bao lâu?\n
+Thời gian giao hàng của Gearshop phụ thuộc vào vị trí giao hàng và phương thức vận chuyển bạn chọn. Thông thường, Gearshop cố gắng giao hàng nhanh chóng trong khoảng thời gian từ vài ngày đến một tuần sau khi đơn hàng được xác nhận.\n
+\n
+7. Có phí vận chuyển không khi mua hàng trên Gearshop?\n
+Gearshop có thể áp dụng phí vận chuyển tùy thuộc vào địa chỉ giao hàng và quy mô đơn hàng. Thông tin về phí vận chuyển cụ thể sẽ được hiển thị trong quá trình thanh toán hoặc trên trang web của Gearshop.\n
+\n
+8. Gearshop có chương trình giảm giá hoặc khuyến mãi không?\n
+Có, Gearshop thường có chương trình giảm giá và khuyến mãi đặc biệt cho khách hàng. Bạn có thể kiểm tra trang web hoặc đăng ký nhận bản tin của Gearshop để cập nhật thông tin về các chương trình khuyến mãi và giảm giá mới nhất.\n
+\n
+9. Cách liên hệ với Gearshop khi có vấn đề hay câu hỏi cần giải đáp?\n
+Bạn có thể liên hệ với Gearshop qua các phương thức sau:\n
+- Số điện thoại: [Số điện thoại chăm sóc khách hàng của Gearshop]\n
+- Email: [Địa chỉ email của Gearshop]\n
+- Trang web: [Trang web của Gearshop] có thể có biểu mẫu liên hệ hoặc thông tin liên lạc khác.\n
+\n
+10. Gearshop có chính sách bảo mật thông tin khách hàng như thế nào?\n
+Gearshop cam kết bảo vệ thông tin khách hàng và tuân thủ chính sách bảo mật. Thông tin cá nhân của bạn sẽ được sử dụng chỉ để xử lý đơn hàng và cung cấp dịch vụ. Chi tiết về chính sách bảo mật thông tin khách hàng của Gearshop có thể tìm thấy trên trang web hoặc liên hệ trực tiếp với Gearshop để biết thêm thông tin.\n
+    </string>
 </resources>

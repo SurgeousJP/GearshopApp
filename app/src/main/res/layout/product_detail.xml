@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="@id/first_bar"
             app:layout_constraintBottom_toBottomOf="@id/first_bar"
             app:layout_constraintEnd_toStartOf="@id/navigation_box"
-             android:layout_marginRight="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/cart_image"/>
 
         <RelativeLayout
@@ -500,18 +500,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-                <TextView
-                    android:id="@+id/add_to_cart_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Thêm vào giỏ hàng"
-                    android:textAppearance="@style/cta_reset_0"
-                    android:lineSpacingExtra="5sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/add_to_cart_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Thêm vào giỏ hàng"
+                android:textAppearance="@style/cta_reset_0"
+                android:lineSpacingExtra="5sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center_horizontal|center_vertical"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="160dp"

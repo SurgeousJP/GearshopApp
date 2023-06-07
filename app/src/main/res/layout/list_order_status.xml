@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,7 +18,7 @@
         <!--Đã giao hàng text color: #007D3A, contraint background: delivered_box-->
         <!--Đang giao hàng text color: #007D3A, contraint background: delivery_box-->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -46,8 +46,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/produ_info_list_order_status"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
                 android:layout_height="40dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -80,22 +80,49 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8.5dp"
                 android:id="@+id/order_name"
-                android:layout_width="wrap_content"
-                android:layout_height="21dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="top"
                 android:lineSpacingExtra="4sp"
                 android:text="Đơn hàng ngày dd/MM/yyyy"
                 android:textAppearance="@style/label_product"
                 android:translationY="-2.03sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/account_avatar_item"
                 app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/customer_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="top"
+                android:lineSpacingExtra="4sp"
+                android:text="Mã khách hàng:"
+                android:textAppearance="@style/label_product"
+                app:layout_constraintStart_toEndOf="@+id/account_avatar_item"
+                app:layout_constraintTop_toBottomOf="@id/order_name" />
+
+            <TextView
+                android:id="@+id/customer_id_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:lineSpacingExtra="4sp"
+                android:layout_marginStart="4dp"
+                android:text="0000"
+                android:textStyle="bold"
+                android:textAppearance="@style/label_product"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/customer_id_label"
+                app:layout_constraintTop_toBottomOf="@id/order_name" />
 
             <TextView
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
                 android:id="@+id/order_total_price"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
@@ -105,7 +132,8 @@
                 android:textAppearance="@style/description12"
                 android:translationY="-1.74sp"
                 app:layout_constraintStart_toEndOf="@+id/account_avatar_item"
-                app:layout_constraintTop_toBottomOf="@+id/order_name" />
+                app:layout_constraintTop_toBottomOf="@+id/customer_id_number"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <View
             android:layout_width="match_parent"
@@ -119,28 +147,30 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="4dp">
 
             <TextView
                 android:id="@+id/label_payme"
                 android:layout_width="wrap_content"
-                android:layout_height="21dp"
+                android:layout_height="wrap_content"
                 android:gravity="top"
                 android:lineSpacingExtra="4sp"
-                android:text="Phương thức thanh toán"
+                android:text="Phương thức thanh toán:"
                 android:textAppearance="@style/content_pro"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/label_payment"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="21dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="top"
                 android:lineSpacingExtra="4sp"
                 android:text="Thẻ tín dụng"
@@ -148,7 +178,8 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@+id/label_payme"
+                app:layout_constraintTop_toBottomOf="@+id/label_payme" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
