@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Sửa option menu trên thanh công cụ (dấu ba chấm) và chức năng về home (HomeActivity)">
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Update README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,13 +208,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Sử dụng recycler view thay thế cho list view trong màn hình cart, cập nhật các thay đổi sau khi merge">
-      <created>1684742650026</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1684742650026</updated>
     </task>
     <task id="LOCAL-00036" summary="update merge">
       <created>1684814423318</created>
@@ -552,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685865604973</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Update README.md">
+      <created>1685865923072</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1685865923072</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Xóa filter box khỏi searchlayout" />
     <MESSAGE value="merge duy's branch" />
     <MESSAGE value="fix 1 vài bug sau khi merge thành công" />
     <MESSAGE value="link category to product" />
@@ -593,7 +592,8 @@
     <MESSAGE value="Làm OrderDetailActivity, OrderItemListAdapter" />
     <MESSAGE value="Finish OrderDetailActivity" />
     <MESSAGE value="Sửa option menu trên thanh công cụ (dấu ba chấm) và chức năng về home (HomeActivity)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sửa option menu trên thanh công cụ (dấu ba chấm) và chức năng về home (HomeActivity)" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
