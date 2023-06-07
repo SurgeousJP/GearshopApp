@@ -61,7 +61,7 @@ public class CustomerListAdapter extends BaseAdapter {
         if (customer != null){
             TextView CustomerIDTextView = v.findViewById(R.id.customer_id);
             if (CustomerIDTextView != null){
-                CustomerIDTextView.setText(customer.getID());
+                CustomerIDTextView.setText(String.valueOf(customer.getID()));
             }
             TextView CustomerUsernameTextView = v.findViewById(R.id.customer_username);
             if (CustomerUsernameTextView != null){

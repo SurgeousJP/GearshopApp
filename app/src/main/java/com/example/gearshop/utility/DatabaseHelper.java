@@ -3,6 +3,7 @@ package com.example.gearshop.utility;
 import android.provider.Telephony;
 
 import com.example.gearshop.database.GetAddressDataFromAzure;
+import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetPaymentMethodDataFromAzure;
@@ -10,6 +11,7 @@ import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.PaymentMethod;
@@ -274,4 +276,26 @@ public class DatabaseHelper {
             return getProductDataFromAzure[0].getProductList();
         return new ArrayList<>();
     }
+
+    public static List<Customer> getCustomerList(String particularCustomer){
+        String sqlCommand = "SELECT * FROM customer";
+        if (!particularCustomer.equals("ALL")){
+            sqlCommand = sqlCommand + particularCustomer;
+        }
+        GetCustomerDataFromAzure getCustomerDataFromAzure = new GetCustomerDataFromAzure();
+        getCustomerDataFromAzure.execute(sqlCommand);
+
+        System.out.println("Async Task get Customer running");
+        try {
+            getCustomerDataFromAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task get Customer ended");
+        if (getCustomerDataFromAzure.getCustomerList() != null){
+            return getCustomerDataFromAzure.getCustomerList();
+        }
+        return new ArrayList<>();
+    }
+
 }

@@ -2969,6 +2969,7 @@ id account_avatar_item
 id account_item_category_detail
 id account_manage_account
 id account_manage_account_text
+id account_manage_customer
 id accout_manage
 id accout_manage_customer
 id accout_manage_customer_text
@@ -3200,6 +3201,12 @@ id customer_manage_customer_text
 id customer_manage_order
 id customer_manage_order_text
 id customer_manage_text
+id customer_management_filter_icon
+id customer_management_label_filter
+id customer_management_search_icon
+id customer_management_search_text
+id customer_management_sort_icon
+id customer_management_sort_text
 id customer_name
 id customer_name_box
 id customer_name_text
@@ -3520,6 +3527,7 @@ id listview_category_layout
 id listview_category_product_management
 id listview_choose_category
 id listview_choose_province
+id listview_customer_layout
 id listview_customer_management
 id listview_support
 id listview_voucher
