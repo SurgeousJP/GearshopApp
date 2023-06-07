@@ -123,6 +123,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         ChangeShippingInfoView.setOnClickListener(view -> {
             ShippingInfoBottomSheetDialogFragment dialogFragment =
                     new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout, TransportFee);
+            dialogFragment.setFinalPriceTextView(FinalPrice);
+            dialogFragment.setCheckoutPriceTextView(CheckoutTextView);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
 

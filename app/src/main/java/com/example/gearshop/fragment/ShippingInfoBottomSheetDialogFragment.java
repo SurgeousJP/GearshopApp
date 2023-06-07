@@ -42,7 +42,18 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     private TextView ApplyChangeShippingInfo;
     private TextView ProvincePickerApply;
     private TextView TransportFeeTextView;
+    private TextView TotalProductPriceTextView;
+    private TextView FinalPriceTextView;
+    private TextView CheckoutPriceTextView;
     private ActivityResultLauncher<Intent> ProvincePickerLauncher;
+
+    public void setFinalPriceTextView(TextView finalPriceTextView) {
+        FinalPriceTextView = finalPriceTextView;
+    }
+
+    public void setCheckoutPriceTextView(TextView checkoutPriceTextView) {
+        CheckoutPriceTextView = checkoutPriceTextView;
+    }
     public ShippingInfoBottomSheetDialogFragment(){}
     public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout){
         this.ShippingInfoLayout = shippingInfoLayout;
@@ -154,8 +165,26 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
                     PhoneNumberEditText.getText().toString()
             );
             if (TransportFeeTextView != null){
+                double oldShippingPrice =
+                        MoneyHelper.getVietnameseMoneyDouble(TransportFeeTextView.getText().toString());
                 double newShippingPrice = GetProvinceDataFromAzure.getShippingCharge(ProvinceID);
-                TransportFeeTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(newShippingPrice));
+
+                double finalPrice =
+                        MoneyHelper.getVietnameseMoneyDouble(FinalPriceTextView.getText().toString());
+                double checkoutPrice =
+                        MoneyHelper.extractVietnameseMoneyFromString(CheckoutPriceTextView.getText().toString());
+
+                double differenceBetweenShippingPrice = newShippingPrice - oldShippingPrice;
+
+                finalPrice = finalPrice + differenceBetweenShippingPrice;
+                checkoutPrice = checkoutPrice + differenceBetweenShippingPrice;
+
+                TransportFeeTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(newShippingPrice));
+                FinalPriceTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(finalPrice));
+                CheckoutPriceTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(checkoutPrice));
             }
             dismiss();
         }
