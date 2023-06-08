@@ -85,7 +85,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="12dp"
                     android:background="@null"
-                    android:hint="Nhập từ khóa cần tìm"
+                    android:hint="Nhập tên khách hàng cần tìm"
                     android:inputType="text"
                     android:textAppearance="@style/placeholder"
                     android:textColor="#808089"

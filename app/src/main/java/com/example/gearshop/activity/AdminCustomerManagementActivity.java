@@ -2,7 +2,6 @@ package com.example.gearshop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CustomerListAdapter;
 import com.example.gearshop.model.Customer;
-import com.example.gearshop.model.Product;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.VietnameseStringConverter;
 
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class CustomerManagementActivity extends AppCompatActivity {
+public class AdminCustomerManagementActivity extends AppCompatActivity {
     private View CustomerSearchIcon;
     private View CustomerFilterIcon;
     private View CustomerSortIcon;
@@ -72,7 +71,7 @@ public class CustomerManagementActivity extends AppCompatActivity {
         });
         TransitionToOrderManagementView = findViewById(R.id.order_manage_customer);
         TransitionToOrderManagementView.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminOrderManagementActivity.class);
         });
 
     }

@@ -67,7 +67,7 @@
             android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerManagementActivity"
+            android:name=".activity.AdminCustomerManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

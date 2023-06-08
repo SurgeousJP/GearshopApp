@@ -88,7 +88,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="12dp"
                     android:background="@null"
-                    android:hint="Nhập từ khóa cần tìm"
+                    android:hint="Nhập mã khách hàng của đơn hàng"
                     android:inputType="text"
                     android:textAppearance="@style/placeholder"
                     android:textColor="#808089"
@@ -375,7 +375,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <ListView
-        android:id="@+id/listview_customer_management"
+        android:id="@+id/listview_admin_order_management"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
