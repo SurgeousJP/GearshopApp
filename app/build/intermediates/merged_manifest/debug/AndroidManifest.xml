@@ -31,6 +31,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
+            android:name="com.example.gearshop.activity.AdminOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.AdminOrderManagementActivity"
             android:exported="false" />
         <activity

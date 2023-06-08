@@ -134,6 +134,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), OrderDetailActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("clickedOrder",(Order) adapterView.getItemAtPosition(i));
+            intent.putExtra("ADMIN_MODE", true);
             startActivity(intent);
             finish();
             return true;

@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.OrderItemListAdapter;
@@ -30,6 +31,7 @@ import java.util.Date;
 import java.util.List;
 
 public class OrderDetailActivity extends AppCompatActivity {
+    boolean ADMIN_MODE = false;
     private TextView OrderIDTextView;
     private TextView OrderCreatedDateTextView;
     private TextView OrderStatusTextView;
@@ -57,7 +59,13 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         Intent getClickedOrderIntent = getIntent();
         Order clickedOrder = (Order) getClickedOrderIntent.getSerializableExtra("clickedOrder");
-
+        ADMIN_MODE = getClickedOrderIntent.getBooleanExtra("ADMIN_MODE", false);
+//
+//        try{
+//        }
+//        catc{
+//
+//        }
         OrderIDTextView = findViewById(R.id.customer_order_id);
         OrderIDTextView.setText(String.valueOf(clickedOrder.getID()));
 
@@ -79,20 +87,47 @@ public class OrderDetailActivity extends AppCompatActivity {
         TimeLengthOfDeliveryTypeTextView.setText("7 ngày");
 
         OrderAddressTextView = findViewById(R.id.label_ship_order_detail);
-        Address customerAddress = GlobalRepository.getCustomerAddress();
-        String customerHouseNumber = customerAddress.getHouseNumber();
-        String customerStreet = customerAddress.getStreet();
-        Province customerProvince = DatabaseHelper.getProvinceList(
-                " WHERE id = '" + customerAddress.getProvinceID() +"'").get(0);
-        String address;
-        if (customerStreet.equals("")){
-            address = customerHouseNumber + "\n" + customerProvince.getName();
-        }
-        else address = customerHouseNumber + "\n" + customerStreet + "\n" + customerProvince.getName();
-        OrderAddressTextView.setText(address);
+        Address customerAddress;
+        Province customerProvince;
+        try{
+            customerAddress= DatabaseHelper.getAddressList(" WHERE id ='"
+                    + clickedOrder.getShippingAddressID() + "'").get(0);
+            String customerHouseNumber = customerAddress.getHouseNumber();
+            String customerStreet = customerAddress.getStreet();
+            customerProvince = DatabaseHelper.getProvinceList(
+                    " WHERE id = '" + customerAddress.getProvinceID() +"'").get(0);
+            String address;
+            if (customerStreet.equals("")){
+                address = customerHouseNumber + "\n" + customerProvince.getName();
+            }
+            else address = customerHouseNumber + "\n" + customerStreet + "\n" + customerProvince.getName();
+            OrderAddressTextView.setText(address);
 
-        CustomerPhoneNumber = findViewById(R.id.label_ship_description_order_detail);
-        CustomerPhoneNumber.setText(GlobalRepository.getCurrentCustomer().getPhoneNumber());
+            CustomerPhoneNumber = findViewById(R.id.label_ship_description_order_detail);
+            Customer currentCustomer = DatabaseHelper.getCustomerList(
+                    " WHERE id ='" + clickedOrder.getCustomerID() +"'").get(0);
+            CustomerPhoneNumber.setText(currentCustomer.getPhoneNumber());
+
+            TotalPriceTextView = findViewById(R.id.total_price_order_detail);
+            TotalPriceTextView.setText(
+                    MoneyHelper.getVietnameseMoneyStringFormatted(clickedOrder.getTotalPrice())
+            );
+
+            DeliveryPriceTextView = findViewById(R.id.transport_fee_price_order_detail);
+            DeliveryPriceTextView.setText(
+                    MoneyHelper.getVietnameseMoneyStringFormatted(customerProvince.getShippingCharge()));
+
+            FinalPriceTextView = findViewById(R.id.final_price_order_detail);
+            FinalPriceTextView.setText(
+                    MoneyHelper.getVietnameseMoneyStringFormatted(clickedOrder.getTotalPrice()
+                            + customerProvince.getShippingCharge()));
+        }
+        catch(IndexOutOfBoundsException | NullPointerException e){
+            Toast.makeText(
+                    getBaseContext(),
+                    "Lỗi không lấy được thông tin địa chỉ và số điện thoại",
+                    Toast.LENGTH_SHORT).show();
+        }
 
         OrderDetailRecyclerView = findViewById(R.id.recycler_view_order_detail);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
@@ -103,19 +138,6 @@ public class OrderDetailActivity extends AppCompatActivity {
         OrderDetailAdapter.setData(orderItemList);
 
         OrderDetailRecyclerView.setAdapter(OrderDetailAdapter);
-
-        TotalPriceTextView = findViewById(R.id.total_price_order_detail);
-        TotalPriceTextView.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(clickedOrder.getTotalPrice())
-        );
-
-        DeliveryPriceTextView = findViewById(R.id.transport_fee_price_order_detail);
-        DeliveryPriceTextView.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(customerProvince.getShippingCharge()));
-        FinalPriceTextView = findViewById(R.id.final_price_order_detail);
-        FinalPriceTextView.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(clickedOrder.getTotalPrice()
-                        + customerProvince.getShippingCharge()));
 
         PickOrderStatusLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -131,25 +153,41 @@ public class OrderDetailActivity extends AppCompatActivity {
                 });
         ChangeOrderStatusTextView = findViewById(R.id.change_order_status_text);
         ChangeOrderStatusTextView.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CustomerOrderStatusPickActivity.class);
+            // CONDITION
+            Intent intent;
+            if (ADMIN_MODE){
+                intent = new Intent(getBaseContext(), AdminOrderStatusPickActivity.class);
+            }
+            else{
+                intent = new Intent(getBaseContext(), CustomerOrderStatusPickActivity.class);
+            }
             intent.putExtra("currentOrderStatus", clickedOrder.getStatus());
             PickOrderStatusLauncher.launch(intent);
         });
 
         ReturnView = findViewById(R.id.order_detail_return_view);
         ReturnView.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
-                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
-            Customer currentCustomer = GlobalRepository.getCurrentCustomer();
-            if (currentCustomer == null){
-                intent.putExtra("customerID", 0);
+            Intent intent;
+            if (ADMIN_MODE){
+                intent = new Intent(getBaseContext(), AdminOrderManagementActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             }
             else{
-                intent.putExtra("customerID", currentCustomer.getID());
+                intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Customer currentCustomer = GlobalRepository.getCurrentCustomer();
+                if (currentCustomer == null){
+                    intent.putExtra("customerID", 0);
+                }
+                else{
+                    intent.putExtra("customerID", currentCustomer.getID());
+                }
             }
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
             getBaseContext().startActivity(intent);
             finish();
+
         });
     }
 
