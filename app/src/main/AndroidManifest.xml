@@ -61,10 +61,10 @@
             android:name=".activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerManagementActivity"
+            android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.CustomerManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

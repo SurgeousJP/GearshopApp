@@ -126,9 +126,10 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     protected boolean checkProductContainsInformation(Product product, String info){
         if (info.isEmpty())
             return false;
-        String productPlainString = VietnameseStringConverter.convertToPlainString(product.getName().toLowerCase(Locale.ROOT));
-        if (VietnameseStringConverter.convertToPlainString(info).equals(info)){
-            return productPlainString.contains(info);
+        String productPlainString = VietnameseStringConverter.convertToPlainString(
+                product.getName().toLowerCase(Locale.ROOT));
+        if (VietnameseStringConverter.convertToPlainString(info).equals(info.toLowerCase(Locale.ROOT))){
+            return productPlainString.contains(info.toLowerCase(Locale.ROOT));
         }
         return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }

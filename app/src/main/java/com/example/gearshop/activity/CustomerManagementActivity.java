@@ -54,7 +54,6 @@ public class CustomerManagementActivity extends AppCompatActivity {
             List<Customer> searchResults = searchForCustomers(searchText);
             CustomerAdapter.UpdateDataToAdapter(searchResults);
         };
-        CustomerSearchText.setOnClickListener(searchOnClickListener);
         CustomerSearchIcon.setOnClickListener(searchOnClickListener);
 
         CustomerFilterText = findViewById(R.id.customer_management_label_filter);
@@ -94,10 +93,13 @@ public class CustomerManagementActivity extends AppCompatActivity {
                 convertToPlainString(customer.getFirstName().toLowerCase(Locale.ROOT));
         String customerLastNamePlainString = VietnameseStringConverter.
                 convertToPlainString(customer.getLastName().toLowerCase(Locale.ROOT));
+        if (VietnameseStringConverter.convertToPlainString(info).equals(info.toLowerCase(Locale.ROOT))){
+            System.out.println("1");
+            return customerFirstNamePlainString.contains(info.toLowerCase(Locale.ROOT))
+                    || customerLastNamePlainString.contains(info.toLowerCase(Locale.ROOT));
 
-        if (VietnameseStringConverter.convertToPlainString(info).equals(info)){
-            return customerFirstNamePlainString.contains(info) || customerLastNamePlainString.contains(info);
         }
+        System.out.println("2");
         return customer.getFirstName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT))
                 || customer.getLastName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }
