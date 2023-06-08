@@ -1,5 +1,7 @@
 package com.example.gearshop.activity;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -53,13 +55,6 @@ public class OrderActivity extends AppCompatActivity {
         OrderType = getDataIntent.getStringExtra("ORDER_TYPE");
         CustomerID = getDataIntent.getIntExtra("customerID", 0);
 
-        OrderListView = findViewById(R.id.list_view_order_management);
-        CustomerOrderList = DatabaseHelper.getOrderList(
-                " WHERE customer_id ='" + CustomerID +"'");
-        CustomerOrderAdapter = new OrderListAdapter(getBaseContext(),
-                R.layout.list_order_status, CustomerOrderList);
-        OrderListView.setAdapter(CustomerOrderAdapter);
-
         AllOrder = findViewById(R.id.content_all);
         AllOrder.setOnClickListener(view -> {
             ResetOrderType();
@@ -91,6 +86,42 @@ public class OrderActivity extends AppCompatActivity {
         });
         UnderlineAllCancelledOrder = findViewById(R.id.view5);
 
+        OrderListView = findViewById(R.id.list_view_order_management);
+        getNewOrderDataAndLoadOntoScreen();
+
+        IconReturnView = findViewById(R.id.wayback_icon_order_management);
+        IconReturnView.setOnClickListener(view -> {
+            finish();
+        });
+        FAQView = findViewById(R.id.thin);
+        FAQView.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), FAQActivity.class);
+        });
+        ReturnHomeLayout = findViewById(R.id.roundx_order_management);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
+        });
+
+        OrderListView.setOnItemLongClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(getBaseContext(), OrderDetailActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("clickedOrder",(Order) adapterView.getItemAtPosition(i));
+            startActivity(intent);
+            finish();
+            return true;
+        });
+    }
+
+    private void getNewOrderDataAndLoadOntoScreen() {
+        if (CustomerID == 0){
+            CustomerOrderList = DatabaseHelper.getOrderList("ALL");
+        }
+        else CustomerOrderList = DatabaseHelper.getOrderList(
+                " WHERE customer_id ='" + CustomerID +"'");
+        CustomerOrderAdapter = new OrderListAdapter(getBaseContext(),
+                R.layout.list_order_status, CustomerOrderList);
+        OrderListView.setAdapter(CustomerOrderAdapter);
+
         ResetOrderType();
         switch (OrderType){
             case "PROCESSING":
@@ -106,29 +137,6 @@ public class OrderActivity extends AppCompatActivity {
                 loadAllOrderOntoScreen();
                 break;
         }
-
-        IconReturnView = findViewById(R.id.wayback_icon_order_management);
-        IconReturnView.setOnClickListener(view -> {
-            finish();
-        });
-        FAQView = findViewById(R.id.thin);
-        FAQView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), FAQActivity.class);
-        });
-        ReturnHomeLayout = findViewById(R.id.roundx_order_management);
-        ReturnHomeLayout.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
-        });
-        OrderListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getBaseContext(), OrderDetailActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("clickedOrder",(Order) adapterView.getItemAtPosition(i));
-                getBaseContext().startActivity(intent);
-                return true;
-            }
-        });
     }
 
     private void loadAllOrderOntoScreen() {

@@ -205,6 +205,7 @@ id category_discount
 id category_item_category_detail
 id category_name
 id category_tag
+id change_order_status_text
 id change_shipping_info
 id check_out_button
 id check_out_text
@@ -253,6 +254,7 @@ id content_sta
 id control_box
 id cta_apply
 id cta_apply_0
+id cta_apply_new_order_status
 id cta_reset
 id cta_viewmor
 id cta_viewmore
@@ -539,6 +541,7 @@ id or_form
 id or_text
 id order_day
 id order_day_box
+id order_detail_return_view
 id order_detail_text
 id order_manage
 id order_manage_account

@@ -192,7 +192,7 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <TextView
-                android:id="@+id/cta_apply"
+                android:id="@+id/cta_apply_new_order_status"
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:gravity="center_horizontal|center_vertical"

@@ -24,6 +24,20 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 public class DatabaseHelper {
+    public static void updateOrderStatusToAzure(Order currentOrder){
+        InsertUpdateDataToAzure updateOrderDataToAzure = new InsertUpdateDataToAzure();
+        System.out.println("Async Task update Order status is running");
+        updateOrderDataToAzure.execute("UPDATE orders\n" +
+                "SET status = '" + currentOrder.getStatus() + "'\n" +
+                "WHERE id = '" + currentOrder.getID() +"';");
+        try{
+            updateOrderDataToAzure.get();
+        }
+        catch (ExecutionException | InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task update Order status ended");
+    }
     public static void updateAddressToAzure(Address oldAddress, Address newAddress){
         InsertUpdateDataToAzure updateAddressDataToAzure = new InsertUpdateDataToAzure();
         System.out.println("Async Task update Address is running");

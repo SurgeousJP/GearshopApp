@@ -1,5 +1,7 @@
 package com.example.gearshop.activity;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -8,17 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.adapter.OrderItemListAdapter;
-import com.example.gearshop.adapter.OrderListAdapter;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
@@ -43,8 +46,11 @@ public class OrderDetailActivity extends AppCompatActivity {
     private TextView TotalPriceTextView;
     private TextView DeliveryPriceTextView;
     private TextView FinalPriceTextView;
+    private TextView ChangeOrderStatusTextView;
+    private ActivityResultLauncher<Intent> PickOrderStatusLauncher;
     private List<OrderItem> orderItemList;
-    @SuppressLint("SetTextI18n")
+    private View ReturnView;
+    @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,48 +69,15 @@ public class OrderDetailActivity extends AppCompatActivity {
         OrderStatusTextView = findViewById(R.id.order_status);
         OrderStatusInDeliveryBoxTextView = findViewById(R.id.tracking_status_text);
 
-        String orderStatus = clickedOrder.getStatus();
-        switch (orderStatus){
-            case "PROCESSING":
-                OrderStatusTextView.setText("Đang xử lý");
-                OrderStatusInDeliveryBoxTextView.setText("Đang xử lý");
-                break;
-            case "DELIVERY":
-                OrderStatusTextView.setText("Đang giao hàng");
-                OrderStatusInDeliveryBoxTextView.setText("Đang giao hàng");
-                break;
-            case "DELIVERED":
-                OrderStatusTextView.setText("Đã giao");
-                OrderStatusInDeliveryBoxTextView.setText("Đã giao");
-                break;
-            case "CANCELLED":
-                OrderStatusTextView.setText("Đã hủy đơn");
-                OrderStatusInDeliveryBoxTextView.setText("Đã hủy đơn");
-                break;
-            default:
-                OrderStatusTextView.setText("N/A");
-                OrderStatusInDeliveryBoxTextView.setText("N/A");
-        }
-
+        loadOrderStatusOntoScreen(clickedOrder);
         OrderTransportMethodTextView = findViewById(R.id.order_transport_unit);
         OrderTransportMethodTextView.setText("Giao hàng thường");
 
-        OrderShippingDateTextView = findViewById(R.id.tracking_status_date);
-        Date updatedDate = getIncrementedDate(clickedOrder);
-        if (clickedOrder.getStatus().equals("DELIVERED")){
-            OrderShippingDateTextView.setText("Đã giao ngày: " +
-                    new SimpleDateFormat("dd/MM/yyyy").format(updatedDate));
-        } else if (clickedOrder.getStatus().equals("CANCELLED")) {
-            OrderShippingDateTextView.setText("Đã hủy đơn hàng");
-        }
-        else if (clickedOrder.getStatus().equals("DELIVERY")){
-            OrderShippingDateTextView.setText("Sẽ giao ngày: " +
-                    new SimpleDateFormat("dd/MM/yyyy").format(updatedDate));
-        }
-        else if (clickedOrder.getStatus().equals("PROCESSING")){
-            OrderShippingDateTextView.setText("Đang xử lý đơn hàng, vui lòng chờ cập nhật");
-        }
+        TypeOfDeliveryTextView = findViewById(R.id.type_of_transport_unit_text_order_detail);
+        TypeOfDeliveryTextView.setText("Giao hàng thường");
 
+        TimeLengthOfDeliveryTypeTextView = findViewById(R.id.time_of_transport_order_detail);
+        TimeLengthOfDeliveryTypeTextView.setText("7 ngày");
 
         OrderAddressTextView = findViewById(R.id.label_ship_order_detail);
         Address customerAddress = GlobalRepository.getCustomerAddress();
@@ -121,12 +94,6 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         CustomerPhoneNumber = findViewById(R.id.label_ship_description_order_detail);
         CustomerPhoneNumber.setText(GlobalRepository.getCurrentCustomer().getPhoneNumber());
-
-        TypeOfDeliveryTextView = findViewById(R.id.type_of_transport_unit_text_order_detail);
-        TypeOfDeliveryTextView.setText("Giao hàng thường");
-
-        TimeLengthOfDeliveryTypeTextView = findViewById(R.id.time_of_transport_order_detail);
-        TimeLengthOfDeliveryTypeTextView.setText("7 ngày");
 
         OrderDetailRecyclerView = findViewById(R.id.recycler_view_order_detail);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
@@ -150,6 +117,86 @@ public class OrderDetailActivity extends AppCompatActivity {
         FinalPriceTextView.setText(
                 MoneyHelper.getVietnameseMoneyStringFormatted(clickedOrder.getTotalPrice()
                         + customerProvince.getShippingCharge()));
+
+        PickOrderStatusLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK){
+                        Intent data = result.getData();
+                        if (data != null) {
+                            String pickedOrderStatus = data.getStringExtra("pickedOrderStatus");
+                            clickedOrder.setStatus(pickedOrderStatus);
+                            DatabaseHelper.updateOrderStatusToAzure(clickedOrder);
+                            loadOrderStatusOntoScreen(clickedOrder);
+                        }
+                    }
+                });
+        ChangeOrderStatusTextView = findViewById(R.id.change_order_status_text);
+        ChangeOrderStatusTextView.setOnClickListener(view -> {
+            Intent intent = new Intent(getBaseContext(), CustomerOrderStatusPickActivity.class);
+            intent.putExtra("currentOrderStatus", clickedOrder.getStatus());
+            PickOrderStatusLauncher.launch(intent);
+        });
+
+        ReturnView = findViewById(R.id.order_detail_return_view);
+        ReturnView.setOnClickListener(view -> {
+            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            Customer currentCustomer = GlobalRepository.getCurrentCustomer();
+            if (currentCustomer == null){
+                intent.putExtra("customerID", 0);
+            }
+            else{
+                intent.putExtra("customerID", currentCustomer.getID());
+            }
+            getBaseContext().startActivity(intent);
+            finish();
+        });
+    }
+
+    @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
+    private void loadOrderStatusOntoScreen(Order clickedOrder) {
+        String orderStatus = clickedOrder.getStatus();
+        switch (orderStatus){
+            case "PROCESSING":
+                OrderStatusTextView.setText("Đang xử lý");
+                OrderStatusInDeliveryBoxTextView.setText("Đang xử lý");
+                break;
+            case "DELIVERY":
+                OrderStatusTextView.setText("Đang giao hàng");
+                OrderStatusInDeliveryBoxTextView.setText("Đang giao hàng");
+                break;
+            case "DELIVERED":
+                OrderStatusTextView.setText("Đã giao");
+                OrderStatusInDeliveryBoxTextView.setText("Đã giao");
+                break;
+            case "CANCELLED":
+                OrderStatusTextView.setText("Đã hủy đơn");
+                OrderStatusInDeliveryBoxTextView.setText("Đã hủy đơn");
+                break;
+            default:
+                OrderStatusTextView.setText("N/A");
+                OrderStatusInDeliveryBoxTextView.setText("N/A");
+        }
+
+        OrderShippingDateTextView = findViewById(R.id.tracking_status_date);
+        Date updatedDate = getIncrementedDate(clickedOrder);
+        switch (clickedOrder.getStatus()) {
+            case "DELIVERED":
+                OrderShippingDateTextView.setText("Đã giao ngày: " +
+                        new SimpleDateFormat("dd/MM/yyyy").format(updatedDate));
+                break;
+            case "CANCELLED":
+                OrderShippingDateTextView.setText("Đã hủy đơn hàng");
+                break;
+            case "DELIVERY":
+                OrderShippingDateTextView.setText("Sẽ giao ngày: " +
+                        new SimpleDateFormat("dd/MM/yyyy").format(updatedDate));
+                break;
+            case "PROCESSING":
+                OrderShippingDateTextView.setText("Đang xử lý đơn hàng, vui lòng chờ cập nhật");
+                break;
+        }
     }
 
     @NonNull
