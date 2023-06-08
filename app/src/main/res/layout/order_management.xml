@@ -218,7 +218,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
-                    android:id="@+id/view4"
+                    android:id="@+id/order_admin_delivery_view"
                     android:layout_width="0dp"
                     android:layout_height="2dp"
                     android:background="@color/grey"

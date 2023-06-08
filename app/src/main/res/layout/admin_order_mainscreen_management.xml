@@ -49,7 +49,7 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_box_product_management"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <View
-                    android:id="@+id/search_icon"
+                    android:id="@+id/admin_order_management_search_icon"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginEnd="16dp"
@@ -82,7 +82,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/search_text"
+                    android:id="@+id/admin_order_management_search_text"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="16dp"
@@ -93,7 +93,7 @@
                     android:textAppearance="@style/placeholder"
                     android:textColor="#808089"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/search_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/admin_order_management_search_icon"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,7 +117,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <View
-                        android:id="@+id/filter_icon"
+                        android:id="@+id/admin_order_filter_icon"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_marginStart="8dp"
@@ -128,7 +128,7 @@
                         app:layout_constraintTop_toTopOf="@id/filter_box" />
 
                     <TextView
-                        android:id="@+id/label_filter"
+                        android:id="@+id/admin_order_label_filter"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_marginHorizontal="8dp"
@@ -140,7 +140,7 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@id/filter_box"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/filter_icon"
+                        app:layout_constraintStart_toEndOf="@id/admin_order_filter_icon"
                         app:layout_constraintTop_toTopOf="@id/filter_box" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -155,7 +155,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <View
-                        android:id="@+id/sort_icon"
+                        android:id="@+id/admin_order_sort_icon"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_marginStart="8dp"
@@ -166,7 +166,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/label_sort_"
+                        android:id="@+id/admin_order_label_sort"
                         android:layout_width="60dp"
                         android:layout_height="21dp"
                         android:layout_marginStart="8dp"
@@ -178,7 +178,7 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/sort_icon"
+                        app:layout_constraintStart_toEndOf="@+id/admin_order_sort_icon"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -208,7 +208,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/content_all"
+                            android:id="@+id/admin_order_content_all"
                             android:layout_width="wrap_content"
                             android:layout_height="21dp"
                             android:layout_marginHorizontal="16dp"
@@ -224,7 +224,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/view1"
+                            android:id="@+id/admin_order_view_all"
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:background="@color/blue"
@@ -242,7 +242,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/admin_delivered"
+                            android:id="@+id/order_admin_delivered"
                             android:layout_width="wrap_content"
                             android:layout_height="21dp"
                             android:layout_marginHorizontal="16dp"
@@ -258,7 +258,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/view2"
+                            android:id="@+id/order_admin_delivered_view"
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:background="@color/grey"
@@ -276,7 +276,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/admin_processing"
+                            android:id="@+id/order_admin_processing"
                             android:layout_width="wrap_content"
                             android:layout_height="21dp"
                             android:layout_marginHorizontal="16dp"
@@ -292,7 +292,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/view3"
+                            android:id="@+id/order_admin_processing_view"
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:background="@color/grey"
@@ -311,7 +311,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/admin_delivery"
+                            android:id="@+id/order_admin_delivery"
                             android:layout_width="wrap_content"
                             android:layout_height="21dp"
                             android:layout_marginHorizontal="16dp"
@@ -327,7 +327,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/view4"
+                            android:id="@+id/order_admin_delivery_view"
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:background="@color/grey"
@@ -345,7 +345,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/admin_cancel"
+                            android:id="@+id/order_admin_cancel"
                             android:layout_width="wrap_content"
                             android:layout_height="21dp"
                             android:layout_marginHorizontal="16dp"
@@ -361,7 +361,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/view5"
+                            android:id="@+id/order_admin_cancel_view"
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:background="@color/grey"
@@ -371,17 +371,17 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
-
-            <ListView
-                android:id="@+id/listview_customer_management"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/filter_sort_order_management" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ListView
+        android:id="@+id/listview_customer_management"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_box_product_management"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_bar"
@@ -513,7 +513,7 @@
             app:layout_constraintTop_toTopOf="@id/bottom_bar">
 
             <View
-                android:id="@+id/accout_manage_order"
+                android:id="@+id/account_manage_order"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="2dp"
@@ -536,7 +536,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/accout_manage_order" />
+                app:layout_constraintTop_toBottomOf="@id/account_manage_order" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

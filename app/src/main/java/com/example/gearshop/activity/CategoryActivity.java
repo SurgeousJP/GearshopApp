@@ -75,6 +75,7 @@ public class CategoryActivity extends AppCompatActivity {
         SearchItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
+
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);

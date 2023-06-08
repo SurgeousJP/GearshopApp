@@ -21,7 +21,6 @@ import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
-import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
@@ -139,7 +138,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         ReturnView = findViewById(R.id.order_detail_return_view);
         ReturnView.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "ALL_ORDER");
             Customer currentCustomer = GlobalRepository.getCurrentCustomer();

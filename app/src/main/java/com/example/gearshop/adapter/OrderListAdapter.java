@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -15,13 +14,10 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.OrderActivity;
 import com.example.gearshop.model.Order;
-import com.example.gearshop.model.Province;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class OrderListAdapter extends BaseAdapter {

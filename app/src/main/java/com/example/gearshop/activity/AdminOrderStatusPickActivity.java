@@ -28,6 +28,7 @@ public class AdminOrderStatusPickActivity extends AppCompatActivity {
     private ConstraintLayout OrderCancelledLayout;
     private TextView OrderCancelledTextView;
     private ConstraintLayout TickedOrderCancelledLayout;
+
     private TextView ApplyChangeOrderStatusTextView;
     private View CancelChangeOrderStatusView;
     private String CurrentOrderStatus;
@@ -112,6 +113,7 @@ public class AdminOrderStatusPickActivity extends AppCompatActivity {
             setResult(RESULT_OK, pickOrderStatusIntent);
             finish();
         });
+
         CancelChangeOrderStatusView = findViewById(R.id.cancel_list_status);
         CancelChangeOrderStatusView.setOnClickListener(view -> {
             finish();

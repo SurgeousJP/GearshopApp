@@ -11,11 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.activity.CustomerDetailActivity;
-import com.example.gearshop.activity.OrderActivity;
 import com.example.gearshop.model.Customer;
 
 

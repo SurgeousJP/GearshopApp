@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
 
 import java.text.SimpleDateFormat;
@@ -78,7 +77,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
             CustomerPhoneNumberInfoTextView.setText(CurrentCustomer.getPhoneNumber());
 
             CustomerOrderManagement.setOnClickListener(view -> {
-                Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+                Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("ORDER_TYPE", "ALL_ORDER");
                 intent.putExtra("customerID", CurrentCustomer.getID());

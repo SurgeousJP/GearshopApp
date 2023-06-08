@@ -16,6 +16,9 @@
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
         <activity
+            android:name=".activity.AdminOrderManagementActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CustomerOrderStatusPickActivity"
             android:exported="false" />
         <activity
@@ -28,7 +31,7 @@
             android:name=".activity.OrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.OrderActivity"
+            android:name=".activity.CustomerOrderActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ProvincePickActivity"

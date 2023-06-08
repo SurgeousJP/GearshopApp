@@ -49,7 +49,6 @@ public class AccountActivity extends AppCompatActivity {
         customerRepository = new CustomerRepository();
         Customer userInfo = customerRepository.getCustomerById(userId);
 
-
         TextView tvUserName = (TextView) findViewById(R.id.title_username);
         String userName = userInfo.getFirstName() + userInfo.getLastName();
         tvUserName.setText(userName);
@@ -59,7 +58,6 @@ public class AccountActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), EditUserInfoActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
-
 
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
@@ -79,10 +77,12 @@ public class AccountActivity extends AppCompatActivity {
         HomeItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
+
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
+
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
@@ -91,7 +91,7 @@ public class AccountActivity extends AppCompatActivity {
         int customerID = GlobalRepository.getCurrentCustomer().getID();
 
         View.OnClickListener viewAllOrderListener = view -> {
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "ALL_ORDER");
             intent.putExtra("customerID", customerID);
@@ -99,7 +99,7 @@ public class AccountActivity extends AppCompatActivity {
         };
 
         View.OnClickListener viewAllProcessingOrderListener = view -> {
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "PROCESSING");
             intent.putExtra("customerID", customerID);
@@ -107,7 +107,7 @@ public class AccountActivity extends AppCompatActivity {
         };
 
         View.OnClickListener viewAllDeliveryOrderListener = view -> {
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "DELIVERY");
             intent.putExtra("customerID", customerID);
@@ -115,7 +115,7 @@ public class AccountActivity extends AppCompatActivity {
         };
 
         View.OnClickListener viewAllDeliveredOrderListener = view -> {
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("ORDER_TYPE", "DELIVERED");
             intent.putExtra("customerID", customerID);

@@ -153,7 +153,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
                                 CartItemList.get(i).getQuantity(), 5, "");
                 DatabaseHelper.insertOrderItemToAzure(newOrderItem);
             }
-            Intent intent = new Intent(getBaseContext(), OrderActivity.class)
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             int customerID = GlobalRepository.getCurrentCustomer().getID();
