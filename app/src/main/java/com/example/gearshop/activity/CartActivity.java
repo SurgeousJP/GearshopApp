@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
@@ -129,6 +130,13 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         });
 
         View.OnClickListener checkoutListener = view -> {
+            if (OrderItemList.size() <= 0){
+                Toast.makeText(getBaseContext(),
+                        "Không có hàng trong giỏ, không thể đặt hàng.",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             Order newOrder = new Order();
             OrderList = DatabaseHelper.getOrderList("ALL");
             newOrder.setID(OrderList.size() + 1);
@@ -153,6 +161,9 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
                                 CartItemList.get(i).getQuantity(), 5, "");
                 DatabaseHelper.insertOrderItemToAzure(newOrderItem);
             }
+
+            Toast.makeText(getBaseContext(), "Đặt hàng thành công !", Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
