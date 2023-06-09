@@ -16,7 +16,7 @@ import com.example.gearshop.R;
 import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
-import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
+import com.example.gearshop.fragment.ProductSortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
@@ -103,8 +103,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =
                 new FilterBottomSheetDialogFragment[1];
-        final SortBottomSheetDialogFragment[] sortBottomSheetDialogFragment =
-                new SortBottomSheetDialogFragment[1];
+        final ProductSortBottomSheetDialogFragment[] productSortBottomSheetDialogFragment =
+                new ProductSortBottomSheetDialogFragment[1];
         View.OnClickListener filterOnClickListener = view -> {
             filterBottomSheetDialogFragment[0] =
                     new FilterBottomSheetDialogFragment(categoryListProductFragment, ProductList);
@@ -114,10 +114,10 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         };
 
         View.OnClickListener sortOnClickListener = view -> {
-            sortBottomSheetDialogFragment[0] =
-                    new SortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            sortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
-                    sortBottomSheetDialogFragment[0].getTag());
+            productSortBottomSheetDialogFragment[0] =
+                    new ProductSortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
+            productSortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
+                    productSortBottomSheetDialogFragment[0].getTag());
         };
 
         FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();

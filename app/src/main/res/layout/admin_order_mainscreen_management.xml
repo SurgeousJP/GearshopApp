@@ -107,6 +107,7 @@
                 app:layout_constraintTop_toBottomOf="@id/search_input">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:visibility="invisible"
                     android:id="@+id/filter_box"
                     android:layout_width="0dp"
                     android:layout_height="32dp"

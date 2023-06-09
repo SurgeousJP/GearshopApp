@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CustomerListAdapter;
+import com.example.gearshop.fragment.CustomerSortBottomSheetDialogFragment;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
@@ -58,9 +59,15 @@ public class AdminCustomerManagementActivity extends AppCompatActivity {
         CustomerFilterText = findViewById(R.id.customer_management_label_filter);
         CustomerFilterIcon = findViewById(R.id.customer_management_filter_icon);
 
+        View.OnClickListener sortCustomerListener = view -> {
+            CustomerSortBottomSheetDialogFragment dialogFragment = new CustomerSortBottomSheetDialogFragment(
+                    CustomerAdapter, CustomerList);
+            dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
+        };
         CustomerSortIcon = findViewById(R.id.customer_management_sort_icon);
+        CustomerSortIcon.setOnClickListener(sortCustomerListener);
         CustomerSortText = findViewById(R.id.customer_management_sort_text);
-
+        CustomerSortText.setOnClickListener(sortCustomerListener);
         TransitionToProductManagementView = findViewById(R.id.product_manage_customer);
         TransitionToProductManagementView.setOnClickListener(view -> {
 
