@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
@@ -191,8 +192,14 @@ public class ProductDetailActivity extends AppCompatActivity {
         ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
                 1, product.getID(), 1, new Date());
 
-        if (!currentShoppingCartList.contains(newItem))
+        if (!currentShoppingCartList.contains(newItem)){
+            Toast.makeText(this, "Thêm sản phẩm vào giỏ hàng thành công!", Toast.LENGTH_SHORT).show();
             currentShoppingCartList.add(newItem);
+        }
+        else{
+            Toast.makeText(this, "Đã tồn tại sản phẩm trong giỏ!", Toast.LENGTH_SHORT).show();
+        }
+
         if (!currentProductList.contains(product))
             currentProductList.add(product);
     }
