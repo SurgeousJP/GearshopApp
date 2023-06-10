@@ -212,18 +212,18 @@ ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:67:13-54
-activity#com.example.gearshop.activity.SignInActivity
+activity#com.example.gearshop.activity.AdminCustomerManagementActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:69:9-71:40
 	android:exported
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:71:13-37
 	android:name
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:70:13-52
-activity#com.example.gearshop.activity.AdminCustomerManagementActivity
+		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:70:13-69
+activity#com.example.gearshop.activity.SignInActivity
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:72:9-80:20
 	android:exported
 		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:74:13-36
 	android:name
-		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:73:13-69
+		ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:73:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:75:13-79:29
 action#android.intent.action.MAIN

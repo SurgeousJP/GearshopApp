@@ -154,14 +154,14 @@
 83-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:68:13-37
 84        <activity
 84-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:69:9-71:40
-85            android:name="com.example.gearshop.activity.SignInActivity"
-85-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:70:13-52
+85            android:name="com.example.gearshop.activity.AdminCustomerManagementActivity"
+85-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:70:13-69
 86            android:exported="false" />
 86-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:71:13-37
 87        <activity
 87-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:72:9-80:20
-88            android:name="com.example.gearshop.activity.AdminCustomerManagementActivity"
-88-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:73:13-69
+88            android:name="com.example.gearshop.activity.SignInActivity"
+88-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:73:13-52
 89            android:exported="true" >
 89-->D:\Downloads\Documents\UIT Courses\2ndYear 2ndSemester\SE114 - Mobile Application\Github\GearshopApp\app\src\main\AndroidManifest.xml:74:13-36
 90            <intent-filter>
