@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.model.Province;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,7 +31,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
     private TextView CustomerPhoneNumberInfoTextView;
     private TextView CustomerOrderManagement;
     private Customer CurrentCustomer;
-
+    private TextView CustomerTitle;
     @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
         CustomerAddressInfoTextView = findViewById(R.id.admin_address_user_info);
         CustomerPhoneNumberInfoTextView = findViewById(R.id.admin_phonenumber_user_info);
         CustomerOrderManagement = findViewById(R.id.order_management_text);
+        CustomerTitle = findViewById(R.id.admin_title_username_user_info);
         ReturnView.setOnClickListener(view -> {
             finish();
         });
@@ -60,6 +65,8 @@ public class CustomerDetailActivity extends AppCompatActivity {
 
             CustomerFirstNameInfoTextView.setText(CurrentCustomer.getFirstName());
 
+            CustomerTitle.setText(CurrentCustomer.getLastName() + " " + CurrentCustomer.getFirstName());
+
             String customerGender = CurrentCustomer.getGender();
             if (customerGender.equals("male")) {
                 CustomerGenderInfoTextView.setText("Nam");
@@ -71,6 +78,29 @@ public class CustomerDetailActivity extends AppCompatActivity {
 
             Date customerDOB = CurrentCustomer.getDateOfBirth();
             CustomerDOBInfoTextView.setText(new SimpleDateFormat("dd/MM/yyyy").format(customerDOB));
+
+            Address customerAddress;
+            Province customerProvince;
+            try {
+                customerAddress = DatabaseHelper.getAddressList(" WHERE id ='"
+                        + CurrentCustomer.getAddressID() + "'").get(0);
+                String customerHouseNumber = customerAddress.getHouseNumber();
+                String customerStreet = customerAddress.getStreet();
+                customerProvince = DatabaseHelper.getProvinceList(
+                        " WHERE id = '" + customerAddress.getProvinceID() + "'").get(0);
+                String address;
+                if (customerStreet.equals("")) {
+                    address = customerHouseNumber + "\n" + customerProvince.getName();
+                } else
+                    address = customerHouseNumber + "\n" + customerStreet + "\n" + customerProvince.getName();
+                CustomerAddressInfoTextView.setText(address);
+            }
+            catch (NullPointerException | IndexOutOfBoundsException e){
+                Toast.makeText(
+                        getBaseContext(),
+                        "Lỗi không lấy được thông tin địa chỉ và số điện thoại",
+                        Toast.LENGTH_SHORT).show();
+            }
 
             CustomerEmailInfoTextView.setText(CurrentCustomer.getEmail());
 
