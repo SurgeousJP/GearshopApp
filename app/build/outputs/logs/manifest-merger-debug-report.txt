@@ -212,18 +212,18 @@ ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\ma
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:67:13-54
-activity#com.example.gearshop.activity.AdminCustomerManagementActivity
+activity#com.example.gearshop.activity.SignInActivity
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:69:9-71:40
 	android:exported
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:71:13-37
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:70:13-69
-activity#com.example.gearshop.activity.SignInActivity
+		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:70:13-52
+activity#com.example.gearshop.activity.AdminCustomerManagementActivity
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:72:9-80:20
 	android:exported
 		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:74:13-36
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:73:13-52
+		ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:73:13-69
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\AndroidManifest.xml:75:13-79:29
 action#android.intent.action.MAIN
