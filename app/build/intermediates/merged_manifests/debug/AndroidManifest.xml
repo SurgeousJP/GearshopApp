@@ -31,6 +31,27 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
+            android:name="com.example.gearshop.activity.AdminOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.AdminOrderManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.CustomerOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.CustomerOrderActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.ProvincePickActivity"
             android:exported="false" />
         <activity
@@ -51,8 +72,6 @@
         <activity
             android:name="com.example.gearshop.activity.HomeActivity"
             android:exported="false" />
-        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
-        <!-- android:exported="false"/> -->
         <activity
             android:name="com.example.gearshop.activity.AccountActivity"
             android:exported="false" />
@@ -64,6 +83,9 @@
             android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.AdminCustomerManagementActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

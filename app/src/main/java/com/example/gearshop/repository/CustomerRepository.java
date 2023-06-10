@@ -3,9 +3,10 @@ package com.example.gearshop.repository;
 import android.annotation.SuppressLint;
 
 import com.example.gearshop.database.GetCustomerDataFromAzure;
-import com.example.gearshop.database.SQLCommandExecutor;
+import com.example.gearshop.database.InsertUpdateDataToAzure;
+import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
-import com.example.gearshop.model.CustomerForEdit;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,6 @@ import java.util.concurrent.ExecutionException;
 public class CustomerRepository {
     private final String SQL_GET_CUSTOMER_BASE = "SELECT *\n" +
             "FROM customer\n";
-    private final String SQL_UPDATE_CUSTOMER_BASE = "UPDATE customer\n";
-
-
     private final List<Customer> CustomerList = new ArrayList<>();
     private final GetCustomerDataFromAzure[] getCustomerDataFromAzure;
 
@@ -68,6 +66,9 @@ public class CustomerRepository {
         for (Customer customer : CustomerList) {
             if (customer.getUsername().equals(username) && customer.getPassword().equals(password)) {
                 GlobalRepository.setCurrentCustomer(customer);
+                List<Address> currentAddressList = DatabaseHelper.getAddressList(" WHERE id ='"+ customer.getAddressID() + "'");
+                if (currentAddressList.size() > 0)
+                    GlobalRepository.setCustomerAddress(currentAddressList.get(0));
                 return customer;
             }
         }
@@ -79,11 +80,11 @@ public class CustomerRepository {
         CustomerList.add(customer);
         String dob = customer.getDateOfBirth().toString();
 
-        SQLCommandExecutor[] sqlCommandExecutor = new SQLCommandExecutor[1];
-        sqlCommandExecutor[0] = new SQLCommandExecutor();
+        InsertUpdateDataToAzure[] insertCustomerDataToAzure = new InsertUpdateDataToAzure[1];
+        insertCustomerDataToAzure[0] = new InsertUpdateDataToAzure();
         System.out.println("Async Task insert Customers is running");
 
-        sqlCommandExecutor[0].execute(
+        insertCustomerDataToAzure[0].execute(
                         "INSERT INTO customer (id, username, password, email, first_name, last_name, gender, phone_number, date_of_birth)\n" +
                         "VALUES(" + customer.getID()   + ", " +
                         "'" + customer.getUsername()    + "', " +
@@ -98,7 +99,7 @@ public class CustomerRepository {
 
 
         try {
-            sqlCommandExecutor[0].get();
+            insertCustomerDataToAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -113,28 +114,6 @@ public class CustomerRepository {
                 break;
             }
         }
-    }
-
-    public boolean updateData(CustomerForEdit newCustomerData){
-        String sql = SQL_UPDATE_CUSTOMER_BASE +
-                "SET email = \n" + newCustomerData.getEmail() +
-                ", first_name = \n" + newCustomerData.getFirstName() +
-                ", last_name = \n" + newCustomerData.getLastName() +
-                ", gender = \n" + newCustomerData.getGender() +
-                ", phone_number = \n" + newCustomerData.getPhoneNumber() +
-                "WHERE id = " + newCustomerData.getID();
-
-        SQLCommandExecutor[] sqlCommandExecutor = new SQLCommandExecutor[1];
-        sqlCommandExecutor[0] = new SQLCommandExecutor();
-
-        try {
-            sqlCommandExecutor[0].execute(sql);
-            sqlCommandExecutor[0].get();
-        } catch (ExecutionException | InterruptedException e) {
-            return false;
-        }
-
-        return true;
     }
 
     public boolean isExists(String email, String username) {

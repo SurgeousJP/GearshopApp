@@ -11,10 +11,14 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
@@ -43,8 +47,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     private RecyclerView ProductSpecsGridView;
     private TextView ProductDetailTextView;
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
 
     private ConstraintLayout ShippingInfoLayout;
     private View EditShippingInfoView;
@@ -52,9 +56,10 @@ public class ProductDetailActivity extends AppCompatActivity {
     private TextView AddToCart;
     private TextView BuyProductNow;
     protected Map<String, String> ConvertProductSpecsToMap(String productSpec){
-        String[] parts = productSpec.split("\\|\\n");
+        String[] parts = productSpec.split("[|\\r\\n]");
         Map<String, String> result = new HashMap<>();
         for (String part : parts) {
+            if (part.equals("")) continue;
             String[] headerAndDetail = part.split(" {4}");
             try {
                 result.put(headerAndDetail[0], headerAndDetail[1]);
@@ -66,7 +71,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
     protected String ConvertToHTMLBulletText(String s){
         if (s == null) return "";
-        String[] bulletParts = s.split("\\|\\n");
+        String[] bulletParts = s.split("[|\\r\\n]");
         String result = "<ul>\n";
         for (int i = 0; i < bulletParts.length; i++){
             bulletParts[i] = "<li>" + bulletParts[i] + "<\\li>\n";
@@ -135,14 +140,12 @@ public class ProductDetailActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
-        MoreInformationLayout = findViewById(R.id.dots_icon_product);
-        MoreInformationLayout.setOnClickListener(view -> {
+        OptionsLayout = findViewById(R.id.dots_icon_product);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        });
-
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         AddToCart = findViewById(R.id.add_to_cart_text);
@@ -189,9 +192,47 @@ public class ProductDetailActivity extends AppCompatActivity {
         ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
                 1, product.getID(), 1, new Date());
 
-        if (!currentShoppingCartList.contains(newItem))
+        if (!checkNewProductExistsInCart(currentProductList, newItem)){
+            Toast.makeText(this, "Thêm sản phẩm vào giỏ hàng thành công!", Toast.LENGTH_SHORT).show();
             currentShoppingCartList.add(newItem);
+        }
+        else{
+            Toast.makeText(this, "Đã tồn tại sản phẩm trong giỏ!", Toast.LENGTH_SHORT).show();
+        }
+
         if (!currentProductList.contains(product))
             currentProductList.add(product);
+    }
+
+    private boolean checkNewProductExistsInCart(List<Product> currentProductList, ShoppingCartItem item){
+        for (int i = 0; i < currentProductList.size(); i++){
+            if (currentProductList.get(i).getID() == item.getProductID()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(ProductDetailActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(ProductDetailActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }

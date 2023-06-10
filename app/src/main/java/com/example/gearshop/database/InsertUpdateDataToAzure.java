@@ -6,7 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+<<<<<<<< HEAD:app/src/main/java/com/example/gearshop/database/SQLCommandExecutor.java
 public class SQLCommandExecutor extends AzureSQLDatabase {
+========
+public class InsertUpdateDataToAzure extends AzureSQLDatabase {
+>>>>>>>> OrderBranch:app/src/main/java/com/example/gearshop/database/InsertUpdateDataToAzure.java
 
     @Override
     protected ResultSet doInBackground(String... SqlCommand) {

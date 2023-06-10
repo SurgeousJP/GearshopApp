@@ -5,21 +5,23 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
-import com.example.gearshop.fragment.SortBottomSheetDialogFragment;
+import com.example.gearshop.fragment.ProductSortBottomSheetDialogFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.DatabaseHelper;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class ProductsInCategoryActivity extends AppCompatActivity {
     private List<Product> ProductList;
@@ -28,8 +30,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
     private ListProductFragment categoryListProductFragment;
 
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
@@ -53,7 +55,7 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         String categoryName = comingIntent.getStringExtra("categoryName");
         CategoryLabel = findViewById(R.id.category_detail_label);
         CategoryLabel.setText(categoryName);
-        initializeProductsInCategory();
+        ProductList = DatabaseHelper.getProductListFromCategory(ProductCategoryID, "ALL");
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         categoryListProductFragment =
@@ -74,14 +76,12 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             getBaseContext().startActivity(intent);
         });
 
-        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(view -> {
+        OptionsLayout = findViewById(R.id.more_info_order_detail);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        });
-
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         HomeItem = findViewById(R.id.home_item_category_detail);
@@ -103,8 +103,8 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
 
         final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =
                 new FilterBottomSheetDialogFragment[1];
-        final SortBottomSheetDialogFragment[] sortBottomSheetDialogFragment =
-                new SortBottomSheetDialogFragment[1];
+        final ProductSortBottomSheetDialogFragment[] productSortBottomSheetDialogFragment =
+                new ProductSortBottomSheetDialogFragment[1];
         View.OnClickListener filterOnClickListener = view -> {
             filterBottomSheetDialogFragment[0] =
                     new FilterBottomSheetDialogFragment(categoryListProductFragment, ProductList);
@@ -114,10 +114,10 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         };
 
         View.OnClickListener sortOnClickListener = view -> {
-            sortBottomSheetDialogFragment[0] =
-                    new SortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            sortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
-                    sortBottomSheetDialogFragment[0].getTag());
+            productSortBottomSheetDialogFragment[0] =
+                    new ProductSortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
+            productSortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
+                    productSortBottomSheetDialogFragment[0].getTag());
         };
 
         FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();
@@ -129,30 +129,28 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
         SortTextView = categoryProductFilterSortBarFragment.getSortTextView();
         SortTextView.setOnClickListener(sortOnClickListener);
     }
-    private void initializeProductsInCategory() {
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].setCategoryID(ProductCategoryID);
-        getProductDataFromAzure[0].execute(
-                "SELECT product.*,\n" +
-                        "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
-                        "\t   discount_percentage, start_date_utc, end_date_utc\n" +
-                        "FROM product\n" +
-                        "JOIN product_category ON product.category_id = product_category.id\n" +
-                        "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
-                        "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
-                        "WHERE product.category_id = ?"
-        );
 
-        System.out.println("Async Task running");
-        try {
-            getProductDataFromAzure[0].get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Async Task ended");
-
-        if (getProductDataFromAzure[0].getProductList() != null)
-            ProductList = getProductDataFromAzure[0].getProductList();
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(ProductsInCategoryActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(ProductsInCategoryActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
+
 }

@@ -16,6 +16,27 @@
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
         <activity
+            android:name=".activity.AdminOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AdminOrderManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CustomerOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CustomerOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ProvincePickActivity"
             android:exported="false" />
         <activity
@@ -36,19 +57,20 @@
         <activity
             android:name=".activity.HomeActivity"
             android:exported="false" />
-        <!-- <activity android:name=".activity.CategoryDetailActivity" -->
-        <!-- android:exported="false"/> -->
         <activity
             android:name=".activity.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".activity.EditUserInfoActivity"
             android:exported="false" />
-        <activity android:name=".activity.CategoryActivity"
-            android:exported="false"/>
-
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AdminCustomerManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

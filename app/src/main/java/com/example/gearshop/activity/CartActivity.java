@@ -7,42 +7,53 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
-import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
 import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
 import com.example.gearshop.model.Address;
-import com.example.gearshop.model.Province;
+import com.example.gearshop.model.Order;
+import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.model.ShoppingCartItem;
+import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 
+import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
     private List<ShoppingCartItem> CartItemList;
     private List<Product> ProductList;
     private ConstraintLayout ReturnView;
     private RecyclerView CartRecyclerView;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private TextView TotalProductPrice;
     private TextView FinalPrice;
     private TextView TransportFee;
     private CartListAdapter CartAdapter;
+    private TextView CheckoutTextView;
+    private ConstraintLayout CheckoutLayout;
     private int CartItemPosition;
 
     private View ChangeShippingInfoView;
     private ConstraintLayout ShippingInfoLayout;
+    private List<Order> OrderList;
+    private List<OrderItem> OrderItemList;
     public int getCartItemPosition() {
         return CartItemPosition;
     }
@@ -51,20 +62,23 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartItemPosition = cartItemPosition;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
 
+        CheckoutTextView = findViewById(R.id.check_out_text);
+        CheckoutLayout = findViewById(R.id.check_out_button);
         ShippingInfoLayout = findViewById(R.id.transport_info_box);
 
         Address globalAddress = GlobalRepository.getCustomerAddress();
         updateShippingInfo(globalAddress.getHouseNumber(), globalAddress.getStreet(),
                 GlobalRepository.getCurrentCustomer().getPhoneNumber());
         TransportFee = findViewById(R.id.transport_fee_price_order_detail);
+        double shippingCharge = GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID());
         TransportFee.setText(
-                MoneyHelper.getVietnameseMoneyStringFormatted(
-                        GetProvinceDataFromAzure.getShippingCharge(globalAddress.getProvinceID())));
+                MoneyHelper.getVietnameseMoneyStringFormatted(shippingCharge));
 
         CartItemList = ((GlobalRepository) getApplication()).getCartItemList();
         ProductList = ((GlobalRepository) getApplication()).getProductList();
@@ -74,22 +88,24 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         CartRecyclerView.setLayoutManager(gridLayoutManager);
         CartRecyclerView.setAdapter(CartAdapter);
         CartAdapter.setData(ProductList);
-        CartAdapter.setOnDeleteItemClickListener(new CartListAdapter.OnDeleteItemClickListener() {
-            @Override
-            public void onDeleteItemClick(int position) {
-                setCartItemPosition(position);
-                showConfirmDeleteDialog();
-            }
+        CartAdapter.setOnDeleteItemClickListener(position -> {
+            setCartItemPosition(position);
+            showConfirmDeleteDialog();
         });
         CartRecyclerView.setAdapter(CartAdapter);
 
         TotalProductPrice = findViewById(R.id.total_price_order_detail);
         TotalProductPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
         FinalPrice = findViewById(R.id.final_price_order_detail);
-        FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalProductPrice(ProductList)));
+        FinalPrice.setText(MoneyHelper.getVietnameseMoneyStringFormatted(
+                getTotalProductPrice(ProductList) + shippingCharge));
+        CheckoutTextView.setText
+                ("Thanh toán: " + MoneyHelper.getVietnameseMoneyStringFormatted(
+                        getTotalProductPrice(ProductList) + shippingCharge));
 
         CartAdapter.setTotalProductPrice(TotalProductPrice);
         CartAdapter.setFinalPrice(FinalPrice);
+        CartAdapter.setCheckoutPrice(CheckoutTextView);
 
         ReturnView = findViewById(R.id.wayback_icon_order_detail);
         ReturnView.setOnClickListener(view -> {
@@ -97,22 +113,68 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             finish();
         });
 
-        MoreInformationLayout = findViewById(R.id.dots_cart);
-        MoreInformationLayout.setOnClickListener(view -> {
-
-        });
-        EscapeLayout = findViewById(R.id.escape_cart);
-        EscapeLayout.setOnClickListener(view -> {
-
+        OptionsLayout = findViewById(R.id.dots_cart);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
+        ReturnHomeLayout = findViewById(R.id.escape_cart);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
         ChangeShippingInfoView.setOnClickListener(view -> {
             ShippingInfoBottomSheetDialogFragment dialogFragment =
                     new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout, TransportFee);
+            dialogFragment.setFinalPriceTextView(FinalPrice);
+            dialogFragment.setCheckoutPriceTextView(CheckoutTextView);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
 
+        View.OnClickListener checkoutListener = view -> {
+            if (CartItemList == null || CartItemList.size() <= 0){
+                Toast.makeText(getBaseContext(),
+                        "Không có hàng trong giỏ, không thể đặt hàng.",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Order newOrder = new Order();
+            OrderList = DatabaseHelper.getOrderList("ALL");
+            newOrder.setID(OrderList.size() + 1);
+            newOrder.setShipmentMethodID(1);
+            newOrder.setPaymentMethodID(2);
+            newOrder.setShippingAddressID(GlobalRepository.getCustomerAddress().getID());
+            newOrder.setCustomerID(GlobalRepository.getCurrentCustomer().getID());
+            newOrder.setTotalPrice(MoneyHelper.getVietnameseMoneyDouble(TotalProductPrice.getText().toString()));
+            newOrder.setCreatedOnUtc(new Date());
+            newOrder.setPaid(false);
+            newOrder.setStatus("PROCESSING");
+
+            DatabaseHelper.insertOrderToAzure(newOrder);
+
+            OrderItemList = DatabaseHelper.getOrderItemList("ALL");
+            for (int i = 0; i < CartItemList.size(); i++){
+                OrderItem newOrderItem =
+                        new OrderItem(
+                                OrderItemList.size() + i + 1,
+                                newOrder.getID(),
+                                CartItemList.get(i).getProductID(),
+                                CartItemList.get(i).getQuantity(), 5, "");
+                DatabaseHelper.insertOrderItemToAzure(newOrderItem);
+            }
+
+            Toast.makeText(getBaseContext(), "Đặt hàng thành công !", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            int customerID = GlobalRepository.getCurrentCustomer().getID();
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            intent.putExtra("customerID", customerID);
+            getBaseContext().startActivity(intent);
+            finish();
+        };
+        CheckoutTextView.setOnClickListener(checkoutListener);
+        CheckoutTextView.setOnClickListener(checkoutListener);
     }
 
 
@@ -147,7 +209,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             }
             resultPrice += price;
         }
-        return resultPrice + MoneyHelper.getVietnameseMoneyDouble(TransportFee.getText().toString());
+        return resultPrice;
     }
     private void showConfirmDeleteDialog() {
         ConfirmDeleteCartItemDialogFragment dialogFragment = new ConfirmDeleteCartItemDialogFragment();
@@ -161,5 +223,28 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         if (result){
             deleteCartItem(itemPosition, CartAdapter);
         }
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(CartActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(CartActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }

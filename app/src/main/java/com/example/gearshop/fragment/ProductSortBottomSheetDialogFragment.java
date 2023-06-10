@@ -14,13 +14,9 @@ import com.example.gearshop.R;
 import com.example.gearshop.model.Product;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import org.w3c.dom.Text;
-
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment
+public class ProductSortBottomSheetDialogFragment extends BottomSheetDialogFragment
         implements ConfirmSortDialogFragment.DialogListener {
     private List<Product> ProductList;
     private List<Product> SortProductResult;
@@ -45,8 +41,8 @@ public class SortBottomSheetDialogFragment extends BottomSheetDialogFragment
     private ConstraintLayout tempLayout;
     private TextView tempTextView;
     private ConstraintLayout tempTickedLayout;
-    public SortBottomSheetDialogFragment(){}
-    public SortBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
+    public ProductSortBottomSheetDialogFragment(){}
+    public ProductSortBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
         this.ProductList = products;
         this.CategoryListProductFragment = categoryListProductFragment;
     }

@@ -24,6 +24,7 @@ import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
+import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -41,7 +42,18 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     private TextView ApplyChangeShippingInfo;
     private TextView ProvincePickerApply;
     private TextView TransportFeeTextView;
+    private TextView TotalProductPriceTextView;
+    private TextView FinalPriceTextView;
+    private TextView CheckoutPriceTextView;
     private ActivityResultLauncher<Intent> ProvincePickerLauncher;
+
+    public void setFinalPriceTextView(TextView finalPriceTextView) {
+        FinalPriceTextView = finalPriceTextView;
+    }
+
+    public void setCheckoutPriceTextView(TextView checkoutPriceTextView) {
+        CheckoutPriceTextView = checkoutPriceTextView;
+    }
     public ShippingInfoBottomSheetDialogFragment(){}
     public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout){
         this.ShippingInfoLayout = shippingInfoLayout;
@@ -124,9 +136,17 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
         PhoneNumberTextView.setText(phoneNumber);
 
         Address globalAddress = GlobalRepository.getCustomerAddress();
-        GlobalRepository.setCustomerAddress(
-                new Address(globalAddress.getID(), houseNumber,
-                        province, ProvinceID));
+        Address newAddress = new Address(globalAddress.getID(), houseNumber,
+                "", ProvinceID);
+        if (globalAddress.getID() == -1){
+            newAddress.setID(DatabaseHelper.getAddressList("ALL").size() + 1);
+            DatabaseHelper.insertAddressToAzure(newAddress);
+        }
+        else{
+            DatabaseHelper.updateAddressToAzure(globalAddress, newAddress);
+        }
+        GlobalRepository.setCustomerAddress(newAddress);
+
         GlobalRepository.getCurrentCustomer().setPhoneNumber(phoneNumber);
     }
 
@@ -145,8 +165,26 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
                     PhoneNumberEditText.getText().toString()
             );
             if (TransportFeeTextView != null){
+                double oldShippingPrice =
+                        MoneyHelper.getVietnameseMoneyDouble(TransportFeeTextView.getText().toString());
                 double newShippingPrice = GetProvinceDataFromAzure.getShippingCharge(ProvinceID);
-                TransportFeeTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(newShippingPrice));
+
+                double finalPrice =
+                        MoneyHelper.getVietnameseMoneyDouble(FinalPriceTextView.getText().toString());
+                double checkoutPrice =
+                        MoneyHelper.extractVietnameseMoneyFromString(CheckoutPriceTextView.getText().toString());
+
+                double differenceBetweenShippingPrice = newShippingPrice - oldShippingPrice;
+
+                finalPrice = finalPrice + differenceBetweenShippingPrice;
+                checkoutPrice = checkoutPrice + differenceBetweenShippingPrice;
+
+                TransportFeeTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(newShippingPrice));
+                FinalPriceTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(finalPrice));
+                CheckoutPriceTextView.setText(
+                        MoneyHelper.getVietnameseMoneyStringFormatted(checkoutPrice));
             }
             dismiss();
         }

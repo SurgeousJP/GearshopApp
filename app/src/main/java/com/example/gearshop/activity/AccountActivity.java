@@ -17,15 +17,24 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.utility.ActivityStartManager;
 
 public class AccountActivity extends AppCompatActivity {
     CustomerRepository customerRepository;
 
+    private TextView ViewAllOrderTextView;
+    private View TrailingAllOrderView;
+    private TextView ViewAllProcessingOrderTextView;
+    private View IconViewAllProcessingOrder;
+    private TextView ViewAllDeliveryOrderTextView;
+    private View IconViewAllDeliveryOrder;
+    private TextView ViewAllDeliveredOrderTextView;
+    private View IconViewAllDeliveredOrder;
 
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout SearchItem;
@@ -40,9 +49,8 @@ public class AccountActivity extends AppCompatActivity {
         customerRepository = new CustomerRepository();
         Customer userInfo = customerRepository.getCustomerById(userId);
 
-
         TextView tvUserName = (TextView) findViewById(R.id.title_username);
-        String userName = userInfo.getLastName() + " " + userInfo.getFirstName();
+        String userName = userInfo.getFirstName() + userInfo.getLastName();
         tvUserName.setText(userName);
 
         ConstraintLayout btnEditUserInfo = (ConstraintLayout) findViewById(R.id.user_info_box);
@@ -51,43 +59,88 @@ public class AccountActivity extends AppCompatActivity {
             getBaseContext().startActivity(intent);
         });
 
-
-
         CartIconLayout = findViewById(R.id.cart_layout);
         CartIconLayout.setOnClickListener(view -> {
             Intent intent = new Intent(getBaseContext(), CartActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
 
-        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu(v);
-            }
-        });
+        OptionsLayout = findViewById(R.id.more_info_order_detail);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        EscapeLayout = findViewById(R.id.escape);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         HomeItem = findViewById(R.id.home_item_category_detail);
         HomeItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
+
         CategoryItem = findViewById(R.id.category_item_category_detail);
         CategoryItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
+
         SearchItem = findViewById(R.id.search_item_category_detail);
         SearchItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
         });
-//        AccountItem = findViewById(R.id.account_item_category_detail);
-//        AccountItem.setOnClickListener(view -> {
-//            ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
-//        });
+
+        int customerID = GlobalRepository.getCurrentCustomer().getID();
+
+        View.OnClickListener viewAllOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "ALL_ORDER");
+            intent.putExtra("customerID", customerID);
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllProcessingOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "PROCESSING");
+            intent.putExtra("customerID", customerID);
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllDeliveryOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "DELIVERY");
+            intent.putExtra("customerID", customerID);
+            getBaseContext().startActivity(intent);
+        };
+
+        View.OnClickListener viewAllDeliveredOrderListener = view -> {
+            Intent intent = new Intent(getBaseContext(), CustomerOrderActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("ORDER_TYPE", "DELIVERED");
+            intent.putExtra("customerID", customerID);
+            getBaseContext().startActivity(intent);
+        };
+
+        ViewAllOrderTextView = findViewById(R.id.cta_viewmor);
+        ViewAllOrderTextView.setOnClickListener(viewAllOrderListener);
+        TrailingAllOrderView = findViewById(R.id.trailing_ic);
+        TrailingAllOrderView.setOnClickListener(viewAllOrderListener);
+
+        ViewAllProcessingOrderTextView = findViewById(R.id.label_processing);
+        ViewAllProcessingOrderTextView.setOnClickListener(viewAllProcessingOrderListener);
+        IconViewAllProcessingOrder = findViewById(R.id.view1);
+        IconViewAllProcessingOrder.setOnClickListener(viewAllProcessingOrderListener);
+
+        ViewAllDeliveryOrderTextView = findViewById(R.id.label_delivery);
+        ViewAllDeliveryOrderTextView.setOnClickListener(viewAllDeliveryOrderListener);
+        IconViewAllDeliveryOrder = findViewById(R.id.view2);
+        IconViewAllDeliveryOrder.setOnClickListener(viewAllDeliveryOrderListener);
+
+        ViewAllDeliveredOrderTextView = findViewById(R.id.label_delivered);
+        ViewAllDeliveredOrderTextView.setOnClickListener(viewAllDeliveredOrderListener);
+        IconViewAllDeliveredOrder = findViewById(R.id.view3);
+        IconViewAllDeliveredOrder.setOnClickListener(viewAllDeliveredOrderListener);
     }
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);

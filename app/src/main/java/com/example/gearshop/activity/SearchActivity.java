@@ -3,9 +3,13 @@ package com.example.gearshop.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
@@ -26,8 +30,8 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     private View SearchIconView;
     private EditText SearchEditText;
     private RelativeLayout CartIconLayout;
-    private RelativeLayout MoreInformationLayout;
-    private RelativeLayout EscapeLayout;
+    private RelativeLayout OptionsLayout;
+    private RelativeLayout ReturnHomeLayout;
     private RelativeLayout HomeItem;
     private RelativeLayout CategoryItem;
     private RelativeLayout AccountItem;
@@ -65,14 +69,12 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
             ActivityStartManager.startTargetActivity(getBaseContext(), CartActivity.class);
         });
 
-        MoreInformationLayout = findViewById(R.id.more_info_order_detail);
-        MoreInformationLayout.setOnClickListener(view -> {
+        OptionsLayout = findViewById(R.id.more_info_order_detail);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
-        });
-
-        EscapeLayout = findViewById(R.id.escape_order_detail);
-        EscapeLayout.setOnClickListener(view -> {
-
+        ReturnHomeLayout = findViewById(R.id.escape_order_detail);
+        ReturnHomeLayout.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
 
         HomeItem = findViewById(R.id.home_item_category_detail);
@@ -83,10 +85,7 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
         CategoryItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), CategoryActivity.class);
         });
-//        SearchItem = findViewById(R.id.search_item_category_detail);
-//        SearchItem.setOnClickListener(view -> {
-//            ActivityStartManager.startTargetActivity(getBaseContext(), SearchActivity.class);
-//        });
+
         AccountItem = findViewById(R.id.account_item_category_detail);
         AccountItem.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
@@ -127,9 +126,10 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     protected boolean checkProductContainsInformation(Product product, String info){
         if (info.isEmpty())
             return false;
-        String productPlainString = VietnameseStringConverter.convertToPlainString(product.getName().toLowerCase(Locale.ROOT));
-        if (VietnameseStringConverter.convertToPlainString(info).equals(info)){
-            return productPlainString.contains(info);
+        String productPlainString = VietnameseStringConverter.convertToPlainString(
+                product.getName().toLowerCase(Locale.ROOT));
+        if (VietnameseStringConverter.convertToPlainString(info).equals(info.toLowerCase(Locale.ROOT))){
+            return productPlainString.contains(info.toLowerCase(Locale.ROOT));
         }
         return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }
@@ -143,5 +143,28 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     @Override
     public void onDialogResult(boolean result) {
 
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(SearchActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(SearchActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }
