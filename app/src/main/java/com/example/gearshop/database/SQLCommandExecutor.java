@@ -1,15 +1,12 @@
 package com.example.gearshop.database;
 
-import com.example.gearshop.model.Customer;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertCustomerDataToAzure extends AzureSQLDatabase {
+public class SQLCommandExecutor extends AzureSQLDatabase {
 
     @Override
     protected ResultSet doInBackground(String... SqlCommand) {

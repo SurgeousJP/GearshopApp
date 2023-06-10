@@ -9,14 +9,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.model.CustomerForEdit;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.utility.GenderHelper;
 
 public class EditUserInfoActivity extends AppCompatActivity {
     private CustomerRepository customerRepository;
@@ -153,7 +156,21 @@ public class EditUserInfoActivity extends AppCompatActivity {
             }
         });
 
+        ConstraintLayout btnSaveUserInfo = findViewById(R.id.save_user_info);
+        btnSaveUserInfo.setOnClickListener(view -> {
+            CustomerForEdit customerNew = new CustomerForEdit(
+                    Integer.parseInt(userId),
+                    edtEmail.getText().toString(),
+                    edtFirstName.getText().toString(),
+                    edtLastName.getText().toString(),
+                    GenderHelper.getDatabaseGenderValueFromUI(edtGender.getText().toString()),
+                    edtPhoneNumber.getText().toString()
+            );
 
+            if (customerRepository.updateData(customerNew)){
+                Toast.makeText(getBaseContext(), "Cập nhật dữ liệu thành công!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         backwardButton = findViewById(R.id.wayback_icon_user_info);
         backwardButton.setOnClickListener(view -> {

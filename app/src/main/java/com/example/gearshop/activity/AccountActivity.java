@@ -42,7 +42,7 @@ public class AccountActivity extends AppCompatActivity {
 
 
         TextView tvUserName = (TextView) findViewById(R.id.title_username);
-        String userName = userInfo.getFirstName() + userInfo.getLastName();
+        String userName = userInfo.getLastName() + " " + userInfo.getFirstName();
         tvUserName.setText(userName);
 
         ConstraintLayout btnEditUserInfo = (ConstraintLayout) findViewById(R.id.user_info_box);
@@ -50,6 +50,7 @@ public class AccountActivity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), EditUserInfoActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(intent);
         });
+
 
 
         CartIconLayout = findViewById(R.id.cart_layout);
