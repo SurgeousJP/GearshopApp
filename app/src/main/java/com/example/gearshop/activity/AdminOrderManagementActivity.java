@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.OrderListAdapter;
+import com.example.gearshop.fragment.OrderSortBottomSheetDialogFragment;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.utility.ActivityStartManager;
@@ -70,15 +71,16 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
 
         FilterTextView = findViewById(R.id.admin_order_label_filter);
         FilterIcon = findViewById(R.id.admin_order_filter_icon);
-        FilterIcon.setOnClickListener(view -> {
 
-        });
-
+        View.OnClickListener sortOrderListener = view -> {
+            OrderSortBottomSheetDialogFragment dialogFragment = new OrderSortBottomSheetDialogFragment(
+                    OrderAdapter, OrderList);
+            dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
+        };
         SortTextView = findViewById(R.id.admin_order_label_sort);
+        SortTextView.setOnClickListener(sortOrderListener);
         SortIcon = findViewById(R.id.admin_order_sort_icon);
-        SortIcon.setOnClickListener(view -> {
-
-        });
+        SortIcon.setOnClickListener(sortOrderListener);
 
         AllOrderTextView = findViewById(R.id.admin_order_content_all);
         AllOrderTextView.setOnClickListener(view -> {

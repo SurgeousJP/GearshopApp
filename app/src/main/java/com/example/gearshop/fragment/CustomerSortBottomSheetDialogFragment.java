@@ -59,7 +59,7 @@ public class CustomerSortBottomSheetDialogFragment extends BottomSheetDialogFrag
             dismiss();
         });
 
-        View.OnClickListener DeafaultListener = view13 -> {
+        View.OnClickListener DefaultListener = view13 -> {
             CustomerList.sort(Comparator.comparingInt(Customer::getID));
             SortCustomerResult = CustomerList;
             setUIComponentTempsForUpdate(
@@ -69,11 +69,11 @@ public class CustomerSortBottomSheetDialogFragment extends BottomSheetDialogFrag
 
         // By default, the customers are displayed by ascending id
         LayoutDefault = view.findViewById(R.id.list_item_1);
-        LayoutDefault.setOnClickListener(DeafaultListener);
+        LayoutDefault.setOnClickListener(DefaultListener);
         DefaultTextView = view.findViewById(R.id.label_option1_customer);
-        DefaultTextView.setOnClickListener(DeafaultListener);
+        DefaultTextView.setOnClickListener(DefaultListener);
         TickedDefault = view.findViewById(R.id.components_1_customer);
-        TickedDefault.setOnClickListener(DeafaultListener);
+        TickedDefault.setOnClickListener(DefaultListener);
 
         View.OnClickListener CustomerIDAscendingListener = view13 -> {
             CustomerList.sort(Comparator.comparingInt(Customer::getID));

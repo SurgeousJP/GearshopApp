@@ -1,5 +1,6 @@
 package com.example.gearshop.utility;
 
+import android.annotation.SuppressLint;
 import android.provider.Telephony;
 
 import com.example.gearshop.database.GetAddressDataFromAzure;
@@ -74,6 +75,7 @@ public class DatabaseHelper {
         System.out.println("Async Task insert Address ended");
     }
 
+    @SuppressLint("DefaultLocale")
     public static void insertOrderToAzure(Order newOrder){
         String inputPattern = "yyyy-MM-dd"; // Input date format
         SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.getDefault());
@@ -91,7 +93,7 @@ public class DatabaseHelper {
                         "'" + newOrder.getShippingAddressID()   + "', " +
                         "'" + newOrder.getShipmentMethodID()    + "', " +
                         "'" + newOrder.getPaymentMethodID()     + "', " +
-                        "'" + newOrder.getTotalPrice()          + "', " +
+                        "CAST('" +  String.format("%.0f", newOrder.getTotalPrice()) + "' AS money), " +
                         "'" + newOrder.getStatus()              + "', " +
                         "'" + newOrder.isPaid()                 + "')\n");
         try {

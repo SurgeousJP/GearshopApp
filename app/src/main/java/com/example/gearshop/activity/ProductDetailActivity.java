@@ -192,7 +192,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         ShoppingCartItem newItem = new ShoppingCartItem(currentShoppingCartList.size() + 1,
                 1, product.getID(), 1, new Date());
 
-        if (!currentShoppingCartList.contains(newItem)){
+        if (!checkNewProductExistsInCart(currentProductList, newItem)){
             Toast.makeText(this, "Thêm sản phẩm vào giỏ hàng thành công!", Toast.LENGTH_SHORT).show();
             currentShoppingCartList.add(newItem);
         }
@@ -202,6 +202,15 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         if (!currentProductList.contains(product))
             currentProductList.add(product);
+    }
+
+    private boolean checkNewProductExistsInCart(List<Product> currentProductList, ShoppingCartItem item){
+        for (int i = 0; i < currentProductList.size(); i++){
+            if (currentProductList.get(i).getID() == item.getProductID()){
+                return true;
+            }
+        }
+        return false;
     }
 
     private void showPopupMenu(View view) {

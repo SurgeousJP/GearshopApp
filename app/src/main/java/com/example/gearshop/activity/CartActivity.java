@@ -130,7 +130,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         });
 
         View.OnClickListener checkoutListener = view -> {
-            if (OrderItemList.size() <= 0){
+            if (CartItemList == null || CartItemList.size() <= 0){
                 Toast.makeText(getBaseContext(),
                         "Không có hàng trong giỏ, không thể đặt hàng.",
                         Toast.LENGTH_SHORT).show();
@@ -171,6 +171,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
             intent.putExtra("ORDER_TYPE", "ALL_ORDER");
             intent.putExtra("customerID", customerID);
             getBaseContext().startActivity(intent);
+            finish();
         };
         CheckoutTextView.setOnClickListener(checkoutListener);
         CheckoutTextView.setOnClickListener(checkoutListener);
