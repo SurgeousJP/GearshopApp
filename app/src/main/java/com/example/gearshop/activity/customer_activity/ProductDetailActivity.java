@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
-import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
+import com.example.gearshop.dialog.ShippingInfoBottomSheetDialog;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.model.Discount;
@@ -173,7 +173,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                 GlobalRepository.getCurrentCustomer().getPhoneNumber());
 
         EditShippingInfoView.setOnClickListener(view -> {
-            ShippingInfoBottomSheetDialogFragment dialogFragment = new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout);
+            ShippingInfoBottomSheetDialog dialogFragment = new ShippingInfoBottomSheetDialog(ShippingInfoLayout);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         });
     }

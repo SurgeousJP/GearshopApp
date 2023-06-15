@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import android.content.Context;
 import android.content.Intent;

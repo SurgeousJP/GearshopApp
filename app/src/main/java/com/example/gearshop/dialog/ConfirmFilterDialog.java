@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -13,11 +13,11 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.gearshop.R;
 
-public class ConfirmSortDialogFragment extends DialogFragment {
+public class ConfirmFilterDialog extends DialogFragment {
     public interface DialogListener {
         void onDialogResult(boolean result);
     }
-    public ConfirmSortDialogFragment() {
+    public ConfirmFilterDialog() {
         // Required empty public constructor
     }
     private DialogListener dialogListener;
@@ -28,12 +28,12 @@ public class ConfirmSortDialogFragment extends DialogFragment {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         @SuppressLint("InflateParams") View dialogView = inflater.inflate(R.layout.confirm_box, null);
 
-        TextView confirmSortTextContent = dialogView.findViewById(R.id.content_rem);
-        confirmSortTextContent.setText("Bạn xác nhận sort theo yêu cầu chứ ?");
-        TextView confirmSortTextView = dialogView.findViewById(R.id.cta_reset);
-        TextView cancelSortTextView = dialogView.findViewById(R.id.cta_apply);
+        TextView confirmFilterTextContent = dialogView.findViewById(R.id.content_rem);
+        confirmFilterTextContent.setText("Bạn xác nhận filter / bỏ filter theo yêu cầu chứ ?");
+        TextView confirmFilterTextView = dialogView.findViewById(R.id.cta_reset);
+        TextView cancelFilterTextView = dialogView.findViewById(R.id.cta_apply);
 
-        confirmSortTextView.setOnClickListener(new View.OnClickListener() {
+        confirmFilterTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (dialogListener != null) {
@@ -43,7 +43,7 @@ public class ConfirmSortDialogFragment extends DialogFragment {
             }
         });
 
-        cancelSortTextView.setOnClickListener(new View.OnClickListener() {
+        cancelFilterTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (dialogListener != null) {
@@ -60,4 +60,3 @@ public class ConfirmSortDialogFragment extends DialogFragment {
         this.dialogListener = listener;
     }
 }
-

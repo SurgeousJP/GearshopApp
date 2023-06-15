@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -19,7 +19,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.ProvincePickActivity;
+import com.example.gearshop.activity.customer_activity.ProvincePickActivity;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Province;
@@ -31,8 +31,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFragment
-        implements ConfirmChangeShippingInfoDialogFragment.DialogListener {
+public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
+        implements ConfirmChangeShippingInfoDialog.DialogListener {
     private int ProvinceID;
     private View CancelEditShipping;
     private ConstraintLayout ShippingInfoLayout;
@@ -54,12 +54,12 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     public void setCheckoutPriceTextView(TextView checkoutPriceTextView) {
         CheckoutPriceTextView = checkoutPriceTextView;
     }
-    public ShippingInfoBottomSheetDialogFragment(){}
-    public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout){
+    public ShippingInfoBottomSheetDialog(){}
+    public ShippingInfoBottomSheetDialog(ConstraintLayout shippingInfoLayout){
         this.ShippingInfoLayout = shippingInfoLayout;
     }
 
-    public ShippingInfoBottomSheetDialogFragment(ConstraintLayout shippingInfoLayout, TextView transportFeeTextView){
+    public ShippingInfoBottomSheetDialog(ConstraintLayout shippingInfoLayout, TextView transportFeeTextView){
         this.ShippingInfoLayout = shippingInfoLayout;
         this.TransportFeeTextView = transportFeeTextView;
     }
@@ -151,8 +151,8 @@ public class ShippingInfoBottomSheetDialogFragment extends BottomSheetDialogFrag
     }
 
     private void showConfirmChangeDialog() {
-        ConfirmChangeShippingInfoDialogFragment dialogFragment=
-                new ConfirmChangeShippingInfoDialogFragment();
+        ConfirmChangeShippingInfoDialog dialogFragment=
+                new ConfirmChangeShippingInfoDialog();
         dialogFragment.setDialogListener(this::onDialogResult);
         dialogFragment.show(getParentFragmentManager(), "");
     }

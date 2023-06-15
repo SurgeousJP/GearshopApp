@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,13 +11,14 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.model.Product;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.List;
 
-public class ProductSortBottomSheetDialogFragment extends BottomSheetDialogFragment
-        implements ConfirmSortDialogFragment.DialogListener {
+public class ProductSortBottomSheetDialog extends BottomSheetDialogFragment
+        implements ConfirmSortDialog.DialogListener {
     private List<Product> ProductList;
     private List<Product> SortProductResult;
     private ListProductFragment CategoryListProductFragment;
@@ -41,8 +42,8 @@ public class ProductSortBottomSheetDialogFragment extends BottomSheetDialogFragm
     private ConstraintLayout tempLayout;
     private TextView tempTextView;
     private ConstraintLayout tempTickedLayout;
-    public ProductSortBottomSheetDialogFragment(){}
-    public ProductSortBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
+    public ProductSortBottomSheetDialog(){}
+    public ProductSortBottomSheetDialog(ListProductFragment categoryListProductFragment, List<Product> products){
         this.ProductList = products;
         this.CategoryListProductFragment = categoryListProductFragment;
     }
@@ -167,7 +168,7 @@ public class ProductSortBottomSheetDialogFragment extends BottomSheetDialogFragm
         return price;
     }
     private void showConfirmSortDialog() {
-        ConfirmSortDialogFragment dialogFragment = new ConfirmSortDialogFragment();
+        ConfirmSortDialog dialogFragment = new ConfirmSortDialog();
         dialogFragment.setDialogListener(this);
         dialogFragment.show(getParentFragmentManager(), "");
     }

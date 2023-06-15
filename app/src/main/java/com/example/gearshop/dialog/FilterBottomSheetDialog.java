@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -22,8 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class FilterBottomSheetDialogFragment extends BottomSheetDialogFragment implements 
-ConfirmFilterDialogFragment.DialogListener{
+public class FilterBottomSheetDialog extends BottomSheetDialogFragment implements
+ConfirmFilterDialog.DialogListener{
     private View DismissView;
     private ConstraintLayout UnderPriceLayout;
     private ConstraintLayout RangePrice1Layout;
@@ -42,8 +43,8 @@ ConfirmFilterDialogFragment.DialogListener{
     private List<Product> ProductList;
     private List<Product> FilterProductResult;
     private ListProductFragment CategoryListProductFragment;
-    public FilterBottomSheetDialogFragment(){}
-    public FilterBottomSheetDialogFragment(ListProductFragment categoryListProductFragment, List<Product> products){
+    public FilterBottomSheetDialog(){}
+    public FilterBottomSheetDialog(ListProductFragment categoryListProductFragment, List<Product> products){
         this.ProductList = products;
         this.CategoryListProductFragment = categoryListProductFragment;
     }
@@ -237,7 +238,7 @@ ConfirmFilterDialogFragment.DialogListener{
     }
 
     private void showConfirmFilterDialog() {
-        ConfirmFilterDialogFragment dialogFragment = new ConfirmFilterDialogFragment();
+        ConfirmFilterDialog dialogFragment = new ConfirmFilterDialog();
         dialogFragment.setDialogListener(this);
         dialogFragment.show(getParentFragmentManager(), "");
     }

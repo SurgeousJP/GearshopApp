@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -13,14 +13,14 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.gearshop.R;
 
-public class ConfirmChangeShippingInfoDialogFragment extends DialogFragment {
+public class ConfirmChangeShippingInfoDialog extends DialogFragment {
     public interface DialogListener {
         void onDialogResult(boolean result);
     }
-    public ConfirmChangeShippingInfoDialogFragment() {
+    public ConfirmChangeShippingInfoDialog() {
         // Required empty public constructor
     }
-    private ConfirmDeleteCartItemDialogFragment.DialogListener dialogListener;
+    private ConfirmDeleteCartItemDialog.DialogListener dialogListener;
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class ConfirmChangeShippingInfoDialogFragment extends DialogFragment {
         builder.setView(dialogView);
         return builder.create();
     }
-    public void setDialogListener(ConfirmDeleteCartItemDialogFragment.DialogListener listener) {
+    public void setDialogListener(ConfirmDeleteCartItemDialog.DialogListener listener) {
         this.dialogListener = listener;
     }
 }

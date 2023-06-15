@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -13,10 +13,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.fragment.FilterBottomSheetDialogFragment;
+import com.example.gearshop.dialog.FilterBottomSheetDialog;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
-import com.example.gearshop.fragment.ProductSortBottomSheetDialogFragment;
+import com.example.gearshop.dialog.ProductSortBottomSheetDialog;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
@@ -101,23 +101,23 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
 
-        final FilterBottomSheetDialogFragment[] filterBottomSheetDialogFragment =
-                new FilterBottomSheetDialogFragment[1];
-        final ProductSortBottomSheetDialogFragment[] productSortBottomSheetDialogFragment =
-                new ProductSortBottomSheetDialogFragment[1];
+        final FilterBottomSheetDialog[] filterBottomSheetDialog =
+                new FilterBottomSheetDialog[1];
+        final ProductSortBottomSheetDialog[] productSortBottomSheetDialog =
+                new ProductSortBottomSheetDialog[1];
         View.OnClickListener filterOnClickListener = view -> {
-            filterBottomSheetDialogFragment[0] =
-                    new FilterBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            filterBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
-                    filterBottomSheetDialogFragment[0].getTag());
+            filterBottomSheetDialog[0] =
+                    new FilterBottomSheetDialog(categoryListProductFragment, ProductList);
+            filterBottomSheetDialog[0].show(getSupportFragmentManager(),
+                    filterBottomSheetDialog[0].getTag());
 
         };
 
         View.OnClickListener sortOnClickListener = view -> {
-            productSortBottomSheetDialogFragment[0] =
-                    new ProductSortBottomSheetDialogFragment(categoryListProductFragment, ProductList);
-            productSortBottomSheetDialogFragment[0].show(getSupportFragmentManager(),
-                    productSortBottomSheetDialogFragment[0].getTag());
+            productSortBottomSheetDialog[0] =
+                    new ProductSortBottomSheetDialog(categoryListProductFragment, ProductList);
+            productSortBottomSheetDialog[0].show(getSupportFragmentManager(),
+                    productSortBottomSheetDialog[0].getTag());
         };
 
         FilterIconView = categoryProductFilterSortBarFragment.getFilterIconView();

@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.fragment.ListProductFragment;
-import com.example.gearshop.fragment.SearchNotFoundFragment;
+import com.example.gearshop.dialog.SearchNotFoundDialog;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.VietnameseStringConverter;
@@ -135,7 +135,7 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     }
 
     private void showSearchNotFoundDialog() {
-        SearchNotFoundFragment dialogFragment = new SearchNotFoundFragment();
+        SearchNotFoundDialog dialogFragment = new SearchNotFoundDialog();
         dialogFragment.setDialogListener(this::onDialogResult);
         dialogFragment.show(getSupportFragmentManager(), "");
     }

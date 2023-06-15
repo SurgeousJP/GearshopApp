@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -18,8 +18,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.Comparator;
 import java.util.List;
 
-public class CustomerSortBottomSheetDialogFragment extends BottomSheetDialogFragment
-        implements ConfirmSortDialogFragment.DialogListener {
+public class CustomerSortBottomSheetDialog extends BottomSheetDialogFragment
+        implements ConfirmSortDialog.DialogListener {
     private List<Customer> CustomerList;
     private List<Customer> SortCustomerResult;
     private CustomerListAdapter CustomerAdapter;
@@ -43,9 +43,9 @@ public class CustomerSortBottomSheetDialogFragment extends BottomSheetDialogFrag
     private ConstraintLayout tempLayout;
     private TextView tempTextView;
     private ConstraintLayout tempTickedLayout;
-    public CustomerSortBottomSheetDialogFragment(){}
-    public CustomerSortBottomSheetDialogFragment(CustomerListAdapter customerAdapter,
-                                                 List<Customer> customers){
+    public CustomerSortBottomSheetDialog(){}
+    public CustomerSortBottomSheetDialog(CustomerListAdapter customerAdapter,
+                                         List<Customer> customers){
         this.CustomerAdapter = customerAdapter;
         this.CustomerList = customers;
     }
@@ -176,7 +176,7 @@ public class CustomerSortBottomSheetDialogFragment extends BottomSheetDialogFrag
         TickedCustomerNameDescending.setBackground(null);
     }
     private void showConfirmSortDialog() {
-        ConfirmSortDialogFragment dialogFragment = new ConfirmSortDialogFragment();
+        ConfirmSortDialog dialogFragment = new ConfirmSortDialog();
         dialogFragment.setDialogListener(this);
         dialogFragment.show(getParentFragmentManager(), "");
     }

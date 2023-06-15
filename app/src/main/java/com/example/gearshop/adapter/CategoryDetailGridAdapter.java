@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.ProductDetailActivity;
+import com.example.gearshop.activity.customer_activity.ProductDetailActivity;
 import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;

@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity;
 import com.example.gearshop.model.Admin;
 import com.example.gearshop.repository.AdminRepository;
 import com.example.gearshop.repository.CustomerRepository;

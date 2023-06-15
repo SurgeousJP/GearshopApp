@@ -16,6 +16,7 @@ import android.widget.GridView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
+import com.example.gearshop.dialog.ConfirmDeleteCartItemDialog;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 import com.example.gearshop.model.Product;
 
@@ -88,7 +89,7 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
     public interface DialogListener {
         void onDialogResult(boolean result);
     }
-    private ConfirmDeleteCartItemDialogFragment.DialogListener dialogListener;
+    private ConfirmDeleteCartItemDialog.DialogListener dialogListener;
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -99,7 +100,7 @@ public class ListProductFragment extends Fragment implements OnFragmentViewCreat
         builder.setView(dialogView).setCancelable(true);
         return builder.create();
     }
-    public void setDialogListener(ConfirmDeleteCartItemDialogFragment.DialogListener listener) {
+    public void setDialogListener(ConfirmDeleteCartItemDialog.DialogListener listener) {
         this.dialogListener = listener;
     }
 }

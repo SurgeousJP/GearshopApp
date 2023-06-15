@@ -1,10 +1,8 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +13,11 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.gearshop.R;
 
-public class ConfirmDeleteCartItemDialogFragment extends DialogFragment {
+public class ConfirmDeleteCartItemDialog extends DialogFragment {
     public interface DialogListener {
         void onDialogResult(boolean result);
     }
-    public ConfirmDeleteCartItemDialogFragment() {
+    public ConfirmDeleteCartItemDialog() {
         // Required empty public constructor
     }
     private DialogListener dialogListener;

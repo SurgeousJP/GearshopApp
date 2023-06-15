@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.CustomerDetailActivity;
+import com.example.gearshop.activity.customer_activity.CustomerDetailActivity;
 import com.example.gearshop.model.Customer;
 
 

@@ -13,8 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.ProductDetailActivity;
-import com.example.gearshop.activity.ProductsInCategoryActivity;
+import com.example.gearshop.activity.customer_activity.ProductDetailActivity;
 import com.example.gearshop.interfaces.ItemClickListener;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;

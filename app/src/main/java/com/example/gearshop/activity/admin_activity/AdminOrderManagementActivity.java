@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.admin_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,17 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.customer_activity.OrderDetailActivity;
 import com.example.gearshop.adapter.OrderListAdapter;
-import com.example.gearshop.fragment.OrderSortBottomSheetDialogFragment;
-import com.example.gearshop.model.Customer;
+import com.example.gearshop.dialog.OrderSortBottomSheetDialog;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
-import com.example.gearshop.utility.VietnameseStringConverter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class AdminOrderManagementActivity extends AppCompatActivity {
     private EditText SearchTextView;
@@ -73,7 +71,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
         FilterIcon = findViewById(R.id.admin_order_filter_icon);
 
         View.OnClickListener sortOrderListener = view -> {
-            OrderSortBottomSheetDialogFragment dialogFragment = new OrderSortBottomSheetDialogFragment(
+            OrderSortBottomSheetDialog dialogFragment = new OrderSortBottomSheetDialog(
                     OrderAdapter, OrderList);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         };

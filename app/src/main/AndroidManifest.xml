@@ -16,61 +16,61 @@
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
         <activity
-            android:name=".activity.AdminOrderStatusPickActivity"
+            android:name=".activity.admin_activity.AdminOrderStatusPickActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AdminOrderManagementActivity"
+            android:name=".activity.admin_activity.AdminOrderManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerOrderStatusPickActivity"
+            android:name=".activity.customer_activity.CustomerOrderStatusPickActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerDetailActivity"
+            android:name=".activity.customer_activity.CustomerDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.FAQActivity"
+            android:name=".activity.customer_activity.FAQActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.OrderDetailActivity"
+            android:name=".activity.customer_activity.OrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CustomerOrderActivity"
+            android:name=".activity.customer_activity.CustomerOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProvincePickActivity"
+            android:name=".activity.customer_activity.ProvincePickActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SearchActivity"
+            android:name=".activity.customer_activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CartActivity"
+            android:name=".activity.customer_activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProductDetailActivity"
+            android:name=".activity.customer_activity.ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProductsInCategoryActivity"
+            android:name=".activity.customer_activity.ProductsInCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignUpActivity"
+            android:name=".activity.customer_activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.customer_activity.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AccountActivity"
+            android:name=".activity.customer_activity.AccountActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.EditUserInfoActivity"
+            android:name=".activity.customer_activity.EditUserInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CategoryActivity"
+            android:name=".activity.customer_activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AdminCustomerManagementActivity"
+            android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

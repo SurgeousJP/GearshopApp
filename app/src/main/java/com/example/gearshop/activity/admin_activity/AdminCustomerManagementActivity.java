@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.admin_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CustomerListAdapter;
-import com.example.gearshop.fragment.CustomerSortBottomSheetDialogFragment;
-import com.example.gearshop.fragment.OrderSortBottomSheetDialogFragment;
+import com.example.gearshop.dialog.CustomerSortBottomSheetDialog;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
@@ -61,7 +60,7 @@ public class AdminCustomerManagementActivity extends AppCompatActivity {
         CustomerFilterIcon = findViewById(R.id.customer_management_filter_icon);
 
         View.OnClickListener sortCustomerListener = view -> {
-            CustomerSortBottomSheetDialogFragment dialogFragment = new CustomerSortBottomSheetDialogFragment(
+            CustomerSortBottomSheetDialog dialogFragment = new CustomerSortBottomSheetDialog(
                     CustomerAdapter, CustomerList);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         };

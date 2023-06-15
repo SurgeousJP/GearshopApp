@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,17 +11,15 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.adapter.CustomerListAdapter;
 import com.example.gearshop.adapter.OrderListAdapter;
-import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Comparator;
 import java.util.List;
 
-public class OrderSortBottomSheetDialogFragment extends BottomSheetDialogFragment
-        implements ConfirmSortDialogFragment.DialogListener {
+public class OrderSortBottomSheetDialog extends BottomSheetDialogFragment
+        implements ConfirmSortDialog.DialogListener {
     private List<Order> OrderList;
     private List<Order> SortOrderList;
     private OrderListAdapter OrderAdapter;
@@ -45,9 +43,9 @@ public class OrderSortBottomSheetDialogFragment extends BottomSheetDialogFragmen
     private ConstraintLayout tempLayout;
     private TextView tempTextView;
     private ConstraintLayout tempTickedLayout;
-    public OrderSortBottomSheetDialogFragment(){}
-    public OrderSortBottomSheetDialogFragment(OrderListAdapter orderAdapter,
-                                              List<Order> orders){
+    public OrderSortBottomSheetDialog(){}
+    public OrderSortBottomSheetDialog(OrderListAdapter orderAdapter,
+                                      List<Order> orders){
         this.OrderAdapter = orderAdapter;
         this.OrderList = orders;
     }
@@ -176,7 +174,7 @@ public class OrderSortBottomSheetDialogFragment extends BottomSheetDialogFragmen
         TickedCustomerNameDescending.setBackground(null);
     }
     private void showConfirmSortDialog() {
-        ConfirmSortDialogFragment dialogFragment = new ConfirmSortDialogFragment();
+        ConfirmSortDialog dialogFragment = new ConfirmSortDialog();
         dialogFragment.setDialogListener(this);
         dialogFragment.show(getParentFragmentManager(), "");
     }

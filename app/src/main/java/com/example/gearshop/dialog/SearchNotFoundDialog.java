@@ -1,4 +1,4 @@
-package com.example.gearshop.fragment;
+package com.example.gearshop.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -10,19 +10,18 @@ import androidx.fragment.app.DialogFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.interfaces.OnFragmentViewCreatedListener;
 
-public class SearchNotFoundFragment extends DialogFragment implements OnFragmentViewCreatedListener {
+public class SearchNotFoundDialog extends DialogFragment implements OnFragmentViewCreatedListener {
     public interface DialogListener {
         void onDialogResult(boolean result);
     }
-    public SearchNotFoundFragment() {
+    public SearchNotFoundDialog() {
         // Required empty public constructor
     }
-    private ConfirmDeleteCartItemDialogFragment.DialogListener dialogListener;
+    private ConfirmDeleteCartItemDialog.DialogListener dialogListener;
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class SearchNotFoundFragment extends DialogFragment implements OnFragment
         builder.setView(dialogView).setCancelable(true);
         return builder.create();
     }
-    public void setDialogListener(ConfirmDeleteCartItemDialogFragment.DialogListener listener) {
+    public void setDialogListener(ConfirmDeleteCartItemDialog.DialogListener listener) {
         this.dialogListener = listener;
     }
     @Override

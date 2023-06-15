@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -15,6 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.admin_activity.AdminOrderManagementActivity;
+import com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity;
+import com.example.gearshop.activity.customer_activity.CustomerOrderActivity;
+import com.example.gearshop.activity.customer_activity.CustomerOrderStatusPickActivity;
 import com.example.gearshop.adapter.OrderItemListAdapter;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;

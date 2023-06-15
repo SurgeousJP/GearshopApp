@@ -1,4 +1,4 @@
-package com.example.gearshop.activity;
+package com.example.gearshop.activity.customer_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,8 +20,8 @@ import android.widget.Toast;
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CartListAdapter;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
-import com.example.gearshop.fragment.ConfirmDeleteCartItemDialogFragment;
-import com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment;
+import com.example.gearshop.dialog.ConfirmDeleteCartItemDialog;
+import com.example.gearshop.dialog.ShippingInfoBottomSheetDialog;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
@@ -35,7 +35,7 @@ import com.example.gearshop.utility.MoneyHelper;
 import java.util.Date;
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialogFragment.DialogListener{
+public class CartActivity extends AppCompatActivity implements ConfirmDeleteCartItemDialog.DialogListener{
     private List<ShoppingCartItem> CartItemList;
     private List<Product> ProductList;
     private ConstraintLayout ReturnView;
@@ -122,8 +122,8 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
 
         ChangeShippingInfoView = findViewById(R.id.change_shipping_info);
         ChangeShippingInfoView.setOnClickListener(view -> {
-            ShippingInfoBottomSheetDialogFragment dialogFragment =
-                    new ShippingInfoBottomSheetDialogFragment(ShippingInfoLayout, TransportFee);
+            ShippingInfoBottomSheetDialog dialogFragment =
+                    new ShippingInfoBottomSheetDialog(ShippingInfoLayout, TransportFee);
             dialogFragment.setFinalPriceTextView(FinalPrice);
             dialogFragment.setCheckoutPriceTextView(CheckoutTextView);
             dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
@@ -212,7 +212,7 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
         return resultPrice;
     }
     private void showConfirmDeleteDialog() {
-        ConfirmDeleteCartItemDialogFragment dialogFragment = new ConfirmDeleteCartItemDialogFragment();
+        ConfirmDeleteCartItemDialog dialogFragment = new ConfirmDeleteCartItemDialog();
         dialogFragment.setDialogListener(this);
         dialogFragment.show(getSupportFragmentManager(), "");
     }
