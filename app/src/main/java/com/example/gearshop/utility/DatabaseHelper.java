@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.provider.Telephony;
 
 import com.example.gearshop.database.GetAddressDataFromAzure;
+import com.example.gearshop.database.GetAdminDataFromAzure;
 import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
@@ -12,6 +13,7 @@ import com.example.gearshop.database.GetProductDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Admin;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
@@ -314,4 +316,22 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
+    public static Admin getAdmin(){
+        String sqlCommand = "SELECT * FROM admin";
+        GetAdminDataFromAzure getAdminDataFromAzure = new GetAdminDataFromAzure();
+        getAdminDataFromAzure.execute(sqlCommand);
+
+        try {
+            getAdminDataFromAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        Admin admin = getAdminDataFromAzure.getAdmin();
+        if (admin != null){
+            return admin;
+        }
+
+        return null;
+    }
 }

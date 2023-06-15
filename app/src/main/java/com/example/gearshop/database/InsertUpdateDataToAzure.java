@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class InsertUpdateDataToAzure extends AzureSQLDatabase {
-
     @Override
     protected ResultSet doInBackground(String... SqlCommand) {
         try {
