@@ -31,61 +31,67 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
-            android:name="com.example.gearshop.activity.AdminOrderStatusPickActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminProductsInCategoryManagement"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.AdminOrderManagementActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminProductManagementActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CustomerOrderStatusPickActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CustomerDetailActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminOrderManagementActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.FAQActivity"
+            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderStatusPickActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.OrderDetailActivity"
+            android:name="com.example.gearshop.activity.customer_activity.CustomerDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CustomerOrderActivity"
+            android:name="com.example.gearshop.activity.customer_activity.FAQActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.ProvincePickActivity"
+            android:name="com.example.gearshop.activity.customer_activity.OrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.SearchActivity"
+            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CartActivity"
+            android:name="com.example.gearshop.activity.customer_activity.ProvincePickActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.ProductDetailActivity"
+            android:name="com.example.gearshop.activity.customer_activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.ProductsInCategoryActivity"
+            android:name="com.example.gearshop.activity.customer_activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.SignUpActivity"
+            android:name="com.example.gearshop.activity.customer_activity.ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.HomeActivity"
+            android:name="com.example.gearshop.activity.customer_activity.ProductsInCategoryActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.AccountActivity"
+            android:name="com.example.gearshop.activity.customer_activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.EditUserInfoActivity"
+            android:name="com.example.gearshop.activity.customer_activity.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.CategoryActivity"
+            android:name="com.example.gearshop.activity.customer_activity.AccountActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.AdminCustomerManagementActivity"
+            android:name="com.example.gearshop.activity.customer_activity.EditUserInfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.SignInActivity"
+            android:name="com.example.gearshop.activity.customer_activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

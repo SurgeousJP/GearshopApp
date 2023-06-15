@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity;
+import com.example.gearshop.activity.admin_activity.AdminProductManagementActivity;
 import com.example.gearshop.model.Admin;
 import com.example.gearshop.repository.AdminRepository;
 import com.example.gearshop.repository.CustomerRepository;
@@ -55,7 +56,7 @@ public class SignInActivity extends AppCompatActivity {
                 Admin admin  = adminRepository.signIn(username, password);
                 if (admin != null)
                 {
-                    ActivityStartManager.startTargetActivity(getApplicationContext(), AdminCustomerManagementActivity.class);
+                    ActivityStartManager.startTargetActivity(getApplicationContext(), AdminProductManagementActivity.class);
                     finish();
 
                     return;

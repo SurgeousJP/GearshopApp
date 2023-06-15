@@ -117,7 +117,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
 
         ProductManagementView = findViewById(R.id.product_manage_order);
         ProductManagementView.setOnClickListener(view -> {
-
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminProductManagementActivity.class);
         });
 
         CustomerManagementView = findViewById(R.id.customer_manage_order);

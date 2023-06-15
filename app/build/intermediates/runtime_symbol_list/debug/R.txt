@@ -2970,7 +2970,6 @@ int id account_manage_account 0x7f080033
 int id account_manage_account_text 0x7f080034
 int id account_manage_customer 0x7f080035
 int id account_manage_order 0x7f080036
-int id accout_manage 0x7f080037
 int id accout_manage_customer 0x7f080038
 int id accout_manage_customer_text 0x7f080039
 int id accout_manage_order_text 0x7f08003a
@@ -3758,10 +3757,12 @@ int id processing_order 0x7f080347
 int id prod_config_box 0x7f080348
 int id prod_detail_box 0x7f080349
 int id produ_info_list_order_status 0x7f08034a
+int id product_account_management 0x7f0804b5
 int id product_category_box 0x7f08034b
 int id product_category_edit_text 0x7f08034c
 int id product_category_text 0x7f08034d
 int id product_config_info 0x7f08034e
+int id product_customer_management 0x7f0804b6
 int id product_detail_box 0x7f08034f
 int id product_detail_description_layout 0x7f080350
 int id product_detail_description_text 0x7f080351
@@ -3789,6 +3790,7 @@ int id product_name_box 0x7f080366
 int id product_name_edit_text 0x7f080367
 int id product_name_text 0x7f080368
 int id product_number_box 0x7f080369
+int id product_order_management 0x7f0804b7
 int id product_price_box 0x7f08036a
 int id product_price_edit_text 0x7f08036b
 int id product_price_text 0x7f08036c

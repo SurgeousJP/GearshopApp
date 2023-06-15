@@ -133,7 +133,7 @@
 
             <View
                 android:layout_marginTop="2dp"
-                android:id="@+id/customer_manage"
+                android:id="@+id/product_customer_management"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/customer_management_icon_grey"
@@ -152,7 +152,7 @@
                 android:textColor="@color/grey"
                 android:textSize="10sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/customer_manage"
+                app:layout_constraintTop_toBottomOf="@id/product_customer_management"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -168,7 +168,7 @@
 
             <View
                 android:layout_marginTop="2dp"
-                android:id="@+id/order_manage"
+                android:id="@+id/product_order_management"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/order_management_icon_grey"
@@ -187,7 +187,7 @@
                 android:textColor="@color/grey"
                 android:textSize="10sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/order_manage"
+                app:layout_constraintTop_toBottomOf="@id/product_order_management"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -203,7 +203,7 @@
             app:layout_constraintTop_toTopOf="@id/bottom_bar">
 
             <View
-                android:id="@+id/accout_manage"
+                android:id="@+id/product_account_management"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="2dp"
@@ -226,7 +226,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/accout_manage" />
+                app:layout_constraintTop_toBottomOf="@id/product_account_management" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

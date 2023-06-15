@@ -128,7 +128,6 @@ id account_manage_account
 id account_manage_account_text
 id account_manage_customer
 id account_manage_order
-id accout_manage
 id accout_manage_customer
 id accout_manage_customer_text
 id accout_manage_order_text
@@ -632,10 +631,12 @@ id processing_order
 id prod_config_box
 id prod_detail_box
 id produ_info_list_order_status
+id product_account_management
 id product_category_box
 id product_category_edit_text
 id product_category_text
 id product_config_info
+id product_customer_management
 id product_detail_box
 id product_detail_description_layout
 id product_detail_description_text
@@ -663,6 +664,7 @@ id product_name_box
 id product_name_edit_text
 id product_name_text
 id product_number_box
+id product_order_management
 id product_price_box
 id product_price_edit_text
 id product_price_text
