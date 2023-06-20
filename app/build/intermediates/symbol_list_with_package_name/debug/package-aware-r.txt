@@ -2789,6 +2789,10 @@ drawable icon
 drawable increment_invalid_button
 drawable increment_valid_button
 drawable lazy_version
+drawable light_blue_box
+drawable light_green_box
+drawable light_red_box
+drawable light_yellow_box
 drawable line
 drawable list_item
 drawable listgear
@@ -2896,6 +2900,11 @@ drawable shipping_box
 drawable shopping_bo
 drawable sort_icon
 drawable star
+drawable statistic_carry_out
+drawable statistic_creditcard
+drawable statistic_customer
+drawable statistic_icon
+drawable statistic_product
 drawable support_image
 drawable test_level_drawable
 drawable thin
@@ -3202,6 +3211,9 @@ id currentState
 id custom
 id customPanel
 id custom_price
+id customer
+id customer_box
+id customer_color_box
 id customer_detail_return_view
 id customer_id
 id customer_id_box
@@ -3227,6 +3239,7 @@ id customer_name
 id customer_name_box
 id customer_name_text
 id customer_order_id
+id customer_title
 id customer_username
 id customer_username_box
 id customer_username_text
@@ -3494,6 +3507,8 @@ id label_ship
 id label_ship_description_order_detail
 id label_ship_order_detail
 id label_sort_
+id label_statistic_desc
+id label_statistic_info
 id label_support
 id label_support_desc
 id label_transport_fee
@@ -3649,6 +3664,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id next_arrow_log_out_admin
 id next_arrow_order_detail
+id next_arrow_statistic_admin
 id next_arrow_support
 id next_arrow_user_info
 id next_arrow_user_info_admin
@@ -3672,6 +3688,7 @@ id onInterceptTouchReturnSwipe
 id open_customer_order
 id or_form
 id or_text
+id order
 id order_admin_cancel
 id order_admin_cancel_view
 id order_admin_delivered
@@ -3680,6 +3697,8 @@ id order_admin_delivery
 id order_admin_delivery_view
 id order_admin_processing
 id order_admin_processing_view
+id order_box
+id order_color_box
 id order_day
 id order_day_box
 id order_detail_return_view
@@ -3700,6 +3719,7 @@ id order_status
 id order_status_border
 id order_status_box
 id order_status_detail_box
+id order_title
 id order_total_price
 id order_tracking_box
 id order_tracking_box_inside
@@ -3758,10 +3778,13 @@ id processing_order
 id prod_config_box
 id prod_detail_box
 id produ_info_list_order_status
+id product
 id product_account_management
+id product_box
 id product_category_box
 id product_category_edit_text
 id product_category_text
+id product_color_box
 id product_config_info
 id product_customer_management
 id product_detail_box
@@ -3792,11 +3815,13 @@ id product_name_edit_text
 id product_name_text
 id product_number_box
 id product_order_management
+id product_pie_chart_title
 id product_price_box
 id product_price_edit_text
 id product_price_text
 id product_specs_box
 id product_status_box
+id product_title
 id progress_circular
 id progress_horizontal
 id province_apply
@@ -3830,6 +3855,10 @@ id right_side
 id rounded
 id roundx_order_management
 id row_index_key
+id sales
+id sales_box
+id sales_color_box
+id sales_title
 id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
@@ -3846,6 +3875,7 @@ id scrollView_product
 id scroll_box
 id scroll_box_cart
 id scroll_box_product_management
+id scroll_view_statistic
 id scrollable
 id search_badge
 id search_bar
@@ -3948,6 +3978,9 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statistic_box
+id statistic_image
+id statistic_title
 id status_change
 id stop
 id stretch
@@ -4111,6 +4144,7 @@ id wayback_icon_order_detail
 id wayback_icon_order_management
 id wayback_icon_product
 id wayback_icon_product_category
+id wayback_icon_statistic
 id wayback_icon_support_info
 id wayback_icon_user_info
 id west
@@ -4244,6 +4278,7 @@ layout admin_product_category_management
 layout admin_product_category_picker
 layout admin_product_list_item_category
 layout admin_product_mainscreen_management
+layout admin_statistic
 layout cart
 layout category_layout
 layout category_layout_detail
