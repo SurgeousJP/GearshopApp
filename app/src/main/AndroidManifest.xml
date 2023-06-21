@@ -76,7 +76,7 @@
             android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.customer_activity.SignInActivity"
+            android:name=".activity.TestMPAndroidChart"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -84,6 +84,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.customer_activity.SignInActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
