@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <View
+                android:id="@+id/add_product_screen_return_view"
                 android:layout_marginHorizontal="16dp"
                 android:layout_width="10dp"
                 android:layout_height="12dp"
@@ -109,7 +110,7 @@
                         app:cardCornerRadius="10dp"
                         android:layout_gravity="center">
                         <ImageView
-                            android:id="@+id/image_edit"
+                            android:id="@+id/add_product_image"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:scaleType="centerCrop"
@@ -128,6 +129,8 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:id="@+id/add_product_image_path_picker"
+                        android:textColor="@color/blue"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_marginVertical="8dp"
@@ -155,7 +158,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/image_path_box">
 
                     <TextView
-                        android:id="@+id/upload_text"
+                        android:id="@+id/upload_add_product_text"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_marginVertical="8dp"
@@ -166,12 +169,12 @@
                         android:textAppearance="@style/title_ship"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/upload_icon"
+                        app:layout_constraintEnd_toStartOf="@id/upload_product_image_icon"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/upload_icon"
+                        android:id="@+id/upload_product_image_icon"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginRight="16dp"
@@ -179,12 +182,12 @@
                         android:background="@drawable/upload_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/upload_text"
+                        app:layout_constraintStart_toEndOf="@+id/upload_add_product_text"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/image_name"
+                    android:id="@+id/add_product_image_selected_path"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
@@ -220,6 +223,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="12dp"
+                android:gravity="right"
+                android:lineSpacingExtra="4sp"
                 android:background="@drawable/cart_box"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -416,7 +421,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="10sp"
+                        android:layout_marginEnd="16sp"
                         android:background="@null"
                         android:gravity="right"
                         android:lineSpacingExtra="4sp"
@@ -424,27 +430,27 @@
                         android:textAppearance="@style/label_ship"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/choose_category"
                         app:layout_constraintStart_toEndOf="@+id/product_category_text"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/choose_category"
-                        android:layout_width="44dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:id="@+id/choose_category"-->
+<!--                        android:layout_width="44dp"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
 
-                        <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="@drawable/next_arrow"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                        <View-->
+<!--                            android:layout_width="12dp"-->
+<!--                            android:layout_height="12dp"-->
+<!--                            android:background="@drawable/next_arrow"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -496,6 +502,7 @@
                     android:layout_marginVertical="12dp"
                     android:background="@drawable/blue_box">
                     <TextView
+                        android:id="@+id/add_product_specs_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Thêm cấu hình sản phẩm"
@@ -536,6 +543,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title_product_detail_info">
                 <EditText
+                    android:id="@+id/add_product_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -577,7 +585,7 @@
                 <Switch
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="12dp"
-                    android:id="@+id/switch1"
+                    android:id="@+id/switch_product_status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Sản phẩm chưa được bán"
@@ -598,6 +606,7 @@
                 android:layout_marginVertical="24dp"
                 android:background="@drawable/fill_blue_box">
                 <TextView
+                    android:id="@+id/confirm_product_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Xác nhận"

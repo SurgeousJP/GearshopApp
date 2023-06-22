@@ -62,7 +62,7 @@ public class GetProductDataFromAzure extends AzureSQLDatabase{
                             resultSet.getString("description"),
                             resultSet.getString("specs"),
                             resultSet.getDouble("price"),
-                            resultSet.getBoolean("status"),
+                            resultSet.getInt("status"),
                             resultSet.getInt("category_id"), newDiscount);
                     ProductList.add(newProduct);
                 } catch (SQLException e) {

@@ -3001,7 +3001,13 @@ id add
 id add_button
 id add_edit_title
 id add_new_product_to_database
+id add_product_description
+id add_product_image
+id add_product_image_path_picker
+id add_product_image_selected_path
+id add_product_screen_return_view
 id add_product_specs
+id add_product_specs_text
 id add_to_card
 id add_to_cart_text
 id address_box_user_info
@@ -3125,7 +3131,6 @@ id checked
 id chip
 id chip1
 id chip2
-id choose_category
 id chronometer
 id circle_blue
 id circle_center
@@ -3168,6 +3173,7 @@ id confirm_password_box
 id confirm_password_box_layout
 id confirm_password_edit_text
 id confirm_password_text
+id confirm_product_text
 id confirm_status
 id confirm_text
 id constraint
@@ -3407,13 +3413,11 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id image_edit
 id image_edit_box
 id image_facebook_support
 id image_hotline_support
 id image_layout_box
 id image_location_support
-id image_name
 id image_path_box
 id image_payment
 id image_voucher
@@ -3970,7 +3974,7 @@ id supportScrollUp
 id support_box
 id support_box_image
 id support_info_label
-id switch1
+id switch_product_status
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4077,9 +4081,9 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id upload_add_product_text
 id upload_button
-id upload_icon
-id upload_text
+id upload_product_image_icon
 id useLogo
 id user_info_box
 id user_info_image
