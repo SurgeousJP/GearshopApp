@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.model.Product;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -21,7 +22,6 @@ public class ProductSortBottomSheetDialog extends BottomSheetDialogFragment
         implements ConfirmSortDialog.DialogListener {
     private List<Product> ProductList;
     private List<Product> SortProductResult;
-    private ListProductFragment CategoryListProductFragment;
     private View DismissView;
     private ConstraintLayout LayoutPopular;
     private ConstraintLayout LayoutAtoZ;
@@ -38,14 +38,14 @@ public class ProductSortBottomSheetDialog extends BottomSheetDialogFragment
     private ConstraintLayout TickedZtoA;
     private ConstraintLayout TickedLayoutLowToHighPrice;
     private ConstraintLayout TickedLayoutHighToLowPrice;
-    private boolean checkConfirmUpdateUI;
     private ConstraintLayout tempLayout;
     private TextView tempTextView;
     private ConstraintLayout tempTickedLayout;
+    private ProductGridAdapter ProductAdapter;
     public ProductSortBottomSheetDialog(){}
-    public ProductSortBottomSheetDialog(ListProductFragment categoryListProductFragment, List<Product> products){
+    public ProductSortBottomSheetDialog(ProductGridAdapter productAdapter, List<Product> products){
         this.ProductList = products;
-        this.CategoryListProductFragment = categoryListProductFragment;
+        this.ProductAdapter = productAdapter;
     }
     @Nullable
     @Override
@@ -176,7 +176,8 @@ public class ProductSortBottomSheetDialog extends BottomSheetDialogFragment
     @Override
     public void onDialogResult(boolean result) {
         if (result){
-            CategoryListProductFragment.UpdateDataOntoAdapter(SortProductResult);
+            ProductAdapter.setData(SortProductResult);
+            ProductAdapter.notifyDataSetChanged();
             setUpdateSortOptionUI(tempLayout, tempTextView, tempTickedLayout);
         }
     }

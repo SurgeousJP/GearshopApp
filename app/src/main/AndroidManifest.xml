@@ -22,9 +22,6 @@
             android:name=".activity.admin_activity.AdminProductsInCategoryManagement"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminProductCategoryManagementActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.admin_activity.AdminOrderStatusPickActivity"
             android:exported="false" />
         <activity
@@ -80,6 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.admin_activity.AdminCustomerManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminProductCategoryManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

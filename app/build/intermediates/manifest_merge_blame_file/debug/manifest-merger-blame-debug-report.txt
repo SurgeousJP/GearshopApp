@@ -64,122 +64,122 @@
 38-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:23:13-37
 39        <activity
 39-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:24:9-26:40
-40            android:name="com.example.gearshop.activity.admin_activity.AdminProductCategoryManagementActivity"
-40-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:25:13-91
+40            android:name="com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity"
+40-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:25:13-81
 41            android:exported="false" />
 41-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:26:13-37
 42        <activity
 42-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:27:9-29:40
-43            android:name="com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity"
+43            android:name="com.example.gearshop.activity.admin_activity.AdminOrderManagementActivity"
 43-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:28:13-81
 44            android:exported="false" />
 44-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:29:13-37
 45        <activity
 45-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:30:9-32:40
-46            android:name="com.example.gearshop.activity.admin_activity.AdminOrderManagementActivity"
-46-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:31:13-81
+46            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderStatusPickActivity"
+46-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:31:13-87
 47            android:exported="false" />
 47-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:32:13-37
 48        <activity
 48-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:33:9-35:40
-49            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderStatusPickActivity"
-49-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:34:13-87
+49            android:name="com.example.gearshop.activity.customer_activity.CustomerDetailActivity"
+49-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:34:13-78
 50            android:exported="false" />
 50-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:35:13-37
 51        <activity
 51-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:36:9-38:40
-52            android:name="com.example.gearshop.activity.customer_activity.CustomerDetailActivity"
-52-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:37:13-78
+52            android:name="com.example.gearshop.activity.customer_activity.FAQActivity"
+52-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:37:13-67
 53            android:exported="false" />
 53-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:38:13-37
 54        <activity
 54-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:39:9-41:40
-55            android:name="com.example.gearshop.activity.customer_activity.FAQActivity"
-55-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:40:13-67
+55            android:name="com.example.gearshop.activity.customer_activity.OrderDetailActivity"
+55-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:40:13-75
 56            android:exported="false" />
 56-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:41:13-37
 57        <activity
 57-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:42:9-44:40
-58            android:name="com.example.gearshop.activity.customer_activity.OrderDetailActivity"
-58-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:43:13-75
+58            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderActivity"
+58-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:43:13-77
 59            android:exported="false" />
 59-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:44:13-37
 60        <activity
 60-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:45:9-47:40
-61            android:name="com.example.gearshop.activity.customer_activity.CustomerOrderActivity"
-61-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:46:13-77
+61            android:name="com.example.gearshop.activity.customer_activity.ProvincePickActivity"
+61-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:46:13-76
 62            android:exported="false" />
 62-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:47:13-37
 63        <activity
 63-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:48:9-50:40
-64            android:name="com.example.gearshop.activity.customer_activity.ProvincePickActivity"
-64-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:49:13-76
+64            android:name="com.example.gearshop.activity.customer_activity.SearchActivity"
+64-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:49:13-70
 65            android:exported="false" />
 65-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:50:13-37
 66        <activity
 66-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:51:9-53:40
-67            android:name="com.example.gearshop.activity.customer_activity.SearchActivity"
-67-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:52:13-70
+67            android:name="com.example.gearshop.activity.customer_activity.CartActivity"
+67-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:52:13-68
 68            android:exported="false" />
 68-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:53:13-37
 69        <activity
 69-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:54:9-56:40
-70            android:name="com.example.gearshop.activity.customer_activity.CartActivity"
-70-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:55:13-68
+70            android:name="com.example.gearshop.activity.customer_activity.ProductDetailActivity"
+70-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:55:13-77
 71            android:exported="false" />
 71-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:56:13-37
 72        <activity
 72-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:57:9-59:40
-73            android:name="com.example.gearshop.activity.customer_activity.ProductDetailActivity"
-73-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:58:13-77
+73            android:name="com.example.gearshop.activity.customer_activity.ProductsInCategoryActivity"
+73-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:58:13-82
 74            android:exported="false" />
 74-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:59:13-37
 75        <activity
 75-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:60:9-62:40
-76            android:name="com.example.gearshop.activity.customer_activity.ProductsInCategoryActivity"
-76-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:61:13-82
+76            android:name="com.example.gearshop.activity.customer_activity.SignUpActivity"
+76-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:61:13-70
 77            android:exported="false" />
 77-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:62:13-37
 78        <activity
 78-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:63:9-65:40
-79            android:name="com.example.gearshop.activity.customer_activity.SignUpActivity"
-79-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:64:13-70
+79            android:name="com.example.gearshop.activity.customer_activity.HomeActivity"
+79-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:64:13-68
 80            android:exported="false" />
 80-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:65:13-37
 81        <activity
 81-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:66:9-68:40
-82            android:name="com.example.gearshop.activity.customer_activity.HomeActivity"
-82-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:67:13-68
+82            android:name="com.example.gearshop.activity.customer_activity.AccountActivity"
+82-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:67:13-71
 83            android:exported="false" />
 83-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:68:13-37
 84        <activity
 84-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:69:9-71:40
-85            android:name="com.example.gearshop.activity.customer_activity.AccountActivity"
-85-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:70:13-71
+85            android:name="com.example.gearshop.activity.customer_activity.EditUserInfoActivity"
+85-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:70:13-76
 86            android:exported="false" />
 86-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:71:13-37
 87        <activity
 87-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:72:9-74:40
-88            android:name="com.example.gearshop.activity.customer_activity.EditUserInfoActivity"
-88-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:73:13-76
+88            android:name="com.example.gearshop.activity.customer_activity.CategoryActivity"
+88-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:73:13-72
 89            android:exported="false" />
 89-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:74:13-37
 90        <activity
 90-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:75:9-77:40
-91            android:name="com.example.gearshop.activity.customer_activity.CategoryActivity"
-91-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:76:13-72
+91            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
+91-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:76:13-70
 92            android:exported="false" />
 92-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:77:13-37
 93        <activity
 93-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:78:9-80:40
-94            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
-94-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:79:13-70
+94            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
+94-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:79:13-84
 95            android:exported="false" />
 95-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:80:13-37
 96        <activity
 96-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:81:9-89:20
-97            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
-97-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:82:13-84
+97            android:name="com.example.gearshop.activity.admin_activity.AdminProductCategoryManagementActivity"
+97-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:82:13-91
 98            android:exported="true" >
 98-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:83:13-36
 99            <intent-filter>

@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
-import com.example.gearshop.dialog.FilterBottomSheetDialog;
+import com.example.gearshop.dialog.ProductFilterBottomSheetDialog;
 import com.example.gearshop.dialog.ProductSortBottomSheetDialog;
 import com.example.gearshop.dialog.SearchNotFoundDialog;
 import com.example.gearshop.model.Category;
@@ -70,6 +70,11 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity impleme
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddNewProductActivity.class);
         });
 
+        ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");
+        ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList);
+        ProductGridView = findViewById(R.id.gridview_product_management);
+        ProductGridView.setAdapter(ProductAdapter);
+
         SearchEditText = findViewById(R.id.search_text_admin_product);
         SearchIconView = findViewById(R.id.search_icon_admin_product);
         SearchIconView.setOnClickListener(view -> {
@@ -86,16 +91,34 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity impleme
             }
         });
 
+        final ProductFilterBottomSheetDialog[] productFilterBottomSheetDialog =
+                new ProductFilterBottomSheetDialog[1];
+
+        View.OnClickListener filterOnClickListener = view -> {
+            productFilterBottomSheetDialog[0] =
+                    new ProductFilterBottomSheetDialog(ProductAdapter, ProductList);
+            productFilterBottomSheetDialog[0].show(getSupportFragmentManager(),
+                    productFilterBottomSheetDialog[0].getTag());
+        };
+
+        final ProductSortBottomSheetDialog[] productSortBottomSheetDialog =
+                new ProductSortBottomSheetDialog[1];
+        View.OnClickListener sortOnClickListener = view -> {
+            productSortBottomSheetDialog[0] =
+                    new ProductSortBottomSheetDialog(ProductAdapter, ProductList);
+            productSortBottomSheetDialog[0].show(getSupportFragmentManager(),
+                    productSortBottomSheetDialog[0].getTag());
+        };
+
         FilterIconView = findViewById(R.id.filter_icon_admin_product);
+        FilterIconView.setOnClickListener(filterOnClickListener);
         FilterTextView = findViewById(R.id.label_filter_admin_product);
+        FilterTextView.setOnClickListener(filterOnClickListener);
 
         SortIconView = findViewById(R.id.sort_icon_admin_product);
+        SortIconView.setOnClickListener(sortOnClickListener);
         SortTextView = findViewById(R.id.label_sort_admin_product);
-
-        ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");
-        ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList);
-        ProductGridView = findViewById(R.id.gridview_product_management);
-        ProductGridView.setAdapter(ProductAdapter);
+        SortTextView.setOnClickListener(sortOnClickListener);
 
         CustomerManagementView = findViewById(R.id.customer_manage_category);
         CustomerManagementView.setOnClickListener(view -> {

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class FilterBottomSheetDialog extends BottomSheetDialogFragment implements
+public class ProductFilterBottomSheetDialog extends BottomSheetDialogFragment implements
 ConfirmFilterDialog.DialogListener{
     private View DismissView;
     private ConstraintLayout UnderPriceLayout;
@@ -42,11 +43,11 @@ ConfirmFilterDialog.DialogListener{
     private TextView ApplyFilterTextView;
     private List<Product> ProductList;
     private List<Product> FilterProductResult;
-    private ListProductFragment CategoryListProductFragment;
-    public FilterBottomSheetDialog(){}
-    public FilterBottomSheetDialog(ListProductFragment categoryListProductFragment, List<Product> products){
+    private ProductGridAdapter ProductAdapter;
+    public ProductFilterBottomSheetDialog(){}
+    public ProductFilterBottomSheetDialog(ProductGridAdapter productAdapter, List<Product> products){
+        this.ProductAdapter = productAdapter;
         this.ProductList = products;
-        this.CategoryListProductFragment = categoryListProductFragment;
     }
     public View getDismissView() {
         return DismissView;
@@ -246,7 +247,8 @@ ConfirmFilterDialog.DialogListener{
     @Override
     public void onDialogResult(boolean result) {
         if (result){
-            CategoryListProductFragment.UpdateDataOntoAdapter(FilterProductResult);
+            ProductAdapter.setData(FilterProductResult);
+            ProductAdapter.notifyDataSetChanged();
             UpdateUIFilterOnChosen(tempLayout, tempTextView);
         }
     }

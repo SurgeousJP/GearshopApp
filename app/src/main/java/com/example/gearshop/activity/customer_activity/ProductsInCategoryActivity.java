@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.dialog.FilterBottomSheetDialog;
+import com.example.gearshop.dialog.ProductFilterBottomSheetDialog;
 import com.example.gearshop.fragment.FilterSortBarFragment;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.dialog.ProductSortBottomSheetDialog;
@@ -101,21 +101,21 @@ public class ProductsInCategoryActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), AccountActivity.class);
         });
 
-        final FilterBottomSheetDialog[] filterBottomSheetDialog =
-                new FilterBottomSheetDialog[1];
+        final ProductFilterBottomSheetDialog[] productFilterBottomSheetDialog =
+                new ProductFilterBottomSheetDialog[1];
         final ProductSortBottomSheetDialog[] productSortBottomSheetDialog =
                 new ProductSortBottomSheetDialog[1];
         View.OnClickListener filterOnClickListener = view -> {
-            filterBottomSheetDialog[0] =
-                    new FilterBottomSheetDialog(categoryListProductFragment, ProductList);
-            filterBottomSheetDialog[0].show(getSupportFragmentManager(),
-                    filterBottomSheetDialog[0].getTag());
+            productFilterBottomSheetDialog[0] =
+                    new ProductFilterBottomSheetDialog(categoryListProductFragment.getProductAdapter(), ProductList);
+            productFilterBottomSheetDialog[0].show(getSupportFragmentManager(),
+                    productFilterBottomSheetDialog[0].getTag());
 
         };
 
         View.OnClickListener sortOnClickListener = view -> {
             productSortBottomSheetDialog[0] =
-                    new ProductSortBottomSheetDialog(categoryListProductFragment, ProductList);
+                    new ProductSortBottomSheetDialog(categoryListProductFragment.getProductAdapter(), ProductList);
             productSortBottomSheetDialog[0].show(getSupportFragmentManager(),
                     productSortBottomSheetDialog[0].getTag());
         };
