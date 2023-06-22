@@ -1,11 +1,18 @@
 package com.example.gearshop.activity.admin_activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -26,7 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class AdminProductsInCategoryManagement extends AppCompatActivity implements SearchNotFoundDialog.DialogListener{
+public class AdminProductsInCategoryManagement extends AppCompatActivity
+        implements SearchNotFoundDialog.DialogListener, AdapterView.OnItemLongClickListener {
 
     private View ReturnView;
     private TextView CategoryNameTextView;
@@ -43,6 +51,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity impleme
     private View AccountManagementView;
     private ProductGridAdapter ProductAdapter;
     private List<Product> ProductList;
+    int position;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -65,15 +74,21 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity impleme
         CategoryNameTextView = findViewById(R.id.admin_product_in_category_management);
         CategoryNameTextView.setText("Quản lý sản phẩm - " + clickedCategory.getName());
 
+        // NOT DONE YET
         AddProductView = findViewById(R.id.add_new_product_to_database);
         AddProductView.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddNewProductActivity.class);
         });
 
         ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");
-        ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList);
+        boolean isMovingToProductDetail = false;
+        ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList, isMovingToProductDetail);
         ProductGridView = findViewById(R.id.gridview_product_management);
         ProductGridView.setAdapter(ProductAdapter);
+        registerForContextMenu(ProductGridView);
+        ProductGridView.setEnabled(true);
+        ProductGridView.setClickable(true);
+        ProductGridView.setOnItemLongClickListener(this);
 
         SearchEditText = findViewById(R.id.search_text_admin_product);
         SearchIconView = findViewById(R.id.search_icon_admin_product);
@@ -134,6 +149,40 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity impleme
         AccountManagementView.setOnClickListener(view -> {
         });
     }
+
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+        position = i;
+        ProductGridView.showContextMenu();
+        return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.update_remove_product_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        switch (item.getItemId()) {
+            // NOT DONE YET
+            case R.id.edit_product_item:
+//                Intent intent = new Intent(MainActivity.this, EditTaskActivity.class);
+//                intent.putExtra("selectedTask", tasks.get(position));
+//                EditLauncher.launch(intent);
+//                return true;
+            case R.id.delete_product_item:
+                ProductList.remove(position);
+                ProductAdapter.setData(ProductList);
+                ProductAdapter.notifyDataSetChanged();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
     @Override
     public void onDialogResult(boolean result) {
 

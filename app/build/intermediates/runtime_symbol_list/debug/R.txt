@@ -3239,6 +3239,7 @@ int id decor_content_parent 0x7f08013e
 int id decrease_box 0x7f08013f
 int id default_activity_button 0x7f080140
 int id delete_product 0x7f080141
+int id delete_product_item 0x7f0804c4
 int id delete_product_view 0x7f080142
 int id delivered_box 0x7f080143
 int id delivered_order 0x7f080144
@@ -3296,6 +3297,7 @@ int id edit_firstname_icon 0x7f080177
 int id edit_lastname_icon 0x7f080178
 int id edit_password_icon 0x7f080179
 int id edit_phonenumber_icon 0x7f08017a
+int id edit_product_item 0x7f0804c5
 int id edit_query 0x7f08017b
 int id edit_sex_icon 0x7f08017c
 int id elastic 0x7f08017d
@@ -4367,6 +4369,7 @@ int layout support_simple_spinner_dropdown_item 0x7f0b0097
 int layout user_info 0x7f0b0098
 int layout voucher_setting 0x7f0b0099
 int menu dots_menu 0x7f0d0000
+int menu update_remove_product_menu 0x7f0d0001
 int mipmap apple_icon 0x7f0e0000
 int mipmap headphone_icon 0x7f0e0001
 int mipmap ic_launcher 0x7f0e0002

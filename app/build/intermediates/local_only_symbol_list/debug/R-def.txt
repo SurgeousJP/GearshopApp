@@ -304,6 +304,7 @@ id customer_username_box
 id customer_username_text
 id decrease_box
 id delete_product
+id delete_product_item
 id delete_product_view
 id delivered_box
 id delivered_order
@@ -333,6 +334,7 @@ id edit_firstname_icon
 id edit_lastname_icon
 id edit_password_icon
 id edit_phonenumber_icon
+id edit_product_item
 id edit_sex_icon
 id email
 id email_box
@@ -902,6 +904,7 @@ layout support_info
 layout user_info
 layout voucher_setting
 menu dots_menu
+menu update_remove_product_menu
 mipmap apple_icon
 mipmap headphone_icon
 mipmap ic_launcher

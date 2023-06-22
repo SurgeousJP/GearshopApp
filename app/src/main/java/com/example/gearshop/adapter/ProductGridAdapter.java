@@ -21,10 +21,16 @@ import com.squareup.picasso.Picasso;
 public class ProductGridAdapter extends BaseAdapter {
     private Context context;
     private List<Product> products;
+    private boolean IsMovingToProductDetail = true;
 
     public ProductGridAdapter(Context context, List<Product> products) {
         this.context = context;
         this.products = products;
+    }
+    public ProductGridAdapter(Context context, List<Product> products, boolean isMovingToProductDetail){
+        this.context = context;
+        this.products = products;
+        this.IsMovingToProductDetail = isMovingToProductDetail;
     }
     public void setData(List<Product> products){
         this.products = products;
@@ -78,14 +84,16 @@ public class ProductGridAdapter extends BaseAdapter {
             productDiscountTextView.setVisibility(View.GONE);
         }
         productSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("clickedProduct", product);
-                context.startActivity(intent);
-            }
-        });
+        if (IsMovingToProductDetail){
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("clickedProduct", product);
+                    context.startActivity(intent);
+                }
+            });
+        }
         return convertView;
     }
 }

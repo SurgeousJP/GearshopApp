@@ -3240,6 +3240,7 @@ id decor_content_parent
 id decrease_box
 id default_activity_button
 id delete_product
+id delete_product_item
 id delete_product_view
 id delivered_box
 id delivered_order
@@ -3297,6 +3298,7 @@ id edit_firstname_icon
 id edit_lastname_icon
 id edit_password_icon
 id edit_phonenumber_icon
+id edit_product_item
 id edit_query
 id edit_sex_icon
 id elastic
@@ -4368,6 +4370,7 @@ layout support_simple_spinner_dropdown_item
 layout user_info
 layout voucher_setting
 menu dots_menu
+menu update_remove_product_menu
 mipmap apple_icon
 mipmap headphone_icon
 mipmap ic_launcher
