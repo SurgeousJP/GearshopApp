@@ -13,14 +13,20 @@ import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductGridAdapter;
+import com.example.gearshop.dialog.FilterBottomSheetDialog;
+import com.example.gearshop.dialog.ProductSortBottomSheetDialog;
+import com.example.gearshop.dialog.SearchNotFoundDialog;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
+import com.example.gearshop.utility.VietnameseStringConverter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class AdminProductsInCategoryManagement extends AppCompatActivity {
+public class AdminProductsInCategoryManagement extends AppCompatActivity implements SearchNotFoundDialog.DialogListener{
 
     private View ReturnView;
     private TextView CategoryNameTextView;
@@ -67,7 +73,17 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity {
         SearchEditText = findViewById(R.id.search_text_admin_product);
         SearchIconView = findViewById(R.id.search_icon_admin_product);
         SearchIconView.setOnClickListener(view -> {
-
+            String searchText = SearchEditText.getText().toString();
+            List<Product> searchResults = searchForProducts(searchText);
+            if (searchText.isEmpty() || searchResults.size() == 0){
+                ProductAdapter.setData(new ArrayList<>());
+                ProductAdapter.notifyDataSetChanged();
+                showSearchNotFoundDialog();
+            }
+            else{
+                ProductAdapter.setData(searchResults);
+                ProductAdapter.notifyDataSetChanged();
+            }
         });
 
         FilterIconView = findViewById(R.id.filter_icon_admin_product);
@@ -94,5 +110,36 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity {
         AccountManagementView = findViewById(R.id.account_management_category);
         AccountManagementView.setOnClickListener(view -> {
         });
+    }
+    @Override
+    public void onDialogResult(boolean result) {
+
+    }
+
+    private void showSearchNotFoundDialog() {
+        SearchNotFoundDialog dialogFragment = new SearchNotFoundDialog();
+        dialogFragment.setDialogListener(this::onDialogResult);
+        dialogFragment.show(getSupportFragmentManager(), "");
+    }
+
+    protected List<Product> searchForProducts(String searchText){
+        List<Product> result = new ArrayList<>();
+        for (int i = 0; i < ProductList.size(); i++){
+            if (checkProductContainsInformation(ProductList.get(i), searchText)){
+                result.add(ProductList.get(i));
+            }
+        }
+        return result;
+    }
+
+    protected boolean checkProductContainsInformation(Product product, String info){
+        if (info.isEmpty())
+            return false;
+        String productPlainString = VietnameseStringConverter.convertToPlainString(
+                product.getName().toLowerCase(Locale.ROOT));
+        if (VietnameseStringConverter.convertToPlainString(info).equals(info.toLowerCase(Locale.ROOT))){
+            return productPlainString.contains(info.toLowerCase(Locale.ROOT));
+        }
+        return product.getName().toLowerCase(Locale.ROOT).contains(info.toLowerCase(Locale.ROOT));
     }
 }
