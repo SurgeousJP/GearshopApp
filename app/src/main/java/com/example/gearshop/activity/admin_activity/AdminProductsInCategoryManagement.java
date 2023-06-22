@@ -10,9 +10,7 @@ import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -77,7 +75,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
         // NOT DONE YET
         AddProductView = findViewById(R.id.add_new_product_to_database);
         AddProductView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddNewProductActivity.class);
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddEditProductActivity.class);
         });
 
         ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");

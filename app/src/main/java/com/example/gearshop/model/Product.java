@@ -6,6 +6,8 @@ public class Product implements Serializable {
     private int ID;
     private String Name, ImageURL, Description, Specs;
     private double Price;
+
+    // Product Status: 0 - DELETED, 1 - AVAILABLE, 2 - NOT AVAILABLE
     private int Status;
     private int CategoryID;
     private Discount DiscountInformation;

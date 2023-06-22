@@ -135,7 +135,13 @@ id accout_manage_text
 id add_button
 id add_edit_title
 id add_new_product_to_database
+id add_product_description
+id add_product_image
+id add_product_image_path_picker
+id add_product_image_selected_path
+id add_product_screen_return_view
 id add_product_specs
+id add_product_specs_text
 id add_to_card
 id add_to_cart_text
 id address_box_user_info
@@ -217,7 +223,6 @@ id check_out_text
 id chip
 id chip1
 id chip2
-id choose_category
 id circle_blue
 id close_sex_setting
 id components_
@@ -251,6 +256,7 @@ id confirm_password_box
 id confirm_password_box_layout
 id confirm_password_edit_text
 id confirm_password_text
+id confirm_product_text
 id confirm_status
 id confirm_text
 id constraintLayout
@@ -396,13 +402,11 @@ id homeadress_edittext
 id horizontal_scrollview_order_status
 id hotline_support_box
 id imageView
-id image_edit
 id image_edit_box
 id image_facebook_support
 id image_hotline_support
 id image_layout_box
 id image_location_support
-id image_name
 id image_path_box
 id image_payment
 id image_voucher
@@ -756,7 +760,7 @@ id status_change
 id support_box
 id support_box_image
 id support_info_label
-id switch1
+id switch_product_status
 id text1
 id textView
 id text_order_day
@@ -813,9 +817,9 @@ id transport_unit_text
 id twitter_icon
 id type_of_transport_unit_text_order_detail
 id type_panel
+id upload_add_product_text
 id upload_button
-id upload_icon
-id upload_text
+id upload_product_image_icon
 id user_info_box
 id user_info_image
 id user_info_label
