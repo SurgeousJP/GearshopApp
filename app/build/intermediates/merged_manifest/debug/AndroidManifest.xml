@@ -31,10 +31,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.GearShop" >
         <activity
+            android:name="com.example.gearshop.activity.admin_activity.AdminAddNewProductActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.admin_activity.AdminProductsInCategoryManagement"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.admin_activity.AdminProductManagementActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminProductCategoryManagementActivity"
             android:exported="false" />
         <activity
             android:name="com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity"

@@ -2971,7 +2971,7 @@ id account_manage_account
 id account_manage_account_text
 id account_manage_customer
 id account_manage_order
-id accout_manage_customer
+id account_management_category
 id accout_manage_customer_text
 id accout_manage_order_text
 id accout_manage_text
@@ -3000,6 +3000,7 @@ id activity_chooser_view_content
 id add
 id add_button
 id add_edit_title
+id add_new_product_to_database
 id add_product_specs
 id add_to_card
 id add_to_cart_text
@@ -3022,6 +3023,7 @@ id admin_order_sort_icon
 id admin_order_view_all
 id admin_password_user_info
 id admin_phonenumber_user_info
+id admin_product_in_category_management
 id admin_sex_user_info
 id admin_title_username_user_info
 id admin_username_user_info
@@ -3340,6 +3342,7 @@ id fill_vertical
 id filled
 id filter_box
 id filter_icon
+id filter_icon_admin_product
 id filter_sort_item
 id filter_sort_order_management
 id final_price_box
@@ -3379,7 +3382,7 @@ id graph
 id graph_wrap
 id grid_item_g
 id grid_view_list_product
-id gridview_product_managerment
+id gridview_product_management
 id group_divider
 id grouping
 id groups
@@ -3450,6 +3453,7 @@ id label_delivery
 id label_facebook
 id label_facebook_name
 id label_filter
+id label_filter_admin_product
 id label_filter_text
 id label_final_price
 id label_hotline
@@ -3494,6 +3498,7 @@ id label_ship
 id label_ship_description_order_detail
 id label_ship_order_detail
 id label_sort_
+id label_sort_admin_product
 id label_support
 id label_support_desc
 id label_transport_fee
@@ -3771,6 +3776,7 @@ id product_detail_description_text
 id product_detail_header_layout
 id product_detail_header_text
 id product_detail_info
+id product_gridview_container
 id product_id_box
 id product_id_edit_text
 id product_id_text
@@ -3820,6 +3826,7 @@ id recycler_view_category_main
 id recycler_view_order_detail
 id register_text
 id registerform
+id return_admin_product_management
 id return_cart_icon
 id return_faq_icon
 id return_to_category
@@ -3856,6 +3863,7 @@ id search_close_btn
 id search_edit_frame
 id search_go_btn
 id search_icon
+id search_icon_admin_product
 id search_input
 id search_item_category_detail
 id search_mag_icon
@@ -3863,6 +3871,7 @@ id search_plate
 id search_result_layout
 id search_src_text
 id search_text
+id search_text_admin_product
 id search_view_background
 id search_view_clear_button
 id search_view_content_container
@@ -3922,6 +3931,7 @@ id snackbar_text
 id snap
 id snapMargins
 id sort_icon
+id sort_icon_admin_product
 id sort_vector
 id sort_vector_customer
 id sort_vector_order

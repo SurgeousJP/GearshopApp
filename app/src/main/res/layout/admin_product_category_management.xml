@@ -89,8 +89,8 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_box_product_management"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/product_gridview_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/none">
@@ -220,16 +220,30 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <GridView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gridview_product_management"
-                app:layout_constraintTop_toBottomOf="@id/filter_sort_item"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/product_gridview_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/scroll_box_product_management"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar">
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridview_product_management"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="10sp"
+            android:columnWidth="20sp"
+            android:horizontalSpacing="10sp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10sp"
+            />
+    </RelativeLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_bar"
         android:layout_width="0dp"

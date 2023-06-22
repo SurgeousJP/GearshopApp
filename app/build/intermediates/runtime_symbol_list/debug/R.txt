@@ -2970,7 +2970,7 @@ int id account_manage_account 0x7f080033
 int id account_manage_account_text 0x7f080034
 int id account_manage_customer 0x7f080035
 int id account_manage_order 0x7f080036
-int id accout_manage_customer 0x7f080037
+int id account_management_category 0x7f0804b8
 int id accout_manage_customer_text 0x7f080038
 int id accout_manage_order_text 0x7f080039
 int id accout_manage_text 0x7f08003a
@@ -2999,6 +2999,7 @@ int id activity_chooser_view_content 0x7f080050
 int id add 0x7f080051
 int id add_button 0x7f080052
 int id add_edit_title 0x7f080053
+int id add_new_product_to_database 0x7f0804b9
 int id add_product_specs 0x7f080054
 int id add_to_card 0x7f080055
 int id add_to_cart_text 0x7f080056
@@ -3021,6 +3022,7 @@ int id admin_order_sort_icon 0x7f080066
 int id admin_order_view_all 0x7f080067
 int id admin_password_user_info 0x7f080068
 int id admin_phonenumber_user_info 0x7f080069
+int id admin_product_in_category_management 0x7f0804ba
 int id admin_sex_user_info 0x7f08006a
 int id admin_title_username_user_info 0x7f08006b
 int id admin_username_user_info 0x7f08006c
@@ -3339,6 +3341,7 @@ int id fill_vertical 0x7f0801a4
 int id filled 0x7f0801a5
 int id filter_box 0x7f0801a6
 int id filter_icon 0x7f0801a7
+int id filter_icon_admin_product 0x7f0804bb
 int id filter_sort_item 0x7f0801a8
 int id filter_sort_order_management 0x7f0801a9
 int id final_price_box 0x7f0801aa
@@ -3378,7 +3381,7 @@ int id graph 0x7f0801cb
 int id graph_wrap 0x7f0801cc
 int id grid_item_g 0x7f0801cd
 int id grid_view_list_product 0x7f0801ce
-int id gridview_product_managerment 0x7f0801cf
+int id gridview_product_management 0x7f0804bc
 int id group_divider 0x7f0801d0
 int id grouping 0x7f0801d1
 int id groups 0x7f0801d2
@@ -3449,6 +3452,7 @@ int id label_delivery 0x7f080212
 int id label_facebook 0x7f080213
 int id label_facebook_name 0x7f080214
 int id label_filter 0x7f080215
+int id label_filter_admin_product 0x7f0804bd
 int id label_filter_text 0x7f080216
 int id label_final_price 0x7f080217
 int id label_hotline 0x7f080218
@@ -3493,6 +3497,7 @@ int id label_ship 0x7f08023e
 int id label_ship_description_order_detail 0x7f08023f
 int id label_ship_order_detail 0x7f080240
 int id label_sort_ 0x7f080241
+int id label_sort_admin_product 0x7f0804be
 int id label_support 0x7f080242
 int id label_support_desc 0x7f080243
 int id label_transport_fee 0x7f080244
@@ -3770,6 +3775,7 @@ int id product_detail_description_text 0x7f080352
 int id product_detail_header_layout 0x7f080353
 int id product_detail_header_text 0x7f080354
 int id product_detail_info 0x7f080355
+int id product_gridview_container 0x7f0804bf
 int id product_id_box 0x7f080356
 int id product_id_edit_text 0x7f080357
 int id product_id_text 0x7f080358
@@ -3819,6 +3825,7 @@ int id recycler_view_category_main 0x7f080383
 int id recycler_view_order_detail 0x7f080384
 int id register_text 0x7f080385
 int id registerform 0x7f080386
+int id return_admin_product_management 0x7f0804c0
 int id return_cart_icon 0x7f080387
 int id return_faq_icon 0x7f080388
 int id return_to_category 0x7f080389
@@ -3855,6 +3862,7 @@ int id search_close_btn 0x7f0803a7
 int id search_edit_frame 0x7f0803a8
 int id search_go_btn 0x7f0803a9
 int id search_icon 0x7f0803aa
+int id search_icon_admin_product 0x7f0804c1
 int id search_input 0x7f0803ab
 int id search_item_category_detail 0x7f0803ac
 int id search_mag_icon 0x7f0803ad
@@ -3862,6 +3870,7 @@ int id search_plate 0x7f0803ae
 int id search_result_layout 0x7f0803af
 int id search_src_text 0x7f0803b0
 int id search_text 0x7f0803b1
+int id search_text_admin_product 0x7f0804c2
 int id search_view_background 0x7f0803b2
 int id search_view_clear_button 0x7f0803b3
 int id search_view_content_container 0x7f0803b4
@@ -3921,6 +3930,7 @@ int id snackbar_text 0x7f0803e9
 int id snap 0x7f0803ea
 int id snapMargins 0x7f0803eb
 int id sort_icon 0x7f0803ec
+int id sort_icon_admin_product 0x7f0804c3
 int id sort_vector 0x7f0803ed
 int id sort_vector_customer 0x7f0803ee
 int id sort_vector_order 0x7f0803ef

@@ -12,8 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.model.Category;
+import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.DatabaseHelper;
+
+import java.util.List;
 
 public class AdminProductsInCategoryManagement extends AppCompatActivity {
 
@@ -30,6 +35,8 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity {
     private View CustomerManagementView;
     private View OrderManagementView;
     private View AccountManagementView;
+    private ProductGridAdapter ProductAdapter;
+    private List<Product> ProductList;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -69,7 +76,10 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity {
         SortIconView = findViewById(R.id.sort_icon_admin_product);
         SortTextView = findViewById(R.id.label_sort_admin_product);
 
+        ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");
+        ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList);
         ProductGridView = findViewById(R.id.gridview_product_management);
+        ProductGridView.setAdapter(ProductAdapter);
 
         CustomerManagementView = findViewById(R.id.customer_manage_category);
         CustomerManagementView.setOnClickListener(view -> {
