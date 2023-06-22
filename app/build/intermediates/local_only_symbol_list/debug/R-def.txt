@@ -498,6 +498,7 @@ id line5
 id line6
 id line7
 id line8
+id lineChart
 id line_view
 id linebegin
 id lineend
@@ -842,6 +843,7 @@ id wayback_icon_user_info
 id zalo_support_box
 layout account_main
 layout activity_main
+layout activity_test_mpandroid_chart
 layout admin_account
 layout admin_customer_detail
 layout admin_customer_list_item

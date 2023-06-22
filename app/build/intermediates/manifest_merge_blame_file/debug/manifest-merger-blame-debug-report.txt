@@ -166,14 +166,14 @@
 89-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:74:13-37
 90        <activity
 90-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:75:9-77:40
-91            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
-91-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:76:13-84
+91            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
+91-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:76:13-70
 92            android:exported="false" />
 92-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:77:13-37
 93        <activity
 93-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:78:9-86:20
-94            android:name="com.example.gearshop.activity.TestMPAndroidChart"
-94-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:79:13-56
+94            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
+94-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:79:13-84
 95            android:exported="true" >
 95-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:80:13-36
 96            <intent-filter>
@@ -189,8 +189,8 @@
 101        </activity>
 102        <activity
 102-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:87:9-89:40
-103            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
-103-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:88:13-70
+103            android:name="com.example.gearshop.activity.TestMPAndroidChart"
+103-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:88:13-56
 104            android:exported="false" />
 104-->C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:89:13-37
 105

@@ -70,7 +70,7 @@ public class AdminCustomerManagementActivity extends AppCompatActivity {
         CustomerSortText.setOnClickListener(sortCustomerListener);
         TransitionToProductManagementView = findViewById(R.id.product_manage_customer);
         TransitionToProductManagementView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), AdminProductManagementActivity.class);
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminProductCategoryManagementActivity.class);
         });
         TransitionToAccountManagementView = findViewById(R.id.account_manage_customer);
         TransitionToAccountManagementView.setOnClickListener(view -> {

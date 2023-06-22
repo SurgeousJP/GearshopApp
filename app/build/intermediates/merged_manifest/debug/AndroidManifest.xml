@@ -88,10 +88,10 @@
             android:name="com.example.gearshop.activity.customer_activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
+            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -99,6 +99,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.gearshop.activity.TestMPAndroidChart"
+            android:exported="false" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

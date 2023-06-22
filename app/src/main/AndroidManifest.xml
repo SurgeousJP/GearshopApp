@@ -16,10 +16,13 @@
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
         <activity
+            android:name=".activity.admin_activity.AdminAddNewProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.admin_activity.AdminProductsInCategoryManagement"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminProductManagementActivity"
+            android:name=".activity.admin_activity.AdminProductCategoryManagementActivity"
             android:exported="false" />
         <activity
             android:name=".activity.admin_activity.AdminOrderStatusPickActivity"
@@ -73,10 +76,10 @@
             android:name=".activity.customer_activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminCustomerManagementActivity"
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.TestMPAndroidChart"
+            android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -85,7 +88,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.customer_activity.SignInActivity"
+            android:name=".activity.TestMPAndroidChart"
             android:exported="false" />
     </application>
 
