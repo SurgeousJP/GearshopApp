@@ -364,13 +364,13 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/account_icon_grey"
-                app:layout_constraintBottom_toTopOf="@id/accout_manage_customer_text"
+                app:layout_constraintBottom_toTopOf="@id/other_manage_customer_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/accout_manage_customer_text"
+                android:id="@+id/other_manage_customer_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"

@@ -2,14 +2,12 @@ package com.example.gearshop.activity.admin_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.customer_activity.ProductsInCategoryActivity;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.repository.CategoryRepository;
@@ -52,7 +50,7 @@ public class AdminProductManagementActivity extends AppCompatActivity {
         OrderManagementView.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminOrderManagementActivity.class);
         });
-        AccountManagementView = findViewById(R.id.product_account_management);
+        AccountManagementView = findViewById(R.id.product_other_management);
         AccountManagementView.setOnClickListener(view -> {
 
         });

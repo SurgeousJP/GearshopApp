@@ -514,30 +514,30 @@
             app:layout_constraintTop_toTopOf="@id/bottom_bar">
 
             <View
-                android:id="@+id/account_manage_order"
+                android:id="@+id/other_manage_order"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="2dp"
-                android:background="@drawable/account_icon_grey"
-                app:layout_constraintBottom_toTopOf="@id/accout_manage_order_text"
+                android:background="@drawable/other_icon_grey"
+                app:layout_constraintBottom_toTopOf="@id/other_manage_order_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/accout_manage_order_text"
+                android:id="@+id/other_manage_order_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Tài khoản"
+                android:text="Thông tin khác"
                 android:textColor="@color/grey"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/account_manage_order" />
+                app:layout_constraintTop_toBottomOf="@id/other_manage_order" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

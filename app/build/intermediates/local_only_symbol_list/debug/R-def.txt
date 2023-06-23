@@ -95,6 +95,8 @@ drawable option_item
 drawable option_item_color
 drawable order_management_icon_blue
 drawable order_management_icon_grey
+drawable other_icon_blue
+drawable other_icon_grey
 drawable plus_icon
 drawable processing_icon
 drawable product_management_icon_blue
@@ -134,13 +136,8 @@ id account_avartar
 id account_avatar_item
 id account_item_category_detail
 id account_manage_account
-id account_manage_account_text
 id account_manage_customer
-id account_manage_order
 id accout_manage_customer
-id accout_manage_customer_text
-id accout_manage_order_text
-id accout_manage_text
 id add_button
 id add_edit_title
 id add_product_specs
@@ -151,6 +148,7 @@ id address_text_user_info
 id address_user_info
 id admin_address_user_info
 id admin_all_order
+id admin_button
 id admin_dob_user_info
 id admin_email_user_info
 id admin_firstname_user_info
@@ -163,9 +161,11 @@ id admin_order_management_search_icon
 id admin_order_management_search_text
 id admin_order_sort_icon
 id admin_order_view_all
+id admin_other_other_text
 id admin_password_user_info
 id admin_phonenumber_user_info
 id admin_sex_user_info
+id admin_text
 id admin_title_username_user_info
 id admin_username_user_info
 id all_order
@@ -283,6 +283,7 @@ id cta_viewmore
 id custom_price
 id customer
 id customer_box
+id customer_button
 id customer_color_box
 id customer_detail_return_view
 id customer_id
@@ -619,6 +620,10 @@ id order_transport_uint_box
 id order_transport_unit
 id original_price
 id other_info_box
+id other_manage_customer_text
+id other_manage_order
+id other_manage_order_text
+id other_manage_text
 id other_option
 id password
 id password_box
@@ -652,7 +657,6 @@ id prod_config_box
 id prod_detail_box
 id produ_info_list_order_status
 id product
-id product_account_management
 id product_box
 id product_category_box
 id product_category_edit_text
@@ -688,6 +692,7 @@ id product_name_edit_text
 id product_name_text
 id product_number_box
 id product_order_management
+id product_other_management
 id product_pie_chart_title
 id product_price_box
 id product_price_edit_text
@@ -773,6 +778,8 @@ id statistic_box
 id statistic_image
 id statistic_title
 id status_change
+id streetname_box
+id streetname_edittext
 id support_box
 id support_box_image
 id support_info_label
@@ -792,11 +799,13 @@ id thinline2
 id thinline3
 id time_of_transport_order_detail
 id title_1
+id title_admin
 id title_categ
 id title_category
 id title_choose_category
 id title_choose_province
 id title_choose_status
+id title_customer
 id title_empty
 id title_filter
 id title_login_user_info
@@ -876,7 +885,6 @@ id wayback_icon_user_info
 id zalo_support_box
 layout account_main
 layout activity_main
-layout admin_account
 layout admin_customer_detail
 layout admin_customer_list_item
 layout admin_customer_mainsceen_management
@@ -884,6 +892,7 @@ layout admin_customer_sort_setting
 layout admin_order_list_item_status
 layout admin_order_mainscreen_management
 layout admin_order_sort_setting
+layout admin_other
 layout admin_product_add_update
 layout admin_product_category_management
 layout admin_product_category_picker
@@ -911,6 +920,8 @@ layout list_item_province
 layout list_order_status
 layout list_voucher
 layout login
+layout login_admin
+layout login_choose
 layout not_found_search
 layout order_detail
 layout order_management

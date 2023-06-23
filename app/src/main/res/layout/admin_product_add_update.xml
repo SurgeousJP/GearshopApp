@@ -745,18 +745,18 @@
             app:layout_constraintTop_toTopOf="@id/bottom_bar">
 
             <View
-                android:id="@+id/product_account_management"
+                android:id="@+id/product_other_management"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/account_icon_grey"
-                app:layout_constraintBottom_toTopOf="@id/accout_manage_text"
+                app:layout_constraintBottom_toTopOf="@id/other_manage_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/accout_manage_text"
+                android:id="@+id/other_manage_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
@@ -768,7 +768,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/product_account_management" />
+                app:layout_constraintTop_toBottomOf="@id/product_other_management" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
