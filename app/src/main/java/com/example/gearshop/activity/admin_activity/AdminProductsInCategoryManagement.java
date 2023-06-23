@@ -17,12 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.customer_activity.CustomerOrderActivity;
 import com.example.gearshop.adapter.ProductGridAdapter;
 import com.example.gearshop.dialog.ProductFilterBottomSheetDialog;
 import com.example.gearshop.dialog.ProductSortBottomSheetDialog;
 import com.example.gearshop.dialog.SearchNotFoundDialog;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Product;
+import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.VietnameseStringConverter;
@@ -72,10 +74,13 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
         CategoryNameTextView = findViewById(R.id.admin_product_in_category_management);
         CategoryNameTextView.setText("Quản lý sản phẩm - " + clickedCategory.getName());
 
-        // NOT DONE YET
         AddProductView = findViewById(R.id.add_new_product_to_database);
         AddProductView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddEditProductActivity.class);
+            Intent intent = new Intent(getBaseContext(), AdminAddProductActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("productCategory", clickedCategory);
+            startActivity(intent);
+            finish();
         });
 
         ProductList = DatabaseHelper.getAdminProductListFromCategory(clickedCategory.getID(), "ALL");

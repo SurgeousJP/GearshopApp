@@ -64,12 +64,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         Intent getClickedOrderIntent = getIntent();
         Order clickedOrder = (Order) getClickedOrderIntent.getSerializableExtra("clickedOrder");
         ADMIN_MODE = getClickedOrderIntent.getBooleanExtra("ADMIN_MODE", false);
-//
-//        try{
-//        }
-//        catc{
-//
-//        }
+
         OrderIDTextView = findViewById(R.id.customer_order_id);
         OrderIDTextView.setText(String.valueOf(clickedOrder.getID()));
 
