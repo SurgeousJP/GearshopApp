@@ -13,7 +13,7 @@ import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 
 import com.example.gearshop.R;
-import com.example.gearshop.database.GetProductDataFromAzure;
+import com.example.gearshop.database.GetCustomerProductDataFromAzure;
 import com.example.gearshop.fragment.ListProductFragment;
 import com.example.gearshop.dialog.SearchNotFoundDialog;
 import com.example.gearshop.model.Product;
@@ -93,9 +93,9 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
     }
 
     private void setProductListFromAzure(){
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].execute(
+        final GetCustomerProductDataFromAzure[] getCustomerProductDataFromAzure = new GetCustomerProductDataFromAzure[1];
+        getCustomerProductDataFromAzure[0] = new GetCustomerProductDataFromAzure();
+        getCustomerProductDataFromAzure[0].execute(
                 "SELECT product.*,\n" +
                         "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
                         "\t   discount_percentage, start_date_utc, end_date_utc\n" +
@@ -106,13 +106,13 @@ public class SearchActivity extends AppCompatActivity implements ListProductFrag
         );
         System.out.println("Async Task running");
         try {
-            getProductDataFromAzure[0].get();
+            getCustomerProductDataFromAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
         System.out.println("Async Task ended");
-        if (getProductDataFromAzure[0].getProductList() != null)
-            ProductList = getProductDataFromAzure[0].getProductList();
+        if (getCustomerProductDataFromAzure[0].getProductList() != null)
+            ProductList = getCustomerProductDataFromAzure[0].getProductList();
     }
     protected List<Product> searchForProducts(String searchText){
         List<Product> result = new ArrayList<>();

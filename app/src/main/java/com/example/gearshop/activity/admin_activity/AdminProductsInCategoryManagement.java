@@ -78,7 +78,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminAddEditProductActivity.class);
         });
 
-        ProductList = DatabaseHelper.getProductListFromCategory(clickedCategory.getID(), "ALL");
+        ProductList = DatabaseHelper.getAdminProductListFromCategory(clickedCategory.getID(), "ALL");
         boolean isMovingToProductDetail = false;
         ProductAdapter = new ProductGridAdapter(getBaseContext(), ProductList, isMovingToProductDetail);
         ProductGridView = findViewById(R.id.gridview_product_management);

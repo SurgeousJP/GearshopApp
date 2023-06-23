@@ -8,18 +8,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class GetProductDataFromAzure extends AzureSQLDatabase{
+public abstract class GetProductDataFromAzure extends AzureSQLDatabase{
     private List<Product> ProductList;
     public int CategoryID = 0;
     public GetProductDataFromAzure() {
         this.ProductList = new ArrayList<>();
     }
-
     public List<Product> getProductList(){
         return ProductList;
     }
@@ -29,6 +26,8 @@ public class GetProductDataFromAzure extends AzureSQLDatabase{
     public void setCategoryID(int categoryID) {
         CategoryID = categoryID;
     }
+
+    public abstract boolean isIgnoreProduct(int status);
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
@@ -48,6 +47,9 @@ public class GetProductDataFromAzure extends AzureSQLDatabase{
                 try {
                     assert resultSet != null;
                     if (!resultSet.next()) break;
+
+                    if (isIgnoreProduct(resultSet.getInt("status"))) continue;
+
                     Discount newDiscount = new Discount(
                             resultSet.getInt("discount_id"),
                             resultSet.getString("discount_name"),

@@ -11,10 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Product;
-import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
@@ -44,7 +42,7 @@ public class OrderItemListAdapter extends RecyclerView.Adapter<OrderItemListAdap
     @Override
     public void onBindViewHolder(@NonNull OrderItemListAdapter.OrderItemListViewHolder holder, int position) {
         OrderItem orderItem = ListOrderItem.get(position);
-        Product productItem = DatabaseHelper.getProductListGivenID(
+        Product productItem = DatabaseHelper.getCustomerProductListGivenID(
                 "WHERE product.id ='" + orderItem.getProductID() + "'").get(0);
         if (productItem == null) return;
         else{

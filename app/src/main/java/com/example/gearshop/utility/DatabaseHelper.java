@@ -1,15 +1,15 @@
 package com.example.gearshop.utility;
 
 import android.annotation.SuppressLint;
-import android.provider.Telephony;
 
 import com.example.gearshop.database.GetAddressDataFromAzure;
 import com.example.gearshop.database.GetAdminDataFromAzure;
+import com.example.gearshop.database.GetAdminProductDataFromAzure;
 import com.example.gearshop.database.GetCustomerDataFromAzure;
 import com.example.gearshop.database.GetOrderDataFromAzure;
 import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.database.GetPaymentMethodDataFromAzure;
-import com.example.gearshop.database.GetProductDataFromAzure;
+import com.example.gearshop.database.GetCustomerProductDataFromAzure;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.database.InsertUpdateDataToAzure;
 import com.example.gearshop.model.Address;
@@ -236,7 +236,7 @@ public class DatabaseHelper {
         return new ArrayList<>();
     }
 
-    public static List<Product> getProductListFromCategory(int categoryID, String particularProduct) {
+    public static List<Product> getCustomerProductListFromCategory(int categoryID, String particularProduct) {
         System.out.println("getProductList running");
         String sqlCommand = "SELECT product.*,\n" +
                 "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
@@ -249,25 +249,25 @@ public class DatabaseHelper {
         if (!particularProduct.equals("ALL")){
             sqlCommand = sqlCommand + particularProduct;
         }
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].setCategoryID(categoryID);
-        getProductDataFromAzure[0].execute(sqlCommand);
+        final GetCustomerProductDataFromAzure[] getCustomerProductDataFromAzure = new GetCustomerProductDataFromAzure[1];
+        getCustomerProductDataFromAzure[0] = new GetCustomerProductDataFromAzure();
+        getCustomerProductDataFromAzure[0].setCategoryID(categoryID);
+        getCustomerProductDataFromAzure[0].execute(sqlCommand);
 
         System.out.println("Async Task running");
         try {
-            getProductDataFromAzure[0].get();
+            getCustomerProductDataFromAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
         System.out.println("Async Task ended");
 
-        if (getProductDataFromAzure[0].getProductList() != null)
-            return getProductDataFromAzure[0].getProductList();
+        if (getCustomerProductDataFromAzure[0].getProductList() != null)
+            return getCustomerProductDataFromAzure[0].getProductList();
         return new ArrayList<>();
     }
 
-    public static List<Product> getProductListGivenID(String particularProduct) {
+    public static List<Product> getCustomerProductListGivenID(String particularProduct) {
         String sqlCommand = "SELECT product.*,\n" +
                 "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
                 "\t   discount_percentage, start_date_utc, end_date_utc\n" +
@@ -278,20 +278,79 @@ public class DatabaseHelper {
         if (!particularProduct.equals("ALL")){
             sqlCommand = sqlCommand + particularProduct;
         }
-        final GetProductDataFromAzure[] getProductDataFromAzure = new GetProductDataFromAzure[1];
-        getProductDataFromAzure[0] = new GetProductDataFromAzure();
-        getProductDataFromAzure[0].execute(sqlCommand);
+        final GetCustomerProductDataFromAzure[] getCustomerProductDataFromAzure = new GetCustomerProductDataFromAzure[1];
+        getCustomerProductDataFromAzure[0] = new GetCustomerProductDataFromAzure();
+        getCustomerProductDataFromAzure[0].execute(sqlCommand);
 
         System.out.println("Async Task running");
         try {
-            getProductDataFromAzure[0].get();
+            getCustomerProductDataFromAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
         System.out.println("Async Task ended");
 
-        if (getProductDataFromAzure[0].getProductList() != null)
-            return getProductDataFromAzure[0].getProductList();
+        if (getCustomerProductDataFromAzure[0].getProductList() != null)
+            return getCustomerProductDataFromAzure[0].getProductList();
+        return new ArrayList<>();
+    }
+
+    public static List<Product> getAdminProductListFromCategory(int categoryID, String particularProduct) {
+        System.out.println("getProductList running");
+        String sqlCommand = "SELECT product.*,\n" +
+                "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
+                "\t   discount_percentage, start_date_utc, end_date_utc\n" +
+                "FROM product\n" +
+                "JOIN product_category ON product.category_id = product_category.id\n" +
+                "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
+                "JOIN discount ON discount.id = discount_applied_category.discount_id\n" +
+                "WHERE product.category_id = ?";
+        if (!particularProduct.equals("ALL")){
+            sqlCommand = sqlCommand + particularProduct;
+        }
+        final GetAdminProductDataFromAzure[] getAdminProductDataFromAzure = new GetAdminProductDataFromAzure[1];
+        getAdminProductDataFromAzure[0] = new GetAdminProductDataFromAzure();
+        getAdminProductDataFromAzure[0].setCategoryID(categoryID);
+        getAdminProductDataFromAzure[0].execute(sqlCommand);
+
+        System.out.println("Async Task running");
+        try {
+            getAdminProductDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task ended");
+
+        if (getAdminProductDataFromAzure[0].getProductList() != null)
+            return getAdminProductDataFromAzure[0].getProductList();
+        return new ArrayList<>();
+    }
+
+    public static List<Product> getAdminProductListGivenID(String particularProduct) {
+        String sqlCommand = "SELECT product.*,\n" +
+                "\t   discount.id AS discount_id, discount.name AS discount_name, \n" +
+                "\t   discount_percentage, start_date_utc, end_date_utc\n" +
+                "FROM product\n" +
+                "JOIN product_category ON product.category_id = product_category.id\n" +
+                "JOIN discount_applied_category ON product_category.id = discount_applied_category.category_id\n" +
+                "JOIN discount ON discount.id = discount_applied_category.discount_id\n";
+        if (!particularProduct.equals("ALL")){
+            sqlCommand = sqlCommand + particularProduct;
+        }
+        final GetAdminProductDataFromAzure[] getAdminProductDataFromAzure = new GetAdminProductDataFromAzure[1];
+        getAdminProductDataFromAzure[0] = new GetAdminProductDataFromAzure();
+        getAdminProductDataFromAzure[0].execute(sqlCommand);
+
+        System.out.println("Async Task running");
+        try {
+            getAdminProductDataFromAzure[0].get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task ended");
+
+        if (getAdminProductDataFromAzure[0].getProductList() != null)
+            return getAdminProductDataFromAzure[0].getProductList();
         return new ArrayList<>();
     }
 

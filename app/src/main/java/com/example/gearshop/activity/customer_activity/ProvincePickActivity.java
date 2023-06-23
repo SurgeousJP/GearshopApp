@@ -10,13 +10,10 @@ import android.widget.ListView;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProvinceListAdapter;
-import com.example.gearshop.database.GetProductDataFromAzure;
-import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.utility.DatabaseHelper;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class ProvincePickActivity extends AppCompatActivity {
     private ListView ProvinceListView;

@@ -21,7 +21,7 @@ import com.example.gearshop.adapter.ProductRecyclerAdapter;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Category;
-import com.example.gearshop.repository.ProductRepository;
+import com.example.gearshop.repository.CustomerProductRepository;
 import com.example.gearshop.utility.ActivityStartManager;
 
 import java.util.List;
@@ -44,8 +44,8 @@ public class HomeActivity extends AppCompatActivity {
         System.out.println("In Home");
 
         //Get Random 10 Products
-        ProductRepository productRepository = new ProductRepository();
-        List<Product> productList = productRepository.getRandomProducts(10);
+        CustomerProductRepository customerProductRepository = new CustomerProductRepository();
+        List<Product> productList = customerProductRepository.getRandomProducts(10);
         Product[] productArray = productList.toArray(new Product[0]);
 
         // Get Categories

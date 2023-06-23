@@ -5,17 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.model.Category;
-import com.example.gearshop.model.Product;
 import com.example.gearshop.model.Province;
-import com.example.gearshop.repository.ProductRepository;
 import com.example.gearshop.utility.MoneyHelper;
 
 import java.util.List;

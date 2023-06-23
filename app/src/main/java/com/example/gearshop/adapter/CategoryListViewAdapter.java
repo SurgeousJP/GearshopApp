@@ -12,20 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.repository.ProductRepository;
+import com.example.gearshop.repository.CustomerProductRepository;
 import com.example.gearshop.model.Category;
-import com.example.gearshop.model.Product;
 
 public class CategoryListViewAdapter extends ArrayAdapter<Category> {
     int resource;
-    private ProductRepository productRepository;
+    private CustomerProductRepository customerProductRepository;
 
     public CategoryListViewAdapter(@NonNull Context context, int resource, @NonNull Category[] categories) {
         super(context, resource, categories);
 
         this.resource = resource;
 
-        productRepository = new ProductRepository();
+        customerProductRepository = new CustomerProductRepository();
     }
 
     @NonNull

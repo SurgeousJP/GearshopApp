@@ -36,11 +36,15 @@ public class AdminAddEditProductActivity extends AppCompatActivity {
         setContentView(R.layout.admin_product_add_update);
 
         ReturnView = findViewById(R.id.add_product_screen_return_view);
+        ReturnView.setOnClickListener(view -> {
+            finish();
+        });
         ImageView = findViewById(R.id.add_product_image);
+        ProductImageSelectedPathTextView = findViewById(R.id.add_product_image_selected_path);
         ProductImagePickTextView = findViewById(R.id.add_product_image_path_picker);
         UploadProductImageTextView = findViewById(R.id.upload_add_product_text);
         UploadProductImageIconView = findViewById(R.id.upload_product_image_icon);
-        ProductImageSelectedPathTextView = findViewById(R.id.add_product_image_selected_path);
+
         ProductIdText = findViewById(R.id.product_id_edit_text);
         ProductNameText = findViewById(R.id.product_name_edit_text);
         ProductPriceText = findViewById(R.id.product_price_edit_text);
