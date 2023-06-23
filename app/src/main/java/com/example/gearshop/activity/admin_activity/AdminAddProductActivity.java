@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -21,8 +22,9 @@ import android.widget.Toast;
 import com.example.gearshop.R;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.utility.DatabaseHelper;
+import com.example.gearshop.utility.GoogleDriveService;
 
-public class AdminAddProductActivity extends AppCompatActivity {
+public class AdminAddProductActivity extends AppCompatActivity implements GoogleDriveService.OnFileSelectedListener{
 
     private View ReturnView;
     private ImageView ImageView;
@@ -40,11 +42,8 @@ public class AdminAddProductActivity extends AppCompatActivity {
     private Switch ProductStatusSwitch;
     private TextView ConfirmChangeTextView;
 
-    private String chosenImagePath;
-    private static final String FILE_CHOOSER_URL = "https://www.google.com.vn/";
-    private static final int PICK_IMAGE_FROM_WEBSITE = 2;
+    private GoogleDriveService googleDriveService;
 
-    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,8 @@ public class AdminAddProductActivity extends AppCompatActivity {
 
         ProductImagePickTextView = findViewById(R.id.add_product_image_path_picker);
         ProductImagePickTextView.setOnClickListener(view -> {
-            selectPictureFromWebsite();
+            googleDriveService = new GoogleDriveService(this);
+            googleDriveService.openFileSelection(this);
         });
 
         UploadProductImageTextView = findViewById(R.id.upload_add_product_text);
@@ -98,48 +98,19 @@ public class AdminAddProductActivity extends AppCompatActivity {
         ConfirmChangeTextView = findViewById(R.id.confirm_product_text);
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
-    private void selectPictureFromWebsite() {
-        webView = new WebView(this);
-        setContentView(webView);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        webView.setWebViewClient(new WebViewClient());
-        webView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onShowFileChooser(WebView webView, android.webkit.ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams) {
-                Intent intent = fileChooserParams.createIntent();
-                startActivityForResult(intent, PICK_IMAGE_FROM_WEBSITE);
-                return true;
-            }
-        });
-
-        webView.loadUrl(FILE_CHOOSER_URL);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_FROM_WEBSITE && resultCode == RESULT_OK) {
-            Uri[] result = null;
-            if (data != null) {
-                result = new Uri[]{data.getData()};
-            }
-            // Process the selected image URI from the website
-            handleWebsiteImageSelection(result);
+        googleDriveService.handleActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onFileSelected(String fileUrl) {
+        // Handle the selected file URL here
+        if (fileUrl != null) {
+            Log.d("AddProductActivity", "Selected file URL: " + fileUrl);
         }
-        finish();
     }
-
-    private void handleWebsiteImageSelection(Uri[] imageUris) {
-        // Process the selected image URI from the website
-        chosenImagePath = String.valueOf(imageUris[0]);
-        Toast.makeText(getBaseContext(), chosenImagePath, Toast.LENGTH_SHORT).show();
-    }
-
-
     public int generateNewProductId(){
         return DatabaseHelper.getAdminProductListGivenID("").size();
     }
