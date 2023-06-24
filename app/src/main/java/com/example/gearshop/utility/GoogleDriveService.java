@@ -3,7 +3,6 @@ package com.example.gearshop.utility;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Environment;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -26,7 +25,6 @@ public class GoogleDriveService {
     private static final String CREDENTIALS_FILE_NAME =
             "client_secret_199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com.json";
     private static final int REQUEST_CODE_OPEN_FILE = 1001;
-
     private Drive driveService;
     private Activity activity;
     private OnFileSelectedListener fileSelectedListener;
@@ -38,19 +36,14 @@ public class GoogleDriveService {
     public GoogleDriveService(Activity activity) {
         this.activity = activity;
 
-        // Get the absolute path of the app's files directory
-        String appFolderPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-
-        // Concatenate the folder path and the file name
-        String filePath = appFolderPath + "/" + CREDENTIALS_FILE_NAME;
-        System.out.println(filePath);
+        String fileName = "ornate-method-380613-a4adf8d5ecb4.json";
         try {
             HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
             JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
             // Load client secrets from your credentials.json file
-            InputStream credentialsStream = GoogleDriveService.class.getResourceAsStream(filePath);
-            assert credentialsStream != null;
+//            InputStream credentialsStream = GoogleDriveService.class.getResourceAsStream(fileName);
+            InputStream credentialsStream = activity.getAssets().open(fileName);
             GoogleCredential credentials = GoogleCredential.fromStream(credentialsStream)
                     .createScoped(Collections.singleton(DriveScopes.DRIVE));
 
