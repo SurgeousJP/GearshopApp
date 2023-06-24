@@ -3,11 +3,24 @@ package com.example.gearshop.utility;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductImageListAdapter;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
@@ -17,10 +30,12 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,7 +45,7 @@ public class GoogleDriveService {
     private static final String CREDENTIALS_FILE_NAME = "ornate-method-380613-a4adf8d5ecb4.json";
     private static final int REQUEST_CODE_OPEN_FILE = 1001;
     private Drive driveService;
-    private Activity activity;
+    private final Activity activity;
     private OnFileSelectedListener fileSelectedListener;
 
     public interface OnFileSelectedListener {
@@ -60,7 +75,6 @@ public class GoogleDriveService {
     @SuppressLint("StaticFieldLeak")
     public void openFileSelection(OnFileSelectedListener listener) {
         fileSelectedListener = listener;
-
         new AsyncTask<Void, Void, List<File>>() {
             @SuppressLint("StaticFieldLeak")
             @Override
@@ -75,32 +89,61 @@ public class GoogleDriveService {
                     return null;
                 }
             }
-
             @SuppressLint("StaticFieldLeak")
             @Override
             protected void onPostExecute(List<File> files) {
                 if (files != null && !files.isEmpty()) {
-                    // Display a file picker dialog or UI to let the user select a file
-                    // ...
+//                    // Display a file picker dialog or UI to let the user select a file
+//                    final Dialog dialog = new Dialog(activity);
+//                    dialog.setContentView(R.layout.custom_file_picker_dialog);
+//                    dialog.setTitle("Select a file");
+//
+//                    // Example: Using an AlertDialog to display file names and let the user select one
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+//                    builder.setTitle("Select a file");
+//                    final String[] fileNames = new String[files.size()];
+//                    for (int i = 0; i < files.size(); i++) {
+//                        fileNames[i] = files.get(i).getName();
+//                    }
+//                    builder.setItems(fileNames, new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            String fileId = files.get(which).getId();
+//                            String fileUrl = getFileUrl(fileId);
+//                            if (fileSelectedListener != null) {
+//                                fileSelectedListener.onFileSelected(fileUrl);
+//                            }
+//                        }
+//                    });
+//                    builder.show();
 
-                    // Example: Using an AlertDialog to display file names and let the user select one
-                    AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                    builder.setTitle("Select a file");
-                    final String[] fileNames = new String[files.size()];
-                    for (int i = 0; i < files.size(); i++) {
-                        fileNames[i] = files.get(i).getName();
-                    }
-                    builder.setItems(fileNames, new DialogInterface.OnClickListener() {
+                    // Create a custom dialog
+                    final Dialog dialog = new Dialog(activity);
+                    dialog.setContentView(R.layout.product_image_picker_dialog);
+                    dialog.setTitle("Select a file");
+
+                    // Create a listview to contains the item
+                    ListView productImageListView = dialog.findViewById(R.id.product_image_list_view);
+                    ProductImageListAdapter productImageListAdapter = new ProductImageListAdapter(activity, files,
+                            dialog, fileSelectedListener);
+                    productImageListView.setAdapter(productImageListAdapter);
+
+                    // Set click listener for the file item
+                    productImageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            String fileId = files.get(which).getId();
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            File file = (File) adapterView.getItemAtPosition(i);
+                            String fileId = file.getId();
                             String fileUrl = getFileUrl(fileId);
                             if (fileSelectedListener != null) {
                                 fileSelectedListener.onFileSelected(fileUrl);
                             }
+                            dialog.dismiss();
                         }
                     });
-                    builder.show();
+
+                    // Show the dialog
+                    dialog.show();
                 }
             }
         }.execute();

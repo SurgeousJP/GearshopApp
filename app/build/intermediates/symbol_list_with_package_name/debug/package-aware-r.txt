@@ -3339,6 +3339,8 @@ id fade
 id faq_item
 id female_option
 id fields
+id file_image_view
+id file_name_text_view
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3537,6 +3539,7 @@ id linebegin
 id lineend
 id listMode
 id list_category
+id list_image_item_layout
 id list_item
 id list_item_1
 id list_item_1_status
@@ -3781,6 +3784,7 @@ id product_id_box
 id product_id_edit_text
 id product_id_text
 id product_image
+id product_image_list_view
 id product_info_box
 id product_info_order_detail
 id product_item
@@ -4354,6 +4358,8 @@ layout notification_template_part_time
 layout order_detail
 layout order_management
 layout product_detail
+layout product_image_item
+layout product_image_picker_dialog
 layout product_spec_item
 layout province_picker
 layout search_layout

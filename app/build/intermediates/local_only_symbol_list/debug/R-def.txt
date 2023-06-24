@@ -364,6 +364,8 @@ id facebook_support_box
 id faq_item
 id female_option
 id fields
+id file_image_view
+id file_name_text_view
 id filter_box
 id filter_icon
 id filter_icon_admin_product
@@ -509,6 +511,7 @@ id line_view
 id linebegin
 id lineend
 id list_category
+id list_image_item_layout
 id list_item_1
 id list_item_1_status
 id list_item_2
@@ -654,6 +657,7 @@ id product_id_box
 id product_id_edit_text
 id product_id_text
 id product_image
+id product_image_list_view
 id product_info_box
 id product_info_order_detail
 id product_item
@@ -892,6 +896,8 @@ layout not_found_search
 layout order_detail
 layout order_management
 layout product_detail
+layout product_image_item
+layout product_image_picker_dialog
 layout product_spec_item
 layout province_picker
 layout search_layout
