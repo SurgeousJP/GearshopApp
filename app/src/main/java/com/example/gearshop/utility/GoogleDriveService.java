@@ -1,8 +1,12 @@
 package com.example.gearshop.utility;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -12,18 +16,18 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
+import java.util.List;
 
 public class GoogleDriveService {
 
     private static final String APPLICATION_NAME = "GearshopApp";
-    private static final String TOKENS_DIRECTORY_PATH = "tokens";
-    private static final String CREDENTIALS_FILE_NAME =
-            "client_secret_199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com.json";
+    private static final String CREDENTIALS_FILE_NAME = "ornate-method-380613-a4adf8d5ecb4.json";
     private static final int REQUEST_CODE_OPEN_FILE = 1001;
     private Drive driveService;
     private Activity activity;
@@ -35,15 +39,12 @@ public class GoogleDriveService {
 
     public GoogleDriveService(Activity activity) {
         this.activity = activity;
-
-        String fileName = "ornate-method-380613-a4adf8d5ecb4.json";
         try {
             HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
             JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
             // Load client secrets from your credentials.json file
-//            InputStream credentialsStream = GoogleDriveService.class.getResourceAsStream(fileName);
-            InputStream credentialsStream = activity.getAssets().open(fileName);
+            InputStream credentialsStream = activity.getAssets().open(CREDENTIALS_FILE_NAME);
             GoogleCredential credentials = GoogleCredential.fromStream(credentialsStream)
                     .createScoped(Collections.singleton(DriveScopes.DRIVE));
 
@@ -56,12 +57,53 @@ public class GoogleDriveService {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void openFileSelection(OnFileSelectedListener listener) {
         fileSelectedListener = listener;
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("*/*");
-        activity.startActivityForResult(intent, REQUEST_CODE_OPEN_FILE);
+
+        new AsyncTask<Void, Void, List<File>>() {
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            protected List<File> doInBackground(Void... voids) {
+                try {
+                    // List all files in the Drive
+                    FileList fileList = driveService.files().list().execute();
+                    return fileList.getFiles();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Handle the exception
+                    return null;
+                }
+            }
+
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            protected void onPostExecute(List<File> files) {
+                if (files != null && !files.isEmpty()) {
+                    // Display a file picker dialog or UI to let the user select a file
+                    // ...
+
+                    // Example: Using an AlertDialog to display file names and let the user select one
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+                    builder.setTitle("Select a file");
+                    final String[] fileNames = new String[files.size()];
+                    for (int i = 0; i < files.size(); i++) {
+                        fileNames[i] = files.get(i).getName();
+                    }
+                    builder.setItems(fileNames, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String fileId = files.get(which).getId();
+                            String fileUrl = getFileUrl(fileId);
+                            if (fileSelectedListener != null) {
+                                fileSelectedListener.onFileSelected(fileUrl);
+                            }
+                        }
+                    });
+                    builder.show();
+                }
+            }
+        }.execute();
     }
 
     public void handleActivityResult(int requestCode, int resultCode, Intent data) {
