@@ -1,19 +1,14 @@
 package com.example.gearshop.activity.admin_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -21,10 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.adapter.ProductSpecEditableAdapter;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.GoogleDriveService;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class AdminAddProductActivity extends AppCompatActivity implements GoogleDriveService.OnFileSelectedListener{
 
@@ -46,7 +46,8 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
 
     private GoogleDriveService googleDriveService;
     private String productImageURL;
-
+    private Map<String, String> specMap;
+    private ProductSpecEditableAdapter productSpecEditableAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,14 +107,37 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
         ProductCategoryText.setText(productCategory.getName());
 
         ProductSpecRecyclerView = findViewById(R.id.list_product_specs);
+        specMap = new LinkedHashMap<>();
+        productSpecEditableAdapter = new ProductSpecEditableAdapter(this, specMap);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1,RecyclerView.VERTICAL, false);
+        ProductSpecRecyclerView.setLayoutManager(layoutManager);
+        ProductSpecRecyclerView.setAdapter(productSpecEditableAdapter);
 
         ProductSpecTextView = findViewById(R.id.add_product_specs_text);
+        ProductSpecTextView.setOnClickListener(view -> {
+            specMap = updateSpecMap();
+            int inputCount = specMap.size() + 1;
+            specMap.put(String.valueOf(inputCount),String.valueOf(inputCount));
+            productSpecEditableAdapter = new ProductSpecEditableAdapter(this, specMap);
+            ProductSpecRecyclerView.setAdapter(productSpecEditableAdapter);
+        });
 
         ProductDescriptionTextView = findViewById(R.id.add_product_description);
 
         ProductStatusSwitch = findViewById(R.id.switch_product_status);
 
         ConfirmChangeTextView = findViewById(R.id.confirm_product_text);
+    }
+
+    private Map<String, String> updateSpecMap(){
+        Map<String, String> newSpecMap = new LinkedHashMap<>();
+        for (int i = 0; i < specMap.size(); i++){
+            View itemView = ProductSpecRecyclerView.getChildAt(i);
+            EditText keyEditText = itemView.findViewById(R.id.product_detail_header_text);
+            EditText valueEditText = itemView.findViewById(R.id.product_detail_description_text);
+            newSpecMap.put(keyEditText.getText().toString(), valueEditText.getText().toString());
+        }
+        return newSpecMap;
     }
 
     @Override

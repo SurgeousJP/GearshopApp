@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecAdapter;
+import com.example.gearshop.adapter.ProductSpecEditableAdapter;
 import com.example.gearshop.dialog.ShippingInfoBottomSheetDialog;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.repository.GlobalRepository;
@@ -102,14 +103,13 @@ public class ProductDetailActivity extends AppCompatActivity {
         else{
             ProductDiscountTextView.setText("Không giảm giá");
         }
+
         ProductSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
         Map<String, String> specMap = ConvertProductSpecsToMap(inputtedProduct.getSpecs());
         ProductSpecAdapter productSpecAdapter = new ProductSpecAdapter(this, specMap);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1,RecyclerView.VERTICAL, false);
         ProductSpecsGridView.setLayoutManager(layoutManager);
         ProductSpecsGridView.setAdapter(productSpecAdapter);
-
-
 
         ProductDetailTextView.setText(
                 Html.fromHtml(this.ConvertToHTMLBulletText(inputtedProduct.getDescription()),

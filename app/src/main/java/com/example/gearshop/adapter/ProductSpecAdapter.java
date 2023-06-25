@@ -1,7 +1,6 @@
 package com.example.gearshop.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,19 +35,8 @@ public class ProductSpecAdapter extends RecyclerView.Adapter<ProductSpecAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         String key = keys.get(position);
         String value = values.get(position);
-        if (position % 2 == 0) {
-            setColorToRow(holder, Color.LTGRAY);
-
-        } else {
-            setColorToRow(holder, Color.WHITE);
-        }
         holder.keyTextView.setText(key);
         holder.valueTextView.setText(value);
-    }
-
-    private void setColorToRow(ViewHolder holder, int colorInt) {
-        holder.keyTextView.setBackgroundColor(colorInt);
-        holder.valueTextView.setBackgroundColor(colorInt);
     }
 
     @Override

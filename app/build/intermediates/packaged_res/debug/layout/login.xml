@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <View
+            android:visibility="invisible"
             android:id="@+id/wayback_icon"
             android:layout_width="14dp"
             android:layout_height="17dp"

@@ -63,6 +63,8 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:textAlignment="viewStart"
+                android:justificationMode="inter_word"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="@string/faq_text"

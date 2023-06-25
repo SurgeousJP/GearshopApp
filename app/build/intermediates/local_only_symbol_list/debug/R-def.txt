@@ -899,6 +899,7 @@ layout product_detail
 layout product_image_item
 layout product_image_picker_dialog
 layout product_spec_item
+layout product_spec_item_editable
 layout province_picker
 layout search_layout
 layout sex_setting

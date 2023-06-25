@@ -237,24 +237,24 @@ ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidMani
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:78:13-37
 	android:name
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:77:13-72
-activity#com.example.gearshop.activity.customer_activity.SignInActivity
+activity#com.example.gearshop.activity.admin_activity.AdminProductCategoryManagementActivity
 ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:79:9-81:40
 	android:exported
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:81:13-37
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:80:13-70
+		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:80:13-91
 activity#com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity
 ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:82:9-84:40
 	android:exported
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:84:13-37
 	android:name
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:83:13-84
-activity#com.example.gearshop.activity.admin_activity.AdminProductCategoryManagementActivity
+activity#com.example.gearshop.activity.customer_activity.SignInActivity
 ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:85:9-93:20
 	android:exported
 		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:87:13-36
 	android:name
-		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:86:13-91
+		ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:86:13-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\AndroidManifest.xml:88:13-92:29
 action#android.intent.action.MAIN

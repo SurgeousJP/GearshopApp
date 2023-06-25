@@ -4360,6 +4360,7 @@ int layout product_detail 0x7f0b008d
 int layout product_image_item 0x7f0b008e
 int layout product_image_picker_dialog 0x7f0b008f
 int layout product_spec_item 0x7f0b0090
+int layout product_spec_item_editable 0x7f0b009d
 int layout province_picker 0x7f0b0091
 int layout search_layout 0x7f0b0092
 int layout select_dialog_item_material 0x7f0b0093
