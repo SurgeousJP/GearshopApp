@@ -35,6 +35,7 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -47,6 +48,7 @@ public class GoogleDriveService {
     private Drive driveService;
     private final Activity activity;
     private OnFileSelectedListener fileSelectedListener;
+    private FileList fileList;
 
     public interface OnFileSelectedListener {
         void onFileSelected(String fileUrl);
@@ -81,7 +83,7 @@ public class GoogleDriveService {
             protected List<File> doInBackground(Void... voids) {
                 try {
                     // List all files in the Drive
-                    FileList fileList = driveService.files().list().execute();
+                    fileList = driveService.files().list().execute();
                     return fileList.getFiles();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -93,30 +95,6 @@ public class GoogleDriveService {
             @Override
             protected void onPostExecute(List<File> files) {
                 if (files != null && !files.isEmpty()) {
-//                    // Display a file picker dialog or UI to let the user select a file
-//                    final Dialog dialog = new Dialog(activity);
-//                    dialog.setContentView(R.layout.custom_file_picker_dialog);
-//                    dialog.setTitle("Select a file");
-//
-//                    // Example: Using an AlertDialog to display file names and let the user select one
-//                    AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-//                    builder.setTitle("Select a file");
-//                    final String[] fileNames = new String[files.size()];
-//                    for (int i = 0; i < files.size(); i++) {
-//                        fileNames[i] = files.get(i).getName();
-//                    }
-//                    builder.setItems(fileNames, new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            String fileId = files.get(which).getId();
-//                            String fileUrl = getFileUrl(fileId);
-//                            if (fileSelectedListener != null) {
-//                                fileSelectedListener.onFileSelected(fileUrl);
-//                            }
-//                        }
-//                    });
-//                    builder.show();
-
                     // Create a custom dialog
                     final Dialog dialog = new Dialog(activity);
                     dialog.setContentView(R.layout.product_image_picker_dialog);
@@ -141,7 +119,6 @@ public class GoogleDriveService {
                             dialog.dismiss();
                         }
                     });
-
                     // Show the dialog
                     dialog.show();
                 }
@@ -168,15 +145,9 @@ public class GoogleDriveService {
         // Extract the file ID from the URI
         return uri.getLastPathSegment();
     }
-
+    @SuppressLint("StaticFieldLeak")
     private String getFileUrl(String fileId) {
-        try {
-            File file = driveService.files().get(fileId).execute();
-            return file.getWebViewLink();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return "https://drive.google.com/uc?id=" + fileId;
     }
 }
 

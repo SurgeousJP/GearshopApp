@@ -10,8 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/product_image_list_view"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         >
-
     </ListView>
 </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

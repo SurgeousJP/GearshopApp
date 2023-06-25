@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gearshop.R;
 import com.example.gearshop.utility.GoogleDriveService;
@@ -57,7 +58,6 @@ public class ProductImageListAdapter extends BaseAdapter {
         }
 
         File file = files.get(position);
-
         if (isImageFile(file)){
             @SuppressLint("InflateParams")
             ImageView fileImageView = convertView.findViewById(R.id.file_image_view);
@@ -65,9 +65,10 @@ public class ProductImageListAdapter extends BaseAdapter {
 
             // Set the file name
             fileNameTextView.setText(file.getName());
+            String imageURL = "https://drive.google.com/uc?id=" + file.getId();
             // Set the image
             Picasso.get()
-                    .load(file.getWebContentLink())
+                    .load(imageURL)
                     .into(fileImageView);
         }
         return convertView;

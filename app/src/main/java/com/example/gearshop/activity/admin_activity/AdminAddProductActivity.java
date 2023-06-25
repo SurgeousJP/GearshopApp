@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -23,6 +24,7 @@ import com.example.gearshop.R;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.GoogleDriveService;
+import com.squareup.picasso.Picasso;
 
 public class AdminAddProductActivity extends AppCompatActivity implements GoogleDriveService.OnFileSelectedListener{
 
@@ -43,7 +45,7 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
     private TextView ConfirmChangeTextView;
 
     private GoogleDriveService googleDriveService;
-
+    private String productImageURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +70,24 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
             googleDriveService.openFileSelection(this);
         });
 
+        View.OnClickListener uploadImageListener = view -> {
+            String imageURL = ProductImageSelectedPathTextView.getText().toString();
+            System.out.println(imageURL);
+            try{
+                Picasso.get()
+                        .load(imageURL)
+                        .into(ImageView);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        };
+
         UploadProductImageTextView = findViewById(R.id.upload_add_product_text);
+        UploadProductImageTextView.setOnClickListener(uploadImageListener);
 
         UploadProductImageIconView = findViewById(R.id.upload_product_image_icon);
+        UploadProductImageIconView.setOnClickListener(uploadImageListener);
 
         ProductIdText = findViewById(R.id.product_id_edit_text);
         try{
@@ -83,6 +100,7 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
         ProductNameText = findViewById(R.id.product_name_edit_text);
 
         ProductPriceText = findViewById(R.id.product_price_edit_text);
+        ProductPriceText.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         ProductCategoryText = findViewById(R.id.product_category_edit_text);
         ProductCategoryText.setText(productCategory.getName());
@@ -109,6 +127,11 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
         // Handle the selected file URL here
         if (fileUrl != null) {
             Log.d("AddProductActivity", "Selected file URL: " + fileUrl);
+            productImageURL = fileUrl;
+            ProductImageSelectedPathTextView.setText(fileUrl);
+        }
+        else{
+            productImageURL = null;
         }
     }
     public int generateNewProductId(){
