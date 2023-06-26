@@ -83,6 +83,7 @@ public class GoogleDriveService {
             protected List<File> doInBackground(Void... voids) {
                 try {
                     // List all files in the Drive
+                    System.out.println("Async Task get Product Image List from Drive");
                     fileList = driveService.files().list().execute();
                     return fileList.getFiles();
                 } catch (IOException e) {

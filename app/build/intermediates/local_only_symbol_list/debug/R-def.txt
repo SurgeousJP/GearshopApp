@@ -306,6 +306,7 @@ id customer_username_text
 id decrease_box
 id delete_product
 id delete_product_item
+id delete_product_spec_view
 id delete_product_view
 id delivered_box
 id delivered_order

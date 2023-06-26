@@ -3241,6 +3241,7 @@ int id decrease_box 0x7f080142
 int id default_activity_button 0x7f080143
 int id delete_product 0x7f080144
 int id delete_product_item 0x7f080145
+int id delete_product_spec_view 0x7f0804c6
 int id delete_product_view 0x7f080146
 int id delivered_box 0x7f080147
 int id delivered_order 0x7f080148

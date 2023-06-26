@@ -1,9 +1,6 @@
 package com.example.gearshop.activity.admin_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -15,18 +12,24 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecEditableAdapter;
+import com.example.gearshop.dialog.ConfirmDeleteSpecRowDialog;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.GoogleDriveService;
 import com.squareup.picasso.Picasso;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
-public class AdminAddProductActivity extends AppCompatActivity implements GoogleDriveService.OnFileSelectedListener{
+public class AdminAddProductActivity extends AppCompatActivity
+        implements GoogleDriveService.OnFileSelectedListener, ConfirmDeleteSpecRowDialog.DialogListener {
 
     private View ReturnView;
     private ImageView ImageView;
@@ -48,6 +51,9 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
     private String productImageURL;
     private Map<String, String> specMap;
     private ProductSpecEditableAdapter productSpecEditableAdapter;
+    private int SpecRowItemPosition;
+
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +85,8 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
                         .load(imageURL)
                         .into(ImageView);
             }
-            catch (Exception e){
-                e.printStackTrace();
+            catch (NullPointerException e){
+                Toast.makeText(getBaseContext(), "Chưa có ảnh để load", Toast.LENGTH_SHORT).show();
             }
         };
 
@@ -109,6 +115,10 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
         ProductSpecRecyclerView = findViewById(R.id.list_product_specs);
         specMap = new LinkedHashMap<>();
         productSpecEditableAdapter = new ProductSpecEditableAdapter(this, specMap);
+        productSpecEditableAdapter.setOnDeleteItemClickListener(position -> {
+            setProductSpecRowItemPosition(position);
+            showConfirmDeleteDialog();
+        });
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1,RecyclerView.VERTICAL, false);
         ProductSpecRecyclerView.setLayoutManager(layoutManager);
         ProductSpecRecyclerView.setAdapter(productSpecEditableAdapter);
@@ -119,6 +129,10 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
             int inputCount = specMap.size() + 1;
             specMap.put(String.valueOf(inputCount),String.valueOf(inputCount));
             productSpecEditableAdapter = new ProductSpecEditableAdapter(this, specMap);
+            productSpecEditableAdapter.setOnDeleteItemClickListener(position -> {
+                setProductSpecRowItemPosition(position);
+                showConfirmDeleteDialog();
+            });
             ProductSpecRecyclerView.setAdapter(productSpecEditableAdapter);
         });
 
@@ -161,4 +175,40 @@ public class AdminAddProductActivity extends AppCompatActivity implements Google
     public int generateNewProductId(){
         return DatabaseHelper.getAdminProductListGivenID("").size();
     }
+    private void showConfirmDeleteDialog() {
+        ConfirmDeleteSpecRowDialog dialogFragment = new ConfirmDeleteSpecRowDialog();
+        dialogFragment.setDialogListener(this);
+        dialogFragment.show(getSupportFragmentManager(), "");
+    }
+    @Override
+    public void onDialogResult(boolean result) {
+        int itemPosition = getProductSpecRowItemPosition();
+        if (result){
+            deleteRowItem(itemPosition);
+        }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void deleteRowItem(int itemPosition){
+        List<String> keys = productSpecEditableAdapter.getKeys();
+        List<String> values = productSpecEditableAdapter.getValues();
+        Map<String, String> specMap = productSpecEditableAdapter.getDataMap();
+        String key = productSpecEditableAdapter.getKeys().get(itemPosition);
+        String value = productSpecEditableAdapter.getValues().get(itemPosition);
+        keys.remove(key);
+        values.remove(value);
+        specMap.remove(key, value);
+        productSpecEditableAdapter.setKeys(keys);
+        productSpecEditableAdapter.setValues(values);
+        productSpecEditableAdapter.setDataMap(specMap);
+        productSpecEditableAdapter.notifyDataSetChanged();
+    }
+
+    public void setProductSpecRowItemPosition(int cartItemPosition) {
+        SpecRowItemPosition = cartItemPosition;
+    }
+    public int getProductSpecRowItemPosition() {
+        return SpecRowItemPosition;
+    }
+
 }
