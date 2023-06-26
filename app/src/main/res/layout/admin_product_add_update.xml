@@ -588,7 +588,7 @@
                     android:id="@+id/switch_product_status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Sản phẩm chưa được bán"
+                    android:text="Có hàng"
                     android:textAppearance="@style/title_empty"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

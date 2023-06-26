@@ -20,10 +20,13 @@ import com.example.gearshop.R;
 import com.example.gearshop.adapter.ProductSpecEditableAdapter;
 import com.example.gearshop.dialog.ConfirmDeleteSpecRowDialog;
 import com.example.gearshop.model.Category;
+import com.example.gearshop.model.Discount;
+import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.GoogleDriveService;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -86,7 +89,7 @@ public class AdminAddProductActivity extends AppCompatActivity
                         .into(ImageView);
             }
             catch (NullPointerException e){
-                Toast.makeText(getBaseContext(), "Chưa có ảnh để load", Toast.LENGTH_SHORT).show();
+                createToast("Chưa có ảnh để load");
             }
         };
 
@@ -101,7 +104,7 @@ public class AdminAddProductActivity extends AppCompatActivity
             ProductIdText.setText(String.valueOf(generateNewProductId()));
         }
         catch(NullPointerException | IndexOutOfBoundsException e){
-            Toast.makeText(getBaseContext(), "Lỗi generate id sản phẩm", Toast.LENGTH_SHORT).show();
+            createToast("Lỗi generate id sản phẩm");
         }
 
         ProductNameText = findViewById(R.id.product_name_edit_text);
@@ -141,6 +144,71 @@ public class AdminAddProductActivity extends AppCompatActivity
         ProductStatusSwitch = findViewById(R.id.switch_product_status);
 
         ConfirmChangeTextView = findViewById(R.id.confirm_product_text);
+        ConfirmChangeTextView.setOnClickListener(view -> {
+            Product newProduct = new Product();
+            newProduct.setID(generateNewProductId());
+
+            if (ImageView.getDrawable() == null){
+                createToast("Chưa chọn ảnh cho sản phẩm !");
+                return;
+            }
+            else newProduct.setImageURL(ProductImageSelectedPathTextView.getText().toString());
+            if (ProductNameText.getText().toString().isEmpty()){
+                createToast("Chưa điền tên sản phẩm !");
+                return;
+            }
+            else newProduct.setName(ProductNameText.getText().toString());
+
+            double productPrice = tryParseDouble(ProductNameText.toString());
+            if (productPrice == 0){
+                return;
+            }
+            else newProduct.setPrice(productPrice);
+
+            if (specMap == null || specMap.size() == 0){
+                createToast("Chưa điền cấu hình sản phẩm");
+                return;
+            }
+            else{
+                String specString = generateSpecString(specMap);
+                newProduct.setSpecs(specString);
+            }
+
+            if (ProductDescriptionTextView.getText().toString().isEmpty()){
+                createToast("Chưa điền chi tiết sản phẩm");
+                return;
+            }
+            else newProduct.setDescription(ProductDescriptionTextView.getText().toString());
+
+            int PRODUCT_AVAILABLE_STATUS = 1;
+            int PRODUCT_NOT_AVAILABLE_STATUS = 2;
+            if (ProductStatusSwitch.isChecked()){
+                newProduct.setStatus(PRODUCT_AVAILABLE_STATUS);
+            }
+            else newProduct.setStatus(PRODUCT_NOT_AVAILABLE_STATUS);
+
+            newProduct.setCategoryID(productCategory.getID());
+        });
+    }
+
+    protected String generateSpecString(Map<String, String> inputSpecMap){
+        String result = "";
+        List<String> keySet = new ArrayList<>(inputSpecMap.keySet());
+        for (int i = 0; i < inputSpecMap.size(); i++){
+            result = result + keySet.get(i) + "    " + inputSpecMap.get(keySet.get(i)) + "|" + "\r" + "\n";
+        }
+        return result;
+    }
+    public Double tryParseDouble(String value) {
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException | NullPointerException e) {
+            createToast("Chưa điền giá / Giá không hợp lệ !");
+            return Double.parseDouble("0");
+        }
+    }
+    private void createToast(String message) {
+        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     private Map<String, String> updateSpecMap(){
