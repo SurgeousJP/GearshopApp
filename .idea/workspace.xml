@@ -11,10 +11,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="finish product spec">
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="prepare inputs for adding products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminAddProductActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminAddProductActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin_product_add_update.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin_product_add_update.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/client_secret_199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,13 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00075" summary="update some code">
-      <created>1685601493436</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1685601493437</updated>
     </task>
     <task id="LOCAL-00076" summary="event đổi address cập nhật lên db">
       <created>1685607516306</created>
@@ -586,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687748903704</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="prepare inputs for adding products">
+      <created>1687750648240</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1687750648240</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -602,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="làm sort dialog cho customermanagement" />
     <MESSAGE value="fix lỗi double hiển thị value dạng E rút gọn khiến k thể insert value" />
     <MESSAGE value="finish sort dialog cho ordermanagement" />
     <MESSAGE value="làm địa chỉ customer, và tên người dùng (title)" />
@@ -627,7 +625,8 @@
     <MESSAGE value="finish làm event pick ảnh từ drive" />
     <MESSAGE value="làm thêm product spec trong add product" />
     <MESSAGE value="finish product spec" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish product spec" />
+    <MESSAGE value="prepare inputs for adding products" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare inputs for adding products" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
