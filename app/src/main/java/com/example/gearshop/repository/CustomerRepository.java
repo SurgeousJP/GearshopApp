@@ -111,6 +111,23 @@ public class CustomerRepository {
         for (Customer customer : CustomerList) {
             if (customer.getEmail().equals((email))) {
                 customer.setPassword(newPassword);
+
+                String sql =
+                        "UPDATE customer \n" +
+                        "SET password = '" + newPassword + "' \n" +
+                        "WHERE email = '" + email + "'";
+
+                InsertUpdateDataToAzure updateDataToAzure = new InsertUpdateDataToAzure();
+
+                updateDataToAzure.execute(sql);
+
+
+                try {
+                    updateDataToAzure.get();
+                } catch (ExecutionException | InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
                 break;
             }
         }

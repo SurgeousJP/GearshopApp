@@ -64,6 +64,8 @@
         <activity
             android:name=".activity.customer_activity.SignUpActivity"
             android:exported="false" />
+        <activity android:name=".activity.customer_activity.ForgotPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.customer_activity.HomeActivity"
             android:exported="false" />
