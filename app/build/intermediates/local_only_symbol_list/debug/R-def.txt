@@ -837,6 +837,8 @@ id view3
 id view5
 id view_more_order
 id view_password_icon
+id view_password_icon_confirm_password
+id view_password_icon_new_password
 id voucher_apply_box
 id voucher_apply_price_order_detail
 id voucher_box

@@ -2,6 +2,7 @@ package com.example.gearshop.activity.customer_activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
@@ -39,12 +40,12 @@ public class SignInActivity extends AppCompatActivity {
         customerRepository = new CustomerRepository();
         adminRepository = new AdminRepository();
 
-        ConstraintLayout btnLogin = (ConstraintLayout) findViewById(R.id.login_button);
-        TextView tvForgotPassword = (TextView) findViewById(R.id.forgot_password_nav_from_sign_in);
-        EditText edtUsername = (EditText) findViewById(R.id.username_text);
-        edtPassword = (EditText) findViewById(R.id.et_sign_up_password);
+        ConstraintLayout btnLogin = findViewById(R.id.login_button);
+        TextView tvForgotPassword = findViewById(R.id.forgot_password_nav_from_sign_in);
+        EditText edtUsername = findViewById(R.id.username_text);
+        edtPassword = findViewById(R.id.et_sign_up_password);
 
-        TextView tvSignUpNav = (TextView) findViewById(R.id.sign_up_nav_from_sign_in);
+        TextView tvSignUpNav = findViewById(R.id.sign_up_nav_from_sign_in);
 
         btnLogin.setOnClickListener (new View.OnClickListener() {
             public void onClick(View v) {
@@ -87,18 +88,16 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-//        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v){
-//                Intent intent = new Intent(v.getContext(), ForgotPasswordActivity.class);
-//                v.getContext().startActivity(intent);
-//            }
-//        });
-//
+        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                ActivityStartManager.startTargetActivity(getBaseContext(), ForgotPasswordActivity.class);
+            }
+        });
+
         tvSignUpNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SignUpActivity.class);
-                v.getContext().startActivity(intent);
+                ActivityStartManager.startTargetActivity(v.getContext(), SignUpActivity.class);
             }
         });
 
@@ -117,9 +116,20 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void updatePasswordVisibility() {
-        Drawable iconDrawable = isPasswordVisible ? getResources().getDrawable(R.drawable.eye_open_icon) :
-                getResources().getDrawable(R.drawable.eye_close_icon);
-        passwordIconView.setBackground(iconDrawable);
+        // Get the default theme
+        Resources.Theme theme = getResources().newTheme();
+
+        // Set the theme to null (default)
+        theme.applyStyle(0, true);
+
+        try{
+            Drawable iconDrawable = isPasswordVisible
+                    ? getResources().getDrawable(R.drawable.eye_open_icon, theme)
+                    : getResources().getDrawable(R.drawable.eye_close_icon, theme);
+        }
+        catch (Resources.NotFoundException ex){
+            ex.printStackTrace();
+        }
 
         int inputType = isPasswordVisible ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD;

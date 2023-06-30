@@ -81,6 +81,9 @@
             android:name="com.example.gearshop.activity.customer_activity.SignUpActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.gearshop.activity.customer_activity.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.gearshop.activity.customer_activity.HomeActivity"
             android:exported="false" />
         <activity
