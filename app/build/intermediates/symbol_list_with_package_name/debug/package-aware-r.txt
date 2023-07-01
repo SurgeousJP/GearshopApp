@@ -4104,6 +4104,8 @@ id view5
 id view_more_order
 id view_offset_helper
 id view_password_icon
+id view_password_icon_confirm_password
+id view_password_icon_new_password
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
