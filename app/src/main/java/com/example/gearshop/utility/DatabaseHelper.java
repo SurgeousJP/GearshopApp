@@ -78,6 +78,30 @@ public class DatabaseHelper {
     }
 
     @SuppressLint("DefaultLocale")
+    public static void insertNewProductToAzure(Product newProduct){
+        InsertUpdateDataToAzure insertAddressDataToAzure = new InsertUpdateDataToAzure();
+        System.out.println("Async Task insert Product is running");
+        insertAddressDataToAzure.execute(
+                "INSERT INTO product (id, name, " +
+                        "image_url, description, specs, price, status," +
+                        "category_id)\n" +
+                        "VALUES(" + newProduct.getID()        + ", "  +
+                        "'" + newProduct.getName()            + "', " +
+                        "'" + newProduct.getImageURL()        + "', " +
+                        "'" + newProduct.getDescription()     + "', " +
+                        "'" + newProduct.getSpecs()           + "', " +
+                        "CAST('" +  String.format("%.0f", newProduct.getPrice()) + "' AS money), " +
+                        "'" + newProduct.getStatus()          + "', " +
+                        "'" + newProduct.getCategoryID()      + "')\n");
+        try {
+            insertAddressDataToAzure.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task insert Product ended");
+    }
+
+    @SuppressLint("DefaultLocale")
     public static void insertOrderToAzure(Order newOrder){
         String inputPattern = "yyyy-MM-dd"; // Input date format
         SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern, Locale.getDefault());

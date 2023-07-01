@@ -33,7 +33,6 @@ import java.util.Map;
 
 public class AdminAddProductActivity extends AppCompatActivity
         implements GoogleDriveService.OnFileSelectedListener, ConfirmDeleteSpecRowDialog.DialogListener {
-
     private View ReturnView;
     private ImageView ImageView;
     private TextView ProductImagePickTextView;
@@ -162,12 +161,6 @@ public class AdminAddProductActivity extends AppCompatActivity
             }
             else newProduct.setName(ProductNameText.getText().toString());
 
-            double productPrice = tryParseDouble(ProductNameText.toString());
-            if (productPrice == 0){
-                return;
-            }
-            else newProduct.setPrice(productPrice);
-
             if (specMap == null || specMap.size() == 0){
                 createToast("Chưa điền cấu hình sản phẩm");
                 return;
@@ -176,6 +169,12 @@ public class AdminAddProductActivity extends AppCompatActivity
                 String specString = generateSpecString(specMap);
                 newProduct.setSpecs(specString);
             }
+
+            double productPrice = tryParseDouble(ProductPriceText.getText().toString());
+            if (productPrice == 0){
+                return;
+            }
+            else newProduct.setPrice(productPrice);
 
             if (ProductDescriptionTextView.getText().toString().isEmpty()){
                 createToast("Chưa điền chi tiết sản phẩm");
@@ -191,6 +190,17 @@ public class AdminAddProductActivity extends AppCompatActivity
             else newProduct.setStatus(PRODUCT_NOT_AVAILABLE_STATUS);
 
             newProduct.setCategoryID(productCategory.getID());
+
+            try{
+                DatabaseHelper.insertNewProductToAzure(newProduct);
+                Intent intent = new Intent(getBaseContext(), AdminProductsInCategoryManagement.class);
+                intent.putExtra("clickedCategory", productCategory);
+                startActivity(intent);
+                finish();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         });
     }
 
@@ -206,7 +216,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         try {
             return Double.parseDouble(value);
         } catch (NumberFormatException | NullPointerException e) {
-            createToast("Chưa điền giá / Giá không hợp lệ !");
+            createToast("Chưa điền giá / Giá không hợp lệ !" + "(" + value + ")");
             return Double.parseDouble("0");
         }
     }
@@ -244,7 +254,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         }
     }
     public int generateNewProductId(){
-        return DatabaseHelper.getAdminProductListGivenID("").size();
+        return DatabaseHelper.getAdminProductListGivenID("").size() + 1;
     }
     private void showConfirmDeleteDialog() {
         ConfirmDeleteSpecRowDialog dialogFragment = new ConfirmDeleteSpecRowDialog();
