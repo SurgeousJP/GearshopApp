@@ -164,8 +164,6 @@ public class AdminEditProductActivity extends AppCompatActivity
             }
             else currentProduct.setDescription(ProductDescriptionTextView.getText().toString());
 
-            int PRODUCT_AVAILABLE_STATUS = 1;
-            int PRODUCT_NOT_AVAILABLE_STATUS = 2;
             if (ProductStatusSwitch.isChecked()){
                 currentProduct.setStatus(PRODUCT_AVAILABLE_STATUS);
             }
