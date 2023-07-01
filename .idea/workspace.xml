@@ -11,9 +11,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="prepare inputs for adding products">
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Add the json file to .gitignore for safety">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/client_secret_199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,20 +240,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00076" summary="event đổi address cập nhật lên db">
-      <created>1685607516306</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1685607516306</updated>
-    </task>
-    <task id="LOCAL-00077" summary="get address của người dùng (nếu đã update lần đầu) khi customer đăng nhập">
-      <created>1685675084217</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1685675084218</updated>
     </task>
     <task id="LOCAL-00078" summary="event checkout khi mua hàng">
       <created>1685676439869</created>
@@ -585,7 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687750648240</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Remove json credential file for safety reason">
+      <created>1687826834189</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1687826834189</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Add the json file to .gitignore for safety">
+      <created>1687827102978</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1687827102978</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -601,8 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix lỗi double hiển thị value dạng E rút gọn khiến k thể insert value" />
-    <MESSAGE value="finish sort dialog cho ordermanagement" />
     <MESSAGE value="làm địa chỉ customer, và tên người dùng (title)" />
     <MESSAGE value="refractor code một chút" />
     <MESSAGE value="tạo admin order management" />
@@ -626,7 +623,9 @@
     <MESSAGE value="làm thêm product spec trong add product" />
     <MESSAGE value="finish product spec" />
     <MESSAGE value="prepare inputs for adding products" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare inputs for adding products" />
+    <MESSAGE value="Remove json credential file for safety reason" />
+    <MESSAGE value="Add the json file to .gitignore for safety" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the json file to .gitignore for safety" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
