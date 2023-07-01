@@ -1,5 +1,7 @@
 package com.example.gearshop.activity.admin_activity;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -52,6 +55,8 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
     private ProductGridAdapter ProductAdapter;
     private List<Product> ProductList;
     int position;
+    private ActivityResultLauncher<Intent> EditLauncher;
+    private Category currentCategory;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -61,6 +66,8 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
 
         Intent getCategoryDataIntent = getIntent();
         Category clickedCategory = (Category) getCategoryDataIntent.getSerializableExtra("clickedCategory");
+        currentCategory = clickedCategory;
+
         if (clickedCategory == null){
             Toast.makeText(getBaseContext(), "Lỗi danh mục", Toast.LENGTH_SHORT).show();
             return;
@@ -92,6 +99,18 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
         ProductGridView.setEnabled(true);
         ProductGridView.setClickable(true);
         ProductGridView.setOnItemLongClickListener(this);
+
+        EditLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == RESULT_OK){
+                Intent data = result.getData();
+                if (data != null) {
+                    Product editedProduct = ((Product) data.getSerializableExtra("product"));
+                    ProductList.remove(position);
+                    ProductList.add(position, editedProduct);
+                    ProductAdapter.notifyDataSetChanged();
+                }
+            }
+        });
 
         SearchEditText = findViewById(R.id.search_text_admin_product);
         SearchIconView = findViewById(R.id.search_icon_admin_product);
@@ -166,16 +185,17 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
         inflater.inflate(R.menu.update_remove_product_menu, menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
         switch (item.getItemId()) {
-            // NOT DONE YET
             case R.id.edit_product_item:
-//                Intent intent = new Intent(MainActivity.this, EditTaskActivity.class);
-//                intent.putExtra("selectedTask", tasks.get(position));
-//                EditLauncher.launch(intent);
-//                return true;
+                Intent intent = new Intent(AdminProductsInCategoryManagement.this, AdminEditProductActivity.class);
+                intent.putExtra("productItem", ProductList.get(position));
+                intent.putExtra("productCategory", currentCategory);
+                EditLauncher.launch(intent);
+                return true;
             case R.id.delete_product_item:
                 ProductList.remove(position);
                 ProductAdapter.setData(ProductList);
