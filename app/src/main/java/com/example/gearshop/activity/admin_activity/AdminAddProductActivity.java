@@ -129,7 +129,10 @@ public class AdminAddProductActivity extends AppCompatActivity
         ProductSpecTextView = findViewById(R.id.add_product_specs_text);
         ProductSpecTextView.setOnClickListener(view -> {
             specMap = updateSpecMap();
-            int inputCount = specMap.size() + 1;
+            int inputCount = specMap.size();
+            do {
+                inputCount++;
+            } while (specMap.containsKey(String.valueOf(inputCount)));
             specMap.put(String.valueOf(inputCount),String.valueOf(inputCount));
             productSpecEditableAdapter = new ProductSpecEditableAdapter(this, specMap);
             productSpecEditableAdapter.setOnDeleteItemClickListener(position -> {
