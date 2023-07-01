@@ -77,6 +77,7 @@ public class CustomerRepository {
     }
 
     public void signUp(Customer customer) {
+
         CustomerList.add(customer);
         String dob = customer.getDateOfBirth().toString();
 
@@ -90,8 +91,8 @@ public class CustomerRepository {
                         "'" + customer.getUsername()    + "', " +
                         "'" + customer.getPassword()    + "', " +
                         "'" + customer.getEmail()       + "', " +
-                        "'" + customer.getFirstName()   + "', " +
-                        "'" + customer.getLastName()    + "', " +
+                        "N'" + customer.getFirstName()   + "', " +
+                        "N'" + customer.getLastName()    + "', " +
                         "'" + customer.getGender()      + "', " +
                         "'" + customer.getPhoneNumber() + "', " +
                         "'" + customer.getDateOfBirth() + "')\n");
@@ -134,8 +135,31 @@ public class CustomerRepository {
     }
 
     public boolean isExists(String email, String username) {
+        return isExistsEmail(email) && isExistsUsername(username);
+    }
+
+    public boolean isExistsUsername(String username) {
         for (Customer customer : CustomerList) {
-            if (customer.getUsername().equals(username) && customer.getEmail().equals(email)) {
+            if (customer.getUsername().equals(username)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean isExistsEmail(String email) {
+        for (Customer customer : CustomerList) {
+            if (customer.getEmail().equals(email)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public boolean isExistsPhoneNumber(String phoneNumber) {
+        for (Customer customer : CustomerList) {
+            if (customer.getPhoneNumber().equals(phoneNumber)) {
                 return true;
             }
         }

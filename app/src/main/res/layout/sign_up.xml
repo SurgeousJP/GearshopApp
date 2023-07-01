@@ -358,13 +358,14 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/sex">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/et_sign_up_gender"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_marginHorizontal="20dp"
                                 android:background="@null"
                                 android:hint="Giới tính"
+                                android:gravity="center_vertical"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -418,15 +419,16 @@
 
                             <EditText
                                 android:id="@+id/et_sign_up_born_day"
-                                android:paddingRight="8dp"
-                                android:paddingLeft="20dp"
+                                android:paddingRight="2dp"
+                                android:paddingLeft="14dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
-                                android:hint="dd"
+                                android:hint="01"
                                 android:inputType="date"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
+                                android:textAlignment="center"
                                 app:layout_constraintEnd_toStartOf="@id/line1"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -444,15 +446,16 @@
                                 app:layout_constraintTop_toTopOf="parent" />
                             <EditText
                                 android:id="@+id/et_sign_up_born_month"
-                                android:paddingRight="8dp"
-                                android:paddingLeft="8dp"
+                                android:paddingRight="2dp"
+                                android:paddingLeft="2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
-                                android:hint="mm"
+                                android:hint="01"
                                 android:inputType="date"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
+                                android:textAlignment="center"
                                 app:layout_constraintEnd_toStartOf="@id/line2"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/line1"
@@ -473,12 +476,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:background="@null"
-                                android:hint="yyyy"
+                                android:layout_marginLeft="3dp"
+                                android:hint="2000"
                                 android:inputType="date"
-                                android:paddingLeft="8dp"
+                                android:paddingLeft="6dp"
                                 android:paddingRight="20dp"
                                 android:textColor="#808089"
                                 android:textSize="15sp"
+                                android:textAlignment="center"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/line2"
@@ -530,6 +535,15 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+                    <View
+                        android:id="@+id/view_password_icon_password"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/eye_close_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
@@ -574,6 +588,16 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view_password_icon_confirm_password"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/eye_close_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

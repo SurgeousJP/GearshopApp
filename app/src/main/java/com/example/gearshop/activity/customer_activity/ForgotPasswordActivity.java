@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
+import com.example.gearshop.utility.ViewPasswordInputHelper;
 
 import java.util.Random;
 
@@ -99,10 +100,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         });
 
         btnViewPasswordNewPassword.setOnClickListener(view -> {
-            togglePasswordVisibility(edtNewPassword);
+            ViewPasswordInputHelper.togglePasswordVisibility(getResources(), edtNewPassword);
         });
         btnViewPasswordConfirmPassword.setOnClickListener(view -> {
-            togglePasswordVisibility(edtConfirmNewPassword);
+            ViewPasswordInputHelper.togglePasswordVisibility(getResources(), edtConfirmNewPassword);
         });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,32 +111,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
-
-    private void togglePasswordVisibility(EditText edtPassword) {
-        isPasswordVisible = !isPasswordVisible;
-        updatePasswordVisibility(edtPassword);
-    }
-
-    private void updatePasswordVisibility(EditText edtPassword) {
-        // Get the default theme
-        Resources.Theme theme = getResources().newTheme();
-
-        // Set the theme to null (default)
-        theme.applyStyle(0, true);
-
-        try{
-            Drawable iconDrawable = isPasswordVisible
-                    ? getResources().getDrawable(R.drawable.eye_open_icon, theme)
-                    : getResources().getDrawable(R.drawable.eye_close_icon, theme);
-        }
-        catch (Resources.NotFoundException ex){
-            ex.printStackTrace();
-        }
-
-        int inputType = isPasswordVisible ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
-                InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD;
-        edtPassword.setInputType(inputType);
     }
 
     private boolean hasValue(String email, String username) {
