@@ -57,6 +57,29 @@ public class DatabaseHelper {
         }
         System.out.println("Async Task update Address ended");
     }
+
+    @SuppressLint("DefaultLocale")
+    public static void updateProductToAzure(Product currentProduct){
+        InsertUpdateDataToAzure updateProductDataToAzure = new InsertUpdateDataToAzure();
+        System.out.println("Async Task update Product is running");
+        updateProductDataToAzure.execute("UPDATE product\n" +
+                "SET name = N'"      + currentProduct.getName()          + "',\n" +
+                "image_url = '"      + currentProduct.getImageURL()      + "',\n" +
+                "description = N'"   + currentProduct.getDescription()   + "',\n" +
+                "specs = N'"         + currentProduct.getSpecs()         + "',\n" +
+                "price = CAST('"    + String.format("%.0f", currentProduct.getPrice()) + "' AS money),\n" +
+                "status = '"         + currentProduct.getStatus()        + "',\n" +
+                "category_id = '"    + currentProduct.getCategoryID()    + "'\n" +
+                "WHERE id = '"       + currentProduct.getID()            + "';");
+        try{
+            updateProductDataToAzure.get();
+        }
+        catch (ExecutionException | InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task update Product ended");
+    }
+
     public static void insertAddressToAzure(Address newAddress){
         InsertUpdateDataToAzure insertAddressDataToAzure = new InsertUpdateDataToAzure();
 

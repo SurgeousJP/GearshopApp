@@ -57,6 +57,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
     int position;
     private ActivityResultLauncher<Intent> EditLauncher;
     private Category currentCategory;
+    private final int PRODUCT_DELETED_STATUS = 0;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -104,7 +105,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
             if (result.getResultCode() == RESULT_OK){
                 Intent data = result.getData();
                 if (data != null) {
-                    Product editedProduct = ((Product) data.getSerializableExtra("product"));
+                    Product editedProduct = ((Product) data.getSerializableExtra("editedProduct"));
                     ProductList.remove(position);
                     ProductList.add(position, editedProduct);
                     ProductAdapter.notifyDataSetChanged();
@@ -197,9 +198,12 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
                 EditLauncher.launch(intent);
                 return true;
             case R.id.delete_product_item:
+                Product deletedProduct = ProductList.get(position);
+                deletedProduct.setStatus(PRODUCT_DELETED_STATUS);
                 ProductList.remove(position);
                 ProductAdapter.setData(ProductList);
                 ProductAdapter.notifyDataSetChanged();
+                DatabaseHelper.updateProductToAzure(deletedProduct);
                 return true;
             default:
                 return super.onContextItemSelected(item);

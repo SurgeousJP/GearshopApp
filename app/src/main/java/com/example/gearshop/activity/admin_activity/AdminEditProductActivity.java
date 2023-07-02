@@ -20,6 +20,7 @@ import com.example.gearshop.adapter.ProductSpecEditableAdapter;
 import com.example.gearshop.dialog.ConfirmDeleteSpecRowDialog;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Product;
+import com.example.gearshop.model.Province;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.GoogleDriveService;
 import com.squareup.picasso.Picasso;
@@ -172,7 +173,11 @@ public class AdminEditProductActivity extends AppCompatActivity
             currentProduct.setCategoryID(currentCategory.getID());
 
             try{
-                // UPDATE THE PRODUCT AND RETURN RESULT
+                DatabaseHelper.updateProductToAzure(currentProduct);
+                Intent updatedProductIntent = new Intent();
+                updatedProductIntent.putExtra("editedProduct", currentProduct);
+                setResult(RESULT_OK, updatedProductIntent);
+                finish();
             }
             catch (Exception e){
                 e.printStackTrace();
