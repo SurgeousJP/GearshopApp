@@ -155,7 +155,6 @@ id address_text_user_info
 id address_user_info
 id admin_address_user_info
 id admin_all_order
-id admin_button
 id admin_dob_user_info
 id admin_email_user_info
 id admin_firstname_user_info
@@ -173,7 +172,6 @@ id admin_password_user_info
 id admin_phonenumber_user_info
 id admin_product_in_category_management
 id admin_sex_user_info
-id admin_text
 id admin_title_username_user_info
 id admin_username_user_info
 id all_order
@@ -288,7 +286,6 @@ id cta_viewmore
 id custom_price
 id customer
 id customer_box
-id customer_button
 id customer_color_box
 id customer_detail_return_view
 id customer_id
@@ -823,7 +820,6 @@ id thinline2
 id thinline3
 id time_of_transport_order_detail
 id title_1
-id title_admin
 id title_categ
 id title_category
 id title_choose_category
@@ -948,8 +944,6 @@ layout list_item_province
 layout list_order_status
 layout list_voucher
 layout login
-layout login_admin
-layout login_choose
 layout not_found_search
 layout order_detail
 layout order_management

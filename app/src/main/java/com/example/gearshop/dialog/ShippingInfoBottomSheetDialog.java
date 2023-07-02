@@ -46,6 +46,7 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
     private TextView FinalPriceTextView;
     private TextView CheckoutPriceTextView;
     private ActivityResultLauncher<Intent> ProvincePickerLauncher;
+    private EditText StreetEditText;
 
     public void setFinalPriceTextView(TextView finalPriceTextView) {
         FinalPriceTextView = finalPriceTextView;
@@ -93,6 +94,7 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
             ProvincePickerLauncher.launch(intent);
         });
         HouseNumberAddressEditText = view.findViewById(R.id.homeadress_edittext);
+        StreetEditText = view.findViewById(R.id.streetname_edittext);
         PhoneNumberEditText = view.findViewById(R.id.phonemuber_edittext);
         PhoneNumberEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
         ApplyChangeShippingInfo = view.findViewById(R.id.cta_apply);
@@ -111,6 +113,14 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
                 Toast.makeText(getActivity(), "Số nhà không hợp lệ", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            String streetChecking = StreetEditText.getText().toString();
+            if (streetChecking.isEmpty()){
+                Toast.makeText(getActivity(), "Chưa điền đường, vui lòng điền lại thông tin đường"
+                        , Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             String phoneNumberChecking = PhoneNumberEditText.getText().toString();
             if (phoneNumberChecking.charAt(0) != '0' || phoneNumberChecking.length() != 10){
                 Toast.makeText(getActivity(), "Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -121,14 +131,14 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
         return view;
     }
     @SuppressLint("SetTextI18n")
-    private void updateShippingInfo(String houseNumber, String province, String phoneNumber){
+    private void updateShippingInfo(String houseNumber, String street, String province, String phoneNumber){
         TextView AddressTextView = ShippingInfoLayout.findViewById(R.id.label_ship_order_detail);
         TextView PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description);
 
         if (AddressTextView == null){
             AddressTextView = ShippingInfoLayout.findViewById(R.id.label_address);
         }
-        AddressTextView.setText(houseNumber + "\n" + province);
+        AddressTextView.setText(houseNumber + " " +  street + "\n" + province);
 
         if (PhoneNumberTextView == null){
             PhoneNumberTextView = ShippingInfoLayout.findViewById(R.id.description_shipping_product);
@@ -137,7 +147,7 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
 
         Address globalAddress = GlobalRepository.getCustomerAddress();
         Address newAddress = new Address(globalAddress.getID(), houseNumber,
-                "", ProvinceID);
+                street, ProvinceID);
         if (globalAddress.getID() == -1){
             newAddress.setID(DatabaseHelper.getAddressList("ALL").size() + 1);
             DatabaseHelper.insertAddressToAzure(newAddress);
@@ -161,6 +171,7 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
         if (result){
             updateShippingInfo(
                     HouseNumberAddressEditText.getText().toString(),
+                    StreetEditText.getText().toString(),
                     ProvinceEditText.getText().toString(),
                     PhoneNumberEditText.getText().toString()
             );

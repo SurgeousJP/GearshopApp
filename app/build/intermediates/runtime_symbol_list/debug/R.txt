@@ -3020,7 +3020,6 @@ int id address_text_user_info 0x7f08005a
 int id address_user_info 0x7f08005b
 int id admin_address_user_info 0x7f08005c
 int id admin_all_order 0x7f08005d
-int id admin_button 0x7f08005e
 int id admin_dob_user_info 0x7f08005f
 int id admin_email_user_info 0x7f080060
 int id admin_firstname_user_info 0x7f080061
@@ -3038,7 +3037,6 @@ int id admin_password_user_info 0x7f08006c
 int id admin_phonenumber_user_info 0x7f08006d
 int id admin_product_in_category_management 0x7f08006e
 int id admin_sex_user_info 0x7f08006f
-int id admin_text 0x7f080070
 int id admin_title_username_user_info 0x7f080071
 int id admin_username_user_info 0x7f080072
 int id alertTitle 0x7f080073
@@ -3217,7 +3215,6 @@ int id customPanel 0x7f08011f
 int id custom_price 0x7f080120
 int id customer 0x7f080121
 int id customer_box 0x7f080122
-int id customer_button 0x7f080123
 int id customer_color_box 0x7f080124
 int id customer_detail_return_view 0x7f080125
 int id customer_id 0x7f080126
@@ -4069,7 +4066,6 @@ int id time_of_transport_order_detail 0x7f080473
 int id title 0x7f080474
 int id titleDividerNoCustom 0x7f080475
 int id title_1 0x7f080476
-int id title_admin 0x7f080477
 int id title_categ 0x7f080478
 int id title_category 0x7f080479
 int id title_choose_category 0x7f08047a
@@ -4352,8 +4348,6 @@ int layout list_item_province 0x7f0b004e
 int layout list_order_status 0x7f0b004f
 int layout list_voucher 0x7f0b0050
 int layout login 0x7f0b0051
-int layout login_admin 0x7f0b0052
-int layout login_choose 0x7f0b0053
 int layout m3_alert_dialog 0x7f0b0054
 int layout m3_alert_dialog_actions 0x7f0b0055
 int layout m3_alert_dialog_title 0x7f0b0056
