@@ -50,7 +50,7 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
         OrderManagementView.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminOrderManagementActivity.class);
         });
-        AccountManagementView = findViewById(R.id.product_account_management);
+        AccountManagementView = findViewById(R.id.product_other_management);
         AccountManagementView.setOnClickListener(view -> {
 
         });
