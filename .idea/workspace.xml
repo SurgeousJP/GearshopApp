@@ -11,8 +11,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="fix missing street">
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="delete test mpandroid chart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminProductCategoryManagementActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminProductCategoryManagementActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin_product_category_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin_product_category_picker.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,13 +243,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Tạo CustomerListAdapter">
-      <created>1686101262509</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1686101262509</updated>
     </task>
     <task id="LOCAL-00088" summary="Hoàn thành 1 phần quản lý customer">
       <created>1686130704661</created>
@@ -584,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688285899725</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="delete test mpandroid chart">
+      <created>1688375642474</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1688375642474</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -600,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Chia class GetProductDataFromAzure thành hai class con GetCustomerProductDataFromAzure, GetAdminProductDataFromAzure" />
     <MESSAGE value="Chỉnh sửa 1 chút" />
     <MESSAGE value="Thử nghiệm set up GoogleDriveAPI" />
     <MESSAGE value="Thử nghiệm set up GoogleDriveAPI (2)" />
@@ -625,7 +627,8 @@
     <MESSAGE value="Merge Duy's_Branch" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Duy's_Branch' into OrderBranch&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.5/checksums/checksums.lock&#10;#&#9;.gradle/7.5/checksums/md5-checksums.bin&#10;#&#9;.gradle/7.5/checksums/sha1-checksums.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.5/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar&#10;#&#9;app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex&#10;#&#9;app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex&#10;#&#9;app/build/intermediates/dex_archive_input_jar_hashes/debug/out&#10;#&#9;app/build/intermediates/incremental/debug-mergeJavaRes/merge-state&#10;#&#9;app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml&#10;#&#9;app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/debug/packageDebugResources/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugAssets/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugShaders/merger.xml&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources&#10;#&#9;app/build/intermediates/local_only_symbol_list/debug/R-def.txt&#10;#&#9;app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-night-v8.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json&#10;#&#9;app/build/intermediates/processed_res/debug/out/resources-debug.ap_&#10;#&#9;app/build/intermediates/runtime_symbol_list/debug/R.txt&#10;#&#9;app/build/intermediates/source_set_path_map/debug/file-map.txt&#10;#&#9;app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt&#10;#&#9;app/build/outputs/logs/manifest-merger-debug-report.txt&#10;#&#9;app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin&#10;#&#9;app/src/main/res/layout/admin_product_add_update.xml" />
     <MESSAGE value="fix missing street" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix missing street" />
+    <MESSAGE value="delete test mpandroid chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete test mpandroid chart" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

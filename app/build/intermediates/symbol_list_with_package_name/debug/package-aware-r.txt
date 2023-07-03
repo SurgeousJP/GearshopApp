@@ -3548,7 +3548,6 @@ id line5
 id line6
 id line7
 id line8
-id lineChart
 id line_view
 id linear
 id linebegin
@@ -3584,6 +3583,8 @@ id listview_customer_layout
 id listview_customer_management
 id listview_support
 id listview_voucher
+id load_multiple_product_layout
+id load_multiple_products_text
 id location_icon
 id location_support_box
 id log_out_box
@@ -4297,7 +4298,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout account_main
 layout activity_main
-layout activity_test_mpandroid_chart
 layout admin_customer_detail
 layout admin_customer_list_item
 layout admin_customer_mainsceen_management
