@@ -6,24 +6,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
 import com.example.gearshop.model.Category;
+import com.example.gearshop.model.Product;
 import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.utility.ActivityStartManager;
+import com.example.gearshop.utility.DatabaseHelper;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminProductCategoryManagementActivity extends AppCompatActivity {
@@ -58,8 +58,7 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
 
         LoadProductListTextView = findViewById(R.id.load_multiple_products_text);
         LoadProductListTextView.setOnClickListener(view -> {
-//            openCSVFilePicker();
-            readExcelFile(null);
+            openCSVFilePicker();
         });
 
         CustomerManagementView = findViewById(R.id.product_customer_management);
@@ -92,55 +91,60 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
                 Uri uri = data.getData();
                 if (uri != null) {
                     // Process the selected CSV file
-//                    readCsvFile(uri);
+                    try {
+                        InsertProductListOntoDatabase(readProductList(uri));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         }
     }
 
-    private void readExcelFile(Uri uri) {
-        try {
-//            InputStream inputStream = getContentResolver().openInputStream(uri);
-            InputStream inputStream = getAssets().open("ProductDataListForDemoSemicolonDelimeter.csv");
-            Workbook workbook = WorkbookFactory.create(inputStream);
+    private void InsertProductListOntoDatabase(List<Product> products){
+        for (Product product : products){
+            DatabaseHelper.insertNewProductToAzure(product);
+        }
+        Toast.makeText(getBaseContext(), "Load sản phẩm mới thành công !", Toast.LENGTH_SHORT).show();
+    }
 
-            // Assuming the Excel file has only one sheet
-            Sheet sheet = workbook.getSheetAt(0);
+    private List<Product> readProductList(Uri uri) throws IOException {
+        List<Product> resultProductList = new ArrayList<>();
+        int newProductID = generateNewProductId();
+        InputStream inputStream = getAssets().open("ProductDataListForDemoSemicolonDelimeter.csv");
+        String[] productRows = readAllCSVLines(inputStream).split("\n;");
+        for (String productRow : productRows){
+            // A row contains: name, image_url, description, specs, price, status, category_id
+            String[] productAttributes = productRow.split(";");
 
-            // Iterate over rows
-            for (Row row : sheet) {
-                // Process each row
-                for (Cell cell : row) {
-                    // Process each cell
-                    String cellValue = getCellValueAsString(cell);
-                    System.out.print(cellValue + " ");
-                }
-                System.out.println(); // Move to the next row
+            String productName = productAttributes[0].trim();
+            String imageURL = productAttributes[1].trim();
+            String productDescription = productAttributes[2].replace("\"", "").trim();
+            String productSpec = productAttributes[3].replace("\"", "").trim();
+            double productPrice = Double.parseDouble(productAttributes[4].trim());
+            int productStatus = Integer.parseInt(productAttributes[5].trim());
+            int productCategoryID = Integer.parseInt(productAttributes[6].trim());
+
+            Product product = new Product(newProductID++, productName, imageURL, productDescription, productSpec,
+                    productPrice, productStatus, productCategoryID, null);
+            resultProductList.add(product);
+        }
+        return resultProductList;
+    }
+    public int generateNewProductId(){
+        return DatabaseHelper.getAdminProductListGivenID("").size() + 1;
+    }
+
+    public String readAllCSVLines(InputStream inputStream) throws IOException {
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                content.append(line).append("\n");
             }
-
-            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return content.toString();
     }
-
-    private String getCellValueAsString(Cell cell) {
-        if (cell == null) {
-            return "";
-        }
-
-        CellType cellType = cell.getCellType();
-        if (cellType == CellType.STRING) {
-            return cell.getStringCellValue();
-        } else if (cellType == CellType.NUMERIC) {
-            return String.valueOf(cell.getNumericCellValue());
-        } else if (cellType == CellType.BOOLEAN) {
-            return String.valueOf(cell.getBooleanCellValue());
-        } else if (cellType == CellType.BLANK) {
-            return "";
-        } else {
-            return ""; // Handle other cell types as needed
-        }
-    }
-
 }

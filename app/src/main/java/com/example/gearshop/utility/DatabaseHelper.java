@@ -109,10 +109,10 @@ public class DatabaseHelper {
                         "image_url, description, specs, price, status," +
                         "category_id)\n" +
                         "VALUES(" + newProduct.getID()        + ", "  +
-                        "'" + newProduct.getName()            + "', " +
+                        "N'" + newProduct.getName()            + "', " +
                         "'" + newProduct.getImageURL()        + "', " +
-                        "'" + newProduct.getDescription()     + "', " +
-                        "'" + newProduct.getSpecs()           + "', " +
+                        "N'" + newProduct.getDescription()     + "', " +
+                        "N'" + newProduct.getSpecs()           + "', " +
                         "CAST('" +  String.format("%.0f", newProduct.getPrice()) + "' AS money), " +
                         "'" + newProduct.getStatus()          + "', " +
                         "'" + newProduct.getCategoryID()      + "')\n");
