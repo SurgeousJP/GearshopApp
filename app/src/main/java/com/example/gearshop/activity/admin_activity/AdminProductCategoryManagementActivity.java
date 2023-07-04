@@ -1,7 +1,5 @@
 package com.example.gearshop.activity.admin_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,16 +7,23 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.gearshop.R;
 import com.example.gearshop.adapter.CategoryListViewAdapter;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.utility.ActivityStartManager;
 
-import java.io.BufferedReader;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
 
 public class AdminProductCategoryManagementActivity extends AppCompatActivity {
@@ -53,7 +58,8 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
 
         LoadProductListTextView = findViewById(R.id.load_multiple_products_text);
         LoadProductListTextView.setOnClickListener(view -> {
-            openCSVFilePicker();
+//            openCSVFilePicker();
+            readExcelFile(null);
         });
 
         CustomerManagementView = findViewById(R.id.product_customer_management);
@@ -86,27 +92,54 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
                 Uri uri = data.getData();
                 if (uri != null) {
                     // Process the selected CSV file
-                    readCsvFile(uri);
+//                    readCsvFile(uri);
                 }
             }
         }
     }
 
-    private void readCsvFile(Uri uri) {
+    private void readExcelFile(Uri uri) {
         try {
-            InputStream inputStream = getContentResolver().openInputStream(uri);
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                // Process each line of the CSV file
-                String[] values = line.split(",");
-                // Access the values array to get individual column values
-                // ...
+//            InputStream inputStream = getContentResolver().openInputStream(uri);
+            InputStream inputStream = getAssets().open("ProductDataListForDemoSemicolonDelimeter.csv");
+            Workbook workbook = WorkbookFactory.create(inputStream);
+
+            // Assuming the Excel file has only one sheet
+            Sheet sheet = workbook.getSheetAt(0);
+
+            // Iterate over rows
+            for (Row row : sheet) {
+                // Process each row
+                for (Cell cell : row) {
+                    // Process each cell
+                    String cellValue = getCellValueAsString(cell);
+                    System.out.print(cellValue + " ");
+                }
+                System.out.println(); // Move to the next row
             }
-            bufferedReader.close();
+
+            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private String getCellValueAsString(Cell cell) {
+        if (cell == null) {
+            return "";
+        }
+
+        CellType cellType = cell.getCellType();
+        if (cellType == CellType.STRING) {
+            return cell.getStringCellValue();
+        } else if (cellType == CellType.NUMERIC) {
+            return String.valueOf(cell.getNumericCellValue());
+        } else if (cellType == CellType.BOOLEAN) {
+            return String.valueOf(cell.getBooleanCellValue());
+        } else if (cellType == CellType.BLANK) {
+            return "";
+        } else {
+            return ""; // Handle other cell types as needed
         }
     }
 
