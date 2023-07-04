@@ -11,31 +11,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="try to load excel file, but it has some bug">
-      <change afterPath="$PROJECT_DIR$/app/libs/jxl.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/base.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/base.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ProductDataListForDemo.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ProductDataListForDemoSemicolonDelimeter.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/ProductDataListForDemoSemicolonDelimeter.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminProductCategoryManagementActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminProductCategoryManagementActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" afterDir="false" />
-    </list>
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="finish load sản phẩm từ file csv" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,20 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00090" summary="fix lỗi k update ship price">
-      <created>1686139997849</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1686139997850</updated>
-    </task>
-    <task id="LOCAL-00091" summary="làm sự kiện đổi order status">
-      <created>1686190316969</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1686190316970</updated>
     </task>
     <task id="LOCAL-00092" summary="làm sự kiện đổi order status">
       <created>1686190330927</created>
@@ -607,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688433270697</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="finish load sản phẩm từ file csv">
+      <created>1688462313430</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462313430</updated>
+    </task>
+    <task id="LOCAL-00140" summary="finish load sản phẩm từ file csv">
+      <created>1688462318781</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462318781</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -626,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Thử nghiệm set up GoogleDriveAPI (2)" />
     <MESSAGE value="fix some bug with GoogleDriveService" />
     <MESSAGE value="fix some bug with GoogleDriveService (3)" />
     <MESSAGE value="fix some bug with GoogleDriveService (2)" />
@@ -651,7 +626,8 @@
     <MESSAGE value="delete test mpandroid chart" />
     <MESSAGE value="tạo button load danh sách sản phẩm" />
     <MESSAGE value="try to load excel file, but it has some bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to load excel file, but it has some bug" />
+    <MESSAGE value="finish load sản phẩm từ file csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish load sản phẩm từ file csv" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

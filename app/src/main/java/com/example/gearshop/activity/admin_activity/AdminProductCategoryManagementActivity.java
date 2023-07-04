@@ -111,7 +111,7 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
     private List<Product> readProductList(Uri uri) throws IOException {
         List<Product> resultProductList = new ArrayList<>();
         int newProductID = generateNewProductId();
-        InputStream inputStream = getAssets().open("ProductDataListForDemoSemicolonDelimeter.csv");
+        InputStream inputStream = getContentResolver().openInputStream(uri);
         String[] productRows = readAllCSVLines(inputStream).split("\n;");
         for (String productRow : productRows){
             // A row contains: name, image_url, description, specs, price, status, category_id
