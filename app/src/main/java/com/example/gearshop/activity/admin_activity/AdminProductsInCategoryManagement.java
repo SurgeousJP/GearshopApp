@@ -49,9 +49,6 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
     private View SortIconView;
     private TextView SortTextView;
     private GridView ProductGridView;
-    private View CustomerManagementView;
-    private View OrderManagementView;
-    private View AccountManagementView;
     private ProductGridAdapter ProductAdapter;
     private List<Product> ProductList;
     int position;
@@ -157,20 +154,6 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
         SortIconView.setOnClickListener(sortOnClickListener);
         SortTextView = findViewById(R.id.label_sort_admin_product);
         SortTextView.setOnClickListener(sortOnClickListener);
-
-        CustomerManagementView = findViewById(R.id.customer_manage_category);
-        CustomerManagementView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), AdminCustomerManagementActivity.class);
-        });
-
-        OrderManagementView = findViewById(R.id.order_manage_category);
-        OrderManagementView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), AdminOrderManagementActivity.class);
-        });
-
-        AccountManagementView = findViewById(R.id.account_management_category);
-        AccountManagementView.setOnClickListener(view -> {
-        });
     }
 
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {

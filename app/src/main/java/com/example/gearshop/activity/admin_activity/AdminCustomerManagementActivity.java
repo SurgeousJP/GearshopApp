@@ -29,7 +29,7 @@ public class AdminCustomerManagementActivity extends AppCompatActivity {
     private TextView CustomerSortText;
     private View TransitionToProductManagementView;
     private View TransitionToOrderManagementView;
-    private View TransitionToAccountManagementView;
+    private View TransitionToOtherManagementView;
     private ListView CustomerManagementListView;
     private List<Customer> CustomerList;
     private CustomerListAdapter CustomerAdapter;
@@ -72,9 +72,9 @@ public class AdminCustomerManagementActivity extends AppCompatActivity {
         TransitionToProductManagementView.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminProductCategoryManagementActivity.class);
         });
-        TransitionToAccountManagementView = findViewById(R.id.account_manage_customer);
-        TransitionToAccountManagementView.setOnClickListener(view -> {
-
+        TransitionToOtherManagementView = findViewById(R.id.account_manage_customer);
+        TransitionToOtherManagementView.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminOtherActivity.class);
         });
         TransitionToOrderManagementView = findViewById(R.id.order_manage_customer);
         TransitionToOrderManagementView.setOnClickListener(view -> {

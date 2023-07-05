@@ -41,7 +41,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
     private View AllCancelledOrderView;
     private View ProductManagementView;
     private View CustomerManagementView;
-    private View AccountManagementView;
+    private View OtherManagementView;
     private List<Order> OrderList;
     private OrderListAdapter OrderAdapter;
     private ListView OrderListView;
@@ -125,9 +125,9 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminCustomerManagementActivity.class);
         });
 
-        AccountManagementView = findViewById(R.id.other_manage_order);
-        AccountManagementView.setOnClickListener(view -> {
-
+        OtherManagementView = findViewById(R.id.other_manage_order);
+        OtherManagementView.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminOtherActivity.class);
         });
 
         OrderListView.setOnItemLongClickListener((adapterView, view, i, l) -> {

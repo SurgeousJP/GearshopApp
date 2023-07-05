@@ -32,10 +32,8 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
     private ListView CategoryListView;
     private View CustomerManagementView;
     private View OrderManagementView;
-    private View AccountManagementView;
+    private View OtherManagementView;
     private TextView LoadProductListTextView;
-    private static final int REQUEST_CODE_FILE_PICKER = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +69,9 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
         OrderManagementView.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), AdminOrderManagementActivity.class);
         });
-        AccountManagementView = findViewById(R.id.product_other_management);
-        AccountManagementView.setOnClickListener(view -> {
-
+        OtherManagementView = findViewById(R.id.product_other_management);
+        OtherManagementView.setOnClickListener(view -> {
+            ActivityStartManager.startTargetActivity(getBaseContext(), AdminOtherActivity.class);
         });
     }
     private void openCSVFilePicker() {
