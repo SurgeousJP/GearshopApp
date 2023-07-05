@@ -11,19 +11,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="fix some bug">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminOtherActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminInfoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminOtherActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminOtherActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin_other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin_other.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,13 +249,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Xong main screen của AdminOrderManagementActivity">
-      <created>1686207738250</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1686207738250</updated>
     </task>
     <task id="LOCAL-00096" summary="finish AdminOrderManagementActivity và các chức năng đi kèm (trừ sort và filter do chưa có UI)">
       <created>1686209178613</created>
@@ -599,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688527939679</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ">
+      <created>1688530917613</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1688530917613</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -618,7 +612,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix some bug with GoogleDriveService (2)" />
     <MESSAGE value="tạo custom dialog khi chọn ảnh" />
     <MESSAGE value="finish làm event pick ảnh từ drive" />
     <MESSAGE value="làm thêm product spec trong add product" />
@@ -643,7 +636,8 @@
     <MESSAGE value="finish load sản phẩm từ file csv" />
     <MESSAGE value="fix load uri khi load danh sách sản phẩm" />
     <MESSAGE value="fix some bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix some bug" />
+    <MESSAGE value="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
