@@ -77,7 +77,7 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
     private void openCSVFilePicker() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("csv"); // Specify the MIME type to restrict file selection to CSV files
+        intent.setType("text/csv"); // Specify the MIME type to restrict file selection to CSV files
 
         startActivityForResult(intent, REQUEST_CODE_FILE_PICKER);
     }
