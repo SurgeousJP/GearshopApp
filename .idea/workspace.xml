@@ -11,9 +11,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="chuẩn bị ý tưởng để vẽ thống kê" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,13 +242,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00099" summary="đổi một vài thông tin trong ui">
-      <created>1686350513798</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1686350513798</updated>
     </task>
     <task id="LOCAL-00100" summary="làm sort dialog cho customermanagement">
       <created>1686353851916</created>
@@ -588,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688547757805</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="chuẩn bị ý tưởng để vẽ thống kê">
+      <created>1688547888071</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1688547888071</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -607,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="finish product spec" />
     <MESSAGE value="prepare inputs for adding products" />
     <MESSAGE value="Remove json credential file for safety reason" />
     <MESSAGE value="Add the json file to .gitignore for safety" />
@@ -632,7 +629,8 @@
     <MESSAGE value="Hoàn thành AdminOtherActivity" />
     <MESSAGE value="chỉnh sửa đôi chút cho admin info và statistic" />
     <MESSAGE value="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED" />
-    <option name="LAST_COMMIT_MESSAGE" value="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED" />
+    <MESSAGE value="chuẩn bị ý tưởng để vẽ thống kê" />
+    <option name="LAST_COMMIT_MESSAGE" value="chuẩn bị ý tưởng để vẽ thống kê" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
