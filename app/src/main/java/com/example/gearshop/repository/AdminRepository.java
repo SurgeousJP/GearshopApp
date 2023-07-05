@@ -14,6 +14,7 @@ public class AdminRepository {
     public Admin signIn(String username, String password) {
         Admin adminInfo = DatabaseHelper.getAdmin();
 
+        assert adminInfo != null;
         if (adminInfo.getUsername().equals(username) && adminInfo.getPassword().equals(password)) {
             return adminInfo;
         }
