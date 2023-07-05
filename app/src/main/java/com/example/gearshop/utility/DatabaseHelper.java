@@ -31,7 +31,8 @@ public class DatabaseHelper {
         InsertUpdateDataToAzure updateOrderDataToAzure = new InsertUpdateDataToAzure();
         System.out.println("Async Task update Order status is running");
         updateOrderDataToAzure.execute("UPDATE orders\n" +
-                "SET status = '" + currentOrder.getStatus() + "'\n" +
+                "SET status = '"       + currentOrder.getStatus()                        + "',\n" +
+                "    is_paid = '"      + Boolean.compare(currentOrder.isPaid(), false)   + "'\n"  +
                 "WHERE id = '" + currentOrder.getID() +"';");
         try{
             updateOrderDataToAzure.get();

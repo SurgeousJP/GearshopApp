@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <View
+                android:id="@+id/statistics_return_icon_view"
                 android:layout_width="10dp"
                 android:layout_height="12dp"
                 android:layout_marginHorizontal="16dp"
@@ -102,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="28dp"
-                    android:text="tổng doanh thu"
+                    android:text="Tổng doanh thu"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -160,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="28dp"
-                    android:text="tổng đơn hàng"
+                    android:text="Tổng đơn hàng"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -168,7 +169,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/order"
+                    android:id="@+id/total_orders"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -218,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="28dp"
-                    android:text="tổng sản phẩm"
+                    android:text="Tổng sản phẩm"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -226,7 +227,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/product"
+                    android:id="@+id/number_of_products"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -284,7 +285,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/customer"
+                    android:id="@+id/number_of_customers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -378,7 +379,7 @@
                 app:layout_constraintTop_toBottomOf="@id/statistic_horizon_bar_chart_title">
 
                 <com.github.mikephil.charting.charts.HorizontalBarChart
-                    android:id="@+id/horizon_bar_chart_monthly_sale"
+                    android:id="@+id/horizon_bar_chart_top_product"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

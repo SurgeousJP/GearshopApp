@@ -11,10 +11,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Hoàn thành AdminOtherActivity">
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="chỉnh sửa đôi chút cho admin info và statistic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminInfoActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/customer_activity/OrderDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/customer_activity/OrderDetailActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin_statistic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin_statistic.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +72,8 @@
       <list>
         <option value="Interface" />
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -246,13 +248,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00097" summary="fix lại connection string do db cũ bị lỗi">
-      <created>1686268852379</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1686268852379</updated>
     </task>
     <task id="LOCAL-00098" summary="sửa lỗi xảy ra khi đặt hàng không có món hàng nào trong giỏ">
       <created>1686349990901</created>
@@ -590,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688531599710</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="chỉnh sửa đôi chút cho admin info và statistic">
+      <created>1688532001959</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1688532001959</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -609,7 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="finish làm event pick ảnh từ drive" />
     <MESSAGE value="làm thêm product spec trong add product" />
     <MESSAGE value="finish product spec" />
     <MESSAGE value="prepare inputs for adding products" />
@@ -634,7 +635,8 @@
     <MESSAGE value="fix some bug" />
     <MESSAGE value="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ" />
     <MESSAGE value="Hoàn thành AdminOtherActivity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hoàn thành AdminOtherActivity" />
+    <MESSAGE value="chỉnh sửa đôi chút cho admin info và statistic" />
+    <option name="LAST_COMMIT_MESSAGE" value="chỉnh sửa đôi chút cho admin info và statistic" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

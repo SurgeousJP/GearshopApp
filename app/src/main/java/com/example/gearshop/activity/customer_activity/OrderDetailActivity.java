@@ -145,6 +145,7 @@ public class OrderDetailActivity extends AppCompatActivity {
                         if (data != null) {
                             String pickedOrderStatus = data.getStringExtra("pickedOrderStatus");
                             clickedOrder.setStatus(pickedOrderStatus);
+                            if (pickedOrderStatus.equals("DELIVERED")) clickedOrder.setPaid(true);
                             DatabaseHelper.updateOrderStatusToAzure(clickedOrder);
                             loadOrderStatusOntoScreen(clickedOrder);
                         }
