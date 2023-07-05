@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gearshop.R;
@@ -79,27 +81,27 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("text/csv"); // Specify the MIME type to restrict file selection to CSV files
 
-        startActivityForResult(intent, REQUEST_CODE_FILE_PICKER);
+        filePickerLauncher.launch(intent);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_FILE_PICKER && resultCode == RESULT_OK) {
-            if (data != null) {
-                Uri uri = data.getData();
-                if (uri != null) {
-                    // Process the selected CSV file
-                    try {
-                        InsertProductListOntoDatabase(readProductList(uri));
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+    private final ActivityResultLauncher<Intent> filePickerLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                    if (data != null) {
+                        Uri uri = data.getData();
+                        if (uri != null) {
+                            try {
+                                InsertProductListOntoDatabase(readProductList(uri));
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
+    );
 
     private void InsertProductListOntoDatabase(List<Product> products){
         for (Product product : products){

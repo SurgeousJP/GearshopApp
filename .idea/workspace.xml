@@ -11,9 +11,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="fix load uri khi load danh sách sản phẩm">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="fix some bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,13 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00093" summary="fix lỗi lower case khi search">
-      <created>1686191161940</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1686191161940</updated>
     </task>
     <task id="LOCAL-00094" summary="Tạo AdminOrderManagementActivity">
       <created>1686199973600</created>
@@ -585,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688473913958</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="fix some bug">
+      <created>1688527719644</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1688527719644</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -604,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix some bug with GoogleDriveService (3)" />
     <MESSAGE value="fix some bug with GoogleDriveService (2)" />
     <MESSAGE value="tạo custom dialog khi chọn ảnh" />
     <MESSAGE value="finish làm event pick ảnh từ drive" />
@@ -629,7 +626,8 @@
     <MESSAGE value="try to load excel file, but it has some bug" />
     <MESSAGE value="finish load sản phẩm từ file csv" />
     <MESSAGE value="fix load uri khi load danh sách sản phẩm" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix load uri khi load danh sách sản phẩm" />
+    <MESSAGE value="fix some bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some bug" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
