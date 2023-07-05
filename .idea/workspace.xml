@@ -11,12 +11,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="chỉnh sửa đôi chút cho admin info và statistic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/admin_activity/AdminStatisticActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/customer_activity/OrderDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/activity/customer_activity/OrderDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gearshop/utility/DatabaseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin_statistic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin_statistic.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,13 +244,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
-    </task>
-    <task id="LOCAL-00098" summary="sửa lỗi xảy ra khi đặt hàng không có món hàng nào trong giỏ">
-      <created>1686349990901</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1686349990902</updated>
     </task>
     <task id="LOCAL-00099" summary="đổi một vài thông tin trong ui">
       <created>1686350513798</created>
@@ -592,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688532001959</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED">
+      <created>1688547757805</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1688547757805</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -611,7 +607,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="làm thêm product spec trong add product" />
     <MESSAGE value="finish product spec" />
     <MESSAGE value="prepare inputs for adding products" />
     <MESSAGE value="Remove json credential file for safety reason" />
@@ -636,7 +631,8 @@
     <MESSAGE value="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ" />
     <MESSAGE value="Hoàn thành AdminOtherActivity" />
     <MESSAGE value="chỉnh sửa đôi chút cho admin info và statistic" />
-    <option name="LAST_COMMIT_MESSAGE" value="chỉnh sửa đôi chút cho admin info và statistic" />
+    <MESSAGE value="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED" />
+    <option name="LAST_COMMIT_MESSAGE" value="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

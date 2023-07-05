@@ -28,12 +28,20 @@ public class AdminStatisticActivity extends AppCompatActivity {
         setContentView(R.layout.admin_statistic);
 
         ReturnIconView = findViewById(R.id.statistics_return_icon_view);
+        // GET ORDER DATA
         SaleTextView = findViewById(R.id.sales);
         TotalOrdersTextView = findViewById(R.id.total_orders);
+        // GET PRODUCT DATA
         NumberOfProductsTextView = findViewById(R.id.number_of_products);
+        // GET CUSTOMER DATA
         NumberOfCustomerTextView = findViewById(R.id.number_of_customers);
+
+        // GET CATEGORY JOIN PRODUCT DATA
         CategoryPieChart = findViewById(R.id.pie_chart_category);
+
+        // GROUP BY MONTH
         MonthlySaleBarChart = findViewById(R.id.bar_chart_monthly_sale);
+        // GROUP BY PRODUCT_ID IN ORDER_ITEM
         TopProductHorizontalBarChart = findViewById(R.id.horizon_bar_chart_top_product);
 
         ReturnIconView.setOnClickListener(view -> {
