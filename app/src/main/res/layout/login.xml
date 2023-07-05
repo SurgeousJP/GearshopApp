@@ -60,6 +60,7 @@
             app:layout_constraintTop_toBottomOf="@+id/listgear" />
         <TextView
             android:id="@+id/title_customer"
+            android:visibility="invisible"
             android:layout_width="312dp"
             android:layout_height="24dp"
             android:layout_marginTop="4dp"

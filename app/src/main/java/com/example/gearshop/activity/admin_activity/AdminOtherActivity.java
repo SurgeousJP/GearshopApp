@@ -21,6 +21,8 @@ public class AdminOtherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.admin_other);
+
         StatisticsTransitionView = findViewById(R.id.transition_to_statistics);
         AdminInfoTransitionView = findViewById(R.id.transition_to_admin_info);
         LogoutView = findViewById(R.id.logout_view);

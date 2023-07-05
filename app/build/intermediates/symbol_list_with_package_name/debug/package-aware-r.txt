@@ -2980,7 +2980,6 @@ id account_avatar_item
 id account_item_category_detail
 id account_manage_account
 id account_manage_customer
-id account_management_category
 id actionDown
 id actionDownUp
 id actionUp
@@ -3034,11 +3033,13 @@ id admin_order_management_search_text
 id admin_order_sort_icon
 id admin_order_view_all
 id admin_other_other_text
+id admin_password_info
 id admin_password_user_info
 id admin_phonenumber_user_info
 id admin_product_in_category_management
 id admin_sex_user_info
 id admin_title_username_user_info
+id admin_username_info
 id admin_username_user_info
 id alertTitle
 id aligned
@@ -3076,21 +3077,17 @@ id box1_admin_account
 id box1_admin_customer
 id box1_admin_order
 id box1_admin_product
-id box1_admin_product_category
 id box2_admin_account
 id box2_admin_customer
 id box2_admin_order
 id box2_admin_product
-id box2_admin_product_category
 id box3_admin_account
 id box3_admin_customer
 id box3_admin_order
 id box3_admin_product
-id box3_admin_product_category
 id box4_admin_account
 id box4_admin_order
 id box4_admin_product
-id box4_admin_product_category
 id box_text
 id brand_button_1
 id brand_button_2
@@ -3214,7 +3211,6 @@ id currentState
 id custom
 id customPanel
 id custom_price
-id customer
 id customer_box
 id customer_color_box
 id customer_detail_return_view
@@ -3223,9 +3219,7 @@ id customer_id_box
 id customer_id_label
 id customer_id_number
 id customer_id_text
-id customer_manage_account
 id customer_manage_account_text
-id customer_manage_category
 id customer_manage_customer
 id customer_manage_customer_text
 id customer_manage_order
@@ -3413,7 +3407,7 @@ id home_item_category_detail
 id homeadress_box
 id homeadress_edittext
 id honorRequest
-id horizon_bar_chart_monthly_sale
+id horizon_bar_chart_top_product
 id horizontal_only
 id horizontal_scrollview_order_status
 id hotline_support_box
@@ -3594,6 +3588,7 @@ id login_info_user_info_box
 id login_text
 id loginform
 id logout_item
+id logout_view
 id low_price
 id m3_side_sheet
 id main_screen
@@ -3693,6 +3688,8 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number_of_customers
+id number_of_products
 id number_voucher
 id off
 id on
@@ -3700,7 +3697,6 @@ id onInterceptTouchReturnSwipe
 id open_customer_order
 id or_form
 id or_text
-id order
 id order_admin_cancel
 id order_admin_cancel_view
 id order_admin_delivered
@@ -3715,10 +3711,7 @@ id order_day
 id order_day_box
 id order_detail_return_view
 id order_detail_text
-id order_manage_account
 id order_manage_account_text
-id order_manage_category
-id order_manage_category_text
 id order_manage_customer
 id order_manage_customer_text
 id order_manage_order
@@ -3738,12 +3731,15 @@ id order_tracking_status_box
 id order_transport_uint_box
 id order_transport_unit
 id original_price
+id other_customer_management_view
 id other_info_box
 id other_manage_customer_text
 id other_manage_order
 id other_manage_order_text
 id other_manage_text
 id other_option
+id other_order_management_view
+id other_product_management_view
 id outline
 id outward
 id overshoot
@@ -3794,7 +3790,6 @@ id processing_order
 id prod_config_box
 id prod_detail_box
 id produ_info_list_order_status
-id product
 id product_box
 id product_category_box
 id product_category_edit_text
@@ -3818,10 +3813,7 @@ id product_info_box
 id product_info_order_detail
 id product_item
 id product_manage
-id product_manage_account
 id product_manage_account_text
-id product_manage_category
-id product_manage_category_text
 id product_manage_customer
 id product_manage_customer_text
 id product_manage_order
@@ -4008,6 +4000,7 @@ id statistic_horizon_bar_chart_title
 id statistic_image
 id statistic_pie_chart_box
 id statistic_title
+id statistics_return_icon_view
 id status_change
 id stop
 id streetname_box
@@ -4098,6 +4091,7 @@ id title_wrap
 id toggle
 id top
 id topPanel
+id total_orders
 id total_price_order_detail
 id touch_outside
 id tracking_status_date
@@ -4109,6 +4103,8 @@ id transition_current_scene
 id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
+id transition_to_admin_info
+id transition_to_statistics
 id transition_transform
 id transport_box
 id transport_box_inside
@@ -4171,6 +4167,7 @@ id voucher_image
 id voucher_mini_box
 id wayback
 id wayback_icon
+id wayback_icon_admin_info
 id wayback_icon_category_detail
 id wayback_icon_faq
 id wayback_icon_order_detail
@@ -4302,6 +4299,7 @@ layout admin_customer_detail
 layout admin_customer_list_item
 layout admin_customer_mainsceen_management
 layout admin_customer_sort_setting
+layout admin_info
 layout admin_order_list_item_status
 layout admin_order_mainscreen_management
 layout admin_order_sort_setting

@@ -14,6 +14,7 @@ public class AdminInfoActivity extends AppCompatActivity {
 
     private TextView AdminUsernameTextView;
     private TextView AdminPasswordTextView;
+    private View AdminInfoReturnView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class AdminInfoActivity extends AppCompatActivity {
 
         AdminUsernameTextView = findViewById(R.id.admin_username_info);
         AdminPasswordTextView = findViewById(R.id.admin_password_info);
+        AdminInfoReturnView = findViewById(R.id.customer_detail_return_view);
 
         Admin adminInfo = DatabaseHelper.getAdmin();
 
@@ -29,5 +31,9 @@ public class AdminInfoActivity extends AppCompatActivity {
             AdminUsernameTextView.setText(adminInfo.getUsername());
             AdminPasswordTextView.setText(adminInfo.getPassword());
         }
+
+        AdminInfoReturnView.setOnClickListener(view -> {
+            finish();
+        });
     }
 }
