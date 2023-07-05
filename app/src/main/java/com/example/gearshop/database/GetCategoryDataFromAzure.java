@@ -12,12 +12,14 @@ import java.util.List;
 
 public class GetCategoryDataFromAzure extends AzureSQLDatabase{
     private List<Category> CategoryList;
+
     public GetCategoryDataFromAzure() {
         this.CategoryList = new ArrayList<>();
     }
     public List<Category> getCategoryList(){
         return CategoryList;
     }
+
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
@@ -39,6 +41,7 @@ public class GetCategoryDataFromAzure extends AzureSQLDatabase{
                             resultSet.getInt("id"),
                             resultSet.getString("name"),
                             resultSet.getString("description"));
+
                     CategoryList.add(newCategory);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
