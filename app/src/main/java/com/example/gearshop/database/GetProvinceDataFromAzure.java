@@ -18,9 +18,6 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
     private List<Province> ProvinceList;
     private int ProvinceID;
 
-    public GetProvinceDataFromAzure() {
-        this.ProvinceList = new ArrayList<>();
-    }
     public int getProvinceID() {
         return ProvinceID;
     }
@@ -31,42 +28,22 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
     public List<Province> getProvinceList(){
         return ProvinceList;
     }
-    @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sqlCommand[0]);
-            if (sqlCommand[0].contains("SELECT")){
-                if (sqlCommand[0].contains("?") && getProvinceID()!= 0){
-                    statement.setInt(1, getProvinceID());
-                }
-                resultSet = statement.executeQuery();
-            }
-            else{
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
 
-                    Province newProvince = new Province(
-                            resultSet.getInt("id"),
-                            resultSet.getString("name"),
-                            resultSet.getDouble("shipping_charge"));
-                    ProvinceList.add(newProvince);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
+    public GetProvinceDataFromAzure() {
+        this.ProvinceList = new ArrayList<>();
+    }
+    @Override
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            Province newProvince = new Province(
+                    resultSet.getInt("id"),
+                    resultSet.getString("name"),
+                    resultSet.getDouble("shipping_charge"));
+            ProvinceList.add(newProvince);
         }
-        catch (SQLException e) {
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 
     public static double getShippingCharge(int provinceID){
@@ -75,13 +52,13 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
         getProvinceDataFromAzure[0].setProvinceID(provinceID);
         getProvinceDataFromAzure[0].execute(GET_PROVINCE_INFORMATION_SQL_STRING);
 
-        System.out.println("Async Task running");
+        System.out.println("Async Task get ShippingCharge running");
         try {
             getProvinceDataFromAzure[0].get();
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Async Task ended");
+        System.out.println("Async Task getShippingCharge ended");
 
         if (getProvinceDataFromAzure[0].getProvinceList() != null &&
                 getProvinceDataFromAzure[0].getProvinceList().size() > 0){

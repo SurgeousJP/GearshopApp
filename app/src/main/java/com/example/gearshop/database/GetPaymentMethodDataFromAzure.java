@@ -20,36 +20,16 @@ public class GetPaymentMethodDataFromAzure extends AzureSQLDatabase{
         return PaymentMethodList;
     }
     @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
-            if (sqlCommand[0].contains("SELECT")){
-                resultSet = statement.executeQuery(sqlCommand[0]);
-            }
-            else{
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
-                    PaymentMethod newPaymentMethod = new PaymentMethod(
-                            resultSet.getInt("id"),
-                            resultSet.getString("name")
-                    );
-                    PaymentMethodList.add(newPaymentMethod);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            PaymentMethod newPaymentMethod = new PaymentMethod(
+                    resultSet.getInt("id"),
+                    resultSet.getString("name")
+            );
+            PaymentMethodList.add(newPaymentMethod);
         }
-        catch (SQLException e) {
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 }

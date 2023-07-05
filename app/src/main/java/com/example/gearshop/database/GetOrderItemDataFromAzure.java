@@ -20,40 +20,20 @@ public class GetOrderItemDataFromAzure extends AzureSQLDatabase{
         return OrderItemList;
     }
     @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
-            if (sqlCommand[0].contains("SELECT")){
-                resultSet = statement.executeQuery(sqlCommand[0]);
-            }
-            else{
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
-                    OrderItem newOrderItem = new OrderItem(
-                            resultSet.getInt("id"),
-                            resultSet.getInt("order_id"),
-                            resultSet.getInt("product_id"),
-                            resultSet.getInt("quantity"),
-                            resultSet.getInt("rate"),
-                            resultSet.getString("comment")
-                    );
-                    OrderItemList.add(newOrderItem);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            OrderItem newOrderItem = new OrderItem(
+                    resultSet.getInt("id"),
+                    resultSet.getInt("order_id"),
+                    resultSet.getInt("product_id"),
+                    resultSet.getInt("quantity"),
+                    resultSet.getInt("rate"),
+                    resultSet.getString("comment")
+            );
+            OrderItemList.add(newOrderItem);
         }
-        catch (SQLException e) {
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 }

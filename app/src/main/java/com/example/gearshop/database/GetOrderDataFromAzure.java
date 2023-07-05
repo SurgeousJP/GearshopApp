@@ -23,42 +23,24 @@ public class GetOrderDataFromAzure extends AzureSQLDatabase{
         return OrderList;
     }
     @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
-            if (sqlCommand[0].contains("SELECT")){
-                resultSet = statement.executeQuery(sqlCommand[0]);
-            }
-            else{
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
-                    Order newOrder = new Order();
-                    newOrder.setID(resultSet.getInt("id"));
-                    newOrder.setShipmentMethodID(resultSet.getInt("shipping_method_id"));
-                    newOrder.setPaymentMethodID(resultSet.getInt("payment_method_id"));
-                    newOrder.setShippingAddressID(resultSet.getInt("shipping_address_id"));
-                    newOrder.setCustomerID(resultSet.getInt("customer_id"));
-                    newOrder.setTotalPrice(resultSet.getDouble("total_price"));
-                    newOrder.setCreatedOnUtc(resultSet.getDate("created_on_utc"));
-                    newOrder.setPaid(resultSet.getBoolean("is_paid"));
-                    newOrder.setStatus(resultSet.getString("status"));
-                    OrderList.add(newOrder);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            Order newOrder = new Order();
+
+            newOrder.setID(resultSet.getInt("id"));
+            newOrder.setShipmentMethodID(resultSet.getInt("shipping_method_id"));
+            newOrder.setPaymentMethodID(resultSet.getInt("payment_method_id"));
+            newOrder.setShippingAddressID(resultSet.getInt("shipping_address_id"));
+            newOrder.setCustomerID(resultSet.getInt("customer_id"));
+            newOrder.setTotalPrice(resultSet.getDouble("total_price"));
+            newOrder.setCreatedOnUtc(resultSet.getDate("created_on_utc"));
+            newOrder.setPaid(resultSet.getBoolean("is_paid"));
+            newOrder.setStatus(resultSet.getString("status"));
+
+            OrderList.add(newOrder);
         }
-        catch (SQLException e) {
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 }

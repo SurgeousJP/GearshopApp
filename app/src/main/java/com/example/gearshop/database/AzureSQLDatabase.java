@@ -3,6 +3,8 @@ package com.example.gearshop.database;
 import android.os.AsyncTask;
 import android.widget.EditText;
 
+import com.example.gearshop.model.Category;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -28,6 +30,11 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
             Statement statement = connection.createStatement();
             if (sqlCommand[0].contains("SELECT")){
                 resultSet = statement.executeQuery(sqlCommand[0]);
+                while (true) {
+                    assert resultSet != null;
+                    if (!resultSet.next()) break;
+                    handleResultSetItem(resultSet);
+                }
             }
             else{
                 statement.execute(sqlCommand[0]);
@@ -40,6 +47,10 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
     }
     @Override
     protected void onPostExecute(ResultSet result) {
+
+    }
+
+    protected void handleResultSetItem(ResultSet resultSet) {
 
     }
 }

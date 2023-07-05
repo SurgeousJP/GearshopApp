@@ -14,9 +14,7 @@ import java.util.List;
 public abstract class GetProductDataFromAzure extends AzureSQLDatabase{
     private List<Product> ProductList;
     public int CategoryID = 0;
-    public GetProductDataFromAzure() {
-        this.ProductList = new ArrayList<>();
-    }
+    public abstract boolean isIgnoreProduct(int status);
     public List<Product> getProductList(){
         return ProductList;
     }
@@ -27,7 +25,9 @@ public abstract class GetProductDataFromAzure extends AzureSQLDatabase{
         CategoryID = categoryID;
     }
 
-    public abstract boolean isIgnoreProduct(int status);
+    public GetProductDataFromAzure() {
+        this.ProductList = new ArrayList<>();
+    }
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;

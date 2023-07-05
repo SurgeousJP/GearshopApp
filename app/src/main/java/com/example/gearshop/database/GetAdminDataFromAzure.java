@@ -21,36 +21,16 @@ public class GetAdminDataFromAzure extends AzureSQLDatabase {
         return admin;
     }
 
-
     @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
-            if (sqlCommand[0].contains("SELECT")) {
-                resultSet = statement.executeQuery(sqlCommand[0]);
-            } else {
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
-
-                    admin = new Admin(
-                            resultSet.getInt("id"),
-                            resultSet.getString("username"),
-                            resultSet.getString("password"));
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            admin = new Admin(
+                    resultSet.getInt("id"),
+                    resultSet.getString("username"),
+                    resultSet.getString("password"));
+        }
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 }

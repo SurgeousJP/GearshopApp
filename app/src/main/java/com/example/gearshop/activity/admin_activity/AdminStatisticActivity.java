@@ -62,14 +62,20 @@ public class AdminStatisticActivity extends AppCompatActivity {
             finish();
         });
 
-        loadSaleAndTotalOrders();
-        loadNumberOfProducts();
-        loadNumberOfCustomers();
-        loadNumberOfProductsInEachCategory();
+        List<Customer> customerList = DatabaseHelper.getCustomerList("ALL");
+        List<Product> productList = DatabaseHelper.getCustomerProductListGivenID("ALL");
+        List<Order> orderList = DatabaseHelper.getOrderList("ALL");
+
+
+        loadSaleAndTotalOrders(orderList);
+        loadNumberOfProducts(productList);
+        loadNumberOfCustomers(customerList);
+//        loadNumberOfProductsInEachCategory();
     }
 
-    private void loadNumberOfProductsInEachCategory(){
-//        String sqlCommand = "  SELECT product_category.id, product_category.name, COUNT(*) AS number_of_products\n" +
+//    private void loadNumberOfProductsInEachCategory(){
+//        String sqlCommand = "  SELECT product_category.id, product_category.name, product_category.description," +
+//                "  COUNT(*) AS number_of_products\n" +
 //                "  FROM product, product_category\n" +
 //                "  WHERE product.category_id = product_category.id\n" +
 //                "  GROUP BY product_category.id, product_category.name";
@@ -86,7 +92,7 @@ public class AdminStatisticActivity extends AppCompatActivity {
 //        System.out.println("Async Task get Category ended");
 //
 //        List<Category> categoryList = getCategoryDataFromAzure.getCategoryList();
-//        List<Integer> numberOfProducts = getCategoryDataFromAzure.getNumberOfProductsInEachCategory();
+////        List<Integer> numberOfProducts = getCategoryDataFromAzure.getNumberOfProductsInEachCategory();
 //        // Create entries
 //        List<PieEntry> entries = new ArrayList<>();
 //        for (int i = 0; i < categoryList.size(); i++) {
@@ -107,21 +113,18 @@ public class AdminStatisticActivity extends AppCompatActivity {
 //
 //        // Refresh the chart
 //        CategoryPieChart.invalidate();
-    }
+//    }
 
-    private void loadNumberOfCustomers(){
-        List<Customer> customerList = DatabaseHelper.getCustomerList("ALL");
+    private void loadNumberOfCustomers(List<Customer> customerList){
         NumberOfCustomerTextView.setText(String.valueOf(customerList.size()));
     }
 
 
-    private void loadNumberOfProducts(){
-        List<Product> productList = DatabaseHelper.getCustomerProductListGivenID("ALL");
+    private void loadNumberOfProducts(List<Product> productList){
         NumberOfProductsTextView.setText(String.valueOf(productList.size()));
     }
 
-    private void loadSaleAndTotalOrders(){
-        List<Order> orderList = DatabaseHelper.getOrderList("ALL");
+    private void loadSaleAndTotalOrders(List<Order> orderList){
         SaleTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(getTotalSale(orderList)));
         TotalOrdersTextView.setText(String.valueOf(orderList.size()));
     }

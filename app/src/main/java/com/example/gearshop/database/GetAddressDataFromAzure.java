@@ -19,39 +19,19 @@ public class GetAddressDataFromAzure extends AzureSQLDatabase{
     public List<Address> getAddressList(){
         return AddressList;
     }
-    @Override
-    protected ResultSet doInBackground(String... sqlCommand) {
-        ResultSet resultSet = null;
-        try {
-            Connection connection = DriverManager.getConnection(AzureConnectionString);
-            Statement statement = connection.createStatement();
-            if (sqlCommand[0].contains("SELECT")){
-                resultSet = statement.executeQuery(sqlCommand[0]);
-            }
-            else{
-                statement.execute(sqlCommand[0]);
-            }
-            while (true) {
-                try {
-                    assert resultSet != null;
-                    if (!resultSet.next()) break;
 
-                    Address newAddress = new Address(
-                            resultSet.getInt("id"),
-                            resultSet.getString("house_number"),
-                            resultSet.getString("street"),
-                            resultSet.getInt("province_id"));
-                    AddressList.add(newAddress);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            statement.close();
-            connection.close();
+    @Override
+    protected void handleResultSetItem(ResultSet resultSet){
+        try{
+            Address newAddress = new Address(
+                    resultSet.getInt("id"),
+                    resultSet.getString("house_number"),
+                    resultSet.getString("street"),
+                    resultSet.getInt("province_id"));
+            AddressList.add(newAddress);
         }
-        catch (SQLException e) {
+        catch (SQLException e){
             e.printStackTrace();
         }
-        return resultSet;
     }
 }
