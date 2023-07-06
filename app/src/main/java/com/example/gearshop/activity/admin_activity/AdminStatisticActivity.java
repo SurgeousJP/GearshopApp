@@ -20,6 +20,7 @@ import com.example.gearshop.utility.MoneyHelper;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -59,8 +60,6 @@ public class AdminStatisticActivity extends AppCompatActivity {
         NumberOfProductsTextView = findViewById(R.id.number_of_products);
         NumberOfCustomerTextView = findViewById(R.id.number_of_customers);
         CategoryPieChart = findViewById(R.id.pie_chart_category);
-
-        // GROUP BY MONTH
         MonthlySaleBarChart = findViewById(R.id.bar_chart_monthly_sale);
         // GROUP BY PRODUCT_ID IN ORDER_ITEM
         TopProductHorizontalBarChart = findViewById(R.id.horizon_bar_chart_top_product);
@@ -88,10 +87,6 @@ public class AdminStatisticActivity extends AppCompatActivity {
             saleInMonths[order.getCreatedOnUtc().getMonth() - 1] += order.getTotalPrice();
         }
 
-        for (double saleInMonth : saleInMonths){
-            System.out.println(saleInMonth);
-        }
-
         // Create a list of BarEntry objects for the data
         List<BarEntry> entries = new ArrayList<>();
             for (int i = 0; i < 12; i++) {
@@ -100,7 +95,7 @@ public class AdminStatisticActivity extends AppCompatActivity {
             }
 
         // Create a BarDataSet with the entries
-        BarDataSet dataSet = new BarDataSet(entries, "Monthly Sales");
+        BarDataSet dataSet = new BarDataSet(entries, "Revenue in VND");
 
         // Set color for the bars
         dataSet.setColor(Color.BLUE);
@@ -116,7 +111,13 @@ public class AdminStatisticActivity extends AppCompatActivity {
         MonthlySaleBarChart.setData(barData);
 
         // Set no description line
-        CategoryPieChart.getDescription().setEnabled(false);
+        MonthlySaleBarChart.getDescription().setEnabled(false);
+
+        // Get the Legend object from the chart
+        Legend legend = MonthlySaleBarChart.getLegend();
+
+        // Set the legend position to center
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
 
         // Customize the x-axis
         XAxis xAxis = MonthlySaleBarChart.getXAxis();
@@ -124,6 +125,7 @@ public class AdminStatisticActivity extends AppCompatActivity {
         xAxis.setDrawGridLines(false);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(getMonths()));
+        xAxis.setLabelCount(saleInMonths.length);
 
         // Customize the y-axis (optional)
         YAxis yAxis = MonthlySaleBarChart.getAxisLeft();
@@ -132,8 +134,13 @@ public class AdminStatisticActivity extends AppCompatActivity {
         // Hide the right y-axis (optional)
         MonthlySaleBarChart.getAxisRight().setEnabled(false);
 
-        // Set chart animation (optional)
-        MonthlySaleBarChart.animateY(10000000);
+        // Set padding for the chart
+        int paddingLeft = 10; // Adjust the left padding as desired
+        int paddingTop = 10; // Adjust the top padding as desired
+        int paddingRight = 10; // Adjust the right padding as desired
+        int paddingBottom = 10; // Adjust the bottom padding as desired
+
+        MonthlySaleBarChart.setExtraOffsets(paddingLeft, paddingTop, paddingRight, paddingBottom);
 
         // Refresh the chart
         MonthlySaleBarChart.invalidate();
@@ -181,6 +188,13 @@ public class AdminStatisticActivity extends AppCompatActivity {
         
         // Create pie data object
         PieData data = new PieData(dataSet);
+
+
+        // Get the Legend object from the chart
+        Legend legend = CategoryPieChart.getLegend();
+
+        // Set the legend position to center
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
 
         // Set value color and text size
         data.setValueTextSize(10f);
