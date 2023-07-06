@@ -4115,6 +4115,7 @@ int id transport_info_order_detail_box 0x7f0804a1
 int id transport_unit 0x7f0804a2
 int id transport_unit_text 0x7f0804a3
 int id triangle 0x7f0804a4
+int id tvContent 0x7f0804ec
 int id twitter_icon 0x7f0804a5
 int id type_of_transport_unit_text_order_detail 0x7f0804a6
 int id type_panel 0x7f0804a7
@@ -4315,6 +4316,7 @@ int layout category_layout_detail 0x7f0b002f
 int layout category_panel 0x7f0b0030
 int layout confirm_box 0x7f0b0031
 int layout custom_dialog 0x7f0b0032
+int layout custom_marker_view 0x7f0b009f
 int layout design_bottom_navigation_item 0x7f0b0033
 int layout design_bottom_sheet_dialog 0x7f0b0034
 int layout design_layout_snackbar 0x7f0b0035
