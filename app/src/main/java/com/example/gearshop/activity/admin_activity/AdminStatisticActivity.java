@@ -3,6 +3,7 @@ package com.example.gearshop.activity.admin_activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -14,12 +15,14 @@ import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
+import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -30,12 +33,19 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.Utils;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class AdminStatisticActivity extends AppCompatActivity {
@@ -71,13 +81,132 @@ public class AdminStatisticActivity extends AppCompatActivity {
         List<Customer> customerList = DatabaseHelper.getCustomerList("ALL");
         List<Product> productList = DatabaseHelper.getCustomerProductListGivenID("ALL");
         List<Order> orderList = DatabaseHelper.getOrderList("ALL");
-
+        List<OrderItem> orderItemList = DatabaseHelper.getOrderItemList("ALL");
 
         loadSaleAndTotalOrders(orderList);
         loadNumberOfProducts(productList);
         loadNumberOfCustomers(customerList);
         loadNumberOfProductsInEachCategory();
         loadSaleInMonths(orderList);
+        loadTopFivePopularProducts(orderItemList);
+    }
+
+    private void loadTopFivePopularProducts(List<OrderItem> orderItemList){
+        // Create a list of BarEntry objects for the data
+        List<BarEntry> entries = new ArrayList<>();
+
+        List<Map.Entry<Integer, Integer>> topFiveProducts = getTopFivePopularProducts(orderItemList);
+
+        int iterator = 0;
+        for (Map.Entry<Integer, Integer> entry : topFiveProducts) {
+            entries.add(new BarEntry(iterator++, entry.getValue()));
+        }
+
+        // Create a BarDataSet with the entries
+        BarDataSet dataSet = new BarDataSet(entries, "Quantity");
+        // Enable value labels for the bars
+        dataSet.setValueTextColor(Color.BLACK); // Set the color of the value labels
+        // Set colors for the bars
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+
+        // Create a BarData object and set the dataset
+        BarData barData = new BarData(dataSet);
+
+        // Set the value text size
+        barData.setValueTextSize(12f);
+        barData.setBarWidth(0.25f);
+
+        // Get the Legend object from the chart
+        Legend legend = TopProductHorizontalBarChart.getLegend();
+
+        // Set the legend position to center
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+
+        // Set data to the chart
+        TopProductHorizontalBarChart.setData(barData);
+
+        // Turn off Description Label
+        TopProductHorizontalBarChart.getDescription().setEnabled(false);
+
+        TopProductHorizontalBarChart.setFitBars(true); // Enable bar width calculation to fill the available space
+        TopProductHorizontalBarChart.setDrawValueAboveBar(true); // Draw value labels above the bars
+
+        // Set up X-axis
+        XAxis xAxis = TopProductHorizontalBarChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f);
+        xAxis.setDrawGridLines(false);
+
+        // Set a custom IndexAxisValueFormatter to truncate the labels
+        String[] labels = getTopFivePopularProductsName(topFiveProducts);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels) {
+            private final int MAX_LABEL_LENGTH = 30; // Adjust the maximum length of the label as desired
+
+            @Override
+            public String getFormattedValue(float value) {
+                int index = (int) value;
+                if (!(index >= 0 && index < labels.length)) return "";
+                String original = labels[index];
+                String truncatedLabel = original; // Use the original label by default
+
+                // Truncate the label if it exceeds the maximum length
+                if (original.length() > MAX_LABEL_LENGTH) {
+                    truncatedLabel = original.substring(0, MAX_LABEL_LENGTH) + "...";
+                }
+
+                return truncatedLabel;
+            }
+        });
+        TopProductHorizontalBarChart.setExtraBottomOffset(-10);
+
+        // Hide the y-axis (optional)
+        TopProductHorizontalBarChart.getAxisLeft().setEnabled(false);
+        TopProductHorizontalBarChart.getAxisRight().setEnabled(false);
+
+        // Refresh the chart
+        TopProductHorizontalBarChart.invalidate();
+    }
+
+    private String[] getTopFivePopularProductsName(List<Map.Entry<Integer, Integer>> topFiveProducts){
+        String[] result = new String[5];
+        int iterator = 0;
+        for (Map.Entry<Integer, Integer> entry : topFiveProducts) {
+            Product product =
+                    DatabaseHelper.getCustomerProductListGivenID
+                            ("WHERE product.id = '" + entry.getKey() + "'").get(0);
+            result[iterator++] = product.getName();
+        }
+        return result;
+    }
+
+    private List<Map.Entry<Integer, Integer>> getTopFivePopularProducts(List<OrderItem> orderItemList) {
+        Map<Integer, Integer> listNumberOfProductsBought = getListNumberOfProductsBought(orderItemList);
+
+        // Convert the map entries to a list
+        List<Map.Entry<Integer, Integer>> entries = new ArrayList<>(listNumberOfProductsBought.entrySet());
+
+        // Sort the list in descending order based on values
+        entries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+
+        // Extract the top 5 values
+        List<Map.Entry<Integer, Integer>> top5Entries = entries.subList(0, Math.min(entries.size(), 5));
+
+        return top5Entries;
+    }
+
+    private Map<Integer, Integer> getListNumberOfProductsBought(List<OrderItem> orderItemList){
+        Map<Integer, Integer> result = new HashMap<>();
+        for (OrderItem orderItem : orderItemList){
+            int key = orderItem.getProductID();
+            if (!result.containsKey(key)){
+                result.put(key, orderItem.getQuantity());
+            }
+            else{
+                int oldValue = result.get(key);
+                result.put(key, oldValue + orderItem.getQuantity());
+            }
+        }
+        return result;
     }
 
     private void loadSaleInMonths(List<Order> orderList){

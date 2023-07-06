@@ -22,9 +22,6 @@
             android:name=".activity.admin_activity.AdminInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminStatisticActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.admin_activity.AdminOtherActivity"
             android:exported="false" />
         <activity
@@ -98,6 +95,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.customer_activity.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminStatisticActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
