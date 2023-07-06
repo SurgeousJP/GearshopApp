@@ -17,6 +17,7 @@ import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Product;
+import com.example.gearshop.utility.CustomMarkerView;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.github.mikephil.charting.charts.BarChart;
@@ -140,7 +141,7 @@ public class AdminStatisticActivity extends AppCompatActivity {
         // Set a custom IndexAxisValueFormatter to truncate the labels
         String[] labels = getTopFivePopularProductsName(topFiveProducts);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels) {
-            private final int MAX_LABEL_LENGTH = 30; // Adjust the maximum length of the label as desired
+            private final int MAX_LABEL_LENGTH = 15; // Adjust the maximum length of the label as desired
 
             @Override
             public String getFormattedValue(float value) {
@@ -157,10 +158,20 @@ public class AdminStatisticActivity extends AppCompatActivity {
                 return truncatedLabel;
             }
         });
+
+        // Set up tooltip to display labels (if not fully displayed)
+        CustomMarkerView markerView = new CustomMarkerView(this, R.layout.custom_marker_view);
+        markerView.setLabels(labels);
+        TopProductHorizontalBarChart.setMarker(markerView);
+
+        // Set bottom offset to reduce empty space
         TopProductHorizontalBarChart.setExtraBottomOffset(-10);
 
-        // Hide the y-axis (optional)
-        TopProductHorizontalBarChart.getAxisLeft().setEnabled(false);
+        // Handle the Y axis
+        YAxis leftYAxis = TopProductHorizontalBarChart.getAxisLeft();
+        leftYAxis.setAxisMinimum(0);
+        leftYAxis.setDrawGridLines(false);
+        leftYAxis.setGranularity(1f);
         TopProductHorizontalBarChart.getAxisRight().setEnabled(false);
 
         // Refresh the chart
