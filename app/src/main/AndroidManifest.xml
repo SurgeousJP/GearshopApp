@@ -94,10 +94,10 @@
             android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.customer_activity.SignInActivity"
+            android:name=".activity.admin_activity.AdminStatisticActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminStatisticActivity"
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
