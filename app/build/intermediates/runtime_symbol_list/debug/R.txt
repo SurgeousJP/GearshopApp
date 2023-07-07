@@ -2888,6 +2888,7 @@ int drawable order_management_icon_grey 0x7f07012e
 int drawable other_icon_blue 0x7f07012f
 int drawable other_icon_grey 0x7f070130
 int drawable plus_icon 0x7f070131
+int drawable printer 0x7f070158
 int drawable processing_icon 0x7f070132
 int drawable product_management_icon_blue 0x7f070133
 int drawable product_management_icon_grey 0x7f070134
@@ -3784,6 +3785,7 @@ int id pricebox1 0x7f080356
 int id pricebox2 0x7f080357
 int id pricebox3 0x7f080358
 int id pricebox4 0x7f080359
+int id print_statistic_view 0x7f0804ed
 int id processing_box 0x7f08035a
 int id processing_order 0x7f08035b
 int id prod_config_box 0x7f08035c

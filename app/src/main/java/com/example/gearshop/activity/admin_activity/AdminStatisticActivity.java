@@ -52,6 +52,7 @@ import java.util.concurrent.ExecutionException;
 public class AdminStatisticActivity extends AppCompatActivity {
 
     private View ReturnIconView;
+    private View PrintStatisticIconView;
     private TextView SaleTextView;
     private TextView TotalOrdersTextView;
     private TextView NumberOfProductsTextView;
@@ -66,17 +67,21 @@ public class AdminStatisticActivity extends AppCompatActivity {
         setContentView(R.layout.admin_statistic);
 
         ReturnIconView = findViewById(R.id.statistics_return_icon_view);
+        PrintStatisticIconView = findViewById(R.id.print_statistic_view);
         SaleTextView = findViewById(R.id.sales);
         TotalOrdersTextView = findViewById(R.id.total_orders);
         NumberOfProductsTextView = findViewById(R.id.number_of_products);
         NumberOfCustomerTextView = findViewById(R.id.number_of_customers);
         CategoryPieChart = findViewById(R.id.pie_chart_category);
         MonthlySaleBarChart = findViewById(R.id.bar_chart_monthly_sale);
-        // GROUP BY PRODUCT_ID IN ORDER_ITEM
         TopProductHorizontalBarChart = findViewById(R.id.horizon_bar_chart_top_product);
 
         ReturnIconView.setOnClickListener(view -> {
             finish();
+        });
+
+        PrintStatisticIconView.setOnClickListener(view -> {
+            // DOING IT LATER
         });
 
         List<Customer> customerList = DatabaseHelper.getCustomerList("ALL");

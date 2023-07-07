@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:name=".repository.GlobalRepository"
         android:allowBackup="true"
@@ -94,10 +93,10 @@
             android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminStatisticActivity"
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.customer_activity.SignInActivity"
+            android:name=".activity.admin_activity.AdminStatisticActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

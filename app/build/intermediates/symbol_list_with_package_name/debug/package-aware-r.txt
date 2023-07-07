@@ -2889,6 +2889,7 @@ drawable order_management_icon_grey
 drawable other_icon_blue
 drawable other_icon_grey
 drawable plus_icon
+drawable printer
 drawable processing_icon
 drawable product_management_icon_blue
 drawable product_management_icon_grey
@@ -3785,6 +3786,7 @@ id pricebox1
 id pricebox2
 id pricebox3
 id pricebox4
+id print_statistic_view
 id processing_box
 id processing_order
 id prod_config_box
