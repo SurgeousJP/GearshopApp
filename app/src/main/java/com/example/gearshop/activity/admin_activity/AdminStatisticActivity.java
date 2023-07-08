@@ -1,17 +1,21 @@
 package com.example.gearshop.activity.admin_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.gearshop.R;
-import com.example.gearshop.database.GetCategoryDataFromAzure;
 import com.example.gearshop.database.GetNumberOfProductsInEachCategoryFromAzure;
-import com.example.gearshop.database.GetOrderItemDataFromAzure;
 import com.example.gearshop.model.Category;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Order;
@@ -23,34 +27,39 @@ import com.example.gearshop.utility.MoneyHelper;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.utils.Utils;
-import com.github.mikephil.charting.utils.ViewPortHandler;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.AreaBreak;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.property.TextAlignment;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class AdminStatisticActivity extends AppCompatActivity {
-
+    private static final int STORAGE_PERMISSION_REQUEST_CODE = 1;
     private View ReturnIconView;
     private View PrintStatisticIconView;
     private TextView SaleTextView;
@@ -81,7 +90,7 @@ public class AdminStatisticActivity extends AppCompatActivity {
         });
 
         PrintStatisticIconView.setOnClickListener(view -> {
-            // DOING IT LATER
+            writeStatisticPDFReport();
         });
 
         List<Customer> customerList = DatabaseHelper.getCustomerList("ALL");
@@ -96,6 +105,131 @@ public class AdminStatisticActivity extends AppCompatActivity {
         loadSaleInMonths(orderList);
         loadTopFivePopularProducts(orderItemList);
     }
+
+    private void writeStatisticPDFReport(){
+        // Check if the app has permission to write to external storage
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted, so request it from the user
+            System.out.println("NOT PERMISSION GRANTED");
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    STORAGE_PERMISSION_REQUEST_CODE);
+        } else {
+            // Permission is already granted, so proceed with saving the PDF
+            System.out.println("PERMISSION GRANTED");
+            try {
+                saveStatisticsAsPdf();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    private void saveStatisticsAsPdf() throws FileNotFoundException {
+        // Create a PDF document
+        File pdfFile = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "statistics.pdf");
+
+        PdfDocument pdfDocument = new PdfDocument(new PdfWriter(pdfFile));
+
+        // Create a Document
+        Document document = new Document(pdfDocument);
+
+        // Add the four lines of information
+        document.add(new Paragraph("GENERAL INFORMATION"));
+        document.add(new Paragraph("Sale: " + SaleTextView.getText().toString()));
+        document.add(new Paragraph("Total Orders: " + TotalOrdersTextView.getText().toString()));
+        document.add(new Paragraph("Number of Products: " + NumberOfProductsTextView.getText().toString()));
+        document.add(new Paragraph("Number of Customers: " + NumberOfCustomerTextView.getText().toString()));
+
+
+        // Add a section for the pie chart
+        document.add(new AreaBreak());
+
+        // Create a Paragraph with the "CATEGORIES" text
+        Paragraph categoriesParagraph = new Paragraph("CATEGORIES")
+                .setTextAlignment(TextAlignment.CENTER)
+                .setBold()
+                .setFontSize(50f);
+
+        // Calculate the vertical position for centering
+        float pageHeight = document.getPdfDocument().getDefaultPageSize().getHeight();
+        float verticalPosition = (pageHeight) / 2;
+
+        // Set the vertical position for the paragraph
+        categoriesParagraph.setFixedPosition(0, verticalPosition, document.getPdfDocument().getDefaultPageSize().getWidth());
+
+        // Add the modified paragraph to the Document
+        document.add(categoriesParagraph);
+
+        // Convert the pie chart to a Bitmap
+        Bitmap pieChartBitmap = CategoryPieChart.getChartBitmap();
+
+        // Convert the pie chart Bitmap to an ImageData object
+        ImageData pieChartImageData = ImageDataFactory.create(toByteArray(pieChartBitmap));
+
+        // Create an Image based on the ImageData
+        com.itextpdf.layout.element.Image pieChartImage =
+                new com.itextpdf.layout.element.Image(pieChartImageData);
+
+        // Add the pie chart Image to the Document
+        document.add(pieChartImage);
+
+
+        // Add a section for the bar chart
+        document.add(new AreaBreak());
+
+        // Add a title for the bar chart
+        document.add(new Paragraph("MONTHLY SALE"));
+
+        // Convert the bar chart to a Bitmap
+        Bitmap barChartBitmap = MonthlySaleBarChart.getChartBitmap();
+
+        // Convert the bar chart Bitmap to an ImageData object
+        ImageData barChartImageData = ImageDataFactory.create(toByteArray(barChartBitmap));
+
+        // Create an Image based on the ImageData
+        com.itextpdf.layout.element.Image barChartImage =
+                new com.itextpdf.layout.element.Image(barChartImageData);
+
+        // Add the bar chart Image to the Document
+        document.add(barChartImage);
+
+
+        // Add a section for the horizontal bar chart
+        document.add(new AreaBreak());
+
+        // Add a title for the horizontal bar chart
+        document.add(new Paragraph("TOP 5 PRODUCTS FROM ALL TIME"));
+
+        // Convert the horizontal bar chart to a Bitmap
+        Bitmap horizontalBarChartBitmap = TopProductHorizontalBarChart.getChartBitmap();
+
+        // Convert the horizontal bar chart Bitmap to an ImageData object
+        ImageData horizontalBarChartImageData = ImageDataFactory.create(toByteArray(horizontalBarChartBitmap));
+
+        // Create an Image based on the ImageData
+        com.itextpdf.layout.element.Image horizontalBarChartImage =
+                new com.itextpdf.layout.element.Image(horizontalBarChartImageData);
+
+        // Add the horizontal bar chart Image to the Document
+        document.add(horizontalBarChartImage);
+
+        // Close the Document
+        document.close();
+
+        // Show a success message
+        Toast.makeText(this, "Statistics saved as PDF", Toast.LENGTH_SHORT).show();
+    }
+
+    private byte[] toByteArray(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        return stream.toByteArray();
+    }
+
 
     private void loadTopFivePopularProducts(List<OrderItem> orderItemList){
         // Create a list of BarEntry objects for the data
@@ -386,4 +520,5 @@ public class AdminStatisticActivity extends AppCompatActivity {
         }
         return totalSale;
     }
+
 }
