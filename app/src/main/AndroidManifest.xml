@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:name=".repository.GlobalRepository"
@@ -20,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GearShop"
         android:value="app_id=199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com"
-        tools:targetApi="31">
+        tools:targetApi="tiramisu">
         <activity
             android:name=".activity.admin_activity.AdminInfoActivity"
             android:exported="false" />
@@ -97,10 +99,10 @@
             android:name=".activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.customer_activity.SignInActivity"
+            android:name=".activity.admin_activity.AdminStatisticActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.admin_activity.AdminStatisticActivity"
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
