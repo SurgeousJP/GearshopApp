@@ -9,19 +9,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="add recyclerview">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_province.xml" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Tạo branch mới để backup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/blue_box.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/blue_box.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/edit_shipping_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_shipping_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/product_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/product_detail.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\duyvi\.android\avd\Galaxy_Nexus_API_28.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[TGO7SKVCR4DI6SIN]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -116,9 +112,6 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.gearshop.activity" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\libs" />
-    </key>
     <key name="android.template.-1818904504">
       <recent name="com.example.gearshop.adapter" />
       <recent name="com.example.gearshop.activity" />
@@ -128,6 +121,9 @@
     </key>
     <key name="android.template.638899212">
       <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\libs" />
     </key>
     <key name="android.template.1405498936">
       <recent name="com.example.gearshop.activity" />
@@ -605,6 +601,8 @@
       <pinned-members>
         <PinnedItemInfo parentTag="com.example.gearshop.database.SelectSQL" memberName="mFuture" />
         <PinnedItemInfo parentTag="com.example.gearshop.adapter.ProductGridAdapter" memberName="products" />
+        <PinnedItemInfo parentTag="com.example.gearshop.fragment.ShippingInfoBottomSheetDialogFragment$$ExternalSyntheticLambda0" memberName="shadow$_klass_" />
+        <PinnedItemInfo parentTag="com.example.gearshop.database.GetCustomerDataFromAzure" memberName="CustomerList" />
         <PinnedItemInfo parentTag="android.os.Bundle" memberName="mClassLoader" />
       </pinned-members>
     </pin-to-top-manager>
