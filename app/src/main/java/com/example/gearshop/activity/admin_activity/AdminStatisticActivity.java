@@ -27,6 +27,7 @@ import com.example.gearshop.utility.MoneyHelper;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -138,31 +139,25 @@ public class AdminStatisticActivity extends AppCompatActivity {
         Document document = new Document(pdfDocument);
 
         // Add the four lines of information
-        document.add(new Paragraph("GENERAL INFORMATION"));
-        document.add(new Paragraph("Sale: " + SaleTextView.getText().toString()));
-        document.add(new Paragraph("Total Orders: " + TotalOrdersTextView.getText().toString()));
-        document.add(new Paragraph("Number of Products: " + NumberOfProductsTextView.getText().toString()));
-        document.add(new Paragraph("Number of Customers: " + NumberOfCustomerTextView.getText().toString()));
+        document.add(
+                new Paragraph("GENERAL INFORMATION")
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setBold()
+                        .setFontSize(50f));
+        document.add(new Paragraph("Sale: " + SaleTextView.getText().toString())
+                .setFontSize(35f));
+        document.add(new Paragraph("Total Orders: " + TotalOrdersTextView.getText().toString())
+                .setFontSize(35f));
+        document.add(new Paragraph("Number of Products: " + NumberOfProductsTextView.getText().toString())
+                .setFontSize(35f));
+        document.add(new Paragraph("Number of Customers: " + NumberOfCustomerTextView.getText().toString())
+                .setFontSize(35f));
 
+        // Add title for chart
+        addTitlePageForChart(document, "CATEGORIES");
 
         // Add a section for the pie chart
         document.add(new AreaBreak());
-
-        // Create a Paragraph with the "CATEGORIES" text
-        Paragraph categoriesParagraph = new Paragraph("CATEGORIES")
-                .setTextAlignment(TextAlignment.CENTER)
-                .setBold()
-                .setFontSize(50f);
-
-        // Calculate the vertical position for centering
-        float pageHeight = document.getPdfDocument().getDefaultPageSize().getHeight();
-        float verticalPosition = (pageHeight) / 2;
-
-        // Set the vertical position for the paragraph
-        categoriesParagraph.setFixedPosition(0, verticalPosition, document.getPdfDocument().getDefaultPageSize().getWidth());
-
-        // Add the modified paragraph to the Document
-        document.add(categoriesParagraph);
 
         // Convert the pie chart to a Bitmap
         Bitmap pieChartBitmap = CategoryPieChart.getChartBitmap();
@@ -178,11 +173,11 @@ public class AdminStatisticActivity extends AppCompatActivity {
         document.add(pieChartImage);
 
 
+        // Add title for chart
+        addTitlePageForChart(document, "MONTHLY SALE");
+
         // Add a section for the bar chart
         document.add(new AreaBreak());
-
-        // Add a title for the bar chart
-        document.add(new Paragraph("MONTHLY SALE"));
 
         // Convert the bar chart to a Bitmap
         Bitmap barChartBitmap = MonthlySaleBarChart.getChartBitmap();
@@ -198,11 +193,11 @@ public class AdminStatisticActivity extends AppCompatActivity {
         document.add(barChartImage);
 
 
+        // Add title for chart
+        addTitlePageForChart(document, "TOP 5 PRODUCTS");
+
         // Add a section for the horizontal bar chart
         document.add(new AreaBreak());
-
-        // Add a title for the horizontal bar chart
-        document.add(new Paragraph("TOP 5 PRODUCTS FROM ALL TIME"));
 
         // Convert the horizontal bar chart to a Bitmap
         Bitmap horizontalBarChartBitmap = TopProductHorizontalBarChart.getChartBitmap();
@@ -222,6 +217,21 @@ public class AdminStatisticActivity extends AppCompatActivity {
 
         // Show a success message
         Toast.makeText(this, "Statistics saved as PDF", Toast.LENGTH_SHORT).show();
+    }
+
+    private void addTitlePageForChart(Document document, String title) {
+        // Add page for pie title
+        document.add(new AreaBreak());
+
+        float pageHeight = document.getPdfDocument().getDefaultPageSize().getHeight();
+        float verticalPosition = (pageHeight) / 2;
+
+        document.add(
+                new Paragraph(title)
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setBold()
+                        .setFontSize(50f)
+                        .setFixedPosition(0, verticalPosition, document.getPdfDocument().getDefaultPageSize().getWidth()));
     }
 
     private byte[] toByteArray(Bitmap bitmap) {
