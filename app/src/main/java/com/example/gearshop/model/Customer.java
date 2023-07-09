@@ -1,27 +1,30 @@
 package com.example.gearshop.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Customer {
+public class Customer implements Serializable {
     private int ID;
     private String Username, Password, Email, FirstName, LastName;
     private String Gender;
     private String PhoneNumber;
     private Date DateOfBirth;
+    private int AddressId;
     private int CardID;
 
     public Customer(int ID, String username, String password, String email,
                     String firstName, String lastName, String gender,
-                    String phoneNumber, Date dateOfBirth) {
+                    String phoneNumber, Date dateOfBirth, int addressID) {
         this.ID = ID;
-        Username = username;
-        Password = password;
-        Email = email;
-        FirstName = firstName;
-        LastName = lastName;
-        Gender = gender;
-        PhoneNumber = phoneNumber;
-        DateOfBirth = dateOfBirth;
+        this.Username = username;
+        this.Password = password;
+        this.Email = email;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Gender = gender;
+        this.PhoneNumber = phoneNumber;
+        this.DateOfBirth = dateOfBirth;
+        this.AddressId = addressID;
     }
 
     public int getID() {
@@ -94,6 +97,14 @@ public class Customer {
 
     public void setDateOfBirth(Date dateOfBirth) {
         DateOfBirth = dateOfBirth;
+    }
+
+    public int getAddressID() {
+        return AddressId;
+    }
+
+    public void setAddressID(int addressID) {
+        AddressId = addressID;
     }
 
     public int getCardID() {

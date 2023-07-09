@@ -6,12 +6,14 @@ public class Product implements Serializable {
     private int ID;
     private String Name, ImageURL, Description, Specs;
     private double Price;
-    private boolean Status;
+
+    // Product Status: 0 - DELETED, 1 - AVAILABLE, 2 - NOT AVAILABLE
+    private int Status;
     private int CategoryID;
     private Discount DiscountInformation;
     public Product(){}
     public Product(int Id, String name, String imageURL, String description,
-                   String specs, double price, boolean status, int categoryID, Discount discountInformation) {
+                   String specs, double price, int status, int categoryID, Discount discountInformation) {
         ID = Id;
         Name = name;
         ImageURL = imageURL;
@@ -46,7 +48,7 @@ public class Product implements Serializable {
         Price = price;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         Status = status;
     }
 
@@ -77,7 +79,7 @@ public class Product implements Serializable {
         return Price;
     }
 
-    public boolean getStatus() {
+    public int getStatus() {
         return Status;
     }
 

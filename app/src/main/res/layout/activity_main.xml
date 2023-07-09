@@ -104,7 +104,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/none2"
+        app:layout_constraintBottom_toTopOf="@+id/none3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/none">
@@ -164,7 +164,7 @@
                             android:text="@string/cta_viewmore"
                             android:textAppearance="@style/cta_viewmore" />
 
-                        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        <RelativeLayout
                             android:id="@+id/trailing_ic"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -176,32 +176,58 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <GridView
-                    android:id="@+id/show_list_category"
+                    android:id="@+id/show_grid_category"
                     android:layout_width="match_parent"
                     android:layout_height="254dp"
                     android:layout_below="@id/show_category"
                     android:layout_marginHorizontal="16dp"
+                    android:numColumns="4"
                     app:layout_constraintBottom_toBottomOf="@id/section"
                     app:layout_constraintEnd_toEndOf="@id/section"
                     app:layout_constraintStart_toStartOf="@id/section"
                     app:layout_constraintTop_toBottomOf="@id/show_category" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/none2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#F5F5FA">
+
+                <TextView
+                    android:id="@+id/title_product_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginVertical="12dp"
+                    android:text="Sản phẩm nổi bật"
+                    android:textAppearance="@style/title_category"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_category_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/section">
+                app:layout_constraintTop_toBottomOf="@id/none2">
             </androidx.recyclerview.widget.RecyclerView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/none2"
+        android:id="@+id/none3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"

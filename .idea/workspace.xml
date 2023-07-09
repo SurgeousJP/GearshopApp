@@ -2,15 +2,19 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <option name="nonWearDeviceLastStateName" value="Portrait" />
+      </config>
     </shared>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="Tạo branch mới để backup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3d19c7c3-54a0-4de9-a3ba-7fced46f7f3a" name="Changes" comment="xong việc xuất statistic ra pdf file">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,18 +69,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
+        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/Login_branch" />
+    <option name="BRANCH" value="kien-work-from-29-5" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Duy's_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,14 +108,21 @@
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;ToolWindowDebug.ShowToolbar&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuanb/Downloads/Visual-Programming-C-/GearshopApp/app/libs&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;last_directory_selection&quot;: &quot;C:/Users/tuanb/Downloads/Project/GearshopApp/app/src/main/res/drawable&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuanb/Downloads/Project/GearshopApp/app/src/main/res/drawable&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.449741218">
+      <recent name="com.example.gearshop.activity.admin_activity" />
+    </key>
+    <key name="android.template.1070694203">
+      <recent name="com.example.gearshop.activity.admin_activity" />
     </key>
     <key name="android.template.-1818904504">
       <recent name="com.example.gearshop.adapter" />
@@ -122,10 +134,48 @@
     <key name="android.template.638899212">
       <recent name="com.example.gearshop.activity" />
     </key>
+    <key name="android.template.1492526510">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.470370504">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.1053272773">
+      <recent name="com.example.gearshop.activity.admin_activity" />
+    </key>
+    <key name="android.template.2113584602">
+      <recent name="com.example.gearshop.activity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\res\drawable" />
+      <recent name="C:\Users\tuanb\Downloads\Project\GearshopApp\app\src\main\assets" />
+      <recent name="C:\Users\tuanb\Downloads\Project\GearshopApp\app\libs" />
+      <recent name="C:\Users\tuanb\Downloads\Project\GearshopApp" />
       <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\libs" />
     </key>
+    <key name="android.template.1888041482">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tuanb\Downloads\Visual-Programming-C-\GearshopApp\app\src\main\java\com\example\gearshop\activity\customer_activity" />
+    </key>
+    <key name="android.template.-2027662725">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.-876619296">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.1121870624">
+      <recent name="com.example.gearshop.activity.admin_activity" />
+    </key>
     <key name="android.template.1405498936">
+      <recent name="com.example.gearshop.activity" />
+    </key>
+    <key name="android.template.-872999637">
+      <recent name="com.example.gearshop.activity" />
+      <recent name="com.example.gearshop" />
+    </key>
+    <key name="android.template.-814425647">
       <recent name="com.example.gearshop.activity" />
     </key>
   </component>
@@ -198,370 +248,361 @@
       <option name="presentableId" value="Default" />
       <updated>1683804220162</updated>
     </task>
-    <task id="LOCAL-00014" summary="Taọ class SelectSQL và tạo package adapter để tổ chức rõ hơn">
-      <created>1684152067741</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
+    <task id="LOCAL-00114" summary="Chia class GetProductDataFromAzure thành hai class con GetCustomerProductDataFromAzure, GetAdminProductDataFromAzure">
+      <created>1687508031361</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
       <option name="project" value="LOCAL" />
-      <updated>1684152067741</updated>
+      <updated>1687508031361</updated>
     </task>
-    <task id="LOCAL-00015" summary="Xử lý async task lấy data của product về">
-      <created>1684225711931</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
+    <task id="LOCAL-00115" summary="Chỉnh sửa 1 chút">
+      <created>1687511785243</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
       <option name="project" value="LOCAL" />
-      <updated>1684225711931</updated>
+      <updated>1687511785243</updated>
     </task>
-    <task id="LOCAL-00016" summary="Fix bug async task không lấy được data từ Azure về">
-      <created>1684307370391</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
+    <task id="LOCAL-00116" summary="Thử nghiệm set up GoogleDriveAPI">
+      <created>1687512628196</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
       <option name="project" value="LOCAL" />
-      <updated>1684307370392</updated>
+      <updated>1687512628196</updated>
     </task>
-    <task id="LOCAL-00017" summary="Sắp xếp lại code và refractor code">
-      <created>1684307569438</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
+    <task id="LOCAL-00117" summary="Thử nghiệm set up GoogleDriveAPI (2)">
+      <created>1687523510445</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
       <option name="project" value="LOCAL" />
-      <updated>1684307569438</updated>
+      <updated>1687523510445</updated>
     </task>
-    <task id="LOCAL-00018" summary="Update database sql">
-      <created>1684307633791</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
+    <task id="LOCAL-00118" summary="fix some bug with GoogleDriveService">
+      <created>1687564924231</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
       <option name="project" value="LOCAL" />
-      <updated>1684307633791</updated>
+      <updated>1687564924232</updated>
     </task>
-    <task id="LOCAL-00019" summary="Import picasso và implement để lấy ảnh product về">
-      <created>1684314786766</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
+    <task id="LOCAL-00119" summary="fix some bug with GoogleDriveService (2)">
+      <created>1687568051479</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
       <option name="project" value="LOCAL" />
-      <updated>1684314786766</updated>
+      <updated>1687568051479</updated>
     </task>
-    <task id="LOCAL-00020" summary="Đổi database và server sang region SoutheastAsia để cải thiện tốc độ truy cập, cập nhật connectionString">
-      <created>1684318973289</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
+    <task id="LOCAL-00120" summary="tạo custom dialog khi chọn ảnh">
+      <created>1687610951239</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
       <option name="project" value="LOCAL" />
-      <updated>1684318973289</updated>
+      <updated>1687610951240</updated>
     </task>
-    <task id="LOCAL-00021" summary="fix bug khi merge nhánh UI">
-      <created>1684373095009</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+    <task id="LOCAL-00121" summary="finish làm event pick ảnh từ drive">
+      <created>1687659808074</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1684373095009</updated>
+      <updated>1687659808074</updated>
     </task>
-    <task id="LOCAL-00022" summary="fix một số bug xảy ra do merge nhánh (cụ thể là mất package và sai tên id)">
-      <created>1684375687860</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+    <task id="LOCAL-00122" summary="làm thêm product spec trong add product">
+      <created>1687663999336</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1684375687860</updated>
+      <updated>1687663999336</updated>
     </task>
-    <task id="LOCAL-00023" summary="Thêm ProductDetailActivity và set event mở, quay trở lại">
-      <created>1684377077306</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+    <task id="LOCAL-00123" summary="finish product spec">
+      <created>1687748903704</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1684377077306</updated>
+      <updated>1687748903704</updated>
     </task>
-    <task id="LOCAL-00024" summary="Load data của product lên ProductDetailActivity">
-      <created>1684378984199</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
+    <task id="LOCAL-00124" summary="prepare inputs for adding products">
+      <created>1687750648240</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1684378984199</updated>
+      <updated>1687750648240</updated>
     </task>
-    <task id="LOCAL-00025" summary="Fix typo các file UI xml">
-      <created>1684392546380</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+    <task id="LOCAL-00125" summary="Remove json credential file for safety reason">
+      <created>1687826834189</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1684392546380</updated>
+      <updated>1687826834189</updated>
     </task>
-    <task id="LOCAL-00026" summary="Thêm một số file UI mới">
-      <created>1684393290243</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
+    <task id="LOCAL-00126" summary="Add the json file to .gitignore for safety">
+      <created>1687827102978</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1684393290243</updated>
+      <updated>1687827102978</updated>
     </task>
-    <task id="LOCAL-00027" summary="load thông số kỹ thuật lên gridview và chỉnh sửa UI">
-      <created>1684397838725</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
+    <task id="LOCAL-00127" summary="update workspace.xml">
+      <created>1688173334411</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1684397838725</updated>
+      <updated>1688173334411</updated>
     </task>
-    <task id="LOCAL-00028" summary="load thông số kỹ thuật lên gridview và chỉnh sửa UI">
-      <created>1684397906163</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
+    <task id="LOCAL-00128" summary="Merge remote-tracking branch 'origin/OrderBranch' into OrderBranch&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1688173418492</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1684397906163</updated>
+      <updated>1688173418492</updated>
     </task>
-    <task id="LOCAL-00029" summary="Tạo CartActivity và thêm các event đến activity này cùng việc return về activity cũ">
-      <created>1684547383574</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
+    <task id="LOCAL-00129" summary="fix bug khi thêm xóa ngẫu hứng cấu hình sản phẩm">
+      <created>1688174196404</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1684547383574</updated>
+      <updated>1688174196404</updated>
     </task>
-    <task id="LOCAL-00030" summary="Tạo event click cho các icon ở dưới trang ProductsInCategoryActivity">
-      <created>1684548291126</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
+    <task id="LOCAL-00130" summary="Merge remote-tracking branch 'origin/OrderBranch' into OrderBranch&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.5/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar&#10;#&#9;app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex&#10;#&#9;app/build/intermediates/dex_archive_input_jar_hashes/debug/out&#10;#&#9;app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json&#10;#&#9;app/build/intermediates/processed_res/debug/out/resources-debug.ap_&#10;#&#9;app/build/intermediates/runtime_symbol_list/debug/R.txt&#10;#&#9;app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin">
+      <created>1688174249567</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1684548291126</updated>
+      <updated>1688174249567</updated>
     </task>
-    <task id="LOCAL-00031" summary="Change asynctask to future (test)">
-      <created>1684555365264</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
+    <task id="LOCAL-00131" summary="Xong thêm sản phẩm">
+      <created>1688177434257</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1684555365264</updated>
+      <updated>1688177434257</updated>
     </task>
-    <task id="LOCAL-00032" summary="Xử lý thêm sản phẩm vào giỏ hàng">
-      <created>1684643618727</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
+    <task id="LOCAL-00132" summary="Làm gần xong sửa sản phẩm">
+      <created>1688179986255</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1684643618727</updated>
+      <updated>1688179986255</updated>
     </task>
-    <task id="LOCAL-00033" summary="Xử lý discount trong quá trình mua hàng">
-      <created>1684653600641</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
+    <task id="LOCAL-00133" summary="xóa các biến cục bộ không cần thiết">
+      <created>1688180030102</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1684653600641</updated>
+      <updated>1688180030102</updated>
     </task>
-    <task id="LOCAL-00034" summary="Xử lý tính toán total price trong màn hình cart">
-      <created>1684657109027</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
+    <task id="LOCAL-00134" summary="Merge remote-tracking branch 'origin/Duy's_Branch' into OrderBranch&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.5/checksums/checksums.lock&#10;#&#9;.gradle/7.5/checksums/md5-checksums.bin&#10;#&#9;.gradle/7.5/checksums/sha1-checksums.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.5/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar&#10;#&#9;app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex&#10;#&#9;app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex&#10;#&#9;app/build/intermediates/dex_archive_input_jar_hashes/debug/out&#10;#&#9;app/build/intermediates/incremental/debug-mergeJavaRes/merge-state&#10;#&#9;app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml&#10;#&#9;app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties&#10;#&#9;app/build/intermediates/incremental/debug/packageDebugResources/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugAssets/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml&#10;#&#9;app/build/intermediates/incremental/mergeDebugShaders/merger.xml&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt&#10;#&#9;app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources&#10;#&#9;app/build/intermediates/local_only_symbol_list/debug/R-def.txt&#10;#&#9;app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-night-v8.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json&#10;#&#9;app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json&#10;#&#9;app/build/intermediates/processed_res/debug/out/resources-debug.ap_&#10;#&#9;app/build/intermediates/runtime_symbol_list/debug/R.txt&#10;#&#9;app/build/intermediates/source_set_path_map/debug/file-map.txt&#10;#&#9;app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt&#10;#&#9;app/build/outputs/logs/manifest-merger-debug-report.txt&#10;#&#9;app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin&#10;#&#9;app/src/main/res/layout/admin_product_add_update.xml">
+      <created>1688285147446</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1684657109027</updated>
+      <updated>1688285147446</updated>
     </task>
-    <task id="LOCAL-00035" summary="Sử dụng recycler view thay thế cho list view trong màn hình cart, cập nhật các thay đổi sau khi merge">
-      <created>1684742650026</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
+    <task id="LOCAL-00135" summary="fix missing street">
+      <created>1688285899725</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1684742650026</updated>
+      <updated>1688285899725</updated>
     </task>
-    <task id="LOCAL-00036" summary="update merge">
-      <created>1684814423318</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
+    <task id="LOCAL-00136" summary="delete test mpandroid chart">
+      <created>1688375642474</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1684814423318</updated>
+      <updated>1688375642474</updated>
     </task>
-    <task id="LOCAL-00037" summary="update debug">
-      <created>1684815111851</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
+    <task id="LOCAL-00137" summary="tạo button load danh sách sản phẩm">
+      <created>1688379057397</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1684815111851</updated>
+      <updated>1688379057398</updated>
     </task>
-    <task id="LOCAL-00038" summary="Xử lý sửa đổi price khi xóa item trong cart">
-      <created>1684834087299</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
+    <task id="LOCAL-00138" summary="try to load excel file, but it has some bug">
+      <created>1688433270696</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1684834087299</updated>
+      <updated>1688433270697</updated>
     </task>
-    <task id="LOCAL-00039" summary="Tạo SearchActivity">
-      <created>1684835302041</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
+    <task id="LOCAL-00139" summary="finish load sản phẩm từ file csv">
+      <created>1688462313430</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1684835302041</updated>
+      <updated>1688462313430</updated>
     </task>
-    <task id="LOCAL-00040" summary="Add trường hợp không tìm thấy product khi search">
-      <created>1684836880668</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
+    <task id="LOCAL-00140" summary="finish load sản phẩm từ file csv">
+      <created>1688462318781</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1684836880668</updated>
+      <updated>1688462318781</updated>
     </task>
-    <task id="LOCAL-00041" summary="Fix search layout bị chồng đè lên thanh tìm kiếm">
-      <created>1684891950772</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
+    <task id="LOCAL-00141" summary="fix load uri khi load danh sách sản phẩm">
+      <created>1688473913957</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1684891950772</updated>
+      <updated>1688473913958</updated>
     </task>
-    <task id="LOCAL-00042" summary="Refractor fragment và class">
-      <created>1684907874978</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
+    <task id="LOCAL-00142" summary="fix some bug">
+      <created>1688527719644</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1684907874978</updated>
+      <updated>1688527719644</updated>
     </task>
-    <task id="LOCAL-00043" summary="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search">
-      <created>1684912109278</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
+    <task id="LOCAL-00143" summary="fix some bug">
+      <created>1688527939679</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1684912109278</updated>
+      <updated>1688527939679</updated>
     </task>
-    <task id="LOCAL-00044" summary="Tham số hóa category trong screen khi hiển thị danh sách product">
-      <created>1684979345867</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
+    <task id="LOCAL-00144" summary="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ">
+      <created>1688530917613</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1684979345867</updated>
+      <updated>1688530917613</updated>
     </task>
-    <task id="LOCAL-00045" summary="Sửa việc phản hồi chậm khi search">
-      <created>1684985626425</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
+    <task id="LOCAL-00145" summary="Hoàn thành AdminOtherActivity">
+      <created>1688531599710</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1684985626425</updated>
+      <updated>1688531599710</updated>
     </task>
-    <task id="LOCAL-00046" summary="fix lỗi hiển thị sản phẩm khi chuỗi tìm kiếm là trống (&quot;&quot;)">
-      <created>1685000740229</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
+    <task id="LOCAL-00146" summary="chỉnh sửa đôi chút cho admin info và statistic">
+      <created>1688532001959</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1685000740229</updated>
+      <updated>1688532001959</updated>
     </task>
-    <task id="LOCAL-00047" summary="Tạo các fragment cho sort và filter">
-      <created>1685002880840</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
+    <task id="LOCAL-00147" summary="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED">
+      <created>1688547757805</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1685002880840</updated>
+      <updated>1688547757805</updated>
     </task>
-    <task id="LOCAL-00048" summary="refractor code">
-      <created>1685002954327</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
+    <task id="LOCAL-00148" summary="chuẩn bị ý tưởng để vẽ thống kê">
+      <created>1688547888071</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1685002954327</updated>
+      <updated>1688547888071</updated>
     </task>
-    <task id="LOCAL-00049" summary="Làm một vài event trong filter setting">
-      <created>1685018657015</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
+    <task id="LOCAL-00149" summary="xong AdminInfoActivity">
+      <created>1688559332194</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1685018657015</updated>
+      <updated>1688559332194</updated>
     </task>
-    <task id="LOCAL-00050" summary="Làm xong chức năng filter">
-      <created>1685087925588</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
+    <task id="LOCAL-00150" summary="làm load các thông tin cơ bản trong AdminStatisticActivity và chỉnh sửa 1 hai chỗ còn thiếu">
+      <created>1688560180118</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1685087925589</updated>
+      <updated>1688560180118</updated>
     </task>
-    <task id="LOCAL-00051" summary="Làm xong chức năng sort">
-      <created>1685090641419</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
+    <task id="LOCAL-00151" summary="tạm thời gặp bug khi xử lý load category">
+      <created>1688563156525</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1685090641419</updated>
+      <updated>1688563156525</updated>
     </task>
-    <task id="LOCAL-00052" summary="hoàn thiện việc confirm khi sort và filter">
-      <created>1685146331911</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
+    <task id="LOCAL-00152" summary="refractor code 1 chút">
+      <created>1688598721055</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1685146331911</updated>
+      <updated>1688598721055</updated>
     </task>
-    <task id="LOCAL-00053" summary="ẩn discount khi discount không có giá trị (không hiệu lực)">
-      <created>1685146476261</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
+    <task id="LOCAL-00153" summary="gần xong monthly sale">
+      <created>1688600743047</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1685146476261</updated>
+      <updated>1688600743048</updated>
     </task>
-    <task id="LOCAL-00054" summary="Apply hiệu ứng khi chọn filter option">
-      <created>1685147348737</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
+    <task id="LOCAL-00154" summary="Xong monthly sale &amp; edit cho đẹp hơn">
+      <created>1688604250064</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1685147348737</updated>
+      <updated>1688604250065</updated>
     </task>
-    <task id="LOCAL-00055" summary="Sửa chức năng search không phân biệt hoa thường">
-      <created>1685155830722</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
+    <task id="LOCAL-00155" summary="xong top 5 products, còn một vài chỗ về label &amp; value sẽ xử lý sau">
+      <created>1688610200945</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1685155830723</updated>
+      <updated>1688610200945</updated>
     </task>
-    <task id="LOCAL-00056" summary="thêm filter box vô searchlayout">
-      <created>1685244630292</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
+    <task id="LOCAL-00156" summary="finish AdminStatisticActivity">
+      <created>1688685468999</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1685244630293</updated>
+      <updated>1688685469000</updated>
     </task>
-    <task id="LOCAL-00057" summary="Xóa filter box khỏi searchlayout">
-      <created>1685322088133</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
+    <task id="LOCAL-00157" summary="finish AdminStatisticActivity">
+      <created>1688685489759</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1685322088134</updated>
+      <updated>1688685489759</updated>
     </task>
-    <task id="LOCAL-00058" summary="Xóa filter box khỏi searchlayout">
-      <created>1685322176921</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
+    <task id="LOCAL-00158" summary="update several files">
+      <created>1688685517865</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1685322176921</updated>
+      <updated>1688685517865</updated>
     </task>
-    <task id="LOCAL-00059" summary="merge duy's branch">
-      <created>1685322814840</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
+    <task id="LOCAL-00159" summary="chuyển activity chính về SignInActivity">
+      <created>1688685598786</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1685322814840</updated>
+      <updated>1688685598786</updated>
     </task>
-    <task id="LOCAL-00060" summary="fix 1 vài bug sau khi merge thành công">
-      <created>1685322973483</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
+    <task id="LOCAL-00160" summary="Còn in thống kê chưa làm, add icon để làm sau">
+      <created>1688690972753</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1685322973483</updated>
+      <updated>1688690972754</updated>
     </task>
-    <task id="LOCAL-00061" summary="link category to product">
-      <created>1685328779281</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+    <task id="LOCAL-00161" summary="gần xong in statistics">
+      <created>1688818395950</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1685328779282</updated>
+      <updated>1688818395951</updated>
     </task>
-    <task id="LOCAL-00062" summary="add recyclerview">
-      <created>1685329004358</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+    <task id="LOCAL-00162" summary="xong việc xuất statistic ra pdf file">
+      <created>1688862973021</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1685329004358</updated>
+      <updated>1688862973022</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <option name="localTasksCounter" value="163" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Login_branch" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -569,32 +610,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Sửa đổi price khi xóa item trong cart" />
-    <MESSAGE value="Xử lý sửa đổi price khi xóa item trong cart" />
-    <MESSAGE value="Tạo SearchActivity" />
-    <MESSAGE value="Add trường hợp không tìm thấy product khi search" />
-    <MESSAGE value="Fix search layout bị chồng đè lên thanh tìm kiếm" />
-    <MESSAGE value="Refractor fragment và class" />
-    <MESSAGE value="Thêm cơ chế đổi fragment để thay đổi kết quả hiện lên màn hình khi search" />
-    <MESSAGE value="Tham số hóa category trong screen khi hiển thị danh sách product" />
-    <MESSAGE value="Sửa việc phản hồi chậm khi search" />
-    <MESSAGE value="fix lỗi hiển thị sản phẩm khi chuỗi tìm kiếm là trống (&quot;&quot;)" />
-    <MESSAGE value="Tạo các fragment cho sort và filter" />
-    <MESSAGE value="refractor code" />
-    <MESSAGE value="Làm một vài event trong filter setting" />
-    <MESSAGE value="Làm xong chức năng filter" />
-    <MESSAGE value="Làm xong chức năng sort" />
-    <MESSAGE value="hoàn thiện việc confirm khi sort và filter" />
-    <MESSAGE value="ẩn discount khi discount không có giá trị (không hiệu lực)" />
-    <MESSAGE value="Apply hiệu ứng khi chọn filter option" />
-    <MESSAGE value="Sửa chức năng search không phân biệt hoa thường" />
-    <MESSAGE value="thêm filter box vô searchlayout" />
-    <MESSAGE value="Xóa filter box khỏi searchlayout" />
-    <MESSAGE value="merge duy's branch" />
-    <MESSAGE value="fix 1 vài bug sau khi merge thành công" />
-    <MESSAGE value="link category to product" />
-    <MESSAGE value="add recyclerview" />
-    <option name="LAST_COMMIT_MESSAGE" value="add recyclerview" />
+    <MESSAGE value="fix missing street" />
+    <MESSAGE value="delete test mpandroid chart" />
+    <MESSAGE value="tạo button load danh sách sản phẩm" />
+    <MESSAGE value="try to load excel file, but it has some bug" />
+    <MESSAGE value="finish load sản phẩm từ file csv" />
+    <MESSAGE value="fix load uri khi load danh sách sản phẩm" />
+    <MESSAGE value="fix some bug" />
+    <MESSAGE value="Thêm AdminOtherActivity và chỉnh sửa code vài chỗ" />
+    <MESSAGE value="Hoàn thành AdminOtherActivity" />
+    <MESSAGE value="chỉnh sửa đôi chút cho admin info và statistic" />
+    <MESSAGE value="thêm cập nhật trạng thái is_paid khi đơn chuyển sang trạng thái DELIVERED" />
+    <MESSAGE value="chuẩn bị ý tưởng để vẽ thống kê" />
+    <MESSAGE value="xong AdminInfoActivity" />
+    <MESSAGE value="làm load các thông tin cơ bản trong AdminStatisticActivity và chỉnh sửa 1 hai chỗ còn thiếu" />
+    <MESSAGE value="tạm thời gặp bug khi xử lý load category" />
+    <MESSAGE value="refractor code 1 chút" />
+    <MESSAGE value="gần xong monthly sale" />
+    <MESSAGE value="Xong monthly sale &amp; edit cho đẹp hơn" />
+    <MESSAGE value="xong top 5 products, còn một vài chỗ về label &amp; value sẽ xử lý sau" />
+    <MESSAGE value="finish AdminStatisticActivity" />
+    <MESSAGE value="update several files" />
+    <MESSAGE value="chuyển activity chính về SignInActivity" />
+    <MESSAGE value="Còn in thống kê chưa làm, add icon để làm sau" />
+    <MESSAGE value="gần xong in statistics" />
+    <MESSAGE value="xong việc xuất statistic ra pdf file" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong việc xuất statistic ra pdf file" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

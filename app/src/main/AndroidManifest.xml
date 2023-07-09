@@ -2,44 +2,107 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
-        android:name=".controller.CartRepository"
+        android:name=".repository.GlobalRepository"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/gear_shop_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.GearShop"
-        tools:targetApi="31"
-        android:enableOnBackInvokedCallback="true">
+        android:value="app_id=199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com"
+        tools:targetApi="tiramisu">
         <activity
-            android:name="com.example.gearshop.activity.SearchActivity"
+            android:name=".activity.admin_activity.AdminInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CartActivity"
+            android:name=".activity.admin_activity.AdminOtherActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProductDetailActivity"
+            android:name=".activity.admin_activity.AdminEditProductActivity"
             android:exported="false" />
-        <activity android:name=".activity.ProductsInCategoryActivity"
-            android:exported="false"/>
-        <activity android:name=".activity.SignUpActivity"
-            android:exported="false"/>
-        <activity android:name=".activity.CategoryActivity"
-            android:exported="false"/>
-<!--        <activity android:name=".activity.CategoryDetailActivity"-->
-<!--            android:exported="false"/>-->
-        <activity android:name=".activity.AccountActivity"
-            android:exported="false"/>
-        <activity android:name=".activity.EditUserInfoActivity"
-            android:exported="false"/>
-
-
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.admin_activity.AdminAddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminProductsInCategoryManagement"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminOrderManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.CustomerOrderStatusPickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.CustomerOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.ProvincePickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.ProductsInCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.EditUserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminProductCategoryManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminCustomerManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin_activity.AdminStatisticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer_activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

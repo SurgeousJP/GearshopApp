@@ -80,7 +80,7 @@
                 android:layout_height="30dp"
                 app:layout_constraintEnd_toStartOf="@id/pricebox2"
                 android:layout_marginTop="44dp"
-                android:background="@drawable/normal_box_2"
+                android:background="@drawable/normal_box"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="44dp"
-                android:background="@drawable/normal_box_2"
+                android:background="@drawable/normal_box"
                 app:layout_constraintStart_toEndOf="@id/pricebox1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -133,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="82dp"
-                android:background="@drawable/normal_box_2"
+                android:background="@drawable/normal_box"
                 app:layout_constraintEnd_toStartOf="@id/pricebox4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -160,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="82dp"
-                android:background="@drawable/normal_box_2"
+                android:background="@drawable/normal_box"
                 app:layout_constraintStart_toEndOf="@id/pricebox3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -386,7 +386,7 @@
                     android:id="@+id/chip1"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
-                    android:background="@drawable/normal_box_2"
+                    android:background="@drawable/normal_box"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -410,7 +410,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/normal_box_2"
+                    android:background="@drawable/normal_box"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/chip1"
                     app:layout_constraintTop_toTopOf="parent">
@@ -496,6 +496,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,16 @@
 package com.example.gearshop.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable {
     private int ID;
     private Date CreatedOnUtc;
     private int CustomerID, ShippingAddressID, ShipmentMethodID, PaymentMethodID;
     private double TotalPrice;
     private String Status;
     private boolean IsPaid;
+
 
     public int getID() {
         return ID;
@@ -81,6 +83,7 @@ public class Order {
     public void setPaid(boolean paid) {
         IsPaid = paid;
     }
+    public Order(){};
 
     public Order(int ID, Date createdOnUtc, int customerID, int shippingAddressID,
                  int shipmentMethodID, int paymentMethodID, double totalPrice,

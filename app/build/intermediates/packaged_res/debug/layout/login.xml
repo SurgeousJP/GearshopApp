@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <View
+            android:visibility="invisible"
             android:id="@+id/wayback_icon"
             android:layout_width="14dp"
             android:layout_height="17dp"
@@ -27,7 +28,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imagelayout"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wayback">
@@ -57,6 +58,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listgear" />
+        <TextView
+            android:id="@+id/title_customer"
+            android:visibility="invisible"
+            android:layout_width="312dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineHeight="24sp"
+            android:lineSpacingExtra="5sp"
+            android:text="CUSTOMER"
+            android:textAppearance="@style/title_empty"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_empty" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,19 +122,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/username_box">
 
-        <EditText
-            android:id="@+id/et_sign_up_password"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@null"
-            android:hint="Mật khẩu"
-            android:textColor="#808089"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/et_sign_up_password"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="12dp"
+                android:background="@null"
+                android:hint="Mật khẩu"
+                android:inputType="textPassword"
+                android:textColor="#808089"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view_password_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_password_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/eye_close_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView

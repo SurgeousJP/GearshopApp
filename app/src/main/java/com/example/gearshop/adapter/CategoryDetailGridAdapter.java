@@ -10,9 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.ProductDetailActivity;
-import com.example.gearshop.controller.CategoryRepository;
-import com.example.gearshop.model.Category;
+import com.example.gearshop.activity.customer_activity.ProductDetailActivity;
+import com.example.gearshop.repository.CategoryRepository;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;
@@ -51,7 +50,7 @@ public class CategoryDetailGridAdapter extends BaseAdapter {
         View v = convertView;
         if (v == null) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
-            v = inflater.inflate(R.layout.list_item, parent, false);
+            v = inflater.inflate(R.layout.list_item_product, parent, false);
         }
 
         Product product = getItem(position);
@@ -61,7 +60,7 @@ public class CategoryDetailGridAdapter extends BaseAdapter {
         ImageView productImageView = v.findViewById(R.id.item_image_list_item);
         TextView productSellingPriceTextView = v.findViewById(R.id.selling_price);
         TextView productNameTextView = v.findViewById(R.id.label_product);
-        TextView productDiscountTextView = v.findViewById(R.id.text);
+        TextView productDiscountTextView = v.findViewById(R.id.discount_text);
 
         if (productNameTextView != null) {
             productNameTextView.setText(product.getName());
@@ -92,12 +91,6 @@ public class CategoryDetailGridAdapter extends BaseAdapter {
                 mContext.startActivity(intent);
             }
         });
-
-
-
-
-
-
         return v;
     }
 }

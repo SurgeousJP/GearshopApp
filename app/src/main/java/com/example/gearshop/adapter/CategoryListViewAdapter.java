@@ -12,21 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.controller.ProductRepository;
+import com.example.gearshop.repository.CustomerProductRepository;
 import com.example.gearshop.model.Category;
-import com.example.gearshop.model.Product;
-import com.squareup.picasso.Picasso;
 
 public class CategoryListViewAdapter extends ArrayAdapter<Category> {
     int resource;
-    private ProductRepository productRepository;
+    private CustomerProductRepository customerProductRepository;
 
     public CategoryListViewAdapter(@NonNull Context context, int resource, @NonNull Category[] categories) {
         super(context, resource, categories);
 
         this.resource = resource;
 
-        productRepository = new ProductRepository();
+        customerProductRepository = new CustomerProductRepository();
     }
 
     @NonNull
@@ -39,24 +37,47 @@ public class CategoryListViewAdapter extends ArrayAdapter<Category> {
         }
 
         Category category = getItem(position);
-        Product productToGetImage = productRepository.getProductsByCategoryId(Integer.toString(category.getID())).get(0);
 
         if (category != null){
             TextView tvCategoryLabel  = v.findViewById(R.id.label_category);
-            ImageView tvCategoryImage = v.findViewById(R.id.item_image_listview_categoty);
+            ImageView ivCategoryThumbnail = v.findViewById(R.id.item_image_listview_categoty);
 
             if (tvCategoryLabel != null)
             {
                 tvCategoryLabel.setText(category.getName());
             }
 
-            if (tvCategoryImage != null){
+            if (ivCategoryThumbnail != null){
                 // set image
-
-//                String imageURL = productToGetImage.getImageURL();
-//                Picasso.get()
-//                        .load(imageURL)
-//                        .into(tvCategoryImage);
+                switch(category.getName()) {
+                    case "Laptop":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.laptop_icon);
+                        break;
+                    case "PC":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.pc_icon);
+                        break;
+                    case "Screen":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.screen_icon);
+                        break;
+                    case "Keyboard":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.keyboard_icon);
+                        break;
+                    case "Mouse":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.mouse_icon);
+                        break;
+                    case "Earphone & Speaker":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.headphone_icon);
+                        break;
+                    case "PC components":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.pc_component_icon);
+                        break;
+                    case "Apple":
+                        ivCategoryThumbnail.setImageResource(R.mipmap.apple_icon);
+                        break;
+                    default:
+                        ivCategoryThumbnail.setImageResource(R.mipmap.ic_launcher);
+                        break;
+                }
 
             }
         }

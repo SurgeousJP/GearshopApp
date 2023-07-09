@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.ProductDetailActivity;
+import com.example.gearshop.activity.customer_activity.ProductDetailActivity;
 import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 
@@ -21,10 +21,16 @@ import com.squareup.picasso.Picasso;
 public class ProductGridAdapter extends BaseAdapter {
     private Context context;
     private List<Product> products;
+    private boolean IsMovingToProductDetail = true;
 
     public ProductGridAdapter(Context context, List<Product> products) {
         this.context = context;
         this.products = products;
+    }
+    public ProductGridAdapter(Context context, List<Product> products, boolean isMovingToProductDetail){
+        this.context = context;
+        this.products = products;
+        this.IsMovingToProductDetail = isMovingToProductDetail;
     }
     public void setData(List<Product> products){
         this.products = products;
@@ -48,14 +54,14 @@ public class ProductGridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.list_item, parent, false);
+            convertView = inflater.inflate(R.layout.list_item_product, parent, false);
         }
 
         // Get UI components in xml file
         ImageView productImageView = convertView.findViewById(R.id.item_image_list_item);
         TextView productSellingPriceTextView = convertView.findViewById(R.id.selling_price);
         TextView productNameTextView = convertView.findViewById(R.id.label_product);
-        TextView productDiscountTextView = convertView.findViewById(R.id.text);
+        TextView productDiscountTextView = convertView.findViewById(R.id.discount_text);
         // Set data to UI components
         Product product = products.get(position);
 
@@ -78,14 +84,16 @@ public class ProductGridAdapter extends BaseAdapter {
             productDiscountTextView.setVisibility(View.GONE);
         }
         productSellingPriceTextView.setText(MoneyHelper.getVietnameseMoneyStringFormatted(sellingPrice));
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("clickedProduct", product);
-                context.startActivity(intent);
-            }
-        });
+        if (IsMovingToProductDetail){
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ProductDetailActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("clickedProduct", product);
+                    context.startActivity(intent);
+                }
+            });
+        }
         return convertView;
     }
 }
