@@ -49,6 +49,7 @@ public class CategoryActivity extends AppCompatActivity {
             // Intent to start products by category page
             Intent intent = new Intent(getBaseContext(), ProductsInCategoryActivity.class);
             intent.putExtra("categoryId", categories[position].getID());
+            intent.putExtra("categoryName", categories[position].getName());
             startActivity(intent);
         });
 
