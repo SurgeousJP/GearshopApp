@@ -28,7 +28,7 @@ Mở ứng dụng, tạo tài khoản là bạn đã có thể sử dụng ứng
 P/S: Ứng dụng chỉ hỗ trợ Android phiên bản 9.0 hoặc hơn.
 
 # Preview:
-<img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop1.jpg" alt="Splash Screen" width="98" height="200" /><img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop2.jpg" alt="Splash Screen" width="98" height="200" /><img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop3.jpg" alt="Splash Screen" width="98" height="200" /><img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop4.jpg" alt="Splash Screen" width="98" height="200" /><img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop5.jpg" alt="Splash Screen" width="98" height="200" /> 
+<img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop1.jpg" alt="Splash Screen" width="98" height="200" /> <img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop2.jpg" alt="Splash Screen" width="98" height="200" /> <img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop3.jpg" alt="Splash Screen" width="98" height="200" /> <img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop4.jpg" alt="Splash Screen" width="98" height="200" /> <img src="https://raw.githubusercontent.com/SurgeousJP/GearshopApp/main/Gearshop5.jpg" alt="Splash Screen" width="98" height="200" /> 
 
 Dự án (project) này có thể được sử dụng với mục đích học tập và có thể thay đổi & chỉnh sửa nếu cần.<br><b>
 Nếu thấy project này hữu ích, 1 sao sẽ rất là tuyệt vời.</b><br>
