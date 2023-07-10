@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -39,6 +42,7 @@ public class CustomerOrderActivity extends AppCompatActivity {
     private List<Order> CustomerParticularTypeOrderList;
     private OrderListAdapter CustomerOrderAdapter;
     private int CustomerID;
+    private RelativeLayout OptionsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,14 +91,14 @@ public class CustomerOrderActivity extends AppCompatActivity {
         IconReturnView.setOnClickListener(view -> {
             finish();
         });
-        FAQView = findViewById(R.id.thin);
-        FAQView.setOnClickListener(view -> {
-            ActivityStartManager.startTargetActivity(getBaseContext(), FAQActivity.class);
-        });
+
         ReturnHomeLayout = findViewById(R.id.roundx_order_management);
         ReturnHomeLayout.setOnClickListener(view -> {
             ActivityStartManager.startTargetActivity(getBaseContext(), HomeActivity.class);
         });
+
+        OptionsLayout = findViewById(R.id.dots_order_management);
+        OptionsLayout.setOnClickListener(this::showPopupMenu);
 
         OrderListView.setOnItemLongClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(getBaseContext(), OrderDetailActivity.class)
@@ -188,5 +192,28 @@ public class CustomerOrderActivity extends AppCompatActivity {
         UnderlineAllDeliveredOrder.setBackgroundColor(Color.GRAY);
         AllCancelledOrder.setTextColor(Color.GRAY);
         UnderlineAllCancelledOrder.setBackgroundColor(Color.GRAY);
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.dots_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.logout_item) {
+                    Intent intent = new Intent(CustomerOrderActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.faq_item) {
+                    Intent intent = new Intent(CustomerOrderActivity.this, FAQActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 }
