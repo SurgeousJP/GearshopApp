@@ -2,43 +2,35 @@
 "GearShop App" là một ứng dụng di động với mục đích cung cấp cho người dùng (users) trải nghiệm mua sắm laptop & các linh kiện điện tử. Bất kỳ người dùng nào có điện thoại sử dụng hệ điều hành Android & Đường truyền kết nối ổn định. 
 
 # Chức năng
-Cung cấp trải nghiệm mua sắm laptop & linh kiện điện tử online một cách tiện lợi.<br>
-Included (Bao gồm):
+Cung cấp trải nghiệm mua sắm laptop & linh kiện điện tử online một cách tiện lợi, bao gồm các chức năng:<br>
 - Cơ sở dữ liệu người dùng & sản phẩm
 - Đăng ký & Đăng nhập tài khoản
 - Xem sản phẩm & Chi tiết sản phẩm
 - Quản lý giỏ hàng & đơn hàng (người dùng)
 - Quản lý các sản phẩm hiện có (Admin)
-- ...
+...
        
 # Công cụ sử dụng
-- SQL Server Database
-- Azure Cloud Services
+- Microsoft Azure SQL Database
 - Android Studio IDE
-- Android version 6.0 hoặc cao hơn
-- API 29
+- Android version 9.0 hoặc cao hơn
+- API 29 hoặc cao hơn
   
 # Cách cài đặt app?
-Bạn có thể cài đặt ứng dụng này để thử trên điện thoại android của bạn. Để tải xuống ứng dụng, bạn nhập đường link vô trình duyệt Chrome và copy-paste đường dẫn ở dưới đây:
-
-
+Bạn có thể cài đặt ứng dụng này để thử trên điện thoại android của bạn. 
+Để tải xuống ứng dụng, bạn nhập đường link vô trình duyệt Chrome và copy-paste đường dẫn ở dưới đây (tải từ Drive về):
 ```
-... (N/A)
+https://drive.google.com/drive/u/0/folders/1Sg9jzNfYrb_hJhss5m-iIHOnZqUgu99N
 ```
 Tải xuống sẽ được bắt đầu tự động, sau đó chỉ cần cài đặt ứng dụng trên thiết bị Android của bạn.
 Mở ứng dụng, tạo tài khoản là bạn đã có thể sử dụng ứng dụng.
 
-P/S: Ứng dụng chỉ hỗ trợ Android phiên bản 6.0 hoặc hơn.
+P/S: Ứng dụng chỉ hỗ trợ Android phiên bản 9.0 hoặc hơn.
 
 # Preview:
 N/A
 
-# Sơ đồ CSDL
-Nhấp vô đường link:
-```
-N/A
-```
-Dự án (project) này có thể được sử dụng với mục đích học tập và có thể thay đổi & chỉnh sửa nếu cầ.n<br><b>
+Dự án (project) này có thể được sử dụng với mục đích học tập và có thể thay đổi & chỉnh sửa nếu cần<br><b>
 Nếu thấy project này hữu ích, 1 sao sẽ rất là tuyệt vời.</b>)<br>
 
 # Nhóm thực hiện
