@@ -453,6 +453,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/support_box"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="86dp"
                 android:layout_marginTop="12dp"

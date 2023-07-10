@@ -8,6 +8,7 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -33,7 +34,6 @@
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.GearShop"
         android:value="app_id=199304663584-012h45i7be2l1vdhdngp1ocbhv7r35tn.apps.googleusercontent.com" >
         <activity
@@ -112,10 +112,10 @@
             android:name="com.example.gearshop.activity.admin_activity.AdminCustomerManagementActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
+            android:name="com.example.gearshop.activity.admin_activity.AdminStatisticActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.gearshop.activity.admin_activity.AdminStatisticActivity"
+            android:name="com.example.gearshop.activity.customer_activity.SignInActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
