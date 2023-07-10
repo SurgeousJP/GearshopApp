@@ -20,7 +20,7 @@ Cung cấp trải nghiệm mua sắm laptop & linh kiện điện tử online m�
 Bạn có thể cài đặt ứng dụng này để thử trên điện thoại android của bạn. 
 Để tải xuống ứng dụng, bạn nhập đường link vô trình duyệt Chrome và copy-paste đường dẫn ở dưới đây (tải từ Drive về):
 ```
-https://drive.google.com/drive/u/0/folders/1Sg9jzNfYrb_hJhss5m-iIHOnZqUgu99N
+https://drive.google.com/file/d/1EX9aWW9b3C42u-PKndjWGstl4eOpu-2q/view
 ```
 Tải xuống sẽ được bắt đầu tự động, sau đó chỉ cần cài đặt ứng dụng trên thiết bị Android của bạn.
 Mở ứng dụng, tạo tài khoản là bạn đã có thể sử dụng ứng dụng.
