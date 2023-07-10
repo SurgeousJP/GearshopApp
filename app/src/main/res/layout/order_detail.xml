@@ -49,6 +49,7 @@
 
         <RelativeLayout
             android:id="@+id/cart_order_detail"
+            android:visibility="invisible"
             android:layout_width="27dp"
             android:layout_height="27dp"
             app:layout_constraintTop_toTopOf="@id/first_bar"
@@ -60,6 +61,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <RelativeLayout
+            android:visibility="invisible"
             android:id="@+id/navigation_box"
             android:layout_width="72dp"
             android:layout_height="27dp"
