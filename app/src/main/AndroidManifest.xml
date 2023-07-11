@@ -48,7 +48,7 @@
             android:name=".activity.customer_activity.CustomerOrderStatusPickActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.customer_activity.CustomerDetailActivity"
+            android:name=".activity.admin_activity.AdminCustomerDetailActivity"
             android:exported="false" />
         <activity
             android:name=".activity.customer_activity.FAQActivity"
