@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerOrderActivity extends AppCompatActivity {
+    boolean ADMIN_MODE = false;
     private String OrderType;
     private View IconReturnView;
     private View FAQView;
@@ -52,6 +53,12 @@ public class CustomerOrderActivity extends AppCompatActivity {
         Intent getDataIntent = getIntent();
         OrderType = getDataIntent.getStringExtra("ORDER_TYPE");
         CustomerID = getDataIntent.getIntExtra("customerID", 0);
+        ADMIN_MODE = getDataIntent.getBooleanExtra("ADMIN_MODE", false);
+
+        if (ADMIN_MODE){
+            RelativeLayout navigationBox = findViewById(R.id.navigation_box);
+            navigationBox.setVisibility(View.INVISIBLE);
+        }
 
         AllOrder = findViewById(R.id.content_all);
         AllOrder.setOnClickListener(view -> {

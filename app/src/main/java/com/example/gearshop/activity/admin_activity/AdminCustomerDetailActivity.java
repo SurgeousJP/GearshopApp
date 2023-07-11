@@ -1,4 +1,4 @@
-package com.example.gearshop.activity.customer_activity;
+package com.example.gearshop.activity.admin_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gearshop.R;
+import com.example.gearshop.activity.customer_activity.CustomerOrderActivity;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Province;
@@ -18,7 +19,7 @@ import com.example.gearshop.utility.DatabaseHelper;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CustomerDetailActivity extends AppCompatActivity {
+public class AdminCustomerDetailActivity extends AppCompatActivity {
     private View ReturnView;
     private TextView CustomerUsernameInfoTextView;
     private TextView CustomerPasswordInfoTextView;
@@ -111,6 +112,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("ORDER_TYPE", "ALL_ORDER");
                 intent.putExtra("customerID", CurrentCustomer.getID());
+                intent.putExtra("ADMIN_MODE", true);
                 getBaseContext().startActivity(intent);
             });
             // CustomerAddress ?

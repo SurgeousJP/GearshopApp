@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.gearshop.R;
-import com.example.gearshop.activity.customer_activity.CustomerDetailActivity;
+import com.example.gearshop.activity.admin_activity.AdminCustomerDetailActivity;
 import com.example.gearshop.model.Customer;
 
 
@@ -73,9 +73,10 @@ public class CustomerListAdapter extends BaseAdapter {
                 CustomerNameTextView.setText(customer.getLastName() + " " + customer.getFirstName());
             }
             v.setOnClickListener(view -> {
-                Intent intent = new Intent(context, CustomerDetailActivity.class)
+                Intent intent = new Intent(context, AdminCustomerDetailActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("clickedCustomer", customer);
+                intent.putExtra("ADMIN_MODE", true);
                 context.startActivity(intent);
             });
         }
