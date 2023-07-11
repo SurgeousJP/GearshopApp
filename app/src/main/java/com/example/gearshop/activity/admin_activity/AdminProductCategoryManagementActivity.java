@@ -96,10 +96,17 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
                                 throw new RuntimeException(e);
                             }
                         }
+                        else printFailToLoadProductsToast();
                     }
+                    else printFailToLoadProductsToast();
                 }
+                else printFailToLoadProductsToast();
             }
     );
+
+    private void printFailToLoadProductsToast(){
+        Toast.makeText(getBaseContext(), "Load sản phẩm mới thất bại !", Toast.LENGTH_SHORT).show();
+    }
 
     private void InsertProductListOntoDatabase(List<Product> products){
         for (Product product : products){
