@@ -195,6 +195,7 @@ public class AdminAddProductActivity extends AppCompatActivity
                 DatabaseHelper.insertNewProductToAzure(newProduct);
                 Intent intent = new Intent(getBaseContext(), AdminProductsInCategoryManagement.class);
                 intent.putExtra("clickedCategory", productCategory);
+                Toast.makeText(this, "Thêm sản phẩm mới thành công !", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 finish();
             }

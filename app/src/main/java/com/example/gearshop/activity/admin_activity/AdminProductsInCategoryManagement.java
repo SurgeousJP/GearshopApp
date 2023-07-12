@@ -106,6 +106,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
                     ProductList.remove(position);
                     ProductList.add(position, editedProduct);
                     ProductAdapter.notifyDataSetChanged();
+                    Toast.makeText(this, "Sửa sản phẩm thành công !", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -187,6 +188,7 @@ public class AdminProductsInCategoryManagement extends AppCompatActivity
                 ProductAdapter.setData(ProductList);
                 ProductAdapter.notifyDataSetChanged();
                 DatabaseHelper.updateProductToAzure(deletedProduct);
+                Toast.makeText(this, "Xóa sản phẩm thành công !", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onContextItemSelected(item);
