@@ -11,19 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gearshop.R;
+import com.example.gearshop.model.Order;
 import com.example.gearshop.model.OrderItem;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.DatabaseHelper;
 import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
+import java.util.Date;
 import java.util.List;
 
 public class OrderItemListAdapter extends RecyclerView.Adapter<OrderItemListAdapter.OrderItemListViewHolder>{
     private List<OrderItem> ListOrderItem;
+    private Order CurrentOrder;
 
-    public OrderItemListAdapter(List<OrderItem> listOrderItem){
+    public OrderItemListAdapter(List<OrderItem> listOrderItem, Order currentOrder){
         this.ListOrderItem = listOrderItem;
+        this.CurrentOrder = currentOrder;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -59,7 +63,7 @@ public class OrderItemListAdapter extends RecyclerView.Adapter<OrderItemListAdap
         }
 
         if (holder.PriceText != null){
-            double discountedPrice = getDiscountedPrice(productItem);
+            double discountedPrice = getDiscountedPrice(productItem, CurrentOrder.getCreatedOnUtc());
             holder.PriceText.setText(MoneyHelper.getVietnameseMoneyStringFormatted(discountedPrice));
         }
 
@@ -74,9 +78,9 @@ public class OrderItemListAdapter extends RecyclerView.Adapter<OrderItemListAdap
         return 0;
     }
 
-    private double getDiscountedPrice(Product p) {
+    private double getDiscountedPrice(Product p, Date createdOrderDate){
         double price = p.getPrice();
-        if (p.getDiscountInformation().isActive()){
+        if (p.getDiscountInformation().isActive(createdOrderDate)){
             price = price * (100 - p.getDiscountInformation().getDiscountPercentage()) / 100;
         }
         return price;

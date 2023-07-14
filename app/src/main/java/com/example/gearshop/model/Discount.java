@@ -51,6 +51,10 @@ public class Discount implements Serializable {
         Date currentDate = new Date();
         return currentDate.after(getStartDateUtc()) && currentDate.before(getEndDateUtc());
     }
+
+    public boolean isActive(Date orderDate) {
+        return orderDate.after(getStartDateUtc()) && orderDate.before(getEndDateUtc());
+    }
     public Discount(int ID, String name, int discountPercentage, Date startDateUtc, Date endDateUtc) {
         this.ID = ID;
         Name = name;

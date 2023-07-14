@@ -1,12 +1,5 @@
 package com.example.gearshop.activity.customer_activity;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +7,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.gearshop.R;
 import com.example.gearshop.activity.admin_activity.AdminOrderManagementActivity;
 import com.example.gearshop.activity.admin_activity.AdminOrderStatusPickActivity;
-import com.example.gearshop.activity.customer_activity.CustomerOrderActivity;
-import com.example.gearshop.activity.customer_activity.CustomerOrderStatusPickActivity;
 import com.example.gearshop.adapter.OrderItemListAdapter;
 import com.example.gearshop.model.Address;
 import com.example.gearshop.model.Customer;
@@ -131,7 +129,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         OrderDetailRecyclerView = findViewById(R.id.recycler_view_order_detail);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false);
         orderItemList = DatabaseHelper.getOrderItemList(" WHERE order_id ='" + clickedOrder.getID() + "'");
-        OrderDetailAdapter = new OrderItemListAdapter(orderItemList);
+        OrderDetailAdapter = new OrderItemListAdapter(orderItemList, clickedOrder);
         OrderDetailRecyclerView.setLayoutManager(gridLayoutManager);
         OrderDetailRecyclerView.setAdapter(OrderDetailAdapter);
         OrderDetailAdapter.setData(orderItemList);

@@ -16,6 +16,7 @@ import com.example.gearshop.model.ShoppingCartItem;
 import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
 
+import java.util.Date;
 import java.util.List;
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.CartListViewHolder> {
