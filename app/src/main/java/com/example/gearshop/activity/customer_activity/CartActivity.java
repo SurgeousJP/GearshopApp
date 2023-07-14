@@ -136,6 +136,11 @@ public class CartActivity extends AppCompatActivity implements ConfirmDeleteCart
                         Toast.LENGTH_SHORT).show();
                 return;
             }
+            else if (GlobalRepository.getCustomerAddress().getID() == -1){
+                Toast.makeText(getBaseContext(), "Chưa đổi địa chỉ nhận hàng lần đầu" +
+                        "\nVui lòng thử lại", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Order newOrder = new Order();
             OrderList = DatabaseHelper.getOrderList("ALL");

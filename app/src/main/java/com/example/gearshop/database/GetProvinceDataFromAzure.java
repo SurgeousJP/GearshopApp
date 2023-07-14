@@ -17,14 +17,6 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
             "SELECT * FROM province WHERE id = ?";
     private List<Province> ProvinceList;
     private int ProvinceID;
-
-    public int getProvinceID() {
-        return ProvinceID;
-    }
-
-    public void setProvinceID(int provinceID) {
-        ProvinceID = provinceID;
-    }
     public List<Province> getProvinceList(){
         return ProvinceList;
     }
@@ -49,8 +41,10 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
     public static double getShippingCharge(int provinceID){
         final GetProvinceDataFromAzure[] getProvinceDataFromAzure = new GetProvinceDataFromAzure[1];
         getProvinceDataFromAzure[0] = new GetProvinceDataFromAzure();
-        getProvinceDataFromAzure[0].setProvinceID(provinceID);
-        getProvinceDataFromAzure[0].execute(GET_PROVINCE_INFORMATION_SQL_STRING);
+        String newSQLCommand =
+                GET_PROVINCE_INFORMATION_SQL_STRING.substring(0, GET_PROVINCE_INFORMATION_SQL_STRING.length() - 1);
+        newSQLCommand = newSQLCommand + "'" + provinceID + "'";
+        getProvinceDataFromAzure[0].execute(newSQLCommand);
 
         System.out.println("Async Task get ShippingCharge running");
         try {
