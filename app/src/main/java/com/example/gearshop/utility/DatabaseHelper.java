@@ -29,6 +29,30 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 public class DatabaseHelper {
+    public static void updateCustomerDataToAzure(Customer currentCustomer){
+        InsertUpdateDataToAzure updateCustomerDataToAzure = new InsertUpdateDataToAzure();
+        System.out.println("Async Task update Customer data is running");
+        updateCustomerDataToAzure.execute("UPDATE customer\n" +
+                "SET username = '"  + currentCustomer.getUsername()    + "',\n" +
+                "password = '"      + currentCustomer.getPassword()    + "',\n" +
+                "email = '"         + currentCustomer.getEmail()       + "',\n" +
+                "first_name = N'"   + currentCustomer.getFirstName()   + "',\n" +
+                "last_name = N'"    + currentCustomer.getLastName()    + "',\n" +
+                "gender = '"        + currentCustomer.getGender()      + "',\n" +
+                "phone_number = '"  + currentCustomer.getPhoneNumber() + "',\n" +
+                "date_of_birth = '" +
+                        new SimpleDateFormat("yyyy-MM-dd").format(currentCustomer.getDateOfBirth()) + "',\n" +
+                "address_id = '" + currentCustomer.getAddressID() +  "'\n" +
+                "WHERE id = '" + currentCustomer.getID() + "';");
+        try{
+            updateCustomerDataToAzure.get();
+        }
+        catch (ExecutionException | InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Async Task update Customer data ended");
+    }
+
     public static void updateOrderStatusToAzure(Order currentOrder){
         InsertUpdateDataToAzure updateOrderDataToAzure = new InsertUpdateDataToAzure();
         System.out.println("Async Task update Order status is running");

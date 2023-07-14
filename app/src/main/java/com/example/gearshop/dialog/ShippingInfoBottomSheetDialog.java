@@ -22,6 +22,7 @@ import com.example.gearshop.R;
 import com.example.gearshop.activity.customer_activity.ProvincePickActivity;
 import com.example.gearshop.database.GetProvinceDataFromAzure;
 import com.example.gearshop.model.Address;
+import com.example.gearshop.model.Customer;
 import com.example.gearshop.model.Province;
 import com.example.gearshop.repository.GlobalRepository;
 import com.example.gearshop.utility.DatabaseHelper;
@@ -105,7 +106,7 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
             }
 
             String houseNumberChecking = HouseNumberAddressEditText.getText().toString();
-            String pattern = "^[A-Z\\d/]+$";
+            String pattern = "^[A-Z\\d]+$";
 
             Pattern regex = Pattern.compile(pattern);
             Matcher matcher = regex.matcher(houseNumberChecking);
@@ -149,8 +150,15 @@ public class ShippingInfoBottomSheetDialog extends BottomSheetDialogFragment
         Address newAddress = new Address(globalAddress.getID(), houseNumber,
                 street, ProvinceID);
         if (globalAddress.getID() == -1){
-            newAddress.setID(DatabaseHelper.getAddressList("ALL").size() + 1);
+            int newAddressID = DatabaseHelper.getAddressList("ALL").size() + 1;
+
+            // Insert new AddressID
+            newAddress.setID(newAddressID);
             DatabaseHelper.insertAddressToAzure(newAddress);
+
+            // Update Customer Address ID column
+            GlobalRepository.getCurrentCustomer().setAddressID(newAddressID);
+            DatabaseHelper.updateCustomerDataToAzure(GlobalRepository.getCurrentCustomer());
         }
         else{
             DatabaseHelper.updateAddressToAzure(globalAddress, newAddress);

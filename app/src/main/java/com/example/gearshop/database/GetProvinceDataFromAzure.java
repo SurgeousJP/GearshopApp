@@ -16,7 +16,6 @@ public class GetProvinceDataFromAzure extends AzureSQLDatabase{
     private static final String GET_PROVINCE_INFORMATION_SQL_STRING = "" +
             "SELECT * FROM province WHERE id = ?";
     private List<Province> ProvinceList;
-    private int ProvinceID;
     public List<Province> getProvinceList(){
         return ProvinceList;
     }

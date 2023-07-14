@@ -25,8 +25,6 @@ import java.util.Random;
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     CustomerRepository customerRepository;
-    private boolean isPasswordVisible = false;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
