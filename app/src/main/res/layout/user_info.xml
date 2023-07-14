@@ -658,7 +658,7 @@
                         android:lineSpacingExtra="4sp"
                         android:enabled="false"
                         android:textColor="@color/black"
-                        android:text="288 Erie Street South Unit D, Leamington, Ontario"
+                        android:text="N/A"
                         android:textAppearance="@style/label_ship"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -755,6 +755,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
+                    android:id="@+id/save_user_info_tv"
                     android:layout_width="0dp"
                     android:layout_height="24dp"
                     android:gravity="center_horizontal|center_vertical"

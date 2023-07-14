@@ -20,8 +20,7 @@ public class AzureSQLDatabase extends AsyncTask<String, Void, ResultSet> {
                     "user=sqladmin@dozlapsoutheastasia;" +
                     "password=CodingProject123@;" +
                     "encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;" +
-                    "loginTimeout=30;ssl=request"
-            ;
+                    "loginTimeout=30;ssl=request";
     @Override
     protected ResultSet doInBackground(String... sqlCommand) {
         ResultSet resultSet = null;
