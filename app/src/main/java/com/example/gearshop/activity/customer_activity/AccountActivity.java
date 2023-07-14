@@ -50,7 +50,7 @@ public class AccountActivity extends AppCompatActivity {
         Customer userInfo = customerRepository.getCustomerById(userId);
 
         TextView tvUserName = (TextView) findViewById(R.id.title_username);
-        String userName = userInfo.getFirstName() + userInfo.getLastName();
+        String userName = userInfo.getLastName() + " " + userInfo.getFirstName();
         tvUserName.setText(userName);
 
         ConstraintLayout btnEditUserInfo = (ConstraintLayout) findViewById(R.id.user_info_box);
