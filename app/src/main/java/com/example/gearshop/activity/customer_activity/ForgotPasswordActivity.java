@@ -1,8 +1,8 @@
 package com.example.gearshop.activity.customer_activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -13,18 +13,31 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.gearshop.R;
+import com.example.gearshop.model.Customer;
 import com.example.gearshop.repository.CustomerRepository;
+import com.example.gearshop.utility.EmailUtil;
 import com.example.gearshop.utility.ViewPasswordInputHelper;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Properties;
 import java.util.Random;
+
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     CustomerRepository customerRepository;
+    int ChangePasswordCode;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +53,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         EditText edtEmail = findViewById(R.id.et_sign_up_email);
         EditText edtUsername = findViewById(R.id.et_sign_up_username);
         EditText edtConfirmCode = (EditText) findViewById(R.id.confirm_code_edit);
+        edtConfirmCode.setInputType(InputType.TYPE_CLASS_NUMBER);
         EditText edtNewPassword = findViewById(R.id.password_edit);
         EditText edtConfirmNewPassword = findViewById(R.id.confirm_password_edit_text);
 
@@ -56,7 +70,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 if (hasValue(email, username)) {
                     if (customerRepository.isExists(email, username)){
                         // send code to email
-                        SendCodeToEmail();
+                        Customer currentCustomer = customerRepository.getCustomerThroughEmail(email);
+                        SendCodeToEmail(currentCustomer);
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "Email hoặc tên đăng nhập không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -67,14 +82,55 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 }
             }
 
-            private void SendCodeToEmail() {
+            @SuppressLint({"SetTextI18n", "StaticFieldLeak"})
+            private void SendCodeToEmail(Customer customer) {
                 // Generate a random number to represent the "send and input code" action
                 Random random = new Random();
-                int code = random.nextInt(5000) + 1000;
+                ChangePasswordCode = random.nextInt(5000) + 1000;
 
-                Toast.makeText(getApplicationContext(), "Đã gửi mã xác nhận", Toast.LENGTH_SHORT).show();
+                String emailReceiver = customer.getEmail();
+                String emailSubject = "Password Reset (From GearShop)";
+                String emailBody =
+                        "Hi " + customer.getLastName() + " " + customer.getFirstName() + ",\n" +
+                        "There was a request to change your password!\n" +
+                        "\n" +
+                        "If you did not make this request then please ignore this email.\n" +
+                        "\n" +
+                        "Otherwise, here is the code to change your password: " + ChangePasswordCode;
 
-                edtConfirmCode.setText(Integer.toString(code));
+                // Perform email existence check
+                boolean emailExists = checkEmailExists(emailReceiver);
+
+                if (emailExists) {
+                    String[] mailSenderContent = readTextFromAssets(getBaseContext(), "sender.txt").split("\n");
+                    String username = mailSenderContent[0];
+                    String password = mailSenderContent[1];
+
+                    Properties properties = System.getProperties();
+                    properties.put("mail.smtp.connectiontimeout", 1000);
+                    properties.put("mail.smtp.port", "587");
+                    properties.put("mail.smtp.auth", "true");
+                    properties.put("mail.smtp.starttls.enable", "true");
+                    properties.setProperty("mail.smtp.host", "smtp.gmail.com");
+
+                    Session session = Session.getInstance(properties, new Authenticator() {
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(username, password);
+                        }
+                    });
+                    new AsyncTask<Void, Void, Boolean>() {
+                        @SuppressLint("StaticFieldLeak")
+                        @Override
+                        protected Boolean doInBackground(Void... voids) {
+                            EmailUtil.sendEmail(session, emailReceiver, emailSubject, emailBody);
+                            return true;
+                        }
+                    }.execute();
+                } else {
+                    // Email does not exist, show an error message or perform appropriate action
+                    // For example, display a toast message
+                    Toast.makeText(getBaseContext(), "Email không hợp lệ !", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -82,6 +138,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         btnConfirmChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Integer.parseInt(edtConfirmCode.getText().toString()) != ChangePasswordCode){
+                    Toast.makeText(getBaseContext(), "Mã xác nhận đổi mật khẩu không đúng !", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String newPassword = edtNewPassword.getText().toString();
                 String confirmNewPassword = edtConfirmNewPassword.getText().toString();
 
@@ -111,11 +171,38 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         });
     }
 
+    private boolean checkEmailExists(String email) {
+        try {
+            InternetAddress internetAddress = new InternetAddress(email);
+            internetAddress.validate();
+            return true;
+        } catch (AddressException e) {
+            return false;
+        }
+    }
+
     private boolean hasValue(String email, String username) {
         return !(email.equals("") || username.equals(""));
     }
 
     private boolean isValidUserInfo(String email, String username) {
         return true;
+    }
+
+    public String readTextFromAssets(Context context, String fileName) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            InputStream inputStream = context.getAssets().open(fileName);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append("\n");
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
     }
 }

@@ -154,9 +154,18 @@ public class CustomerRepository {
                 return true;
             }
         }
-
         return false;
     }
+
+    public Customer getCustomerThroughEmail(String email){
+        for (Customer customer : CustomerList) {
+            if (customer.getEmail().equals(email)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
     public boolean isExistsPhoneNumber(String phoneNumber) {
         for (Customer customer : CustomerList) {
             if (customer.getPhoneNumber().equals(phoneNumber)) {

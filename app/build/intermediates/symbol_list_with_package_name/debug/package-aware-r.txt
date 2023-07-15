@@ -3876,6 +3876,7 @@ id save_button_list_voucher
 id save_non_transition_alpha
 id save_overlay_view
 id save_user_info
+id save_user_info_tv
 id sawtooth
 id scale
 id screen
