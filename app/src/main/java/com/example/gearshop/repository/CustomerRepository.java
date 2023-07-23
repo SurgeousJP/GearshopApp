@@ -134,8 +134,13 @@ public class CustomerRepository {
         }
     }
 
-    public boolean isExists(String email, String username) {
-        return isExistsEmail(email) && isExistsUsername(username);
+    public boolean isExistUserWithEmail(String email, String username) {
+        for (Customer customer: CustomerList){
+            if (customer.getUsername().equals(username) && customer.getEmail().equals(email)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean isExistsUsername(String username) {

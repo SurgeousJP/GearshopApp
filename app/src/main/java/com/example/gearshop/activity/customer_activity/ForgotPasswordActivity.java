@@ -68,13 +68,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 String username = edtUsername.getText().toString();
 
                 if (hasValue(email, username)) {
-                    if (customerRepository.isExists(email, username)){
+                    if (customerRepository.isExistUserWithEmail(email, username)){
                         // send code to email
                         Customer currentCustomer = customerRepository.getCustomerThroughEmail(email);
                         SendCodeToEmail(currentCustomer);
+                        Toast.makeText(getBaseContext(), "Đã gửi email có mã xác nhận đổi mật khẩu", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(getApplicationContext(), "Email hoặc tên đăng nhập không hợp lệ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Username không tồn tại / không có email như trên", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
@@ -146,6 +147,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 String confirmNewPassword = edtConfirmNewPassword.getText().toString();
 
                 if (newPassword.equals(confirmNewPassword)){
+                    if (!validPassword(newPassword)){
+                        Toast.makeText(ForgotPasswordActivity.this,
+                                "Mật khẩu không đủ 8 ký tự hoặc không hợp lệ", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    
                     customerRepository.changePassword(edtEmail.getText().toString(), newPassword);
 
                     Toast.makeText(v.getContext(), "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show();
@@ -169,6 +176,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private boolean validPassword(String password) {
+        int minPasswordLength = 8;
+        boolean hasUpperCase = !password.equals(password.toLowerCase());
+        boolean hasLowerCase = !password.equals(password.toUpperCase());
+        boolean hasNumber = password.matches(".*\\d.*");
+        boolean hasSpecialChar = !password.matches("[a-zA-Z0-9 ]*");
+
+        return password.length() >= minPasswordLength;
     }
 
     private boolean checkEmailExists(String email) {
