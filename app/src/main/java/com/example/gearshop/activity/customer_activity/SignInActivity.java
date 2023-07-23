@@ -90,6 +90,7 @@ public class SignInActivity extends AppCompatActivity {
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 ActivityStartManager.startTargetActivity(getBaseContext(), ForgotPasswordActivity.class);
+                finish();
             }
         });
 
@@ -97,6 +98,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ActivityStartManager.startTargetActivity(v.getContext(), SignUpActivity.class);
+                finish();
             }
         });
 

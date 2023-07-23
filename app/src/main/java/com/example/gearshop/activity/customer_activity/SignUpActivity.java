@@ -17,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.repository.CustomerRepository;
 import com.example.gearshop.model.Customer;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.ViewPasswordInputHelper;
 
 import java.text.ParseException;
@@ -311,6 +312,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                ActivityStartManager.startTargetActivity(getBaseContext(), SignInActivity.class);
                 finish();
             }
         });
@@ -318,6 +320,7 @@ public class SignUpActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ActivityStartManager.startTargetActivity(getBaseContext(), SignInActivity.class);
                 finish();
             }
         });

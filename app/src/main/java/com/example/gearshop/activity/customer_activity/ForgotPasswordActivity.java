@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.gearshop.R;
 import com.example.gearshop.model.Customer;
 import com.example.gearshop.repository.CustomerRepository;
+import com.example.gearshop.utility.ActivityStartManager;
 import com.example.gearshop.utility.EmailUtil;
 import com.example.gearshop.utility.ViewPasswordInputHelper;
 
@@ -156,6 +157,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     customerRepository.changePassword(edtEmail.getText().toString(), newPassword);
 
                     Toast.makeText(v.getContext(), "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show();
+                    ActivityStartManager.startTargetActivity(getBaseContext(), SignInActivity.class);
                     finish();
                 }
                 else {
@@ -173,6 +175,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ActivityStartManager.startTargetActivity(getBaseContext(), SignInActivity.class);
                 finish();
             }
         });
