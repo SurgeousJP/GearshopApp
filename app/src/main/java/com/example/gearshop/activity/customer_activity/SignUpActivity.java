@@ -21,7 +21,9 @@ import com.example.gearshop.utility.ViewPasswordInputHelper;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -135,11 +137,11 @@ public class SignUpActivity extends AppCompatActivity {
                 String newCustomerGender = edtGender.getText().toString();
 
                 String dayString = edtDay.getText().toString();
-                int dayInt = Integer.parseInt(dayString);
+                int dayInt = tryParseInt(dayString);
                 String monthString = edtMonth.getText().toString();
-                int monthInt = Integer.parseInt(monthString);
+                int monthInt = tryParseInt(monthString);
                 String yearString = edtYear.getText().toString();
-                int yearInt = Integer.parseInt(yearString);
+                int yearInt = tryParseInt(yearString);
 
                 if (newCustomerGender.equals("Nam")) {
                     newCustomerGender = "male";
@@ -168,7 +170,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return false;
                 }
 
-                if (!validDate(dayInt, monthInt, yearInt)) {
+                if (!validDateOfBirth(dayInt, monthInt, yearInt)) {
                     // Handle date validation error
                     Toast.makeText(getApplicationContext(), "Ngày sinh không hợp lệ", Toast.LENGTH_SHORT).show();
 
@@ -186,7 +188,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (!validPassword(password)) {
                     // Handle password validation error
-                    Toast.makeText(getApplicationContext(), "Mật khẩu quá ngắn", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Mật khẩu không đủ 8 ký tự hoặc sai định dạng", Toast.LENGTH_SHORT).show();
 
                     return false;
                 }
@@ -231,13 +233,30 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
                 return true;
             }
+            private int tryParseInt(String number){
+                try{
+                    return Integer.parseInt(number);
+                }
+                catch(NumberFormatException e){
+                    return 0;
+                }
+            }
 
             private boolean validUsername(String username) {
                 return username.length() > 0;
             }
 
             private boolean validPhoneNumber(String phoneNumber) {
-                return phoneNumber.length() == 10;
+                return phoneNumber.length() == 10 && phoneNumber.startsWith("0");
+            }
+
+            private boolean validDateOfBirth(int day, int month, int year){
+                if (!validDate(day, month, year)) return false;
+
+                LocalDate currentDate = LocalDate.now();
+                LocalDate dateOfBirth = LocalDate.of(year, month, day);
+
+                return dateOfBirth.compareTo(currentDate) < 0;
             }
 
             private boolean validDate(int day, int month, int year) {
