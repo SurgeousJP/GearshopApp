@@ -41,18 +41,40 @@ public class AdminCustomerDetailActivity extends AppCompatActivity {
 
         Intent getCustomerData = getIntent();
         CurrentCustomer = (Customer) getCustomerData.getSerializableExtra("clickedCustomer");
+
         ReturnView = findViewById(R.id.customer_detail_return_view);
+
         CustomerUsernameInfoTextView = findViewById(R.id.admin_username_user_info);
+        CustomerUsernameInfoTextView.setEnabled(false);
+
         CustomerPasswordInfoTextView = findViewById(R.id.admin_password_user_info);
+        CustomerPasswordInfoTextView.setEnabled(false);
+
         CustomerLastNameInfoTextView = findViewById(R.id.admin_lastname_user_info);
+        CustomerLastNameInfoTextView.setEnabled(false);
+
         CustomerFirstNameInfoTextView = findViewById(R.id.admin_firstname_user_info);
+        CustomerFirstNameInfoTextView.setEnabled(false);
+
         CustomerGenderInfoTextView = findViewById(R.id.admin_sex_user_info);
+        CustomerGenderInfoTextView.setEnabled(false);
+
         CustomerDOBInfoTextView = findViewById(R.id.admin_dob_user_info);
+        CustomerDOBInfoTextView.setEnabled(false);
+
         CustomerEmailInfoTextView = findViewById(R.id.admin_email_user_info);
+        CustomerEmailInfoTextView.setEnabled(false);
+
         CustomerAddressInfoTextView = findViewById(R.id.admin_address_user_info);
+        CustomerAddressInfoTextView.setEnabled(false);
+
         CustomerPhoneNumberInfoTextView = findViewById(R.id.admin_phonenumber_user_info);
+        CustomerPhoneNumberInfoTextView.setEnabled(false);
+
         CustomerOrderManagement = findViewById(R.id.order_management_text);
         CustomerTitle = findViewById(R.id.admin_title_username_user_info);
+        CustomerTitle.setEnabled(false);
+
         ReturnView.setOnClickListener(view -> {
             finish();
         });
