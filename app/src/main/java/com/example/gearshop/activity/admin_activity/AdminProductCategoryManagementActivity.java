@@ -116,27 +116,47 @@ public class AdminProductCategoryManagementActivity extends AppCompatActivity {
     }
 
     private List<Product> readProductList(Uri uri) throws IOException {
+
         List<Product> resultProductList = new ArrayList<>();
-        int newProductID = generateNewProductId();
         InputStream inputStream = getContentResolver().openInputStream(uri);
         String[] productRows = readAllCSVLines(inputStream).split("\n;");
-        for (String productRow : productRows){
-            // A row contains: name, image_url, description, specs, price, status, category_id
-            String[] productAttributes = productRow.split(";");
 
-            String productName = productAttributes[0].trim();
-            String imageURL = productAttributes[1].trim();
-            String productDescription = productAttributes[2].replace("\"", "").trim();
-            String productSpec = productAttributes[3].replace("\"", "").trim();
-            double productPrice = Double.parseDouble(productAttributes[4].trim());
-            int productStatus = Integer.parseInt(productAttributes[5].trim());
-            int productCategoryID = Integer.parseInt(productAttributes[6].trim());
+        if (productRows.length > 0){
+            int newProductID = generateNewProductId();
 
-            Product product = new Product(newProductID++, productName, imageURL, productDescription, productSpec,
-                    productPrice, productStatus, productCategoryID, null);
-            resultProductList.add(product);
+            for (String productRow : productRows){
+                // A row contains: name, image_url, description, specs, price, status, category_id
+                String[] productAttributes = productRow.split(";");
+
+                if (productAttributes.length != 7) continue;
+
+                String productName = productAttributes[0].trim();
+                String imageURL = productAttributes[1].trim();
+                String productDescription = productAttributes[2].replace("\"", "").trim();
+                String productSpec = productAttributes[3].replace("\"", "").trim();
+                double productPrice = Double.parseDouble(productAttributes[4].trim());
+                int productStatus = Integer.parseInt(productAttributes[5].trim());
+                int productCategoryID = Integer.parseInt(productAttributes[6].trim());
+
+                Product product = new Product(newProductID++, productName, imageURL, productDescription, productSpec,
+                        productPrice, productStatus, productCategoryID, null);
+
+                if (!checkValidProduct(product)) continue;
+
+                resultProductList.add(product);
+            }
         }
         return resultProductList;
+    }
+
+    public boolean checkValidProduct(Product product){
+        return !product.getName().equals("")
+                && !product.getImageURL().equals("")
+                && !product.getDescription().equals("")
+                && !product.getSpecs().equals("")
+                && product.getPrice() > 0
+                && (product.getStatus() >= 0 && product.getStatus() <= 2)
+                && product.getCategoryID() >= 1;
     }
     public int generateNewProductId(){
         return DatabaseHelper.getAdminProductListGivenID("").size() + 1;

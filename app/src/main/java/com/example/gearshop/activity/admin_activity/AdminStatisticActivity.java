@@ -216,7 +216,9 @@ public class AdminStatisticActivity extends AppCompatActivity {
         document.close();
 
         // Show a success message
-        Toast.makeText(this, "Statistics saved as PDF", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Statistics saved as PDF\nStored at " + Environment.DIRECTORY_DOCUMENTS,
+                Toast.LENGTH_SHORT).show();
+
     }
 
     private void addTitlePageForChart(Document document, String title) {

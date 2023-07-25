@@ -217,7 +217,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         try {
             return Double.parseDouble(value);
         } catch (NumberFormatException | NullPointerException e) {
-            createToast("Chưa điền giá / Giá không hợp lệ !" + "(" + value + ")");
+            createToast("Chưa điền giá / Giá không hợp lệ !");
             return Double.parseDouble("0");
         }
     }

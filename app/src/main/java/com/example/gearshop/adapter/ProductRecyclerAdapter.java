@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gearshop.R;
 import com.example.gearshop.activity.customer_activity.ProductDetailActivity;
 import com.example.gearshop.interfaces.ItemClickListener;
+import com.example.gearshop.model.Discount;
 import com.example.gearshop.model.Product;
 import com.example.gearshop.utility.MoneyHelper;
 import com.squareup.picasso.Picasso;
@@ -44,6 +45,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
         return new ProductListViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ProductListViewHolder holder, int position) {
         Product product = listProductItems.get(position);
@@ -59,9 +61,13 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
         }
 
         if (holder.tvDiscount != null) {
-            String discountPercentageWithPercent = product.getDiscountInformation().getDiscountPercentage() + "%";
-
-            holder.tvDiscount.setText(discountPercentageWithPercent);
+            Discount productDiscount = product.getDiscountInformation();
+            if (productDiscount.isActive()){
+                holder.tvDiscount.setText(String.valueOf(productDiscount.getDiscountPercentage()) + "%");
+            }
+            else{
+                holder.tvDiscount.setText("Không giảm giá");
+            }
         }
 
         if (holder.ivProductThumbnail != null) {

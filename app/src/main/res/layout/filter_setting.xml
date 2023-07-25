@@ -383,36 +383,12 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/chip1"
+                    android:id="@+id/chip2"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:background="@drawable/normal_box"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:layout_marginHorizontal="16dp"
-                        android:id="@+id/content_pro1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="21dp"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:lineSpacingExtra="4sp"
-                        android:text="Đánh giá cao"
-                        android:textAppearance="@style/content_pro"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/chip2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="8dp"
-                    android:background="@drawable/normal_box"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/chip1"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -423,6 +399,32 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:lineSpacingExtra="4sp"
                         android:text="Đang giảm giá"
+                        android:textAppearance="@style/content_pro"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/chip1"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/normal_box"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/chip1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_marginHorizontal="16dp"
+                        android:id="@+id/content_pro1"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:lineSpacingExtra="4sp"
+                        android:text="Đánh giá cao"
                         android:textAppearance="@style/content_pro"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

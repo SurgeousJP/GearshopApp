@@ -53,6 +53,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
         setContentView(R.layout.admin_order_mainscreen_management);
 
         OrderList = DatabaseHelper.getOrderList("ALL");
+        CustomerParticularTypeOrderList = OrderList;
         OrderAdapter = new OrderListAdapter(getBaseContext(), R.layout.list_order_status, OrderList);
         OrderListView = findViewById(R.id.listview_admin_order_management);
         OrderListView.setAdapter(OrderAdapter);
@@ -61,8 +62,11 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
         SearchIcon = findViewById(R.id.admin_order_management_search_icon);
         SearchIcon.setOnClickListener(view -> {
             String searchText = SearchTextView.getText().toString();
-            int customerID = tryParseInt(searchText, -1);
-            if (customerID == -1) return;
+            int customerID = tryParseInt(searchText, 0);
+            if (customerID == 0){
+                Toast.makeText(getBaseContext(), "Mã khách hàng không hợp lệ !", Toast.LENGTH_SHORT).show();
+                return;
+            }
             List<Order> searchResults = searchForOrders(customerID);
             OrderAdapter.UpdateDataToAdapter(searchResults);
         });
@@ -145,7 +149,6 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException e) {
-            Toast.makeText(getBaseContext(), "Mã khách hàng không hợp lệ !", Toast.LENGTH_SHORT).show();
             return defaultVal;
         }
     }
