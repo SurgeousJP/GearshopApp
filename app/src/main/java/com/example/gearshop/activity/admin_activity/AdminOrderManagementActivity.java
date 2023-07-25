@@ -53,6 +53,7 @@ public class AdminOrderManagementActivity extends AppCompatActivity {
         setContentView(R.layout.admin_order_mainscreen_management);
 
         OrderList = DatabaseHelper.getOrderList("ALL");
+        CustomerParticularTypeOrderList = OrderList;
         OrderAdapter = new OrderListAdapter(getBaseContext(), R.layout.list_order_status, OrderList);
         OrderListView = findViewById(R.id.listview_admin_order_management);
         OrderListView.setAdapter(OrderAdapter);
