@@ -89,7 +89,7 @@
                     android:layout_marginRight="12dp"
                     android:background="@null"
                     android:hint="Nhập mã khách hàng của đơn hàng"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:textAppearance="@style/placeholder"
                     android:textColor="#808089"
                     app:layout_constraintBottom_toBottomOf="parent"
